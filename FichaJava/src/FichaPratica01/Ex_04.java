@@ -16,7 +16,7 @@ public class Ex_04 {
         //Ler raio
         System.out.println("Insira um número");
         raio = input.nextDouble();
-        
+
         //Calcular area
         area= pi*(raio*raio);
 
