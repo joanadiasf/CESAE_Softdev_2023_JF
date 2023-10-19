@@ -24,7 +24,7 @@ public class Ex_01 {
         //Calcular soma num1 e num2
         soma= num1+num2;
 
-       //Apresentar a soma
+        //Apresentar a soma
         System.out.println( " A soma é:" + soma);
 
     }
