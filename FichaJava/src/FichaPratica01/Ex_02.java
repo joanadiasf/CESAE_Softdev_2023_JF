@@ -14,11 +14,11 @@ public class Ex_02 {
 
         //Ler num1
         System.out.println("Insira um número");
-        num1= input.nextInt();
+        num1= input.nextDouble();
 
         //Ler num2
         System.out.println("Insira um número");
-        num2= input.nextInt();
+        num2= input.nextDouble();
 
         //Calcular soma num1 e num2
         soma= num1+num2;
