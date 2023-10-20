@@ -19,11 +19,21 @@ public class Ex_06 {
         valor2 = input.nextInt();
 
         //Apresentar valores
-        //valor2=valoraux;
-       // valor1=valor2;
 
-        //System.out.println("Valor 1: " + valor1);
-       // System.out.println("Valor 2: " + valoraux);
+        System.out.println("Valor 1: " + valor1);
+        System.out.println("Valor 2: " + valor2);
+
+        //Trocar valores
+        System.out.println("Troca: ");
+
+        valoraux=valor1;
+        valor1=valor2;
+        valor2=valoraux;
+
+        //Apresentar valores trocados
+        System.out.println("Valor 1: " + valor1);
+        System.out.println("Valor 2: " + valor2);
+
 
         //Parte2
         System.out.println("Valor 1: " + valor2);
