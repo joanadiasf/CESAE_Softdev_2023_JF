@@ -21,7 +21,7 @@ public class Ex_07 {
         System.out.println("Insira o terceiro preço");
         prod3= input.nextDouble();
 
-        //Preço (conta ?????)
+        //Preço
         pagar = (prod1 + prod2 + prod3) * 0.9;
 
         //Apresentar valor a pagar com desconto
