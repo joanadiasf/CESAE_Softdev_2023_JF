@@ -12,13 +12,13 @@ public class Ex_07 {
         double prod1,prod2,prod3,pagar;
 
         //Ler preços
-        System.out.println("Insira um número");
+        System.out.println("Insira um preço");
         prod1= input.nextDouble();
 
-        System.out.println("Insira um número");
+        System.out.println("Insira o segundo preço");
         prod2= input.nextDouble();
 
-        System.out.println("Insira um número");
+        System.out.println("Insira o terceiro preço");
         prod3= input.nextDouble();
 
         //Preço (conta ?????)
