@@ -20,10 +20,18 @@ public class Ex_01 {
 
         //Condicional
 
-        if (valor1 > valor2)
+        if (valor1 > valor2){
             System.out.println("O valor maior é: " + valor1);
-        else
+             }
+
+        if (valor2>valor1){
             System.out.println("O valor maior é: " + valor2);
+        }
+
+        if (valor1==valor2){
+            System.out.println("O valor é igual!");
+        }
+
     }
 
 
