@@ -9,7 +9,7 @@ public class Ex_08 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        int min1,seg1,min2,seg2,min3,seg3,min4,seg4,min5,seg5;
+        int min1,seg1,min2,seg2,min3,seg3,min4,seg4,min5,seg5,hora,minuto,segundo;
 
         //Ler tempos música
         System.out.println("Insira minutos faixa 1");
@@ -43,5 +43,12 @@ public class Ex_08 {
         seg5= input.nextInt();
 
         //Somar tempos e converter
+        segundo = (seg1 + seg2 + seg3 + seg4 + seg5) % 60;
+        minuto = ((seg1 + seg2 + seg3 + seg4 + seg5) / 60) + (min1 + min2 + min3 + min4 + min5) % 60 ;
+        hora = (min1 + min2 + min3 + min4 + min5) / 60;
+
+        //Apresentar resultado
+        System.out.println( hora + ":" + minuto + ":" + segundo );
+
     }
 }
