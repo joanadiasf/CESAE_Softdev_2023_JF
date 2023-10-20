@@ -18,10 +18,10 @@ public class Ex_02 {
         //Condicional
 
         if (salario <= 15000)
-            System.out.println("Taxa a pagar: " + salario * 0.2);
+            System.out.println("Taxa a pagar (20%): " + salario * 0.2);
 
         else
-            System.out.println("Taxa a pagar: " + salario * 0.3);
+            System.out.println("Taxa a pagar (30%): " + salario * 0.3);
 
     }
 }
