@@ -9,7 +9,7 @@ public class Ex_09 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        double codfun,diastrab,iliquido,subali,irs,ss,liquido;
+        double codfun,diastrab,iliquido,subali,irs,ss1, ss2 ,liquido;
 
         //ler info
         System.out.println("Insirir código de funcionário");
@@ -20,17 +20,19 @@ public class Ex_09 {
 
         //Calcular
         subali= diastrab * 5;
-        iliquido= (40 * diastrab) + subali;
+        iliquido= (40 * diastrab);
         irs= (iliquido * 0.1);
-        ss= (iliquido * 0.11) + (iliquido * 0.2375);
-        liquido= (iliquido - irs) - ss;
+        ss1= (iliquido * 0.11);
+        ss2= (iliquido * 0.2375);
+        liquido= ((iliquido + subali) - irs) - ss1 ;
 
 
         //Apresentar resultados
         System.out.println("Valor ilíquido: " + iliquido);
         System.out.println("Subsídio de alimentação: " + subali);
         System.out.println("IRS: " + irs);
-        System.out.println("A pagar à Segurança Social: " + ss);
+        System.out.println("A pagar à Segurança Social (funcionário): " + ss1);
+        System.out.println("A pagar à Segurança Social (empresa): " + ss2);
         System.out.println("Valor líquido: " + liquido);
 
 

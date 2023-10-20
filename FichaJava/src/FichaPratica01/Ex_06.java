@@ -18,6 +18,6 @@ public class Ex_06 {
         System.out.println("Insira um valor");
         valor2 = input.nextInt();
 
-        ???????????????
+        //
     }
 }
