@@ -10,7 +10,7 @@ public class Ex_08 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        int mintotal,segtotais, hora, minuto, segundo;
+        int mintotal,segtotais, hora, minuto, segundo, segundoTotalAlb;
 
         //Ler tempos música
 
@@ -44,13 +44,32 @@ public class Ex_08 {
         System.out.println("Insira segundos faixa 5");
         segtotais = segtotais + input.nextInt();
 
+
+        System.out.println("Minutos Totais: " + mintotal);
+        System.out.println("Segundos Totais: " + segtotais);
+
+        //Calcular total de segundos
+        segundoTotalAlb= (mintotal*60) + segtotais;
+        System.out.println("Segundos Totais do Album: " + segundoTotalAlb);
+
+        //Calcular total de horas
+        hora = segundoTotalAlb / 3600;
+
+        //Calcular total de minutos
+        minuto = segundoTotalAlb / 60 - (hora*60);
+
+        //Calcular total de segundos
+        segundo = segundoTotalAlb - (hora*3600)-(minuto*60);
+
+        System.out.println(hora + "h" + minuto + "min" + segundo + "s");
+
         //Somar tempos e converter
 //        segundo = (seg1 + seg2 + seg3 + seg4 + seg5) % 60;
 //        minuto = ((seg1 + seg2 + seg3 + seg4 + seg5) / 60) + (min1 + min2 + min3 + min4 + min5) % 60 ;
 //        hora = (min1 + min2 + min3 + min4 + min5) / 60;
 
         //Apresentar resultado
-        System.out.println(hora + ":" + minuto + ":" + segundo);
+       // System.out.println(hora + ":" + minuto + ":" + segundo);
 
     }
 }
