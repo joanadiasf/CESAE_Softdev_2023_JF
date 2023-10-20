@@ -9,7 +9,7 @@ public class Ex_06 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        int valor1,valor2;
+        int valor1,valor2,valoraux;
 
         //Ler valores
         System.out.println("Insira um valor");
@@ -18,6 +18,16 @@ public class Ex_06 {
         System.out.println("Insira um valor");
         valor2 = input.nextInt();
 
-        //
+        //Apresentar valores
+        //valor2=valoraux;
+       // valor1=valor2;
+
+        //System.out.println("Valor 1: " + valor1);
+       // System.out.println("Valor 2: " + valoraux);
+
+        //Parte2
+        System.out.println("Valor 1: " + valor2);
+        System.out.println("Valor 2: " + valor1);
+
     }
 }
