@@ -56,11 +56,3 @@ public class Ex_04 {
 
     }
 }
-
-
-
-
-
-
-//default:
-//sout
