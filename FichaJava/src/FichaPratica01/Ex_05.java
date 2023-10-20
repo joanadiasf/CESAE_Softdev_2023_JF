@@ -24,7 +24,7 @@ public class Ex_05 {
         //Calcular e apresentar medias
         mediaar = (valor1 + valor2 + valor3) / 3;
 
-        mediapon = (valor1 * 0.5) + (valor2 * 0.3) + (valor3 * 0.2) ;
+        mediapon = (valor1 * 0.2) + (valor2 * 0.3) + (valor3 * 0.5);
 
 
         System.out.println("Média Aritmética é: " + mediaar);
