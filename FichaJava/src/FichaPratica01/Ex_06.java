@@ -36,6 +36,15 @@ public class Ex_06 {
 
 
         //Parte2
+
+                     //correto
+        //valor1=valor 1 + valor2;
+        //valor2=valor 1-valor 2;
+        //valor1=valor1-valor2;
+
+        //System.out.println("Valor 1: " + valor1);
+        //System.out.println("Valor 2: " + valor2);
+
         System.out.println("Valor 1: " + valor2);
         System.out.println("Valor 2: " + valor1);
 
