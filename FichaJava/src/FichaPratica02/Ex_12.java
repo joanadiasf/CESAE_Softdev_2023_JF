@@ -12,7 +12,7 @@ public class Ex_12 {
         int escolha;
 
         //Condicional
-        System.out.println("Menu: \n 1.Criar 2.Atualizar 3.Eliminar 4.Sair");
+        System.out.println("\n Menu: \n 1.Criar 2.Atualizar 3.Eliminar 4.Sair");
         escolha = input.nextInt();
 
         switch (escolha){
@@ -27,7 +27,7 @@ public class Ex_12 {
 
             case 3:
                 System.out.println("Selecionou a opção 3.Eliminar.");
-                
+
             case 4:
                 System.out.println("          ");
                 break;
