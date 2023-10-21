@@ -28,6 +28,7 @@ public class Ex_09 {
 
 
         //Apresentar resultados
+        System.out.println("Funcionário(a)" + codfun);
         System.out.println("Valor ilíquido: " + iliquido);
         System.out.println("Subsídio de alimentação: " + subali);
         System.out.println("IRS: " + irs);
