@@ -1,0 +1,61 @@
+h1 {
+    font-family: 'Comic Neue', cursive; 
+    color: rgb(116, 10, 238); 
+    margin: 50px;
+}
+
+h2 {
+    margin: 50px; 
+    color: rgb(117, 29, 218);
+}
+
+h3 {
+    margin: 50px; 
+    color: rgb(168, 93, 255);
+}
+
+h4 {
+    font-family: 'Sometype Mono', monospace; 
+    margin: 50px; 
+    color: rgb(163, 108, 224);
+}
+
+h5 {
+    margin: 50px; 
+    color: rgb(163, 128, 204);
+}
+
+div {
+    color: blueviolet; 
+    margin: 50px; 
+    font:bold; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    font-family: 'Comic Neue', cursive;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #7a0fdd;
+    position: fixed;
+    right: 0;
+    /* width: 100%; */
+    margin: 30 px;
+  }
+  
+  .navbar a {
+    float: center;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background: #a661b4;
+    color: rgb(226, 220, 220);
+  }
