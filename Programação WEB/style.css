@@ -4,6 +4,13 @@ h1 {
     margin: 50px;
 }
 
+h1:hover {
+
+    background: #a661b4;
+    color: rgb(226, 220, 220);
+    
+}
+
 h2 {
     margin: 50px; 
     color: rgb(117, 29, 218);
@@ -58,4 +65,17 @@ p {
   .navbar a:hover {
     background: #a661b4;
     color: rgb(226, 220, 220);
+  }
+
+  form{
+    font-family: 'Comic Neue', cursive;
+    margin: 100px;
+    background-color: rgb(233, 195, 236) ;
+
+  }
+
+  .among{
+    width: 100px;
+    margin-left: 200px;
+    margin-bottom: 10px;
   }
