@@ -10,7 +10,7 @@ public class Ex_18 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        double cargo,iliquido,subali,irs,ss1,ss2,liquido;
+        double iliquido,subali,irs,ss1,ss2,liquido;
         int codfun,diastrab;
 
         //ler info
@@ -21,7 +21,8 @@ public class Ex_18 {
         diastrab = input.nextInt();
 
         System.out.println("Selecione cargo:     E-Empregado     C-Chefe     A-Administrador");
-        cargo = input.nextDouble();
+        String cargo;
+        cargo = input.next();
 
 
 
