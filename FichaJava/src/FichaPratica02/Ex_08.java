@@ -24,5 +24,12 @@ public class Ex_08 {
         //Calcular a media
         mediap=(nota1*0.25) + (nota2*0.35) + (nota3*0.4);
         System.out.println(" A média final ponderada é: " + mediap);
+
+        //Avaliar
+        if (mediap >=9.5){
+            System.out.println("Aprovado");
+        } else {
+            System.out.println("Reprovado");
+        }
     }
 }
