@@ -10,44 +10,42 @@ public class Ex_16 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        int dinheiro;
+        int dinheiro,notas,resto;
 
         //Ler variaveis
         System.out.println("Insira um valor (que seja múltiplo de 5) para saber as notas necessárias: \n");
         dinheiro = input.nextInt();
 
         //Condicionais
-        if (dinheiro / 5 == 1){
-            System.out.println("1 nota de 5€");
+        if (dinheiro % 5 != 0){
+            System.out.println("Não é múltiplo de 5");
         }
 
-        if (dinheiro / 5 == 2){
-            System.out.println("1 nota de 10€");
+        else {
+            notas = dinheiro / 200;
+            System.out.println(notas + "notas de 200€");
+            resto = dinheiro % 200;
+
+            notas = dinheiro / 100;
+            System.out.println(notas + "notas de 100€");
+            resto = dinheiro % 100;
+
+            notas = dinheiro / 50;
+            System.out.println(notas + "notas de 50€");
+            resto = dinheiro % 50;
+
+            notas = dinheiro / 20;
+            System.out.println(notas + "notas de 20€");
+            resto = dinheiro % 20;
+
+            notas = dinheiro / 10;
+            System.out.println(notas + "notas de 10€");
+            resto = dinheiro % 10;
+
+            notas = dinheiro / 5;
+            System.out.println(notas + "notas de 5€");
         }
 
-        if (dinheiro / 5 == 3){
-            System.out.println("1 nota de 5€ e 1 nota de 10€");
-        }
-
-        if ( dinheiro / 5 == 4){
-            System.out.println("1 nota de 20€");
-        }
-
-        if (dinheiro / 5 == 5){
-            System.out.println("1 nota de 5€ e 1 nota de 20€");
-        }
-
-        if ( dinheiro / 5 == 6){
-            System.out.println("1 nota de 20€ e 1 nota de 10€");
-        }
-
-        if ( dinheiro / 5 == 7){
-            System.out.println("1 nota de 20€, 1 nota de 10€ e 1 nota de 5€");
-        }
-
-        if ( dinheiro / 5 == 8){
-            System.out.println("2 nota de 20€");
-        }
 
     }
 }
