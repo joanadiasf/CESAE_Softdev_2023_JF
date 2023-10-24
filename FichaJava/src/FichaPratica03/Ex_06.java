@@ -6,11 +6,11 @@ public class Ex_06 {
     public static void main(String[] args) {
 
         //Declarar variaveis
-        int num;
+        int num,soma;
 
 
         num=1;
-
+        soma=num;
 
         //Loop
         System.out.println("\n");
@@ -18,7 +18,14 @@ public class Ex_06 {
         while (num <=100){
             System.out.println(num);
             num=num+1;
+
+            soma=soma + num;
+            System.out.println("Somatório: " + soma);
         }
-        //incompleto (falta soma)
+
+        System.out.println("Somatório: " + soma);
+
+
+
     }
 }
