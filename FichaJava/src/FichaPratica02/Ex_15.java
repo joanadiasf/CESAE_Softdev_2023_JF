@@ -8,7 +8,8 @@ public class Ex_15 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        int num1,num2,num3,opcao;
+        int num1,num2,num3;
+        String opcao;
 
         //Ler variáveis
         System.out.println("Insira três números separados por Enter");
@@ -17,66 +18,63 @@ public class Ex_15 {
         num3 = input.nextInt();
 
         System.out.println("Ordem crescente (C) ou Ordem decrescente (D)");
-        opcao = input.nextInt();
+        opcao = input.next();
 
         //Condicionais
 
-//        switch (opcao){
-//
-//            case "C":
-//
-//                if (num1 < num2 && num2 < num3);{
-//                System.out.println("Ordem crescente: " + num1 + " "+ num2 + " "+ num3);
-//            }
-//
-//            if (num1 < num2 && num3 < num2);{
-//                System.out.println("Ordem crescente: " + num1 + " " + num3 + " " + num2);
-//            }
-//
-//            if (num2 < num3 && num3 < num1);{
-//                System.out.println("Ordem crescente: " + num2 + " " + num3 + " " + num1);
-//            }
-//
-//            if (num2 < num3 && num1 < num3);{
-//                System.out.println("Ordem crescente: " + num2 + " " + num1 + " " + num3);
-//            }
-//
-//            if (num3 < num1 && num1 < num2);{
-//                System.out.println("Ordem crescente: " + num3 + " " + num2 + " " + num3);
-//            }
-//
-//            if (num3 < num1 && num2 < num1);{
-//                System.out.println("Ordem crescente: " + num3 + " " + num2 + " " + num1);
-//            }
-//            break;
-//
-//            case "D":
-//                if (num1 < num2 && num2 < num3);{
-//                System.out.println("Ordem decrescente: " + num3 + " "+ num2 + " "+ num1);
-//            }
-//
-//            if (num1 < num2 && num3 < num2);{
-//                System.out.println("Ordem decrescente: " + num2 + " " + num3 + " " + num1);
-//            }
-//
-//            if (num2 < num3 && num3 < num1);{
-//                System.out.println("Ordem decrescente: " + num1 + " " + num3 + " " + num2);
-//            }
-//
-//            if (num2 < num3 && num1 < num3);{
-//                System.out.println("Ordem decrescente: " + num3 + " " + num1 + " " + num2);
-//            }
-//
-//            if (num3 < num1 && num1 < num2);{
-//                System.out.println("Ordem decrescente: " + num3 + " " + num2 + " " + num1);
-//            }
-//
-//            if (num3 < num1 && num2 < num1);{
-//                System.out.println("Ordem decrescente: " + num1 + " " + num2 + " " + num3);
-//            }
-//            break;
-//        }
+        switch (opcao) {
 
+            case "C":
+                if (num1 < num2) {
+                    if (num1 < num3) {
+                        if (num3 < num2) {
+                            System.out.println("Ordem crescente: " + num1 + " " + num3 + " " + num2);
+                        } else {
+                            System.out.println("Ordem crescente: " + num1 + " " + num2 + " " + num3);
+                        }
+                    }
+                }
+
+                if (num2 < num3) {
+                    if (num3 < num1) {
+                        System.out.println("Ordem crescente: " + num2 + " " + num3 + " " + num1);
+                    } else {
+                        System.out.println("Ordem crescente: " + num2 + " " + num1 + " " + num3);
+                    }
+                } else if (num3 < num1) {
+                    if (num2 < num1) {
+                        System.out.println("Ordem crescente: " + num3 + " " + num2 + " " + num1);
+                    } else {
+                        System.out.println("Ordem crescente: " + num3 + " " + num1 + " " + num2);
+                    }
+                }
+
+            case "D":
+                if (num1 < num2) {
+                    if (num1 < num3) {
+                        if (num3 < num2) {
+                            System.out.println("Ordem decrescente: " + num2 + " " + num3 + " " + num1);
+                        } else {
+                            System.out.println("Ordem decrescente: " + num3 + " " + num2 + " " + num1);
+                        }
+                    }
+                }
+
+                if (num2 < num3) {
+                    if (num3 < num1) {
+                        System.out.println("Ordem decrescente: " + num1 + " " + num3 + " " + num2);
+                    } else {
+                        System.out.println("Ordem decrescente: " + num3 + " " + num1 + " " + num2);
+                    }
+                } else if (num3 < num1) {
+                    if (num2 < num1) {
+                        System.out.println("Ordem decrescente: " + num1 + " " + num2 + " " + num3);
+                    } else {
+                        System.out.println("Ordem decrescente: " + num2 + " " + num1 + " " + num3);
+                    }
+                }
+        }
 
     }
 }
+
