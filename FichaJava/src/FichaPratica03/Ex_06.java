@@ -14,10 +14,11 @@ public class Ex_06 {
 
         //Loop
         System.out.println("\n");
-        
+
         while (num <=100){
             System.out.println(num);
             num=num+1;
         }
+        //incompleto (falta soma)
     }
 }
