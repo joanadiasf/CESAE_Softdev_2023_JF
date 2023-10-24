@@ -5,7 +5,7 @@ public class Ex_14 {
 
     public static void main(String[] args) {
 
-        // Instanciar o Scanner obrigatório para todos os exercicios)
+        // Instanciar o Scanner obligatorio para todos os exercicios)
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
