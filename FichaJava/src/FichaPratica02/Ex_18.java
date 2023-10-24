@@ -23,7 +23,7 @@ public class Ex_18 {
         System.out.println("Selecione cargo:     E-Empregado     C-Chefe     A-Administrador");
         String cargo;
         cargo = input.next();
-        
+
 
         switch (cargo){
 
