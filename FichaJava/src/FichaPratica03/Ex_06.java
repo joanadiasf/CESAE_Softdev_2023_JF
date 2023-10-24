@@ -1,8 +1,7 @@
 package FichaPratica03;
 
 import java.util.Scanner;
-
-public class Ex_01 {
+public class Ex_06 {
 
     public static void main(String[] args) {
 
@@ -15,8 +14,8 @@ public class Ex_01 {
 
         //Loop
         System.out.println("\n");
-
-        while (num <=250){
+        
+        while (num <=100){
             System.out.println(num);
             num=num+1;
         }
