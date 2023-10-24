@@ -34,7 +34,10 @@ public class Ex_14 {
             }else {
                 System.out.println("Ordem crescente: " + num2 + " " + num1 + " " + num3 );
             }
-        } else if (num3 < num1){
+        }
+
+
+         if (num3 < num1){
             if ( num2 < num1){
                 System.out.println("Ordem crescente: " + num3 + " " + num2 + " " + num1 );
             } else {
