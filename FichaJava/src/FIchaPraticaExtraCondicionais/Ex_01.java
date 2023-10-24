@@ -1,4 +1,4 @@
-package FIchaPraticaExtraCondicionais;
+package FichaPraticaExtraCondicionais;
 
 import java.util.Scanner;
 
