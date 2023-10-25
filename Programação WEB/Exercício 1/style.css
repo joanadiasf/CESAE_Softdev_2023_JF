@@ -7,9 +7,21 @@
     background-color: antiquewhite;
 } */
 
+header, footer{
+    text-align: center;
+}
 header img{
     width: 70%;
     max-width: 600px;
     min-width: 400px;
+    align-items: center;
     
+}
+
+nav {
+    align-items: center;
+}
+
+p{
+    text-align: center;
 }
