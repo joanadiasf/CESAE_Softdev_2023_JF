@@ -14,14 +14,16 @@ header img{
     width: 70%;
     max-width: 600px;
     min-width: 400px;
-    align-items: center;
     
 }
 
-nav {
-    align-items: center;
-}
 
 p{
     text-align: center;
+}
+
+footer img{
+    max-width: 40px;
+    min-width: 20px;
+
 }
