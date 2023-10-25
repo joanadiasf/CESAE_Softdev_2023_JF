@@ -1,8 +1,15 @@
-p{
-    font-size: 10 px;
+/* p{
+    font-size: 30 px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 50px;
     color: slateblue;
     text-align: center;
     background-color: antiquewhite;
+} */
+
+header img{
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+    
 }
