@@ -18,12 +18,12 @@ header img{
 }
 
 
-p{
-    text-align: center;
-}
-
 footer img{
     max-width: 40px;
     min-width: 20px;
 
+}
+
+.link{
+    text-decoration: none;
 }
