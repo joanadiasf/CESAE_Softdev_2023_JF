@@ -27,3 +27,17 @@ footer img{
 .link{
     text-decoration: none;
 }
+
+table,th,td{
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px, solid;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+
+
+table{
+    width: 75%;
+}
