@@ -12,6 +12,7 @@ public class Ex_14 {
         int n;
 
         //Ler variáveis
+        System.out.println("Insira um número inteiro não-negativo: ");
         
     }
 }
