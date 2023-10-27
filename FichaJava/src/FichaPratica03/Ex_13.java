@@ -14,11 +14,12 @@ public class Ex_13 {
         //Ler variáveis
 
         conta = 0;
-        aux = 0;
+//        aux = 0;
         check = 0;
 
         System.out.println("Quantos números deseja inserir? ");
         nmax = input.nextInt();
+        System.out.println("\n");
 
 
         //Loop
@@ -26,7 +27,7 @@ public class Ex_13 {
 
             System.out.println("Introduza um número: ");
             num = input.nextInt();
-
+            aux=num;
                 if (num < aux){
                     check++;
                 }
