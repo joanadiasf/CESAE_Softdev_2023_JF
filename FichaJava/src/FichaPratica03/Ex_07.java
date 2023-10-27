@@ -23,7 +23,7 @@ public class Ex_07 {
             System.out.println(num2);
             num2++;
         }
-        
+
 
         while (num2 <= num + 5){
             System.out.println(num2);
