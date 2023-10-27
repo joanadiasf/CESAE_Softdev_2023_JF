@@ -9,10 +9,13 @@ public class Ex_11 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        int num,conta;
+        int num,conta1,conta2,conta3,conta4;
 
         //Ler variável
-        conta=0;
+        conta1=0;
+        conta2=0;
+        conta3=0;
+        conta4=0;
 
         System.out.println("Introduzir um número: ");
         num = input.nextInt();
@@ -22,29 +25,35 @@ public class Ex_11 {
 
                 System.out.println("Introduzir um número: ");
                 num = input.nextInt();
-                conta++;
 
                 if (num > 0 && num < 25){
-                    conta++;
-                    System.out.println("[00,25]: "+conta);
+                    conta1++;
+
                 }
 
-                if (num > 26 && num < 50){
-                    conta++;
-                    System.out.println("[26,50]: "+conta);
+                else if (num > 26 && num < 50){
+                    conta2++;
+
                 }
 
-                if (num > 51 && num < 75){
-                    conta++;
-                    System.out.println("[51,75]: "+conta);
+                else if (num > 51 && num < 75){
+                    conta3++;
+
                 }
 
-                if (num > 76 && num < 100){
-                    conta++;
-                    System.out.println("[76,100]: "+conta);
+                else if (num > 76 && num < 100){
+                    conta4++;
+
                 }
+                else
+                    break;
 
             }
+
+        System.out.println("[00,25]: "+conta1);
+        System.out.println("[26,50]: "+conta2);
+        System.out.println("[51,75]: "+conta3);
+        System.out.println("[76,100]: "+conta4);
 
     }
 }
