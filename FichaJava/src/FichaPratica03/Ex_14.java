@@ -9,10 +9,18 @@ public class Ex_14 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
-        int n;
+        int n,cont;
 
         //Ler variáveis
         System.out.println("Insira um número inteiro não-negativo: ");
+        n = input.nextInt();
+        cont=1;
+
+        //cont soma ate valor
+        //fatorial valor dado x cont
+
+        //Loop
         
+
     }
 }
