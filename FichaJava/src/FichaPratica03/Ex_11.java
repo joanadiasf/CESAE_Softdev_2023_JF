@@ -21,33 +21,34 @@ public class Ex_11 {
         num = input.nextInt();
 
 
-            while (num > 0 && num < 100){
+            while (num >= 0 && num <= 100){
 
-                System.out.println("Introduzir um número: ");
-                num = input.nextInt();
 
-                if (num > 0 && num < 25){
+
+                if (num <= 25){
                     conta1++;
 
                 }
 
-                else if (num > 26 && num < 50){
+                else if (num > 26 && num <= 50){
                     conta2++;
 
                 }
 
-                else if (num > 51 && num < 75){
+                else if (num > 51 && num <= 75){
                     conta3++;
 
                 }
 
-                else if (num > 76 && num < 100){
+                else if (num > 76 && num <= 100){
                     conta4++;
 
                 }
                 else
                     break;
 
+                System.out.println("Introduzir um número: ");
+                num = input.nextInt();
             }
 
         System.out.println("[00,25]: "+conta1);
