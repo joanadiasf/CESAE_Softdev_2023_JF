@@ -14,7 +14,7 @@ public class Ex_03 {
 
         //Loop
 
-        while (num >= 531 && num <=750) {
+        while (num <=750) {
 
             System.out.println(num);
             num = num + 2;
