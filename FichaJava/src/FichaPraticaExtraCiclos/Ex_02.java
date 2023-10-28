@@ -9,10 +9,16 @@ public class Ex_02 {
         //Declarar variáveis
         int num;
 
+        num = 3;
+
+
         //Loop
 
+        while (num <= 255){
 
-        for (num=3;num <=255;)
+            System.out.println(num);
+            num=num+3;
+        }
 
     }
 
