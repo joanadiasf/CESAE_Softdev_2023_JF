@@ -11,9 +11,9 @@ public class Ex_01 {
         // Declarar variáveis
         int num;
 
+        //Loop
 
-
-        for (num=1;num <=500;num++){
+        for (num = 1;num <=500;num++){
 
             System.out.println(num);
         }
