@@ -6,10 +6,18 @@ public class Ex_01 {
 
     public static void main(String[] args) {
 
-        // Instanciar o Scanner obligatorio para todos os exercicios)
-        Scanner input = new Scanner(System.in);
+
 
         // Declarar variáveis
+        int num;
+
+
+
+        for (num=1;num <=500;num++){
+
+            System.out.println(num);
+        }
+
 
     }
 
