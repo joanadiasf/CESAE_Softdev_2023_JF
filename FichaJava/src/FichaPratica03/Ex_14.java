@@ -15,8 +15,8 @@ public class Ex_14 {
         System.out.println("Insira um número inteiro não-negativo: ");
         n = input.nextInt();
 
-        total= n;
-        aux=n;
+        total = n;
+        aux = n;
         //cont soma ate valor
         //fatorial valor dado x cont
         //5x4x3x2x1=120
@@ -28,7 +28,7 @@ public class Ex_14 {
             aux = n-1;
             if (n >= aux){
 
-                total=total*aux;
+                total = total * aux;
 
             }
 
