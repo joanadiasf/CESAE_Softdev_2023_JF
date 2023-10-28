@@ -10,6 +10,7 @@ public class Ex_01 {
         Scanner input = new Scanner(System.in);
 
         // Declarar variáveis
+        
     }
 
 }
