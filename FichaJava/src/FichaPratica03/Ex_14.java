@@ -17,23 +17,22 @@ public class Ex_14 {
 
         total = n;
         aux = n;
+
         //cont soma ate valor
         //fatorial valor dado x cont
         //5x4x3x2x1=120
 
 
         //Loop
-        while ( aux > 0 ){
+        while ( aux > 1 ){
 
-            aux = n-1;
-            if (n >= aux){
+            total = total * (aux - 1);
 
-                total = total * aux;
-
-            }
+            aux--;
 
 
         }
-        System.out.println(total);
+
+        System.out.println("\n" + total);
     }
 }
