@@ -74,38 +74,38 @@ public class Ex_05 {
 
          //5.3
 
-        simetria=0;
-        num =1;
-        linha =1;
-        strg = "";
-
-        //1for - numero de linhas
-        // 2for - por espaços na coluna
-        // if - simetria para achar o meio da piramide
-        //mudar de linha e simetria++ para acrescentar * apartir do meio
-
-        for (linha=1;linha<=5;linha++){
-
-            for (coluna=1; coluna <=9; coluna++){
-
-                strg += " ";
-////////////////////////////////////////////////
-                if (coluna+simetria==5){
-
-                    for (coluna=5-simetria; coluna<=5+simetria;coluna++){
-
-                        strg += num;
-                    }
-                }
-            }
-
-            num++;
-
-            //muda de linha
-            strg += "\n";
-            simetria++;
-
-        }
-        System.out.println(strg);
+//        simetria=0;
+//        num =1;
+//        linha =1;
+//        strg = "";
+//
+//        //1for - numero de linhas
+//        // 2for - por espaços na coluna
+//        // if - simetria para achar o meio da piramide
+//        //mudar de linha e simetria++ para acrescentar * apartir do meio
+//
+//        for (linha=1;linha<=5;linha++){
+//
+//            for (coluna=1; coluna <=9; coluna++){
+//
+//                strg += " ";
+//////////////////////////////////////////////////
+//                if (coluna+simetria==5){
+//
+//                    for (coluna=5-simetria; coluna<=5+simetria;coluna++){
+//
+//                        strg += num;
+//                    }
+//                }
+//            }
+//
+//            num++;
+//
+//            //muda de linha
+//            strg += "\n";
+//            simetria++;
+//
+//        }
+//        System.out.println(strg);
     }
 }
