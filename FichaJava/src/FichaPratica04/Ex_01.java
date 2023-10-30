@@ -52,10 +52,13 @@ public class Ex_01 {
                 default:
                     System.out.println(" * | ERRO | *");
             }
+
         }while (!opcao.equals("s/n"));
+            System.out.println("Menu:");
+        };
 
 
     }
 
-}
+
 // FUNCIONA MAS O LOOP NÃO PARA
