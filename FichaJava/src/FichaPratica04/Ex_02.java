@@ -12,12 +12,12 @@ public class Ex_02 {
         int escolha;
 
         //Condicional + Loop
-        System.out.println("\n Menu: \n 1.Criar 2.Atualizar 3.Eliminar 4.Sair");
-        escolha = input.nextInt();
+
 
         do {
 
-
+        System.out.println("\n Menu: \n 1.Criar 2.Atualizar 3.Eliminar 4.Sair");
+        escolha = input.nextInt();
 
              switch (escolha){
 
@@ -34,7 +34,7 @@ public class Ex_02 {
                 break;
 
                 case 4:
-                System.out.println("          ");
+                System.out.println("--------");
                 break;
 
                 default:
@@ -45,4 +45,3 @@ public class Ex_02 {
         }while (escolha != 4);
     }
 }
-// FUNCIONA MAS O LOOP NÃO PARA

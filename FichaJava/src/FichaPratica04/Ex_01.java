@@ -12,7 +12,7 @@ public class Ex_01 {
         //declarar variaveis
         int valor1,valor2;
         double resultado;
-        String opcao;
+        String opcao,repeat;
 
         //ler variaveis
         System.out.println("Insira o primeiro valor: ");
@@ -23,42 +23,52 @@ public class Ex_01 {
 
         //Loop + menu
 
-        System.out.println("Escolha uma operação usando + | - | * | / ");
-        opcao = input.next();
+        repeat = "s/n";
 
         do {
+
+            System.out.println("Escolha uma operação usando + | - | * | / ");
+            opcao = input.next();
+
             switch (opcao){
 
                 case "+":
                     resultado = valor1 + valor2;
                     System.out.println(resultado);
+                    System.out.println("Deseja continuar? (introduza s/n)");
                     break;
 
                 case "-":
                     resultado = valor1 - valor2;
                     System.out.println(resultado);
+                    System.out.println("Deseja continuar? (introduza s/n)");
                     break;
 
                 case "*":
                     resultado = valor1 * valor2;
                     System.out.println(resultado);
+                    System.out.println("Deseja continuar? (introduza s/n)");
                     break;
 
                 case "/":
                     resultado = (double) valor1 / valor2;
                     System.out.println(resultado);
+                    System.out.println("Deseja continuar? (introduza s/n)");
                     break;
                     
                 default:
                     System.out.println(" * | ERRO | *");
+                    System.out.println("Deseja continuar? (introduza s/n)");
             }
 
-        }while (!opcao.equals("s/n"));
+
+
+        }while (!opcao.equals(repeat));
             System.out.println("Menu:");
-        };
+        }
 
 
     }
 
 
-// FUNCIONA MAS O LOOP NÃO PARA
+//SE CARREGAR S/N DA ERRO EM VEZ DE VOLTAR AO INICIO
