@@ -6,19 +6,21 @@ public class Ex_03 {
 
     public static void main(String[] args) {
 
-        int num,resultado,multi;
+        //Declarar variáveis
+        int num, resultado, multi;
 
 
+        num = 1;
+        multi = 1;
 
-        num=1;
-        multi=1;
+        //for1 ( adiciona +1 ao multiplicador sempre que o for2 acabar)
+        //for2 ( adiciona +1 ao numero sempre que repetir o ciclo)
 
+        for (multi = 1; multi <= 10; multi++) {
 
-        for (multi=1;multi<=10;multi++){
+            System.out.println("\nTabuada do " + multi + ": ");
 
-            System.out.println("Tabuada do "+ multi + ": ");
-
-            for (num=1;num<=10;num++){
+            for (num = 1; num <= 10; num++) {
 
                 resultado = multi * num;
 
@@ -27,34 +29,5 @@ public class Ex_03 {
         }
 
 
-
-
-
-
-
-//        System.out.println("Tabuada do " + multi + ": ");
-
-//        while (num <= 10){
-//
-//            resultado = multi * num;
-//
-//            System.out.println(multi +"x"+ num + " =" + resultado);
-//
-//            num++;
-//
-//
-//            if (num > 10){
-//                multi++;
-//
-//                System.out.println("\nTabuada do " + multi + ": ");
-//
-//            }
-//        }
-
-
     }
 }
-
-
-// for
-//      for
