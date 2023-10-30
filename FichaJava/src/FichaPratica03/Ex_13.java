@@ -28,7 +28,7 @@ public class Ex_13 {
             System.out.println("Introduza um número: ");
             num = input.nextInt();
             aux=num;
-                if (num < aux){
+                if (num <= aux){
                     check++;
                 }
 
