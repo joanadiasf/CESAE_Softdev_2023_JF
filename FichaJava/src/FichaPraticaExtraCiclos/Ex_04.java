@@ -7,15 +7,15 @@ public class Ex_04 {
     public static void main(String[] args) {
 
         //Declarar variáveis
-        String simbolo,espaco;
-        int conta,contesp;
+        String simbolo;
+        int conta, simetria,coluna;
 
-        conta=1;
+        conta = 1;
 
         //4.1
         simbolo = "**********";
 
-        while (conta <=4){
+        while (conta <= 4) {
 
             System.out.println(simbolo);
             conta++;
@@ -28,7 +28,7 @@ public class Ex_04 {
         simbolo = "*";
 
 
-        for (conta=1;conta <=5;conta++){
+        for (conta = 1; conta <= 5; conta++) {
 
             System.out.println(simbolo);
 
@@ -41,35 +41,40 @@ public class Ex_04 {
 
         //4.3
 
-        simbolo = "*";
-        espaco = ".";
-        contesp = 1;
-
-        for (conta=1;conta <=5;conta++){
+        simbolo = "";
+        simetria = 0;
+        conta = 1;
 
 
+        //linhas
+        for (conta = 1; conta <= 5; conta++){
 
-            while (contesp <=5){
+            //colunas
+            for (coluna=1; coluna <=9; coluna++){
 
-                System.out.println(espaco);
-                espaco += ".";
+                simbolo +=" ";
 
-                contesp++;
+                if (coluna+simetria==5){
 
+                    for (coluna=5-simetria; coluna<=5+simetria;coluna++){
+
+                        simbolo += "*";
+                    }
+                }
 
             }
 
-            while (conta <=5){
-
-                System.out.println(simbolo);
-
-                simbolo += "*";
-                conta++;
-            }
-
-
+            //muda de linha
+            simbolo += "\n";
+            simetria++;
 
         }
 
+        System.out.println(simbolo);
+
+                //1for - numero de linhas
+                // 2for - por espaços na coluna
+                // if - simetria para achar o meio da piramide
+                //mudar de linha e simetria++ para acrescentar * apartir do meio
     }
 }
