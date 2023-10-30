@@ -18,7 +18,7 @@ public class Ex_05 {
 
             for (num=1;num<=conta;num++){
 
-                linha += num + " ";
+                linha += conta + " ";
 
                 if (num == conta){
 
