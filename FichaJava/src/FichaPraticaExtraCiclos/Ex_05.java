@@ -6,10 +6,11 @@ public class Ex_05 {
     public static void main(String[] args) {
 
         //declarar variaveis
-        int num,conta;
+        int num,conta,simetria,coluna;
         String linha;
 
         //5.1
+        
         num=1;
         conta=1;
         linha = "";
@@ -29,6 +30,17 @@ public class Ex_05 {
 
         }
         System.out.println(linha);
+
+
+        System.out.println("\n");
+
+
+        //5.2
+
+        simetria=0;
+        num =1;
+        conta =1;
+        linha = "";
 
     }
 }
