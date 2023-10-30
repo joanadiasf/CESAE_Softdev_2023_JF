@@ -6,30 +6,30 @@ public class Ex_05 {
     public static void main(String[] args) {
 
         //declarar variaveis
-        int num,conta,simetria,coluna;
-        String linha;
+        int num,linha,simetria,coluna;
+        String strg;
 
         //5.1
-        
+
         num=1;
-        conta=1;
-        linha = "";
+        linha=1;
+        strg = "";
 
-        for (conta=1;conta<=5;conta++){
+        for (linha=1;linha<=5;linha++){
 
-            for (num=1;num<=conta;num++){
+            for (num=1;num<=linha;num++){
 
-                linha += conta + " ";
+                strg += linha + " ";
 
-                if (num == conta){
+                if (num == linha){
 
-                    linha += "\n";
+                    strg += "\n";
                 }
 
             }
 
         }
-        System.out.println(linha);
+        System.out.println(strg);
 
 
         System.out.println("\n");
@@ -39,8 +39,36 @@ public class Ex_05 {
 
         simetria=0;
         num =1;
-        conta =1;
-        linha = "";
+        linha =1;
+        strg = "";
 
+        //1for - numero de linhas
+        // 2for - por espaços na coluna
+        // if - simetria para achar o meio da piramide
+        //mudar de linha e simetria++ para acrescentar * apartir do meio
+
+            for (linha=1;linha<=5;linha++){
+
+                for (coluna=1; coluna <=9; coluna++){
+
+                    strg += " ";
+
+                    if (coluna+simetria==5){
+
+                        for (coluna=5-simetria; coluna<=5+simetria;coluna++){
+
+                            strg += num;
+                        }
+                    }
+                }
+                
+                num++;
+
+                //muda de linha
+                strg += "\n";
+                simetria++;
+
+            }
+        System.out.println(strg);
     }
 }
