@@ -45,3 +45,4 @@ public class Ex_02 {
         }while (escolha != 4);
     }
 }
+// FUNCIONA MAS O LOOP NÃO PARA
