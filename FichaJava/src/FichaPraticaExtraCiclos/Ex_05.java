@@ -72,7 +72,7 @@ public class Ex_05 {
         System.out.println(strg);
 
 
-         //5.3
+         //5.3  ACEITA QUE DOI MENOS
 
 //        simetria=0;
 //        num =1;
