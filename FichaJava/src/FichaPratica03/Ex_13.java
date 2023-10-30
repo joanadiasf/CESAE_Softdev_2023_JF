@@ -45,4 +45,3 @@ public class Ex_13 {
     }
 }
 
-//E SE FOREM NUMEROS IGUAIS?  - arranjar
