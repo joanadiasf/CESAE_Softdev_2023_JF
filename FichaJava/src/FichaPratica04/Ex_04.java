@@ -10,31 +10,28 @@ public class Ex_04 {
         Scanner input = new Scanner(System.in);
 
         //Declarar + ler variaveis
-        int valor,resultado;
+        int valor;
+        boolean primo=true;
 
         System.out.println("Insira um número para verificar se é um número primo: \n");
         valor = input.nextInt();
 
-        resultado = valor % 2;
+        for (int divisor=2; divisor < valor; divisor++){
 
 
-        if (resultado != 0){
-
-            resultado = valor / 3;
-
-            if (resultado != 1){
-
-                System.out.println("Não é primo!");
+            //avaliar se ha algum divisir outro que 1 e o proprio nr
+            if (valor % divisor==0){
+                System.out.println("Número deixa de ser primo");
+                primo=false;
             }
-
-            System.out.println("É primo!!!");
-
         }
 
-        else {
-
-            System.out.println("Não é primo!");
+        if (primo){
+            System.out.println("Primo");
+        }else {
+            System.out.println("Não primo");
         }
+
 
     }
 }
