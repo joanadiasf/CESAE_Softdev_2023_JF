@@ -10,24 +10,21 @@ public class Ex_01 {
         Scanner input = new Scanner(System.in);
 
         //declarar variaveis
-        int valor1,valor2;
-        double resultado;
+
+        double resultado,valor1,valor2;
         String opcao,repeat;
 
-        //ler variaveis
-        System.out.println("Insira o primeiro valor: ");
-        valor1 = input.nextInt();
-
-        System.out.println("Insira o segundo valor: ");
-        valor2 = input.nextInt();
-
-        //Loop + menu
-
-        repeat = "s/n";
+        //Ler variáveis + Loop
 
         do {
 
-            System.out.println("Escolha uma operação usando + | - | * | / ");
+            System.out.println("Insira o primeiro valor: ");
+            valor1 = input.nextDouble();
+
+            System.out.println("Insira o segundo valor: ");
+            valor2 = input.nextDouble();
+
+            System.out.println("Escolha uma operação aritmética usando + | - | * | / ");
             opcao = input.next();
 
             switch (opcao){
@@ -35,40 +32,46 @@ public class Ex_01 {
                 case "+":
                     resultado = valor1 + valor2;
                     System.out.println(resultado);
-                    System.out.println("Deseja continuar? (introduza s/n)");
+
                     break;
 
                 case "-":
                     resultado = valor1 - valor2;
                     System.out.println(resultado);
-                    System.out.println("Deseja continuar? (introduza s/n)");
+
                     break;
 
                 case "*":
                     resultado = valor1 * valor2;
                     System.out.println(resultado);
-                    System.out.println("Deseja continuar? (introduza s/n)");
+
                     break;
 
                 case "/":
-                    resultado = (double) valor1 / valor2;
+                    resultado = valor1 / valor2;
                     System.out.println(resultado);
-                    System.out.println("Deseja continuar? (introduza s/n)");
+
                     break;
                     
                 default:
                     System.out.println(" * | ERRO | *");
-                    System.out.println("Deseja continuar? (introduza s/n)");
+
             }
 
+            do {
+                System.out.println("Deseja continuar? (introduza s/n)");
+                repeat = input.next();
+            }while (!repeat.equals("s") && !repeat.equals("n") );
 
 
-        }while (!opcao.equals(repeat));
-            System.out.println("Menu:");
+
+
+        }while (!repeat.equals("n"));
+
+
         }
 
 
     }
 
 
-//SE CARREGAR S/N DA ERRO EM VEZ DE VOLTAR AO INICIO
