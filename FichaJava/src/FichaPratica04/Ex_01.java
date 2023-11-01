@@ -10,11 +10,15 @@ public class Ex_01 {
         Scanner input = new Scanner(System.in);
 
         //declarar variaveis
+        //double + string (double - ler valores não inteiros | string - ler caracteres
+
 
         double resultado,valor1,valor2;
         String opcao,repeat;
 
         //Ler variáveis + Loop
+        //ciclo do...while porque tem que rodar pelo menos 1vez
+
 
         do {
 
@@ -26,6 +30,9 @@ public class Ex_01 {
 
             System.out.println("Escolha uma operação aritmética usando + | - | * | / ");
             opcao = input.next();
+
+
+            //switch case para "menu"
 
             switch (opcao){
 
@@ -58,13 +65,18 @@ public class Ex_01 {
 
             }
 
+
+            //outro ciclo do...while para garantir que o utilizador escreve um s ou um n
+            //ou seja "while" repeat != de s e != de n, "do" o ciclo
+
             do {
                 System.out.println("Deseja continuar? (introduza s/n)");
                 repeat = input.next();
             }while (!repeat.equals("s") && !repeat.equals("n") );
 
 
-
+            //assim que o utilizador escrever n o ciclo "grande" para, se ele escrever s ele continua
+            //ou seja "while" repeat for != de n , "do" ciclo
 
         }while (!repeat.equals("n"));
 
