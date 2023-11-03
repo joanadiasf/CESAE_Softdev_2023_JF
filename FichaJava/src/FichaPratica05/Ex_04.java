@@ -1,7 +1,7 @@
 package FichaPratica05;
 
 import java.util.Scanner;
-public class Ex_03 {
+public class Ex_04 {
 
     public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class Ex_03 {
 
         //Declarar variavel de vetor
         int []vetor=new int[10];
-        int nummaior;
+        int nummenor;
 
         for ( int indice=0; indice < 10; indice++){
 
@@ -19,18 +19,18 @@ public class Ex_03 {
 
         }
 
-        nummaior = vetor[0];
+        nummenor = vetor[0];
 
         for ( int indice=1; indice < 10; indice++){
 
-            if (nummaior < vetor[indice]){
+            if (nummenor > vetor[indice]){
 
-                nummaior = vetor[indice];
+                nummenor = vetor[indice];
 
             }
 
         }
 
-        System.out.println("O maior é: " + nummaior);
+        System.out.println("O menor é: " + nummenor);
     }
 }
