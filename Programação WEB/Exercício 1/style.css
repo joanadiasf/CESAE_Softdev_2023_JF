@@ -1,12 +1,5 @@
-/* p{
-    font-size: 30 px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 50px;
-    color: slateblue;
-    text-align: center;
-    background-color: antiquewhite;
-} */
 
+/* página home*/
 body{
 
     font-family: 'Roboto', sans-serif;
@@ -17,7 +10,7 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 30%;
+    width: 40%;
     
 }
 
@@ -27,15 +20,15 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #211840;
+    background-color: #692273;
   }
   
 
- li {
+ nav li {
   float: left;
 }
 
-li a {
+nav li a {
   display: block;
   color: white;
   text-align: center;
@@ -43,8 +36,8 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+nav li a:hover {
+  background-color: #049DD9;
 }
 
 
@@ -53,9 +46,121 @@ h6{
     text-align: center;
 }
 
+
 .column {
-    float: left;
-    width: 150px;
-    padding: 5px;
     float: center;
-  }
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25%;
+    
+    
+}
+
+table{
+
+  
+  margin-left: auto;
+  margin-right: auto;
+}
+.areaiframes {
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+.iframe-grelha {
+  width: 31%;
+  
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.video{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 40px;
+  
+}
+
+
+footer{
+background-color: #A6A6A6;
+}
+
+/* Sobre nós */
+
+.imghead{
+
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+
+}
+
+
+h1{
+
+  margin-left: 50px;
+
+}
+
+p{
+  margin-left: 40px;
+}
+
+h2{
+
+  margin-left: 50px;
+
+}
+
+.iefp{
+
+    display: block;
+    margin-left: 60px;
+    margin-right: auto;
+    width: 15%;
+}
+
+/* Página contactos*/
+.formulario {
+
+  margin-top: 50px;
+  margin-left: 50px;
+  background: rgb(236, 236, 236);
+  padding: 15px;
+  max-width: 30%;
+
+}
+
+.submit {
+
+  color: white;
+  background-color: #692273;
+}
+
+#mapa{
+
+  margin-left: 50px;
+  max-width: 31.5%;
+  
+
+}
