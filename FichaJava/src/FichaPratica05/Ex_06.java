@@ -12,7 +12,7 @@ public class Ex_06 {
         int []vetor=new int[10];
 
 
-
+        //Dar valores ao vetor
         for ( int indice=0; indice < 10; indice++) {
 
             System.out.println("Insira um número no Vetor: ");
@@ -20,6 +20,7 @@ public class Ex_06 {
 
         }
 
+        //acrescentar boolean para determinar se a condição é verdadeira ou falsa
         boolean crescente=true;
 
         for ( int indice=1; indice < 10; indice++){
@@ -28,6 +29,7 @@ public class Ex_06 {
 
                 crescente=false;
                 break;
+                //break pq senao o loop nao vai parar
 
             }
 
