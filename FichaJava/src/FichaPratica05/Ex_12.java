@@ -35,6 +35,8 @@ public class Ex_12 {
         for (int l=0; l <10; l++){
 
             System.out.println("Insira valores " + l + ": ");
+
+            //l - linha onde está o valor,  o vetor tem 1 coluna e 10 linhas
             vetor2[l] = input.nextInt();
 
             //inserir os valores na segunda [] da matriz - 2coluna
