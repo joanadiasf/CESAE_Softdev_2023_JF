@@ -20,6 +20,7 @@ public class Ex_07 {
         }
 
         //nummaior -1 pq é preciso considerar se algum dos nrs vai ser 0
+
         nummaior = -1;
 
         //ciclo para verificar todas as "gavetas"
@@ -27,7 +28,7 @@ public class Ex_07 {
 
 
                     //condição para só gravar o nr se for par
-                if ( nummaior < vetor[indice] && vetor[indice]%2==0){
+                if ( ( nummaior < vetor[indice] || nummaior==-1) && vetor[indice]%2==0){
 
                     nummaior = vetor[indice];
 
