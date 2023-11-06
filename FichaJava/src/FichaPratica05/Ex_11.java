@@ -29,6 +29,9 @@ public class Ex_11 {
         }
 
         //ver qual o numero maior
+
+        nummaior = matriz[0][0];
+
         for (linha = 0; linha <= 2; linha++) {
 
 
@@ -45,6 +48,9 @@ public class Ex_11 {
         System.out.println("\n O número maior é: " + nummaior);
 
         //ver qual o numero menor
+
+        nummenor = matriz[0][0];
+
         for (linha = 0; linha <= 2; linha++) {
 
 
