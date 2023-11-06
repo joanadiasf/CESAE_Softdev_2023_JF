@@ -19,7 +19,7 @@ public class Ex_02 {
             vetor[l] = input.nextInt();
 
         }
-        
+
         System.out.println(); //espaçamento
 
         //Apresentar na ordem inversa
