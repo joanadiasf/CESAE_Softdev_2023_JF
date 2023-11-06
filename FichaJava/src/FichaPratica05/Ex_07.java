@@ -19,24 +19,35 @@ public class Ex_07 {
 
         }
 
-        nummaior = vetor[0];
+        //nummaior -1 pq é preciso considerar se algum dos nrs vai ser 0
+        nummaior = -1;
 
-        for ( int indice=1; indice < 10; indice++){
+        //ciclo para verificar todas as "gavetas"
+        for ( int indice=0; indice < 10; indice++){
 
-            if (nummaior < vetor[indice]){
 
-                nummaior = vetor[indice];
+                    //condição para só gravar o nr se for par
+                if ( nummaior < vetor[indice] && vetor[indice]%2==0){
 
-                if (nummaior%2==0){
+                    nummaior = vetor[indice];
 
-                    System.out.println("O maior número par é: " + nummaior);
+
                 }
-            }
+
 
         }
 
-        System.out.println("O maior é: " + nummaior);
+
+        //apresentar valores
+        if (nummaior != -1){
+            System.out.println("O maior número par é: " + nummaior);
+        }
+
+        if (nummaior==-1){
+
+            System.out.println("Não há números pares na sequência...");
+        }
+
     }
 }
 
-//acabar
