@@ -8,71 +8,52 @@ public class Ex_12 {
         //Scanner
         Scanner input = new Scanner(System.in);
 
-        //Declarar variavel de vetor
+        //Declarar variavel de vetor e matriz
         int []vetor1=new int[10];
         int []vetor2=new int[10];
         int [][]matriz =new int[10][2];
-        int linha=0,coluna=0,indice1,indice2;
-
-        String strg;
-
-        //string para ele imprimir mais que um nr seguido
-        strg= "";
-
-        System.out.println("Vetor 1");
-
-        for ( indice1=0; indice1 <= 9; indice1++){
-
-            System.out.println("Insira um número no Vetor: ");
-            vetor1[indice1]= input.nextInt();
 
 
-        }
+        //ler vetores
 
-        for ( indice1=0; indice1 <= 9; indice1++){
+//vetor1 + os lugares na matriz
+        System.out.println("Vetor 1: ");
+        for (int l=0; l <10;l++){
 
-            matriz[linha][0]=vetor1[indice1];
-        }
+            System.out.println("Insira valores " + l + ": ");
 
-        System.out.println(" \nVetor 2");
+            //l - linha onde está o valor,  o vetor tem 1 coluna e 10 linhas
+            vetor1[l] = input.nextInt();
 
-        for (indice2=0; indice2 <= 9; indice2++){
-
-            System.out.println("Insira um número no Vetor: ");
-            vetor2[indice2]= input.nextInt();
-
+            //inserir os valores no primeiro [] da matriz - 1coluna
+            matriz[l][0] = vetor1[l];
 
         }
 
-        for (indice2=0; indice2 <= 9; indice2++){
+//vetor2 + os lugares na matriz
+        System.out.println("Vetor 2: ");
+        for (int l=0; l <10; l++){
 
+            System.out.println("Insira valores " + l + ": ");
+            vetor2[l] = input.nextInt();
 
-            matriz[linha][coluna] = vetor2[indice2];
+            //inserir os valores na segunda [] da matriz - 2coluna
+            matriz[l][1]= vetor2[l];
         }
 
-
-        //pra ler matriz e por nrs seguidos
-        for (linha=0; linha <=9; linha++){
-
-            for (coluna =0; coluna <=1; coluna++){
-
-                strg += matriz[linha][coluna] + " ";
+//matriz - apresentação
+        //l - linha  | c - coluna
 
 
-                if (coluna == 2){
+        for (int l=0; l <10; l++){
 
-                    strg += "\n";
-                }
+            System.out.println();
 
+            for (int c=0; c <2; c++){
+
+                System.out.print(matriz[l][c]);
             }
         }
-
-        //imprimir FORA do for para so aparecer o que se quer
-        System.out.println("\n");
-        System.out.println(strg);
-
-
-
 
     }
 }
