@@ -44,11 +44,13 @@ public class Ex_05 {
             compara = vetor[l];
         }
 
-        for (int l = 0; l < 12; l++){
+        System.out.println();
+
+        for (int l = 1; l < 12; l++){
 
             if (vetor2[l] == vetor[l]){
 
-                System.out.println("posição " + l + " " + vetor2[l]);
+                System.out.println("Na posição " + l + ": o número repetido é o " + vetor2[l]);
             }
 
 
