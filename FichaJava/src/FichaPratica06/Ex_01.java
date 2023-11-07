@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Ex_01 {
 
+    /**
+     * metodo "menu" com animais
+     * @param animal - quando o animal é selecionado ele faz "return" do som
+     */
     public static void fazerBarulho(String animal){
 
         switch (animal){
