@@ -17,6 +17,7 @@ public class Ex_03 {
         }
     }
 
+//b
     /**
      * avalia se um nr é positivo ou negativo
      * @param num - nr a ser avaliado
@@ -31,7 +32,7 @@ public class Ex_03 {
             }
     }
 
-
+//c
     /**
      * avalia se um nr é ou não primo
      * @param num -nr a ser avaliado
@@ -49,7 +50,7 @@ public class Ex_03 {
         return true;
     }
 
-
+//d
     /**
      * avalia se o nr é perfeito ou não
      * @param num - nr a ser avaliado
@@ -75,7 +76,32 @@ public class Ex_03 {
 
     }
 
+//e
 
+    /**
+     * avalia se um nr é triangular
+     * @param num - nr a ser avaliado
+     * @return true -nr triangular || false - nr nao triangular
+     */
+    public static boolean triangular (int num){
+
+        int i=1;
+        
+        for ( i=1; i * (i+1)*(1+2) < num; i++){
+
+            if (i * (i+1)*(1+2)==num){
+                return true;
+            }
+
+        }
+
+        if (i * (i+1)*(1+2)==num){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 
 
 }
