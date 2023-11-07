@@ -9,12 +9,15 @@ public class Ex_04 {
 
     public static void main(String[] args) {
 
+        //scanner
         Scanner input = new Scanner(System.in);
 
+        //declarar variáveis
         int numero,opcao;
 
         System.out.println("Insira um nr:");
         numero = input.nextInt();
+
 
         do {
             System.out.println("1");
