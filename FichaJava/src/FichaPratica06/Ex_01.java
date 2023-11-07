@@ -43,6 +43,7 @@ public class Ex_01 {
         System.out.println("Insira um animal: ");
         animalEscolhido = input.next();
 
+        //a função fazerBarulho vai ser usado com o input do animalEscolhido
         fazerBarulho(animalEscolhido);
 
     }

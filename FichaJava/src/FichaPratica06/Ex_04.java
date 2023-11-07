@@ -38,7 +38,7 @@ public class Ex_04 {
                         System.out.println("Impar");
                     }
                     break;
-                    
+
                 case 2:
                     break;
                 case 3:
