@@ -53,26 +53,25 @@ public class Ex_07 {
                 }
 
         //novo vetor para conter os vetores não repetidos
-        int pausa=0;
-        int [] vetor2 = new int[numinsere-contador];
+        int[] vetor2 = new int[numinsere - contador];
+        int pausa = 0;
+
+        //variavel pausa para "saltar" à frente a passagem de um nr repetido do vetor para o vetor2
 
 
-
-        for (int l = 0; l < vetor2.length; l++){
-
-            if (retiro==vetor[l]){
-
+        //
+        for (int l = 0; l < vetor.length; l++) {
+            if (retiro != vetor[l]) {
+                vetor2[pausa] = vetor[l];
                 pausa++;
-
             }
-            vetor2[pausa]=vetor[l];
-
-
-            System.out.println("Vetor [" + l + "]: " + vetor2[pausa]);
-
         }
 
 
+        //imprimir
+        for (int l = 0; l < vetor2.length; l++) {
+            System.out.println(vetor2[l]);
+        }
 
 
     }
