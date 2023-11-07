@@ -86,7 +86,7 @@ public class Ex_03 {
     public static boolean triangular (int num){
 
         int i=1;
-        
+
         for ( i=1; i * (i+1)*(1+2) < num; i++){
 
             if (i * (i+1)*(1+2)==num){
