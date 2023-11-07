@@ -35,7 +35,7 @@ class Ex_08 {
 
             for (coluna =0; coluna <=2; coluna++){
 
-                strg += matriz[linha][coluna] + " ";
+                strg += matriz[linha][coluna] + "\t";
 
 
                 if (coluna == 2){
