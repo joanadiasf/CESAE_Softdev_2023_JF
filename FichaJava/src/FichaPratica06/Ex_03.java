@@ -49,4 +49,29 @@ public class Ex_03 {
         return true;
     }
 
+
+    /**
+     * avalia se o nr é perfeito ou não
+     * @param num - nr a ser avaliado
+     * @return true - nr perfeito || false - nr não perfeito
+     */
+    public static boolean perfeito (int num){
+
+        int somaDivisor=0;
+
+        for ( int divisor=1; divisor <num; divisor++){
+
+            if (num%divisor==0){
+                somaDivisor=somaDivisor+divisor;
+            }
+        }
+
+        if (num == somaDivisor){
+
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }
