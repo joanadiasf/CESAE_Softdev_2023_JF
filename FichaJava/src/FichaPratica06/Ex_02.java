@@ -36,10 +36,14 @@ public class Ex_02 {
 
     }
 
+
+    //ponto de partida do programa
     public static void main(String[] args) {
 
+        //declarar variavel
         int numInteiro = lerInteiroPositivo();
 
+        //função
         imprimirAsterisco(numInteiro);
     }
 }
