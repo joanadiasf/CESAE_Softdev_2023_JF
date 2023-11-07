@@ -2,7 +2,7 @@ package FichaPratica06;
 
 public class Ex_03 {
 
-
+//a
     /**
      * Avalia se um nr é par ou imar
      * @param num - nr a ser avaliado
@@ -74,4 +74,8 @@ public class Ex_03 {
         }
 
     }
+
+
+
+
 }
