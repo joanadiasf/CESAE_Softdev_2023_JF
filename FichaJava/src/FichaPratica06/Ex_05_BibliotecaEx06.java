@@ -64,7 +64,7 @@ public class Ex_05_BibliotecaEx06 {
 
         boolean crescente=true;
 
-        for (int i=0; i < vetor.length; i++){
+        for (int i=1; i < vetor.length; i++){
 
             if (vetor[i] < vetor[i - 1]){
 
@@ -73,11 +73,7 @@ public class Ex_05_BibliotecaEx06 {
             }
 
         }
-        if (crescente){
-            return true;
-        }else {
-            return false;
-        }
+        return crescente;
     }
 
 
