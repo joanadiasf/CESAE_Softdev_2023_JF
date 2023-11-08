@@ -58,6 +58,10 @@ public class Ex_06 {
                    }
                     break;
 
+                case 10:
+                    System.out.println("Saiu do programa");
+                    break;
+
                 default:
                     System.out.println("*| Opção inválida... |*");
             }
