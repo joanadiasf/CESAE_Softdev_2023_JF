@@ -3,7 +3,7 @@ package FichaPratica06;
 import java.util.Scanner;
 
 //importar funcoes do ex3, o * é pra ser todas as funçoes
-import static FichaPratica06.Ex_03.*;
+import static FichaPratica06.Ex_03_BibliotecaEx04.*;
 
 public class Ex_04 {
 

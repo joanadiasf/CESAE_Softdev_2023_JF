@@ -1,6 +1,6 @@
 package FichaPratica06;
 
-public class Ex_03 {
+public class Ex_03_BibliotecaEx04 {
 
 //a
     /**
