@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ex_08 {
 
     /**
-     * Faz a soma dos elementos de duas matrizes
+     * Faz uma matriz ao somar os elementos da mesma posição de duas matrizes
      *
      * @param matriz1 - matriz 1
      * @param matriz2 - matriz 2
@@ -48,7 +48,41 @@ public class Ex_08 {
 
     }
 
-    
+    /**
+     * Faz o somatório dos elementos de duas matrizes
+     * @param matriz1 - matriz 1
+     * @param matriz2 - matriz 2
+     */
+    public static void somatorioMatrizes(int [][]matriz1, int [][]matriz2){
+
+        int somatorio1=0,somatorio2=0;
+
+        //somar elementos matriz 1
+        for (int l=0; l < matriz1.length; l++){
+
+            for (int c=0; c < matriz1[0].length; c++){
+
+             somatorio1= somatorio1 + matriz1[l][c];
+            }
+        }
+
+        //somar elementos matriz 2
+        for (int l=0; l < matriz2.length; l++){
+
+            for (int c=0; c < matriz2[0].length; c++){
+
+                somatorio2= somatorio2 + matriz1[l][c];
+            }
+        }
+
+        //somar somatorios e apresentar
+        somatorio2= somatorio2+somatorio1;
+
+        System.out.println(somatorio2);
+
+    }
+
+    //programa
 
     public static void main(String[] args) {
 
@@ -96,8 +130,13 @@ public class Ex_08 {
 
         //função soma e apresentação
 
-        System.out.println("A soma dos elementos das suas matrizes:");
+        System.out.println("A soma das suas matrizes dá a seguinte matriz:");
         somarMatrizes(matriz1,matriz2);
+
+        //função somatório e apresentação
+        System.out.println("\nO somatório dos elemntos das matrizes é:");
+        somatorioMatrizes(matriz1,matriz2);
+
 
     }
 }
