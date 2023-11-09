@@ -6,26 +6,34 @@ public class Ex_07 {
 
     public static void quadrado(String caracter, int  linhas, int coluna){
 
-    String strg="";
 
 
-        for (int l=1; l <= linhas;l++){
+        //ler a altura do quadrado
+        for(int l=0; l<linhas; l++) {
 
-            for (int c=0; c <= coluna; c++ ){
+            //ler o comprimento do quadrado
+            for (int c=0; c<coluna; c++) {
 
-                strg += caracter;
+                //se a altura ou comprimento for 0 e a ultima coluna da linha até à penultima for o nr dado -1
+                //ele vai imprimir o caracter, fora isso imprime o espaçamento
+                if ( l==0 || c==0 ||l == linhas-1 || c == coluna-1){
 
-                if (c==l){
-                    strg += "\n";
+                    System.out.print(caracter);
+
+                } else {
+
+                    System.out.print(" ");
                 }
-                if (c==coluna+1 && c==coluna-1){
 
-                    strg += " ";
-                }
+                //espaço entre caracteres
+                System.out.print(" ");
             }
 
+            //para ir para a próxima linha no fim da coluna
+            System.out.print("\n");
+
         }
-        System.out.println(strg);
+
 
 
     }
@@ -50,6 +58,8 @@ public class Ex_07 {
         System.out.println("Insira um numero de colunas");
         coluna = input.nextInt();
 
+        //espaçamento
+        System.out.println();
         quadrado(caracter,linhas,coluna);
     }
 
