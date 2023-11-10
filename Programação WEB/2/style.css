@@ -105,13 +105,18 @@ div {
     text-shadow: 0px 2px #00321f;
 }
 
-iframe{
-
+.musica{
     
     margin: 4px;
     width: 99%;
 }
 
+.youtube{
+
+    
+    margin-left: 25%;
+
+}
 
 .about-bachelors{
 
