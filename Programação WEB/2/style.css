@@ -57,6 +57,7 @@ p {
     clear: left;
     margin: 0 0.5em 0.5em 0;
 
+    padding: 5px;
    
 }
 .floatleft2 {
@@ -112,9 +113,12 @@ iframe{
 
     width: 60%;
     margin-top: 3%;
-    margin-left: 3%;
+    
     background-color: rgba(175,199,231, .7);
     
+    margin-left: auto;
+    margin-right: auto;
+  
 }
 
 .about-bachelors h6{
@@ -248,4 +252,5 @@ footer img{
     color: white;
     text-shadow: 0px 2px #00321f;
 }
+
 
