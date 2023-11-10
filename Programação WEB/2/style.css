@@ -51,7 +51,16 @@ p {
     clear: left;
     margin: 0 0.5em 0.5em 0;
 }
+.floatleft2 {
+    float: left;
+    clear: left;
+    margin: 0 0.5em 0.5em 0;
+}
 
+.floatleft2 img{
+
+    width: auto;
+}
 
 div {
     display: block;
