@@ -71,7 +71,7 @@ public class Ex_08 {
 
             for (int c=0; c < matriz2[0].length; c++){
 
-                somatorio2= somatorio2 + matriz1[l][c];
+                somatorio2= somatorio2 + matriz2[l][c];
             }
         }
 
