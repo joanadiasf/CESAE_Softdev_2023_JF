@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class Ex_07 {
 
+    /**
+     * Cria um quadrado/retangulo com o caract5er escolhido pelo utilizador
+     * @param caracter - input caracter
+     * @param linhas - input linhas
+     * @param coluna - input colunas
+     */
     public static void quadrado(String caracter, int  linhas, int coluna){
 
 
