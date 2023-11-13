@@ -13,7 +13,7 @@ public class Ex_01 {
     public static void main(String[] args) throws FileNotFoundException {
 
         //scanner de ficheiro - o path tem q estar correto
-        Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_01.txt"));
+        Scanner fileScanner = new Scanner(new File("/Ficheiros/exercicio_01.txt"));
 
         //String - para poder ler linha de texto
         String linha;
