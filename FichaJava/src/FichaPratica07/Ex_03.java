@@ -16,6 +16,29 @@ public class Ex_03 {
 
 
 
+        //criação novo ficheiro
+        File novoFicheiro = new File("FichaJava/Ficheiros/exercicio_03Arquivo.txt");
+
+        //criar "maquina de escrever"
+        PrintWriter escritaFicheiro = new PrintWriter(novoFicheiro);
+
+
+        //String - para poder ler linha de texto
+        String linha;
+
+
+        //enquanto o ficheiro tiver mais linhas ele vai imprimir
+        while (fileScanner.hasNextLine()){
+            linha = fileScanner.nextLine();
+
+            //imprimir e guardar no novo ficheiro txt
+            escritaFicheiro.println(linha);
+        }
+
+
+        //close é necessário!!
+        escritaFicheiro.close();
+
 
     }
 }
