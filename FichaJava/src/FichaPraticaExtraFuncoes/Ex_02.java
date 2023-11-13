@@ -35,7 +35,7 @@ public class Ex_02 {
         System.out.print("Insira o terceiro número:");
         num3 = input.nextInt();
 
-        
+
         System.out.println("A média aritmética é: " + mediaAritmetica(num1,num2,num3));
     }
 
