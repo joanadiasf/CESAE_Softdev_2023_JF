@@ -11,7 +11,7 @@ public class Ex_05 {
 
     public static void main(String[] args) throws FileNotFoundException{
 
-        
+
         Scanner fileScanner = new Scanner(new File("FichaJava/Ficheiros/exercicio_05_31.txt"));
 
         //String - para poder ler linha de texto
