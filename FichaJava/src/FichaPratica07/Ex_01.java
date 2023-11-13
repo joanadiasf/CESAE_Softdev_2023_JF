@@ -8,12 +8,14 @@ import java.util.Scanner;
 
 public class Ex_01 {
 
+    //throws FileNotFoundException - é adicionado "automaticamente"
+    //serve para caso o programa tentar aceder a ficheiro q nao existe
     public static void main(String[] args) throws FileNotFoundException {
 
-        //scanner de ficheiro
+        //scanner de ficheiro - o path tem q estar correto
         Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_01.txt"));
 
-        //String
+        //String - para poder ler linha de texto
         String linha;
 
         while (fileScanner.hasNextLine()){
