@@ -10,7 +10,7 @@ public class Ex_02 {
 
 
         //criação novo ficheiro
-        File novoFicheiro = new File("Ficheiros/exercicio_02.txt");
+        File novoFicheiro = new File("FichaJava/Ficheiros/exercicio_02.txt");
 
         //criar "maquina de escrever"
         PrintWriter escritaFicheiro = new PrintWriter(novoFicheiro);

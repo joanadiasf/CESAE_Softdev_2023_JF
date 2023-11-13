@@ -12,7 +12,7 @@ public class Ex_03 {
 
 
         //scanner de ficheiro - o path tem q estar correto
-        Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_03.txt"));
+        Scanner fileScanner = new Scanner(new File("FichaJava/Ficheiros/exercicio_03.txt"));
 
 
 
