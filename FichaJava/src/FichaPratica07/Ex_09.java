@@ -28,18 +28,18 @@ public class Ex_09 {
             }
 
         }
-        System.out.println("Número de palavras: "+ contaPalavras);
+        
+//        System.out.println("Número de palavras: "+ contaPalavras);
 
         String [] grandeVetor = new String[contaPalavras];
 
         while (fileScanner.hasNextLine()){
             linha = fileScanner.nextLine();
-
             String[] palavras = linha.split(" ");
 
             for (int i =0; i < grandeVetor.length;i++){
 
-                
+                grandeVetor[i] = palavras[i];
 
             }
 
