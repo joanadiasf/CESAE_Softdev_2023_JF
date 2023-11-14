@@ -36,7 +36,7 @@ public class Ex_07 {
 
         Scanner fileScanner2 = new Scanner(new File("FichaJava/Ficheiros/exercicio_07.txt"));
 
-        //chatgpt diz que é com vetor string
+        
         while (fileScanner2.hasNextLine()){
 
             linha = fileScanner2.nextLine();
