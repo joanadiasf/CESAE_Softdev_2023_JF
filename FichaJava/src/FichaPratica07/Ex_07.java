@@ -11,7 +11,7 @@ public class Ex_07 {
     public static void main(String[] args) throws FileNotFoundException {
 
 
-        Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_07.txt"));
+        Scanner fileScanner = new Scanner(new File("FichaJava/Ficheiros/exercicio_07.txt"));
 
         //ler ficheiro
         String linha;
@@ -34,7 +34,7 @@ public class Ex_07 {
 
         // ****************** PARTE DOIS ******************
 
-        Scanner fileScanner2 = new Scanner(new File("Ficheiros/exercicio_07.txt"));
+        Scanner fileScanner2 = new Scanner(new File("FichaJava/Ficheiros/exercicio_07.txt"));
 
         //chatgpt diz que é com vetor string
         while (fileScanner2.hasNextLine()){
