@@ -18,9 +18,18 @@ public class Ex_10 {
 
         while (fileScanner.hasNextLine()){
 
-            System.out.println(linha);
+            tipoProd = fileScanner.nextLine();
+            prod = fileScanner.nextLine();
+            quantidade = fileScanner.nextDouble();
+            valor = fileScanner.nextDouble();
+
+            total+= valor;
+
+
         }
 
+        System.out.println("Total: " + total);
+        fileScanner.close();
 
     }
 }
