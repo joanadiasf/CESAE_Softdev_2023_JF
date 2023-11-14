@@ -3,12 +3,14 @@ package FichaPratica07;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import static FichaPratica07.Ex_11_funcoes.*;
 public class Ex_11 {
 
     public static void main(String[] args) throws FileNotFoundException {
 
         //scanner de ficheiro
-        Scanner fileScanner = new Scanner(new File("FichaJava/Ficheiros/exercicio_11.csv"));
+        Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_11.csv"));
 
 
         String artista,genero,nome,duracao;
@@ -35,6 +37,11 @@ public class Ex_11 {
 
             i++;
 
+            nome = matriz[0][0];
+            artista = matriz[0][1];
+            genero = matriz[0][2];
+            duracao = matriz[0][3];
+
         }
 
         fileScanner.close();
@@ -44,14 +51,7 @@ public class Ex_11 {
 
         Scanner input = new Scanner(System.in);
 
-        while (fileScanner.hasNextLine() ){
 
-            nome = matriz[0][0];
-            artista = matriz[0][1];
-            genero = matriz[0][2];
-            duracao = matriz[0][3];
-
-        }
 
         //"menu"
         do {
@@ -70,11 +70,11 @@ public class Ex_11 {
             switch (opcao){
 
                 case 1:
-                    System.out.println(matriz[i][1]);
+                    pesquisarGenero(matriz);
                 break;
 
                 case 2:
-                    System.out.println(matriz[i][2]);
+                    pesquisarArtista(matriz);
                     break;
 
                 case 3:
