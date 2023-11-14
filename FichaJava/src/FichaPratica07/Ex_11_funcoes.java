@@ -48,6 +48,32 @@ public class Ex_11_funcoes {
             }
         }
     }
+
+    /**
+     * Método para pesquisar maior duração de música
+     * @param matriz- ser analisada
+     */
+    public static void pesquisarDuracaoMusica(String[][] matriz){
+
+        double musica= Double.parseDouble(matriz[0][3]);
+        double maiorDuracao;
+        String linhaMusica = matriz[0][0];
+
+        for (int l=0; l < matriz.length;l++){
+
+            maiorDuracao= Double.parseDouble(matriz[l][3]);
+
+            if (maiorDuracao < musica){
+
+                maiorDuracao=musica;
+                linhaMusica=matriz[l][0];
+            }
+        }
+
+        System.out.println("A música com maior duração é: " + linhaMusica);
+
+    }
+
 }
 //pergunta utilizador
 //input

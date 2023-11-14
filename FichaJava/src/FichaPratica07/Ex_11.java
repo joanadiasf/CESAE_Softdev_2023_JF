@@ -37,10 +37,10 @@ public class Ex_11 {
 
             i++;
 
-            nome = matriz[0][0];
-            artista = matriz[0][1];
-            genero = matriz[0][2];
-            duracao = matriz[0][3];
+           // nome = matriz[0][0];
+           // artista = matriz[0][1];
+           // genero = matriz[0][2];
+           // duracao = matriz[0][3];
 
         }
 
@@ -78,7 +78,7 @@ public class Ex_11 {
                     break;
 
                 case 3:
-                    System.out.println();
+                    pesquisarDuracaoMusica(matriz);
                     break;
 
                 case 4:
