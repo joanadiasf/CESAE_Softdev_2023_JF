@@ -59,6 +59,8 @@ public class Ex_11_funcoes {
         double maiorDuracao;
         String linhaMusica = matriz[0][0];
 
+
+
         for (int l=0; l < matriz.length;l++){
 
             maiorDuracao= Double.parseDouble(matriz[l][3]);
@@ -72,6 +74,30 @@ public class Ex_11_funcoes {
 
         System.out.println("A música com maior duração é: " + linhaMusica);
 
+    }
+
+    public static void musicaAcimaTempo(String [][]matriz){
+
+        Scanner input = new Scanner(System.in);
+
+        matriz[0][3]=matriz[0][3].replace(":",".");
+
+        double musica= Double.parseDouble(matriz[0][3]);
+        double acimaTempo;
+        String linhaMusica = matriz[0][0];
+
+        System.out.println("Qual o mínimo de duração que procura? (Use . para separar os minutos dos segundos) ");
+        acimaTempo= input.nextDouble();
+
+        for (int l=0;l < matriz.length; l++){
+
+            if (acimaTempo>musica){
+
+                linhaMusica=matriz[l][3];
+            }
+        }
+
+        System.out.println("A música com mais duração que a pesquisada é: " + linhaMusica);
     }
 
 }

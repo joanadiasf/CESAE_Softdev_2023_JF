@@ -82,7 +82,7 @@ public class Ex_11 {
                     break;
 
                 case 4:
-                    System.out.println();
+                    musicaAcimaTempo(matriz);
                     break;
 
                 case 5:
