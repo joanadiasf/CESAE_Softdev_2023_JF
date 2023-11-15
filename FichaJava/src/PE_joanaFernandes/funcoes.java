@@ -6,10 +6,59 @@ public class funcoes {
 
     public static void menuAdmin() {
 
+        Scanner input = new Scanner(System.in);
+
+        int opcao;
+
+        do {
+            System.out.println("*****| M E N U |*****");
+            System.out.println("1. Conteúdo CSV  - print.");
+            System.out.println("2. Ver vendas e o valor total.");
+            System.out.println("3. Total de Lucro.");
+            System.out.println("4. Pesquisar cliente por ID.");
+            System.out.println("5. Ver o BestSeller.");
+            System.out.println("6. Sair.");
+
+            System.out.println();
+            System.out.print("Escolha a opção:");
+            opcao= input.nextInt();
+
+            switch (opcao){
+
+                case 1:
+                    //imprimir conteudo na consola
+                break;
+
+                case 2:
+                    //imprimir conteudo na consola
+                break;
+
+                case 3:
+                    //imprimir conteudo na consola
+                break;
+
+                case 4:
+                    //imprimir conteudo na consola
+                break;
+
+                case 5:
+                    //imprimir conteudo na consola
+                break;
+
+                case 6:
+                    System.out.println("****** | A D E U S | ******");
+                break;
+
+                default:
+                    System.out.println("------ Opção inválida... ------");
+                    System.out.println("------ Tente novamente ------");
+            }
+
+        }while (opcao !=6);
 
     }
 
-    public static void menuClient() {
+    public static void menuClient(int escolha) {
 
         Scanner input = new Scanner(System.in);
 
@@ -81,8 +130,15 @@ public class funcoes {
                     //user dá editora, print todos os jogos e categorias
                 break;
 
+                case 5:
+                    System.out.println("****** | A D E U S | ******");
+                break;
+
+                default:
+                    System.out.println("------ Opção inválida... ------");
+                    System.out.println("------ Tente novamente ------");
             }
 
-        } while (opcao != 6);
+        } while (opcao != 5);
     }
 }
