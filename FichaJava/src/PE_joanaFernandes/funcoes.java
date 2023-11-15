@@ -4,16 +4,25 @@ import java.util.Scanner;
 
 public class funcoes {
 
-    public static void menuAdmin() {
+    /**
+     * Menu do Administrador
+     * @param escolha - input necessário p/ função trabalhar
+     */
+    public static void menuAdmin(int escolha) {
 
         Scanner input = new Scanner(System.in);
 
         int opcao;
 
+        //***** NÃO ESQUECER *****
+        //FAZER CICLO PRA PALAVRA PASSE E LOGIN
+
+
+//"menu"
         do {
             System.out.println("*****| M E N U |*****");
             System.out.println("1. Conteúdo CSV  - print.");
-            System.out.println("2. Ver vendas e o valor total.");
+            System.out.println("2. Ver total de vendas e valor total.");
             System.out.println("3. Total de Lucro.");
             System.out.println("4. Pesquisar cliente por ID.");
             System.out.println("5. Ver o BestSeller.");
@@ -23,6 +32,7 @@ public class funcoes {
             System.out.print("Escolha a opção:");
             opcao= input.nextInt();
 
+            //menu
             switch (opcao){
 
                 case 1:
@@ -30,19 +40,19 @@ public class funcoes {
                 break;
 
                 case 2:
-                    //imprimir conteudo na consola
+                    //quantas vendas foram executadas e valor total
                 break;
 
                 case 3:
-                    //imprimir conteudo na consola
+                    //total de lucro - 20% de cada jogo
                 break;
 
                 case 4:
-                    //imprimir conteudo na consola
+                    //pesquisa idcliente - tem nome contacto e email
                 break;
 
                 case 5:
-                    //imprimir conteudo na consola
+                    //print jogo mais caro e quem o comprou(todos os cliente)
                 break;
 
                 case 6:
@@ -58,6 +68,10 @@ public class funcoes {
 
     }
 
+    /**
+     * Menu do Cliente
+     * @param escolha - input necessário p/ função trabalhar
+     */
     public static void menuClient(int escolha) {
 
         Scanner input = new Scanner(System.in);
