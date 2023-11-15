@@ -59,6 +59,9 @@ public class Ex_11_funcoes {
      */
     public static void pesquisarDuracaoMusica(String[][] matriz){
 
+
+        matriz[0][3]=matriz[0][3].replace(":",".");
+
         double musica= Double.parseDouble(matriz[0][3]);
         double maiorDuracao;
         String linhaMusica = matriz[0][0];
