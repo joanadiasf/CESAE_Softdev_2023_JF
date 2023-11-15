@@ -72,7 +72,7 @@ public class Ex_11_funcoes {
 
             maiorDuracao= Double.parseDouble(matriz[l][3]);
 
-            if (maiorDuracao < musica){
+            if (maiorDuracao > musica){
 
                 maiorDuracao=musica;
                 linhaMusica=matriz[l][0];
@@ -81,7 +81,7 @@ public class Ex_11_funcoes {
 
         System.out.println("A música com maior duração é: " + linhaMusica);
 
-        //outra solucao seria fazer o slit pelos :, e depois de comparar os minutos, comparar os segundos
+        //outra solucao seria fazer o slit pelos : e depois de comparar os minutos, comparar os segundos
 
     }
 
