@@ -104,6 +104,23 @@ public class Ex_11_funcoes {
         System.out.println("A música com mais duração que a pesquisada é: " + linhaMusica);
     }
 
+
+    /**
+     * Método para contar as "linhas" da matriz
+     * @param matriz - ser analisada
+     */
+    public static void musicasFicheiro(String[][]matriz){
+
+        int contadorMusicas=0;
+
+        for (int l =0; l < matriz.length;l++){
+
+            contadorMusicas++;
+
+        }
+
+        System.out.println("Tem " + contadorMusicas + "músicas no ficheiro!");
+    }
 }
 //pergunta utilizador
 //input

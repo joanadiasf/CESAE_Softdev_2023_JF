@@ -13,13 +13,12 @@ public class Ex_11 {
         Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_11.csv"));
 
 
-        String artista,genero,nome,duracao;
         int i=0,opcao;
-
 
 
         String linha= fileScanner.nextLine(); //linha cabeçalho;
 
+        //declarar matriz
         String[][] matriz = new String[46][4];
 
         //ler ficheiro e transformar em matriz
@@ -46,9 +45,7 @@ public class Ex_11 {
 
         fileScanner.close();
 
-        //reiniciar o scanner
-        Scanner fileScanner2 = new Scanner(new File("FichaJava/Ficheiros/exercicio_11.csv"));
-
+        //para receber input do menu
         Scanner input = new Scanner(System.in);
 
 
@@ -62,11 +59,14 @@ public class Ex_11 {
             System.out.println("3. Pesquisar música de maior duração");
             System.out.println("4. Pesquisar música acima de *insira tempo*");
             System.out.println("5. Saber quantas músicas tem no seu ficheiro");
+            System.out.println("6. Sair");
 
+            //espaçamento
             System.out.println();
 
             opcao=input.nextInt();
 
+            //menu
             switch (opcao){
 
                 case 1:
@@ -86,29 +86,14 @@ public class Ex_11 {
                     break;
 
                 case 5:
-                    System.out.println();
+                    musicasFicheiro(matriz);
                     break;
 
+                default:
+                    System.out.println("*****| Opção inválida |*****");
             }
+
         }while (opcao!=6);
-
-
-        //para apresentar a matriz
-
-//        String strg = "";
-//
-//        //pra ler matriz e por nrs seguidos
-//        for (int l=0; l <matriz.length; l++){
-//            for (int c =0; c <matriz[0].length; c++){
-//
-//                strg += matriz[l][c] + "\t";
-//            }
-//            strg += "\n";
-//        }
-//
-//        //imprimir FORA do for para so aparecer o que se quer
-//        System.out.println("\n");
-//        System.out.println(strg);
 
 
     }
