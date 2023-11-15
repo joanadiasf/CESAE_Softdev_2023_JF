@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class funcoes {
 
-    public static void menuAdmin(){
+    public static void menuAdmin() {
 
 
     }
 
-    public static void menuClient(){
+    public static void menuClient() {
 
         Scanner input = new Scanner(System.in);
 
-        int opcao,contactoCLiente;
+        int opcao, contactoCLiente;
         String nomeCliente, emailCliente;
 
         //menu
@@ -31,7 +31,7 @@ public class funcoes {
             System.out.print("O que pretende fazer?");
             opcao = input.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
 
                 case 1:
 
@@ -59,17 +59,30 @@ public class funcoes {
                     //espaçamento
                     System.out.println();
 
-                    for (int i=1; i*(i+1)*(1+2) < 121;i++){
+                    //definir o limite de lugares de estacionamento || o indice do ciclo for || a formula do nr triangular
+                    int limite = 121, i = 1, numTri = i * (i + 1) * (1 + 2);
 
-                        if (i%5==0){
+                    for (i = 1; numTri < limite; i++) {
 
+                        //ver e imprimir apenas os múltiplos de 5
+                        if (numTri % 5 == 0) {
+
+                            System.out.print("Os lugares de estacionamento livres são: " + numTri);
                         }
                     }
 
+                break;
 
+                case 3:
+                    //imprimir todos os jogos (sem duplicados)
+                break;
+
+                case 4:
+                    //user dá editora, print todos os jogos e categorias
+                break;
 
             }
 
-        }while (opcao != 6);
+        } while (opcao != 6);
     }
 }
