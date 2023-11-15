@@ -76,6 +76,10 @@ public class Ex_11_funcoes {
 
     }
 
+    /**
+     * Método para pesquisar música com mais duração que a introduzida pelo utilizador
+     * @param matriz - ser analisada
+     */
     public static void musicaAcimaTempo(String [][]matriz){
 
         Scanner input = new Scanner(System.in);
