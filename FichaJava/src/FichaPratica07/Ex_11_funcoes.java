@@ -64,7 +64,7 @@ public class Ex_11_funcoes {
 
         double musica= Double.parseDouble(matriz[0][3]);
         double maiorDuracao;
-        String linhaMusica = matriz[0][0];
+        String linhaMusica = "";
 
 
 
@@ -80,6 +80,8 @@ public class Ex_11_funcoes {
         }
 
         System.out.println("A música com maior duração é: " + linhaMusica);
+
+        //outra solucao seria fazer o slit pelos :, e depois de comparar os minutos, comparar os segundos
 
     }
 
