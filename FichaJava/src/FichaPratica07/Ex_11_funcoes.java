@@ -20,7 +20,7 @@ public class Ex_11_funcoes {
         for (int l=0; l < matriz.length;l++){
 
                 if (generoProcura.equals(matriz[l][2])){
-                    System.out.println(matriz[l][2]);
+                  System.out.println("Música: "+matriz[l][0] + "Artista" + matriz[l][1]);
                 }
 
         }
@@ -44,7 +44,7 @@ public class Ex_11_funcoes {
         for (int l=0; l < matriz.length;l++){
 
             if (artistaProcura.equals(matriz[l][1])){
-                System.out.println(matriz[l][1]);
+                System.out.println("Música: "+matriz[l][0] + "Artista" + matriz[l][1]);
             }
         }
     }

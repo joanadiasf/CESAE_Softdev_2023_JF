@@ -19,7 +19,7 @@ public class GameStart_JoanaFernandes {
         //espaçamento
         System.out.println();
 
-        System.out.println("*****| BEM - VINDO |*****");
+        System.out.println("*****| B E M - V I N D O |*****");
 
 
         //menu1 - admin ou client
