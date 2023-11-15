@@ -15,7 +15,10 @@ public class Ex_11_funcoes {
         String generoProcura;
 
         System.out.println("Qual o género a pesquisar?");
-        generoProcura = input.next();
+        //limpar o buffer
+        input.nextLine();
+        //caso a pesquisa tenha 2 ou mais palavras
+        generoProcura = input.nextLine();
 
         for (int l=0; l < matriz.length;l++){
 
@@ -39,7 +42,8 @@ public class Ex_11_funcoes {
         String artistaProcura;
 
         System.out.println("Qual o artista a pesquisar?");
-        artistaProcura = input.next();
+        input.nextLine();
+        artistaProcura = input.nextLine();
 
         for (int l=0; l < matriz.length;l++){
 
