@@ -110,6 +110,8 @@ public class funcoes {
      * Apresenta a matriz
      * @param matriz - recebe a matriz da função que a cria
      */
+
+    //está a imprimir 3 x /!/  /!/   /!/   /!/  /!/   /!/   /!/  /!/   /!/   /!/  /!/   /!/
     public static void apresentarMatriz(String [][] matriz) {
 
 
