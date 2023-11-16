@@ -7,6 +7,10 @@ import java.util.Scanner;
 public class funcoes {
 
 //*******************************************************************************************************
+//*******************************************************************************************************
+//********************************* M E N U   A D M I N *************************************************
+//*******************************************************************************************************
+//*******************************************************************************************************
     /**
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
      *
@@ -239,6 +243,8 @@ public class funcoes {
      * @param matriz - parametro a ser avaliado
      * @throws FileNotFoundException - excepçao
      */
+
+    //verificar se realmente está a dar o mais caro
     public static void bestseller(String[][] matriz) throws FileNotFoundException {
 
         //comparar o preço de todos os jogos p/ver qual é o mais caro
@@ -359,6 +365,72 @@ public class funcoes {
 
 //*******************************************************************************************************
 //*******************************************************************************************************
+//********************************* M E N U   C L I E N T E *********************************************
+//*******************************************************************************************************
+//*******************************************************************************************************
+    /**
+     * Registo do cliente e confirmação de registo
+     */
+    public static void registoCLiente(){
+
+        Scanner input = new Scanner(System.in);
+
+        String nomeCliente, emailCliente;
+        int contactoCLiente;
+
+        //espaçamento
+        System.out.println();
+
+        System.out.println("*****| R E G I S T O |*****");
+
+        System.out.print("Insira o seu nome:");
+        nomeCliente = input.next();
+
+        System.out.print("Insira o seu contacto:");
+        contactoCLiente = input.nextInt();
+
+        System.out.println("Insira o seu e-mail:");
+        emailCliente = input.next();
+
+        System.out.println("------ Registado com sucesso!! ------");
+        System.out.println(nomeCliente + " | " + contactoCLiente + " | " + emailCliente);
+
+    }
+
+//*******************************************************************************************************
+    /**
+     * Números triangulares até 121 que são múltiplos de 5
+     */
+    public static void estacionamentoLugares(){
+
+        //espaçamento
+        System.out.println();
+
+        //definir o limite de lugares de estacionamento || o indice do ciclo for || a formula do nr triangular
+        int limite = 121, i = 1, numTri = i * (i + 1) * (1 + 2);
+
+        for (i = 1; numTri < limite; i++) {
+
+            //ver e imprimir apenas os múltiplos de 5
+            if (numTri % 5 == 0) {
+
+                System.out.print("Os lugares de estacionamento livres são: " + numTri);
+            }
+        }
+    }
+
+//*******************************************************************************************************
+
+    public static void jogosDisponiveis(String[][] matriz) throws FileNotFoundException {
+
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+
+        //puxar a matriz para esta função
+        fileEmMatriz();
+
+        
+    }
+
 //*******************************************************************************************************
     /**
      * Menu do Cliente
@@ -369,15 +441,15 @@ public class funcoes {
 
         Scanner input = new Scanner(System.in);
 
-        int opcao, contactoCLiente;
-        String nomeCliente, emailCliente;
+        int opcao;
+
 
         //menu
         do {
 
             System.out.println("*****| M E N U |*****");
 
-            System.out.println("1. Inserir cliente.");
+            System.out.println("1. Inserir cliente novo.");
             System.out.println("2. Procurar por estacionamento.");
             System.out.println("3. Ver títulos de jogos disponíveis.");
             System.out.println("4. Pesquisa por editora.");
@@ -390,47 +462,21 @@ public class funcoes {
             switch (opcao) {
 
                 case 1:
+                    //registo cliente
+                    registoCLiente();
 
-                    //espaçamento
-                    System.out.println();
-
-                    System.out.println("*****| R E G I S T O |*****");
-
-                    System.out.print("Insira o seu nome:");
-                    nomeCliente = input.next();
-
-                    System.out.print("Insira o seu contacto:");
-                    contactoCLiente = input.nextInt();
-
-                    System.out.println("Insira o seu e-mail:");
-                    emailCliente = input.next();
-
-                    System.out.println("------ Registado com sucesso!! ------");
-                    System.out.println(nomeCliente + " | " + contactoCLiente + " | " + emailCliente);
-
-                    break;
+                break;
 
                 case 2:
+                    //estacionamento
+                    estacionamentoLugares();
 
-                    //espaçamento
-                    System.out.println();
-
-                    //definir o limite de lugares de estacionamento || o indice do ciclo for || a formula do nr triangular
-                    int limite = 121, i = 1, numTri = i * (i + 1) * (1 + 2);
-
-                    for (i = 1; numTri < limite; i++) {
-
-                        //ver e imprimir apenas os múltiplos de 5
-                        if (numTri % 5 == 0) {
-
-                            System.out.print("Os lugares de estacionamento livres são: " + numTri);
-                        }
-                    }
-
-                    break;
+                break;
 
                 case 3:
                     //imprimir todos os jogos (sem duplicados)
+
+
                     break;
 
                 case 4:
