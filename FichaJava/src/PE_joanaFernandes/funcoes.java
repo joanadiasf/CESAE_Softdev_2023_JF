@@ -161,17 +161,40 @@ public class funcoes {
 
     public static void pesquisaIdCliente(String[][] matriz) throws FileNotFoundException {
 
-        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+        Scanner input = new Scanner(System.in);
+
         //puxar a matriz para esta função
         fileEmMatriz();
 
-        String pesquisaID;
+        //para receber o input || contador para o mesmo id nao se repetir quando é impresso
+        int pesquisaID,contador=0;
 
-        //linha do cabeçalho
-        String linha = fileScanner.nextLine();
 
-        //utilizador procura a coluna 2
-        //e imprime a coluna 3, 4 e 5 correspondente
+        //utilizador procura na coluna 1
+        //e imprime a coluna 2, 3 e 4 correspondente
+
+        System.out.println();
+        System.out.print("Qual o IDCliente que quer pesquisar? ");
+        pesquisaID = input.nextInt();
+
+
+        for (int l=0;l < matriz.length;l++){
+
+            //comparar e transformar a coluna 1 num nr inteiro
+            if (pesquisaID == Integer.parseInt(matriz[l][1]) && contador ==0){
+
+                //Imprimir info correspondente
+                System.out.println();
+                System.out.println(matriz[l][2] + "|" + matriz[l][3] + "|" + matriz[l][4]);
+                System.out.println();
+
+
+                contador++;
+            }
+
+        }
+
+
 
 
 
@@ -209,7 +232,6 @@ public class funcoes {
 
                 case 1:
                     //ler csv file
-                    fileEmMatriz();
                     apresentarMatriz(fileEmMatriz());
 
                 break;
@@ -226,7 +248,7 @@ public class funcoes {
 
                 case 4:
                     //pesquisa idcliente - tem nome contacto e email
-
+                    pesquisaIdCliente(fileEmMatriz());
 
                     break;
 
