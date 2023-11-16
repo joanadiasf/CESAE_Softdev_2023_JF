@@ -10,6 +10,7 @@ public class funcoes {
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
      * @return - se a palavra passe for correta ele segue, senão o programa para
      */
+    //fazer com o que caso o utilizador erre 3x ele nao avance /!/  /!/   /!/   /!/  /!/   /!/
     public static boolean password(){
 
         Scanner input = new Scanner(System.in);
@@ -61,6 +62,7 @@ public class funcoes {
 
             return true;
     }
+
 
     /**
      * Transforma o ficheiro CSV numa matriz
@@ -126,9 +128,6 @@ public class funcoes {
         Scanner input = new Scanner(System.in);
 
         int opcao;
-
-        //***** NÃO ESQUECER *****
-        //FAZER CICLO PRA PALAVRA PASSE E LOGIN
 
 
 //"menu"
