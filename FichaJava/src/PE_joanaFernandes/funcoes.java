@@ -274,7 +274,7 @@ public class funcoes {
      *
      * @param escolha - input necessário p/ função trabalhar
      */
-    public static void menuClient(int escolha) {
+    public static void menuClient(String escolha) {
 
         Scanner input = new Scanner(System.in);
 

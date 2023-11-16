@@ -38,12 +38,15 @@ public class GameStart_JoanaFernandes {
                     System.out.println();
 
                     menuAdmin(menuAdmClient);
-                    break;
+                break;
 
                 case "CLIENTE":
                     //funçao menu client
-                    System.out.println("client");
-                    break;
+
+                    System.out.println();
+                    
+                    menuClient(menuAdmClient);
+                break;
 
                 default:
                     System.out.println("------ Opção inválida... ------");
