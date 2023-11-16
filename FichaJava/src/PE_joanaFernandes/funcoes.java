@@ -462,22 +462,7 @@ public class funcoes {
 
         //espaçamento
         System.out.println();
-
-//        for (int l=0;l < matriz.length;l++){
-//
-//            //comparar e transformar a coluna 1 num nr inteiro
-//            if (pesquisaID == Integer.parseInt(matriz[l][1]) && contador ==0){
-//
-//                //Imprimir info correspondente
-//                System.out.println();
-//                System.out.println(matriz[l][2] + "|" + matriz[l][3] + "|" + matriz[l][4]);
-//                System.out.println();
-//
-//
-//                contador++;
-//            }
-//
-//        }
+        
     }
 
 //*******************************************************************************************************
