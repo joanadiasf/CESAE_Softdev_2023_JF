@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class funcoes {
 
+//*******************************************************************************************************
     /**
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
      *
@@ -65,7 +66,7 @@ public class funcoes {
         return entrou;
     }
 
-
+//*******************************************************************************************************
     /**
      * Transforma o ficheiro CSV numa matriz
      *
@@ -106,6 +107,7 @@ public class funcoes {
         return matriz;
     }
 
+//*******************************************************************************************************
     /**
      * Apresenta a matriz
      * @param matriz - recebe a matriz da função que a cria
@@ -135,7 +137,7 @@ public class funcoes {
 
     }
 
-
+//*******************************************************************************************************
     /**
      * Método para contar nr de jogos vendidos e para somar os seus valores
      * @param matriz - parametro a ser avaliado
@@ -159,6 +161,38 @@ public class funcoes {
         System.out.println();
     }
 
+//*******************************************************************************************************
+    /**
+     * Método para pegar no valor total das vendas e ver quanto é o lucro (20%)
+     * @param matriz - parametro a ser avalidado
+     */
+    public static void lucroJogos(String[][] matriz){
+
+        double valor = 0,total=0;
+
+        for(int linha=0; linha< matriz.length;linha++){
+
+            //sei q os valores q tenho que somar estão na coluna 9
+            valor=(Double.parseDouble(matriz[linha][8]));
+
+            total+= valor;
+        }
+
+        //conta para ver os 20% de lucro
+        valor=valor/1.2;
+
+        System.out.println();
+        System.out.println("O seu lucro é de: " + valor + "€");
+        System.out.println();
+
+    }
+
+//*******************************************************************************************************
+    /**
+     * Método para pesquisar o id de um cliente e imprimir nome,contacto e email respetivos
+     * @param matriz - parametro a ser avaliado
+     * @throws FileNotFoundException - excepçao
+     */
     public static void pesquisaIdCliente(String[][] matriz) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
@@ -200,6 +234,7 @@ public class funcoes {
 
     }
 
+//*******************************************************************************************************
     /**
      * Menu do Administrador
      *
@@ -244,13 +279,15 @@ public class funcoes {
 
                 case 3:
                     //total de lucro - 20% de cada jogo
-                    break;
+                    lucroJogos(fileEmMatriz());
+
+                break;
 
                 case 4:
                     //pesquisa idcliente - tem nome contacto e email
                     pesquisaIdCliente(fileEmMatriz());
 
-                    break;
+                break;
 
                 case 5:
                     //print jogo mais caro e quem o comprou(todos os cliente)
@@ -269,6 +306,7 @@ public class funcoes {
 
     }
 
+//*******************************************************************************************************
     /**
      * Menu do Cliente
      *

@@ -44,7 +44,7 @@ public class GameStart_JoanaFernandes {
                     //funçao menu client
 
                     System.out.println();
-                    
+
                     menuClient(menuAdmClient);
                 break;
 
