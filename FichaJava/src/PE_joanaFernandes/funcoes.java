@@ -490,30 +490,37 @@ public class funcoes {
 
 
         System.out.println();
-        System.out.print("Qual a editora que quer pesquisar? ");
+        System.out.print("Qual a editora que quer pesquisar? (Não usar espaços)");
         pesquisaEditora = input.next();
 
 
         for (int l=0;l < matriz.length;l++){
 
+            //para não ter problema de não ler a editora por causa do espaço
+            matriz[l][5]=matriz[l][5].replace(" ","");
+
             //comparar e transformar a coluna 1 num nr inteiro
-            if (pesquisaEditora.equals(matriz[l][5]) && contador ==0){
+            if (pesquisaEditora.equals(matriz[l][5])){
 
-                //Imprimir info correspondente
+
+                //apresenta editora
+                System.out.println("***** " + pesquisaEditora + " *****");
                 System.out.println();
-                System.out.println("**********  " + matriz[l][5] + "  **********");
+
+                //apresenta categoria
+                System.out.println("--- " + matriz[l][6] + " ---");
                 System.out.println();
-                System.out.println("----------  " + matriz[l][6] + "  ----------");
 
+                //apresenta jogo
+                System.out.println("> " + matriz[l][7] + " <");
+                System.out.println();
 
-
-                System.out.println(">>>>>>>>>> " + matriz[l][7] + "<<<<<<<<<<");
-
-
-                contador++;
             }
 
         }
+
+
+
     }
 
 //*******************************************************************************************************
