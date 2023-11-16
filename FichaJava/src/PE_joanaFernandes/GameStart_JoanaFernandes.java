@@ -26,7 +26,7 @@ public class GameStart_JoanaFernandes {
 
         do {
 
-            System.out.print("Tipo de Utilizador ( ADMIN || CLIENT): ");
+            System.out.print("Tipo de Utilizador ( ADMIN || CLIENTE): ");
             menuAdmClient = input.next();
 
             switch (menuAdmClient){

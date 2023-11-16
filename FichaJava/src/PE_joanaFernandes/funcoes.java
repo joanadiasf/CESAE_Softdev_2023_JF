@@ -428,7 +428,51 @@ public class funcoes {
         //puxar a matriz para esta função
         fileEmMatriz();
 
-        
+        //contador para saltar duplicados
+        int contador=0;
+
+        //comparar a matriz com ela mesma para achar os duplicados
+        for (int l=0; l < matriz.length;l++){
+
+                 for (int i=0; i < matriz.length; i++){
+
+                     //para nao se comparar o mesmo elemento l!=i
+                     if (l!=i && matriz[l][7].equals(matriz[i][7]) && contador==0) {
+
+                         contador++;
+                     }
+                 }
+
+                 if (contador==0) {
+                     System.out.println(matriz[l][7]);
+                 }
+                 //é necessário reiniciar o contador
+                 else {
+                     contador=0;
+                 }
+
+
+        }
+
+
+        //espaçamento
+        System.out.println();
+
+//        for (int l=0;l < matriz.length;l++){
+//
+//            //comparar e transformar a coluna 1 num nr inteiro
+//            if (pesquisaID == Integer.parseInt(matriz[l][1]) && contador ==0){
+//
+//                //Imprimir info correspondente
+//                System.out.println();
+//                System.out.println(matriz[l][2] + "|" + matriz[l][3] + "|" + matriz[l][4]);
+//                System.out.println();
+//
+//
+//                contador++;
+//            }
+//
+//        }
     }
 
 //*******************************************************************************************************
@@ -437,12 +481,12 @@ public class funcoes {
      *
      * @param escolha - input necessário p/ função trabalhar
      */
-    public static void menuClient(String escolha) {
+    public static void menuClient(String escolha) throws FileNotFoundException{
 
         Scanner input = new Scanner(System.in);
 
         int opcao;
-
+      
 
         //menu
         do {
@@ -475,7 +519,7 @@ public class funcoes {
 
                 case 3:
                     //imprimir todos os jogos (sem duplicados)
-
+                    jogosDisponiveis(fileEmMatriz());
 
                     break;
 
