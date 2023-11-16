@@ -32,6 +32,8 @@ public class funcoes {
 
         if (passwordTentativa.equals(password)) {
 
+
+            System.out.println();
             System.out.println("***| B E M - V I N D O  A D M I N|***");
 
 
@@ -143,7 +145,7 @@ public class funcoes {
      * @param matriz - parametro a ser avaliado
      * @throws FileNotFoundException - excepçao
      */
-    public static void jogosVendidos(String[][] matriz) throws FileNotFoundException {
+    public static void jogosVendidos(String[][] matriz)  {
 
         double valor = 0,total=0;
         int contaLinhas = matriz.length;
@@ -179,7 +181,7 @@ public class funcoes {
         }
 
         //conta para ver os 20% de lucro
-        valor=valor/1.2;
+        valor=valor*0.2;
 
         System.out.println();
         System.out.println("O seu lucro é de: " + valor + "€");
@@ -229,6 +231,53 @@ public class funcoes {
         }
 
 
+    }
+
+//*******************************************************************************************************
+    /**
+     * Método para ver qual o jogo mais caro e imprimir quem o comprou
+     * @param matriz - parametro a ser avaliado
+     * @throws FileNotFoundException - excepçao
+     */
+    public static void bestseller(String[][] matriz) throws FileNotFoundException {
+
+        //comparar o preço de todos os jogos p/ver qual é o mais caro
+        //imprimir todos os clientes que o compraram
+
+        //puxar a matriz para esta função
+        fileEmMatriz();
+
+        double maisCaro;
+        double preco= Double.parseDouble(matriz[0][8]);
+        String nomeJogo = matriz[0][7];
+
+
+        //para saber qual o jogo mais caro
+        for (int l=0; l < matriz.length;l++){
+
+            maisCaro=Double.parseDouble(matriz[l][8]);
+
+            if (preco > maisCaro){
+
+                preco=maisCaro;
+
+                //vai guardar o nome do jogo mais caro
+                nomeJogo=matriz[l][7];
+
+
+                //imprimir o nome de quem comprou
+                if (nomeJogo.equals(matriz[l][7])){
+
+
+                    System.out.println("** Cliente: " + matriz[l][2]);
+                }
+
+            }
+
+        }
+        System.out.println();
+        System.out.println("***** O JOGO MAIS CARO É: " + nomeJogo + " *****");
+        System.out.println();
 
 
 
@@ -255,7 +304,7 @@ public class funcoes {
             System.out.println("2. Ver total de vendas e valor total.");
             System.out.println("3. Total de Lucro.");
             System.out.println("4. Pesquisar cliente por ID.");
-            System.out.println("5. Ver o BestSeller.");
+            System.out.println("5. Ver jogo mais caro e vendas.");
             System.out.println("6. Sair.");
 
             System.out.println();
@@ -291,11 +340,13 @@ public class funcoes {
 
                 case 5:
                     //print jogo mais caro e quem o comprou(todos os cliente)
-                    break;
+                    bestseller(fileEmMatriz());
+
+                break;
 
                 case 6:
                     System.out.println("****** | A D E U S | ******");
-                    break;
+                break;
 
                 default:
                     System.out.println("------ Opção inválida... ------");
@@ -306,6 +357,8 @@ public class funcoes {
 
     }
 
+//*******************************************************************************************************
+//*******************************************************************************************************
 //*******************************************************************************************************
     /**
      * Menu do Cliente
