@@ -10,7 +10,7 @@ public class GameStart_JoanaFernandes {
     public static void main(String[] args) throws FileNotFoundException {
 
         //ler ficheiro + ler input do utilizador
-        Scanner fileScanner = new Scanner(new File("src/PE_joanaFernandes/GameStart_V2.csv"));
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
         Scanner input = new Scanner(System.in);
 
 
@@ -33,7 +33,11 @@ public class GameStart_JoanaFernandes {
 
                 case "ADMIN":
                     //funçao menu admin
-                    System.out.println("admin");
+                    password();
+
+                    System.out.println();
+
+                    menuAdmin(menuAdmClient);
                     break;
 
                 case "CLIENTE":

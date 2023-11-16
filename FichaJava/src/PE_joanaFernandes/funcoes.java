@@ -1,15 +1,128 @@
 package PE_joanaFernandes;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class funcoes {
 
     /**
+     * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
+     * @return - se a palavra passe for correta ele segue, senão o programa para
+     */
+    public static boolean password(){
+
+        Scanner input = new Scanner(System.in);
+
+
+        String password, passwordTentativa;
+        password = "123456789";
+
+        int contador=0;
+
+        boolean entrou=true;
+
+        System.out.print("Introduza a palavra-passe:");
+        passwordTentativa = input.next();
+
+
+            if (passwordTentativa.equals(password)){
+
+                System.out.println("***| B E M - V I N D O  A D M I N|***");
+                entrou=true;
+
+            }
+            while (!passwordTentativa.equals(password) && contador <2){
+                System.out.println("/!/ Palavra-passe incorreta... /!/");
+                contador++;
+
+                System.out.println();
+                System.out.println("------ Tente novamente... ------");
+
+                System.out.println();
+                System.out.print("Introduza a palavra-passe:");
+                passwordTentativa = input.next();
+
+                //para caso o utilizador acerte entretanto
+                if (passwordTentativa.equals(password)){
+
+                    System.out.println("***| B E M - V I N D O  A D M I N|***");
+
+
+                }
+            }
+
+            if (contador >=3){
+
+                System.out.println("/!/ NÚMERO DE TENTATIVAS ESGOTADAS /!/");
+                entrou=false;
+            }
+
+
+            return true;
+    }
+
+    /**
+     * Transforma o ficheiro CSV numa matriz
+     * @throws FileNotFoundException
+     */
+    public static void fileEmMatriz() throws FileNotFoundException {
+
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+
+        int i=0;
+
+        //linha cabeçalho;
+        String linha= fileScanner.nextLine();
+
+        //declarar matriz
+        String[][] matriz = new String[125][9];
+
+        //ler ficheiro e transformar em matriz
+        while (fileScanner.hasNextLine() ){
+            linha = fileScanner.nextLine();
+
+            //as "colunas" são divididas por , então: split
+            String[] divisor = linha.split(";");
+
+
+            for (int c = 0; c < 9 && c < divisor.length; c++) {
+
+                matriz[i][c] = divisor[c];
+            }
+
+            i++;
+
+        }
+
+        //para apresentar a matriz
+
+//        String strg = "";
+//
+//        //pra ler matriz e por nrs seguidos
+//        for (int l=0; l <matriz.length; l++){
+//            for (int c =0; c <matriz[0].length; c++){
+//
+//                strg += matriz[l][c] + "\t";
+//            }
+//            strg += "\n";
+//        }
+//
+//        //imprimir FORA do for para so aparecer o que se quer
+//        System.out.println("\n");
+//        System.out.println(strg);
+
+        fileScanner.close();
+
+    }
+
+    /**
      * Menu do Administrador
      * @param escolha - input necessário p/ função trabalhar
      */
-    public static void menuAdmin(int escolha) {
+    public static void menuAdmin(String escolha) throws FileNotFoundException {
 
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
         Scanner input = new Scanner(System.in);
 
         int opcao;
@@ -36,7 +149,9 @@ public class funcoes {
             switch (opcao){
 
                 case 1:
-                    //imprimir conteudo na consola
+                        //ler csv file
+                    fileEmMatriz();
+
                 break;
 
                 case 2:
