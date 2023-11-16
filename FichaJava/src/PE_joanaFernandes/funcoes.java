@@ -147,7 +147,6 @@ public class funcoes {
     /**
      * Método para contar nr de jogos vendidos e para somar os seus valores
      * @param matriz - parametro a ser avaliado
-     * @throws FileNotFoundException - excepçao
      */
     public static void jogosVendidos(String[][] matriz)  {
 
@@ -462,7 +461,7 @@ public class funcoes {
 
         //espaçamento
         System.out.println();
-        
+
     }
 
 //*******************************************************************************************************
@@ -482,7 +481,7 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contador=0,contadorJogo=0;
+        int contador=0;
         String pesquisaEditora;
 
 
@@ -503,16 +502,12 @@ public class funcoes {
                 //Imprimir info correspondente
                 System.out.println();
                 System.out.println("**********  " + matriz[l][5] + "  **********");
+                System.out.println();
                 System.out.println("----------  " + matriz[l][6] + "  ----------");
 
-                if (contadorJogo==0){
 
-                    System.out.println(matriz[l][7]);
-                    System.out.println();
 
-                    contadorJogo++;
-                }
-
+                System.out.println(">>>>>>>>>> " + matriz[l][7] + "<<<<<<<<<<");
 
 
                 contador++;
