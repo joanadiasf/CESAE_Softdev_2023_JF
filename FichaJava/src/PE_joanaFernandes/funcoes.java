@@ -12,6 +12,7 @@ public class funcoes {
      * @return - se a palavra passe for correta ele segue, senão o programa para
      */
     //fazer com o que caso o utilizador erre 3x ele nao avance /!/  /!/   /!/   /!/  /!/   /!/
+    //talvez com do while????
     public static boolean password() {
 
         Scanner input = new Scanner(System.in);
@@ -70,7 +71,7 @@ public class funcoes {
      *
      * @throws FileNotFoundException - excepçao
      */
-    public static String[][] lerFileEmMatriz() throws FileNotFoundException {
+    public static String[][] fileEmMatriz() throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
 
@@ -100,6 +101,18 @@ public class funcoes {
 
         }
 
+        fileScanner.close();
+
+        return matriz;
+    }
+
+    /**
+     * Apresenta a matriz
+     * @param matriz - recebe a matriz da função que a cria
+     */
+    public static void apresentarMatriz(String [][] matriz) {
+
+
         //apresentar matriz
         String strg = "";
 
@@ -115,10 +128,11 @@ public class funcoes {
         System.out.println("\n");
         System.out.println(strg);
 
-        fileScanner.close();
 
-        return matriz;
+
+
     }
+
 
     /**
      * Método para contar nr de jogos vendidos e para somar os seus valores
@@ -127,46 +141,37 @@ public class funcoes {
      */
     public static void jogosVendidos(String[][] matriz) throws FileNotFoundException {
 
-        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
-        //puxar a matriz para esta função
-        lerFileEmMatriz();
+        double valor = 0,total=0;
+        int contaLinhas = matriz.length;
 
-        //linha do cabeçalho
-        String linha = fileScanner.nextLine();
+        for(int linha=0; linha< matriz.length;linha++){
 
-        int contaLinhas = 0;
-        double valor = 0;
+            //sei q os valores q tenho que somar estão na coluna 9
+            valor=(Double.parseDouble(matriz[linha][8]));
 
-
-
-        //contar o nr de jogos e somar os seus valores
-        while (fileScanner.hasNextLine()) {
-            linha = fileScanner.nextLine();
-
-
-            contaLinhas++;
-
-
-            for (int l = 0; l < matriz.length; l++) {
-                valor += Double.parseDouble(matriz[l][9]);
-
-            }
-
-            System.out.println("Vendeu " + contaLinhas + "jogos e fez " + valor + "€.");
+            total+= valor;
         }
+
+        System.out.println();
+        System.out.println("Vendeu " + contaLinhas + " jogos e fez " + total + "€.");
+        System.out.println();
     }
 
     public static void pesquisaIdCliente(String[][] matriz) throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
         //puxar a matriz para esta função
-        lerFileEmMatriz();
+        fileEmMatriz();
+
+        String pesquisaID;
 
         //linha do cabeçalho
         String linha = fileScanner.nextLine();
 
         //utilizador procura a coluna 2
         //e imprime a coluna 3, 4 e 5 correspondente
+
+
 
     }
 
@@ -202,13 +207,14 @@ public class funcoes {
 
                 case 1:
                     //ler csv file
-                    lerFileEmMatriz();
+                    fileEmMatriz();
+                    apresentarMatriz(fileEmMatriz());
 
                 break;
 
                 case 2:
                     //quantas vendas foram executadas e valor total
-                    jogosVendidos(lerFileEmMatriz());
+                    jogosVendidos(fileEmMatriz());
 
                 break;
 
@@ -218,6 +224,8 @@ public class funcoes {
 
                 case 4:
                     //pesquisa idcliente - tem nome contacto e email
+
+
                     break;
 
                 case 5:
