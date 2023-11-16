@@ -8,10 +8,11 @@ public class funcoes {
 
     /**
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
+     *
      * @return - se a palavra passe for correta ele segue, senão o programa para
      */
     //fazer com o que caso o utilizador erre 3x ele nao avance /!/  /!/   /!/   /!/  /!/   /!/
-    public static boolean password(){
+    public static boolean password() {
 
         Scanner input = new Scanner(System.in);
 
@@ -19,69 +20,70 @@ public class funcoes {
         String password, passwordTentativa;
         password = "123456789";
 
-        int contador=0;
+        int contador = 0;
 
-        boolean entrou=true;
+        boolean entrou = true;
 
         System.out.print("Introduza a palavra-passe:");
         passwordTentativa = input.next();
 
 
-            if (passwordTentativa.equals(password)){
+        if (passwordTentativa.equals(password)) {
+
+            System.out.println("***| B E M - V I N D O  A D M I N|***");
+
+
+        }
+        while (!passwordTentativa.equals(password) && contador < 2) {
+            System.out.println("/!/ Palavra-passe incorreta... /!/");
+            contador++;
+
+            System.out.println();
+            System.out.println("------ Tente novamente... ------");
+
+            System.out.println();
+            System.out.print("Introduza a palavra-passe:");
+            passwordTentativa = input.next();
+
+            //para caso o utilizador acerte entretanto
+            if (passwordTentativa.equals(password)) {
 
                 System.out.println("***| B E M - V I N D O  A D M I N|***");
-                entrou=true;
+
 
             }
-            while (!passwordTentativa.equals(password) && contador <2){
-                System.out.println("/!/ Palavra-passe incorreta... /!/");
-                contador++;
+        }
 
-                System.out.println();
-                System.out.println("------ Tente novamente... ------");
+        if (contador >= 3) {
 
-                System.out.println();
-                System.out.print("Introduza a palavra-passe:");
-                passwordTentativa = input.next();
-
-                //para caso o utilizador acerte entretanto
-                if (passwordTentativa.equals(password)){
-
-                    System.out.println("***| B E M - V I N D O  A D M I N|***");
+            System.out.println("/!/ NÚMERO DE TENTATIVAS ESGOTADAS /!/");
+            entrou = false;
+        }
 
 
-                }
-            }
-
-            if (contador >=3){
-
-                System.out.println("/!/ NÚMERO DE TENTATIVAS ESGOTADAS /!/");
-                entrou=false;
-            }
-
-
-            return true;
+        return entrou;
     }
 
 
     /**
      * Transforma o ficheiro CSV numa matriz
-     * @throws FileNotFoundException
+     *
+     * @throws FileNotFoundException - excepçao
      */
-    public static void fileEmMatriz() throws FileNotFoundException {
+    public static String[][] lerFileEmMatriz() throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
 
-        int i=0;
+        int i = 0;
 
         //linha cabeçalho;
-        String linha= fileScanner.nextLine();
+        String linha = fileScanner.nextLine();
 
         //declarar matriz
         String[][] matriz = new String[125][9];
 
         //ler ficheiro e transformar em matriz
-        while (fileScanner.hasNextLine() ){
+        while (fileScanner.hasNextLine()) {
             linha = fileScanner.nextLine();
 
             //as "colunas" são divididas por , então: split
@@ -95,31 +97,82 @@ public class funcoes {
 
             i++;
 
+
         }
 
-        //para apresentar a matriz
+        //apresentar matriz
+        String strg = "";
 
-//        String strg = "";
-//
-//        //pra ler matriz e por nrs seguidos
-//        for (int l=0; l <matriz.length; l++){
-//            for (int c =0; c <matriz[0].length; c++){
-//
-//                strg += matriz[l][c] + "\t";
-//            }
-//            strg += "\n";
-//        }
-//
-//        //imprimir FORA do for para so aparecer o que se quer
-//        System.out.println("\n");
-//        System.out.println(strg);
+        for (int l = 0; l < matriz.length; l++) {
+            for (int c = 0; c < matriz[0].length; c++) {
+
+                strg += matriz[l][c] + "\t";
+            }
+            strg += "\n";
+        }
+
+        //imprimir FORA do for para so aparecer o que se quer
+        System.out.println("\n");
+        System.out.println(strg);
 
         fileScanner.close();
+
+        return matriz;
+    }
+
+    /**
+     * Método para contar nr de jogos vendidos e para somar os seus valores
+     * @param matriz - parametro a ser avaliado
+     * @throws FileNotFoundException - excepçao
+     */
+    public static void jogosVendidos(String[][] matriz) throws FileNotFoundException {
+
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+        //puxar a matriz para esta função
+        lerFileEmMatriz();
+
+        //linha do cabeçalho
+        String linha = fileScanner.nextLine();
+
+        int contaLinhas = 0;
+        double valor = 0;
+
+
+
+        //contar o nr de jogos e somar os seus valores
+        while (fileScanner.hasNextLine()) {
+            linha = fileScanner.nextLine();
+
+
+            contaLinhas++;
+
+
+            for (int l = 0; l < matriz.length; l++) {
+                valor += Double.parseDouble(matriz[l][9]);
+
+            }
+
+            System.out.println("Vendeu " + contaLinhas + "jogos e fez " + valor + "€.");
+        }
+    }
+
+    public static void pesquisaIdCliente(String[][] matriz) throws FileNotFoundException {
+
+        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+        //puxar a matriz para esta função
+        lerFileEmMatriz();
+
+        //linha do cabeçalho
+        String linha = fileScanner.nextLine();
+
+        //utilizador procura a coluna 2
+        //e imprime a coluna 3, 4 e 5 correspondente
 
     }
 
     /**
      * Menu do Administrador
+     *
      * @param escolha - input necessário p/ função trabalhar
      */
     public static void menuAdmin(String escolha) throws FileNotFoundException {
@@ -142,48 +195,51 @@ public class funcoes {
 
             System.out.println();
             System.out.print("Escolha a opção:");
-            opcao= input.nextInt();
+            opcao = input.nextInt();
 
             //menu
-            switch (opcao){
+            switch (opcao) {
 
                 case 1:
-                        //ler csv file
-                    fileEmMatriz();
+                    //ler csv file
+                    lerFileEmMatriz();
 
                 break;
 
                 case 2:
                     //quantas vendas foram executadas e valor total
+                    jogosVendidos(lerFileEmMatriz());
+
                 break;
 
                 case 3:
                     //total de lucro - 20% de cada jogo
-                break;
+                    break;
 
                 case 4:
                     //pesquisa idcliente - tem nome contacto e email
-                break;
+                    break;
 
                 case 5:
                     //print jogo mais caro e quem o comprou(todos os cliente)
-                break;
+                    break;
 
                 case 6:
                     System.out.println("****** | A D E U S | ******");
-                break;
+                    break;
 
                 default:
                     System.out.println("------ Opção inválida... ------");
                     System.out.println("------ Tente novamente ------");
             }
 
-        }while (opcao !=6);
+        } while (opcao != 6);
 
     }
 
     /**
      * Menu do Cliente
+     *
      * @param escolha - input necessário p/ função trabalhar
      */
     public static void menuClient(int escolha) {
@@ -229,7 +285,7 @@ public class funcoes {
                     System.out.println("------ Registado com sucesso!! ------");
                     System.out.println(nomeCliente + " | " + contactoCLiente + " | " + emailCliente);
 
-                break;
+                    break;
 
                 case 2:
 
@@ -248,19 +304,19 @@ public class funcoes {
                         }
                     }
 
-                break;
+                    break;
 
                 case 3:
                     //imprimir todos os jogos (sem duplicados)
-                break;
+                    break;
 
                 case 4:
                     //user dá editora, print todos os jogos e categorias
-                break;
+                    break;
 
                 case 5:
                     System.out.println("****** | A D E U S | ******");
-                break;
+                    break;
 
                 default:
                     System.out.println("------ Opção inválida... ------");
