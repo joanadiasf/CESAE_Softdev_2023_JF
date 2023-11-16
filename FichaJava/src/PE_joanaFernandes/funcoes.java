@@ -475,6 +475,45 @@ public class funcoes {
 //        }
     }
 
+
+    public static void pesquisaEmpresa(String[][] matriz) throws FileNotFoundException{
+
+        Scanner input = new Scanner(System.in);
+
+        //puxar a matriz para esta função
+        fileEmMatriz();
+
+        //para receber o input || contador para o mesmo id nao se repetir quando é impresso
+        int contador=0;
+        String pesquisaEmpresa;
+
+
+        //utilizador procura na coluna 5
+        //imprime coluna 6 e 7
+
+
+        System.out.println();
+        System.out.print("Qual o IDCliente que quer pesquisar? ");
+        pesquisaEmpresa = input.next();
+
+
+        for (int l=0;l < matriz.length;l++){
+
+            //comparar e transformar a coluna 1 num nr inteiro
+            if (pesquisaEmpresa.equals(matriz[l][5]) && contador ==0){
+
+                //Imprimir info correspondente
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
+
+                contador++;
+            }
+
+        }
+    }
+
 //*******************************************************************************************************
     /**
      * Menu do Cliente
@@ -525,7 +564,7 @@ public class funcoes {
 
                 case 4:
                     //user dá editora, print todos os jogos e categorias
-                    
+
 
                     break;
 
