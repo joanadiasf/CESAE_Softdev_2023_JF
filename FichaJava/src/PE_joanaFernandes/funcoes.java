@@ -421,6 +421,11 @@ public class funcoes {
 
 //*******************************************************************************************************
 
+    /**
+     * Método para imprimir os jogos disponiveis sem aparecerem duplicados
+     * @param matriz - parametro a ser analisado
+     * @throws FileNotFoundException - excepçao
+     */
     public static void jogosDisponiveis(String[][] matriz) throws FileNotFoundException {
 
         Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
@@ -475,8 +480,16 @@ public class funcoes {
 //        }
     }
 
+//*******************************************************************************************************
 
-    public static void pesquisaEmpresa(String[][] matriz) throws FileNotFoundException{
+    /**
+     * Método para pesquisar jogo e categoria dentro de um editora
+     * @param matriz - parametro a ser analisado
+     * @throws FileNotFoundException - excepçao
+     */
+
+    //So aparece um jogo /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/
+    public static void pesquisaEditora(String[][] matriz) throws FileNotFoundException{
 
         Scanner input = new Scanner(System.in);
 
@@ -484,8 +497,8 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contador=0;
-        String pesquisaEmpresa;
+        int contador=0,contadorJogo=0;
+        String pesquisaEditora;
 
 
         //utilizador procura na coluna 5
@@ -493,19 +506,28 @@ public class funcoes {
 
 
         System.out.println();
-        System.out.print("Qual o IDCliente que quer pesquisar? ");
-        pesquisaEmpresa = input.next();
+        System.out.print("Qual a editora que quer pesquisar? ");
+        pesquisaEditora = input.next();
 
 
         for (int l=0;l < matriz.length;l++){
 
             //comparar e transformar a coluna 1 num nr inteiro
-            if (pesquisaEmpresa.equals(matriz[l][5]) && contador ==0){
+            if (pesquisaEditora.equals(matriz[l][5]) && contador ==0){
 
                 //Imprimir info correspondente
                 System.out.println();
-                System.out.println();
-                System.out.println();
+                System.out.println("**********  " + matriz[l][5] + "  **********");
+                System.out.println("----------  " + matriz[l][6] + "  ----------");
+
+                if (contadorJogo==0){
+
+                    System.out.println(matriz[l][7]);
+                    System.out.println();
+
+                    contadorJogo++;
+                }
+
 
 
                 contador++;
@@ -564,7 +586,7 @@ public class funcoes {
 
                 case 4:
                     //user dá editora, print todos os jogos e categorias
-
+                    pesquisaEditora(fileEmMatriz());
 
                     break;
 
