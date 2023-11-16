@@ -486,7 +486,7 @@ public class funcoes {
         Scanner input = new Scanner(System.in);
 
         int opcao;
-      
+
 
         //menu
         do {
@@ -521,15 +521,17 @@ public class funcoes {
                     //imprimir todos os jogos (sem duplicados)
                     jogosDisponiveis(fileEmMatriz());
 
-                    break;
+                break;
 
                 case 4:
                     //user dá editora, print todos os jogos e categorias
+                    
+
                     break;
 
                 case 5:
                     System.out.println("****** | A D E U S | ******");
-                    break;
+                break;
 
                 default:
                     System.out.println("------ Opção inválida... ------");
