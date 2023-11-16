@@ -80,7 +80,8 @@ public class funcoes {
      */
     public static String[][] fileEmMatriz() throws FileNotFoundException {
 
-        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+        //        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+        Scanner fileScanner = new Scanner(new File("src/PE_joanaFernandes/GameStart_V2.csv"));
 
         int i = 0;
 
@@ -472,7 +473,7 @@ public class funcoes {
      * @throws FileNotFoundException - excepçao
      */
 
-    //So aparece um jogo /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/
+    //Loop /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/
     public static void pesquisaEditora(String[][] matriz) throws FileNotFoundException{
 
         Scanner input = new Scanner(System.in);
@@ -507,14 +508,32 @@ public class funcoes {
                 System.out.println("***** " + pesquisaEditora + " *****");
                 System.out.println();
 
-                //apresenta categoria
-                System.out.println("--- " + matriz[l][6] + " ---");
-                System.out.println();
+                for(int i=0; i < matriz.length;i++){
 
-                //apresenta jogo
-                System.out.println("> " + matriz[l][7] + " <");
-                System.out.println();
+                    if (l!=i && !matriz[l][6].equals(matriz[i][6])){
 
+                        //apresenta categoria
+                        System.out.println("--- " + matriz[l][6] + " ---");
+                        System.out.println();
+                    }
+
+                }
+
+               for (int i=0; i < matriz.length;i++){
+
+                   if (l!=i && !matriz[l][6].equals(matriz[i][6])){
+
+                       //apresenta jogo
+                       System.out.println("> " + matriz[l][7] + " <");
+                       System.out.println();
+                   }
+               }
+
+
+
+            }else {
+
+                System.out.println("Editora não encontrada... Tente mais tarde.");
             }
 
         }
