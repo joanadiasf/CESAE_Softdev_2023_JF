@@ -27,5 +27,3 @@ public class Circulo {
 //instanciar circulo
 //area e circunferencia
 
-
-// Perceba que podemos escrever C=2πr como C=2rπ, ou seja, C=dπ.
