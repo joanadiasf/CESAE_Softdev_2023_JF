@@ -13,12 +13,10 @@ public class funcoes {
 //*******************************************************************************************************
     /**
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
-     *
-     * @return - se a palavra passe for correta ele segue, senão o programa para
      */
     //fazer com o que caso o utilizador erre 3x ele nao avance /!/  /!/   /!/   /!/  /!/   /!/
     //talvez com do while????
-    public static boolean password() {
+    public static void password() {
 
         Scanner input = new Scanner(System.in);
 
@@ -27,8 +25,6 @@ public class funcoes {
         password = "123456789";
 
         int contador = 0;
-
-        boolean entrou = true;
 
         System.out.print("Introduza a palavra-passe:");
         passwordTentativa = input.next();
@@ -65,11 +61,9 @@ public class funcoes {
         if (contador >= 3) {
 
             System.out.println("/!/ NÚMERO DE TENTATIVAS ESGOTADAS /!/");
-            entrou = false;
         }
 
 
-        return entrou;
     }
 
 //*******************************************************************************************************
@@ -244,7 +238,7 @@ public class funcoes {
      * @throws FileNotFoundException - excepçao
      */
 
-    //verificar se realmente está a dar o mais caro
+    //verificar se realmente está a dar o mais caro - Sim4
     public static void bestseller(String[][] matriz) throws FileNotFoundException {
 
         //comparar o preço de todos os jogos p/ver qual é o mais caro
