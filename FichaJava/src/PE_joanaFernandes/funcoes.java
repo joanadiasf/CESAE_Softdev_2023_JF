@@ -80,8 +80,8 @@ public class funcoes {
      */
     public static String[][] fileEmMatriz() throws FileNotFoundException {
 
-        //        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
-        Scanner fileScanner = new Scanner(new File("src/PE_joanaFernandes/GameStart_V2.csv"));
+                Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+//        Scanner fileScanner = new Scanner(new File("src/PE_joanaFernandes/GameStart_V2.csv"));
 
         int i = 0;
 
@@ -482,7 +482,7 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contador=0;
+        int contador=0,contadorcat=0,contadorjogo=0;
         String pesquisaEditora;
 
 
@@ -501,7 +501,7 @@ public class funcoes {
             matriz[l][5]=matriz[l][5].replace(" ","");
 
             //comparar e transformar a coluna 1 num nr inteiro
-            if (pesquisaEditora.equals(matriz[l][5])){
+            if (pesquisaEditora.equals(matriz[l][5]) && contador==0){
 
 
                 //apresenta editora
@@ -510,30 +510,31 @@ public class funcoes {
 
                 for(int i=0; i < matriz.length;i++){
 
-                    if (l!=i && !matriz[l][6].equals(matriz[i][6])){
+                    if (l!=i && matriz[l][6].equals(matriz[i][6]) && contadorcat==0){
 
                         //apresenta categoria
                         System.out.println("--- " + matriz[l][6] + " ---");
                         System.out.println();
+
+                        contadorcat++;
                     }
 
                 }
 
                for (int i=0; i < matriz.length;i++){
 
-                   if (l!=i && !matriz[l][6].equals(matriz[i][6])){
+                   if (l!=i && matriz[l][6].equals(matriz[i][6]) && contadorjogo==0){
 
                        //apresenta jogo
                        System.out.println("> " + matriz[l][7] + " <");
                        System.out.println();
+
+                       contadorjogo++;
                    }
                }
 
+                contador++;
 
-
-            }else {
-
-                System.out.println("Editora não encontrada... Tente mais tarde.");
             }
 
         }
