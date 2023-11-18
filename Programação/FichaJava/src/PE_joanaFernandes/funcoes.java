@@ -486,59 +486,77 @@ public class funcoes {
         System.out.print("Qual a editora que quer pesquisar? (Não usar espaços)");
         pesquisaEditora = input.next();
 
+        //para nao imprimir repetido
+        boolean editoraJaImpressa = false;
+        boolean jogoJaImpresso = false;
+        boolean categoriaJaImpressa = false;
+
 
 
         for (int l = 0; l < matriz.length; l++) {
 
-            //para não ter problema de não ler a editora por causa do espaço
-            matriz[l][5] = matriz[l][5].replace(" ", "");
+            //para se pesquisar ler as strings que tenham mais que uma palavra
+            String editora = matriz[l][5].replace(" ", "");
 
+            //peesquisa do utilizador foi encontrada
+            if (pesquisaEditora.equals(editora)) {
 
-            //comparar pesquisa com coluna da editora
-            if (pesquisaEditora.equals(matriz[l][5])) {
+                for (int i = 0; i < l; i++) {
 
-                //nao imprimir editora mais que uma vez
-                if (contadorEditora==0){
+                    //para guardar a editora anterior
+                    String editoraAnterior = matriz[i][5].replace(" ", "");
 
-                    System.out.println("***** " + pesquisaEditora + " *****");
-                    System.out.println();
+                    //se ela se repetir a boolean passa para true
 
-                    contadorEditora++;
-                }
-
-
-                //guardar a categoria
-                String categoriaAtual = matriz[l][6];
-
-
-                    System.out.println("--- " + categoriaAtual + " ---");
-                    System.out.println();
-
-
-
-
-
-                //voltar a ler a matriz para imprimir os jogos
-                for (int i = l; i < matriz.length; i++) {
-
-                    String jogoAtual= matriz[l][7];
-
-                    //se a coluna da editora e da categoria forem iguais entao o programa imprime o jogo
-                    if (pesquisaEditora.equals(matriz[i][5]) && categoriaAtual.equals(matriz[i][6])) {
-
-
-                            System.out.println("> " + jogoAtual + " <");
-                            System.out.println();
+                    if (editora.equals(editoraAnterior)) {
+                        editoraJaImpressa = true;
 
                     }
                 }
 
+                if (editoraJaImpressa == false) {
+                    System.out.println("***** " + editora + " *****");
+                }
+
+                String categoria = matriz[l][6];
+
+
+                for (int i = 0; i < l; i++) {
+
+                    //guardar categoria anterior
+                    String categoriaAnterior = matriz[i][6];
+
+                    //se ela se repetir a boolean passa para true
+                    if (categoria.equals(categoriaAnterior)) {
+                        categoriaJaImpressa = true;
+
+                    }
+                }
+
+                if (categoriaJaImpressa == false) {
+                    System.out.println("--- " + categoria + " ---");
+                }
+
+
+                String jogo = matriz[l][7];
+
+                for (int i = 0; i < l; i++) {
+
+                    //guardar jogo anterior
+                    String jogoAnterior = matriz[i][7];
+
+                    //se ela se repetir a boolean passa para true
+                    if (jogo.equals(jogoAnterior)) {
+                        jogoJaImpresso = true;
+
+                    }
+                }
+
+                if (jogoJaImpresso == false) {
+                    System.out.println("> " + jogo + " <");
+                }
             }
         }
-
-
-
-
 
 
 
