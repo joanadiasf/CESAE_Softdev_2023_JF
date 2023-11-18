@@ -11,7 +11,7 @@ public class GameStart_JoanaFernandes {
 
         //ler ficheiro + ler input do utilizador
 
-        
+
         //Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
         Scanner fileScanner = new Scanner(new File("src/PE_joanaFernandes/GameStart_V2.csv"));
 
