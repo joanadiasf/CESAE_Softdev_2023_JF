@@ -478,7 +478,6 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contadorEditora=0;
         String pesquisaEditora;
 
 
@@ -486,7 +485,7 @@ public class funcoes {
         System.out.print("Qual a editora que quer pesquisar? (Não usar espaços)");
         pesquisaEditora = input.next();
 
-        //para nao imprimir repetido
+        //para nao imprimir repetido (desisti dos contadores depois de 2 dias nisto)
         boolean editoraJaImpressa = false;
         boolean jogoJaImpresso = false;
         boolean categoriaJaImpressa = false;
@@ -531,10 +530,13 @@ public class funcoes {
                         categoriaJaImpressa = true;
 
                     }
+
+
                 }
 
                 if (categoriaJaImpressa == false) {
                     System.out.println("--- " + categoria + " ---");
+
                 }
 
 
