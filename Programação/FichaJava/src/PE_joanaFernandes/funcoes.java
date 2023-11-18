@@ -392,19 +392,26 @@ public class funcoes {
      */
     public static void estacionamentoLugares(){
 
+
         //espaçamento
         System.out.println();
 
-        //definir o limite de lugares de estacionamento || o indice do ciclo for || a formula do nr triangular
-        int limite = 121, i = 1, numTri = i * (i + 1) * (1 + 2);
+        //definir o limite de lugares de estacionamento
+        int limite = 121;
+        int i = 1;
 
-        for (i = 1; numTri < limite; i++) {
+        //enquanto o resultado da conta for menor que o limite 121
+        while (i * (i + 1) / 2 < limite) {
 
-            //ver e imprimir apenas os múltiplos de 5
+            //criar variavel para guardar a formula (se ela for instanciada antes do while nao imprime nada)
+            int numTri = i * (i + 1) / 2;
+
+            //verificar se sao multiplos de 5 e ai imprimir
             if (numTri % 5 == 0) {
-
-                System.out.print("Os lugares de estacionamento livres são: " + numTri);
+                System.out.println("O lugar de estacionamento livre (número triangular) é: " + numTri);
             }
+
+            i++;
         }
     }
 
@@ -417,7 +424,7 @@ public class funcoes {
      */
     public static void jogosDisponiveis(String[][] matriz) throws FileNotFoundException {
 
-        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
+
 
         //puxar a matriz para esta função
         fileEmMatriz();
@@ -471,7 +478,7 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contadorEditora=0,contadorCategoria=0,contadorJogo=0;
+        int contadorEditora=0;
         String pesquisaEditora;
 
 
@@ -502,8 +509,14 @@ public class funcoes {
 
                 //guardar a categoria
                 String categoriaAtual = matriz[l][6];
-                System.out.println("--- " + categoriaAtual + " ---");
-                System.out.println();
+
+
+                    System.out.println("--- " + categoriaAtual + " ---");
+                    System.out.println();
+
+
+
+
 
                 //voltar a ler a matriz para imprimir os jogos
                 for (int i = l; i < matriz.length; i++) {
@@ -512,14 +525,18 @@ public class funcoes {
 
                     //se a coluna da editora e da categoria forem iguais entao o programa imprime o jogo
                     if (pesquisaEditora.equals(matriz[i][5]) && categoriaAtual.equals(matriz[i][6])) {
-                        System.out.println("> " + jogoAtual + " <");
-                        System.out.println();
+
+
+                            System.out.println("> " + jogoAtual + " <");
+                            System.out.println();
+
                     }
                 }
-                //parar o ciclo senao ele imprime infinitamente
-//                break;
+
             }
         }
+
+
 
 
 
