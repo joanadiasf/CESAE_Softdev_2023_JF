@@ -471,7 +471,7 @@ public class funcoes {
         fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
-        int contador=0;
+        int contadorEditora=0,contadorCategoria=0,contadorJogo=0;
         String pesquisaEditora;
 
 
@@ -489,8 +489,16 @@ public class funcoes {
 
             //comparar pesquisa com coluna da editora
             if (pesquisaEditora.equals(matriz[l][5])) {
-                System.out.println("***** " + pesquisaEditora + " *****");
-                System.out.println();
+
+                //nao imprimir editora mais que uma vez
+                if (contadorEditora==0){
+
+                    System.out.println("***** " + pesquisaEditora + " *****");
+                    System.out.println();
+
+                    contadorEditora++;
+                }
+
 
                 //guardar a categoria
                 String categoriaAtual = matriz[l][6];
@@ -500,14 +508,16 @@ public class funcoes {
                 //voltar a ler a matriz para imprimir os jogos
                 for (int i = l; i < matriz.length; i++) {
 
+                    String jogoAtual= matriz[l][7];
+
                     //se a coluna da editora e da categoria forem iguais entao o programa imprime o jogo
                     if (pesquisaEditora.equals(matriz[i][5]) && categoriaAtual.equals(matriz[i][6])) {
-                        System.out.println("> " + matriz[i][7] + " <");
+                        System.out.println("> " + jogoAtual + " <");
                         System.out.println();
                     }
                 }
                 //parar o ciclo senao ele imprime infinitamente
-                break;
+//                break;
             }
         }
 
