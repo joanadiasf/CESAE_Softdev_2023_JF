@@ -179,7 +179,7 @@ public class funcoes {
         }
 
         //conta para ver os 20% de lucro
-        valor=valor*0.2;
+        total=total*0.2;
 
         System.out.println();
         System.out.println("O seu lucro é de: " + valor + "€");
