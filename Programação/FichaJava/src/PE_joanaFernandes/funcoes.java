@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class funcoes {
 
+
 //*******************************************************************************************************
 //*******************************************************************************************************
 //********************************* M E N U   A D M I N *************************************************
@@ -14,8 +15,7 @@ public class funcoes {
     /**
      * Método para verificar se a palavra-passe está correta e se não ultrapassa as 3 tentativas
      */
-    //fazer com o que caso o utilizador erre 3x ele nao avance /!/  /!/   /!/   /!/  /!/   /!/
-    //talvez com do while????
+
     public static void password() {
 
         Scanner input = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class funcoes {
         String password, passwordTentativa;
         password = "123456789";
 
-        int contador = 0;
+
 
         System.out.print("Introduza a palavra-passe:");
         passwordTentativa = input.next();
@@ -38,9 +38,9 @@ public class funcoes {
 
 
         }
-        while (!passwordTentativa.equals(password) && contador < 2) {
+        while (!passwordTentativa.equals(password) ) {
             System.out.println("/!/ Palavra-passe incorreta... /!/");
-            contador++;
+
 
             System.out.println();
             System.out.println("------ Tente novamente... ------");
@@ -56,12 +56,11 @@ public class funcoes {
 
 
             }
+
+
         }
 
-        if (contador >= 3) {
 
-            System.out.println("/!/ NÚMERO DE TENTATIVAS ESGOTADAS /!/");
-        }
 
 
     }
@@ -113,18 +112,18 @@ public class funcoes {
      * Apresenta a matriz
      * @param matriz - recebe a matriz da função que a cria
      */
-
-    //está a imprimir 3 x /!/  /!/   /!/   /!/  /!/   /!/   /!/  /!/   /!/   /!/  /!/   /!/
     public static void apresentarMatriz(String [][] matriz) {
 
 
         //apresentar matriz
         String strg = "";
+        int contador=0;
 
         for (int l = 0; l < matriz.length; l++) {
             for (int c = 0; c < matriz[0].length; c++) {
 
-                strg += matriz[l][c] + "\t";
+                    strg += matriz[l][c] + "\t";
+
             }
             strg += "\n";
         }
@@ -237,12 +236,7 @@ public class funcoes {
      * @param matriz - parametro a ser avaliado
      * @throws FileNotFoundException - excepçao
      */
-
-    //verificar se realmente está a dar o mais caro - Sim4
     public static void bestseller(String[][] matriz) throws FileNotFoundException {
-
-        //comparar o preço de todos os jogos p/ver qual é o mais caro
-        //imprimir todos os clientes que o compraram
 
         //puxar a matriz para esta função
         fileEmMatriz();
@@ -252,13 +246,15 @@ public class funcoes {
         String nomeJogo = matriz[0][7];
 
 
+
         //para saber qual o jogo mais caro
-        for (int l=0; l < matriz.length;l++){
+        for (int l=1; l < matriz.length;l++){
 
             maisCaro=Double.parseDouble(matriz[l][8]);
 
             if (preco > maisCaro){
 
+               //continuar a fazer a comparaçao ate ao fim do loop
                 preco=maisCaro;
 
                 //vai guardar o nome do jogo mais caro
@@ -291,7 +287,6 @@ public class funcoes {
      */
     public static void menuAdmin(String escolha) throws FileNotFoundException {
 
-        Scanner fileScanner = new Scanner(new File("FichaJava/src/PE_joanaFernandes/GameStart_V2.csv"));
         Scanner input = new Scanner(System.in);
 
         int opcao;
@@ -480,65 +475,38 @@ public class funcoes {
         String pesquisaEditora;
 
 
-        //utilizador procura na coluna 5
-        //imprime coluna 6 e 7
-
-
         System.out.println();
         System.out.print("Qual a editora que quer pesquisar? (Não usar espaços)");
         pesquisaEditora = input.next();
 
 
-//        for (int l=0;l < matriz.length;l++){
-//
-//            //para não ter problema de não ler a editora por causa do espaço
-//            matriz[l][5]=matriz[l][5].replace(" ","");
-//
-//            //comparar e transformar a coluna 1 num nr inteiro
-//            if (pesquisaEditora.equals(matriz[l][5]) && contador==0){
-//
-//
-//                //apresenta editora
-//                System.out.println("***** " + pesquisaEditora + " *****");
-//                System.out.println();
-//
-//
-//                    if (l==0||!matriz[l][6].equals(matriz[l-1][6])){
-//
-//                        //apresenta categoria
-//                        System.out.println("--- " + matriz[l][6] + " ---");
-//                        System.out.println();
-//                    }
-//
-//
-//                       //apresenta jogo
-//                       System.out.println("> " + matriz[l][7] + " <");
-//                       System.out.println();
-//
-//
-//                contador++;
-//
-//            }
-//
-//        }
 
         for (int l = 0; l < matriz.length; l++) {
+
+            //para não ter problema de não ler a editora por causa do espaço
             matriz[l][5] = matriz[l][5].replace(" ", "");
 
+
+            //comparar pesquisa com coluna da editora
             if (pesquisaEditora.equals(matriz[l][5])) {
                 System.out.println("***** " + pesquisaEditora + " *****");
                 System.out.println();
 
+                //guardar a categoria
                 String categoriaAtual = matriz[l][6];
                 System.out.println("--- " + categoriaAtual + " ---");
                 System.out.println();
 
+                //voltar a ler a matriz para imprimir os jogos
                 for (int i = l; i < matriz.length; i++) {
+
+                    //se a coluna da editora e da categoria forem iguais entao o programa imprime o jogo
                     if (pesquisaEditora.equals(matriz[i][5]) && categoriaAtual.equals(matriz[i][6])) {
                         System.out.println("> " + matriz[i][7] + " <");
                         System.out.println();
                     }
                 }
+                //parar o ciclo senao ele imprime infinitamente
                 break;
             }
         }
