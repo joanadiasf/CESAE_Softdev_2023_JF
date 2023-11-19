@@ -190,14 +190,11 @@ public class funcoes {
     /**
      * Método para pesquisar o id de um cliente e imprimir nome,contacto e email respetivos
      * @param matriz - parametro a ser avaliado
-     * @throws FileNotFoundException - excepçao
      */
-    public static void pesquisaIdCliente(String[][] matriz) throws FileNotFoundException {
+    public static void pesquisaIdCliente(String[][] matriz)  {
 
         Scanner input = new Scanner(System.in);
 
-        //puxar a matriz para esta função
-        fileEmMatriz();
 
         //para receber o input || contador para o mesmo id nao se repetir quando é impresso
         int pesquisaID,contador=0;
@@ -234,23 +231,19 @@ public class funcoes {
     /**
      * Método para ver qual o jogo mais caro e imprimir quem o comprou
      * @param matriz - parametro a ser avaliado
-     * @throws FileNotFoundException - excepçao
      */
-    public static void bestseller(String[][] matriz) throws FileNotFoundException {
+    public static void bestseller(String[][] matriz)  {
 
-        //puxar a matriz para esta função
-        fileEmMatriz();
 
-        double maisCaro;
+
+        double maisCaro=0;
         double preco= Double.parseDouble(matriz[0][8]);
         String nomeJogo = matriz[0][7];
-
-
 
         //para saber qual o jogo mais caro
         for (int l=1; l < matriz.length;l++){
 
-            maisCaro=Double.parseDouble(matriz[l][8]);
+
 
             if (preco > maisCaro){
 
@@ -420,14 +413,10 @@ public class funcoes {
     /**
      * Método para imprimir os jogos disponiveis sem aparecerem duplicados
      * @param matriz - parametro a ser analisado
-     * @throws FileNotFoundException - excepçao
      */
-    public static void jogosDisponiveis(String[][] matriz) throws FileNotFoundException {
+    public static void jogosDisponiveis(String[][] matriz)  {
 
 
-
-        //puxar a matriz para esta função
-        fileEmMatriz();
 
         //contador para saltar duplicados
         int contador=0;
@@ -435,7 +424,7 @@ public class funcoes {
         //comparar a matriz com ela mesma para achar os duplicados
         for (int l=0; l < matriz.length;l++){
 
-                 for (int i=0; i < matriz.length; i++){
+                 for (int i=0; i < l; i++){
 
                      //para nao se comparar o mesmo elemento l!=i
                      if (l!=i && matriz[l][7].equals(matriz[i][7]) && contador==0) {
@@ -469,7 +458,6 @@ public class funcoes {
      * @throws FileNotFoundException - excepçao
      */
 
-    //Loop /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/     /!/
     public static void pesquisaEditora(String[][] matriz) throws FileNotFoundException{
 
         Scanner input = new Scanner(System.in);
@@ -538,6 +526,7 @@ public class funcoes {
                 if (categoriaJaImpressa == false) {
                     System.out.println("--- " + categoria + " ---");
 
+                    
                 }
 
 
