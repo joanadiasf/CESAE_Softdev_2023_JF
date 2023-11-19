@@ -408,7 +408,7 @@ public class funcoes {
 
             //verificar se sao multiplos de 5 e ai imprimir
             if (numTri % 5 == 0) {
-                System.out.println("O lugar de estacionamento livre (número triangular) é: " + numTri);
+                System.out.println("Lugar de estacionamento livre é: " + numTri);
             }
 
             i++;
@@ -493,7 +493,7 @@ public class funcoes {
 
         for (int l = 0; l < matriz.length; l++) {
 
-            
+
 
             //para se pesquisar ler as strings que tenham mais que uma palavra
             String editora = matriz[l][5].replace(" ", "");
