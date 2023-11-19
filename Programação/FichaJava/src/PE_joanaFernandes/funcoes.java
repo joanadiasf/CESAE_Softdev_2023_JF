@@ -477,7 +477,7 @@ public class funcoes {
         //puxar a matriz para esta função
         fileEmMatriz();
 
-        //para receber o input || contador para o mesmo id nao se repetir quando é impresso
+        //para receber o input
         String pesquisaEditora;
 
 
@@ -485,14 +485,15 @@ public class funcoes {
         System.out.print("Qual a editora que quer pesquisar? (Não usar espaços)");
         pesquisaEditora = input.next();
 
-        //para nao imprimir repetido (desisti dos contadores depois de 2 dias nisto)
+
         boolean editoraJaImpressa = false;
         boolean jogoJaImpresso = false;
         boolean categoriaJaImpressa = false;
 
 
-
         for (int l = 0; l < matriz.length; l++) {
+
+            
 
             //para se pesquisar ler as strings que tenham mais que uma palavra
             String editora = matriz[l][5].replace(" ", "");
@@ -507,7 +508,7 @@ public class funcoes {
 
                     //se ela se repetir a boolean passa para true
 
-                    if (editora.equals(editoraAnterior)) {
+                    if (editora.equals(editoraAnterior) ) {
                         editoraJaImpressa = true;
 
                     }
@@ -526,7 +527,7 @@ public class funcoes {
                     String categoriaAnterior = matriz[i][6];
 
                     //se ela se repetir a boolean passa para true
-                    if (categoria.equals(categoriaAnterior)) {
+                    if (categoria.equals(categoriaAnterior) && i!=1) {
                         categoriaJaImpressa = true;
 
                     }
@@ -548,7 +549,7 @@ public class funcoes {
                     String jogoAnterior = matriz[i][7];
 
                     //se ela se repetir a boolean passa para true
-                    if (jogo.equals(jogoAnterior)) {
+                    if (jogo.equals(jogoAnterior) && i!=1) {
                         jogoJaImpresso = true;
 
                     }
