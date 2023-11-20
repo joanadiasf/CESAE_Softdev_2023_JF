@@ -32,7 +32,7 @@ public class Funcionario {
 
     public void aumentarSalario(double valor){
 
-        this.salario=this.salario + (this.salario*0.1);
+        this.salario=this.salario + (this.salario*valor);
 
 
     }
