@@ -12,11 +12,12 @@ public class Carro {
 
     /**
      * construtor
-     * @param marca - marca
-     * @param modelo - modelo
-     * @param idade - ano
-     * @param potencia - potencia em cavalos
-     * @param cilindrada - cilindrada
+     *
+     * @param marca       - marca
+     * @param modelo      - modelo
+     * @param idade       - ano
+     * @param potencia    - potencia em cavalos
+     * @param cilindrada  - cilindrada
      * @param combustivel - combustivel
      * @param litros100Km - qts litros faz por cada 100km
      */
@@ -42,11 +43,11 @@ public class Carro {
         return cilindrada;
     }
 
-    public void ligado(){
+    public void ligado() {
 
-        if (idade<=30){
+        if (idade <= 30) {
 
-            if (potencia>=250){
+            if (potencia >= 250) {
 
                 System.out.println("\nO carro está ligado! \nVRUUMMMMM");
                 System.out.println();
@@ -56,7 +57,7 @@ public class Carro {
                 System.out.println("----()----()---|");
 
             }
-            if (potencia<250){
+            if (potencia < 250) {
 
                 System.out.println("\nO carro está ligado! \nVruummmmmmm");
                 System.out.println();
@@ -67,9 +68,9 @@ public class Carro {
             }
         }
 
-        if (idade> 30){
+        if (idade > 30) {
 
-            if (combustivel==TipoCombustivel.DIESEL){
+            if (combustivel == TipoCombustivel.DIESEL) {
 
                 System.out.println("\nDeita um pouco de fumo... Custa a pegar... O carro está ligado! \nVrum-vrum-vrum");
                 System.out.println();
@@ -79,7 +80,7 @@ public class Carro {
                 System.out.println("----()----()---|");
             }
 
-            if (combustivel!=TipoCombustivel.DIESEL){
+            if (combustivel != TipoCombustivel.DIESEL) {
 
                 System.out.println("\nCusta a pegar...O carro está ligado! \nVrum-vrum-vrum");
                 System.out.println();
@@ -93,22 +94,56 @@ public class Carro {
 
     }
 
-    public String corrida(Carro adversarioMarca){
+    public Carro corrida(Carro adversario) {
 
-        if (this.potencia > adversarioMarca.getPotencia() || this.potencia == adversarioMarca.getPotencia() ){
 
-            if (this.cilindrada > adversarioMarca.getCilindrada() || this.cilindrada == adversarioMarca.getCilindrada()){
-
-                if (this.idade < adversarioMarca.getIdade() || this.idade == adversarioMarca.getIdade()){
-
-                    System.out.println(this.marca + "é o vencedor!!!!");
-                }
-            }
-
+        if (this.potencia > adversario.getPotencia()) {
+            return this;
         }
 
+        if (this.potencia < adversario.getPotencia()) {
 
-        return
+            return adversario;
+        }
+
+            if (this.potencia == adversario.getPotencia()) {
+
+                if (this.cilindrada > adversario.getCilindrada()) {
+
+                    return this;
+                }
+                if (this.cilindrada < adversario.getCilindrada()) {
+
+                    return adversario;
+                }
+
+                if (this.cilindrada == adversario.getCilindrada()) {
+
+                    if (this.idade < adversario.getIdade()) {
+
+                        return this;
+                    }
+
+                    if (this.idade > adversario.getIdade()) {
+
+                        return adversario;
+                    }
+                }
+
+
+            }
+
+
+
+
+    }
+
+
+    //conferir conta
+    public int litros(int distancia) {
+
+        return distancia * this.litros100Km;
+
     }
 
 
