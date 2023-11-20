@@ -15,7 +15,7 @@ public class Circulo {
 
     public double calcularArea(){
 
-        return this.pi*(this.raio*2);
+        return this.pi*(this.raio*this.raio);
     }
 
     public double calcularCircunferencia(){
