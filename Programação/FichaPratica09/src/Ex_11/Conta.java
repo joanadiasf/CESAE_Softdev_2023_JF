@@ -20,18 +20,45 @@ public class Conta {
         this.titularConta = titularConta;
     }
 
-    public void transferencia(double valor, int numeroConta2){
+    public void transferencia(double valor, Conta contaDestino){
 
-        Scanner input = new Scanner(System.in);
 
-        int contaTransferencia;
-
-        System.out.print("De que conta quer transferir? ");
-        contaTransferencia = input.nextInt();
-
-        if (contaTransferencia==this.numeroConta){
+        if (valor <=this.saldo){
 
             this.saldo-=valor;
+
+            //para o deposito ser feito
+            contaDestino.depositar(valor);
+
+            System.out.println("Transferência feita");
+        }else {
+
+            System.out.println("Saldo insuficiente.... ");
         }
+
+    }
+
+    public void depositar(double valor){
+
+        this.saldo+=valor;
+    }
+
+    public void levantar (double valor){
+
+        if (valor <= this.saldo){
+
+            this.saldo-=valor;
+
+            System.out.println("Levantamento concluido");
+        }else {
+
+            System.out.println("Saldo insuficiente...");
+        }
+
+    }
+
+    public void exibirSaldo(){
+
+        System.out.println("Saldo da conta " + this.numeroConta + " : " + this.saldo + "€.");
     }
 }
