@@ -74,10 +74,10 @@ public class Carro {
 
                 System.out.println("\nDeita um pouco de fumo... Custa a pegar... O carro está ligado! \nVrum-vrum-vrum");
                 System.out.println();
-                System.out.println("     _____     ");
-                System.out.println("   /    | \\   ");
-                System.out.println("|           ---|");
-                System.out.println("----()----()---|");
+                System.out.println("     _____         (  )");
+                System.out.println("   /    | \\      _      )");
+                System.out.println("|           ---|  _      )");
+                System.out.println("----()----()---|   (  )");
             }
 
             if (combustivel != TipoCombustivel.DIESEL) {
@@ -98,45 +98,66 @@ public class Carro {
 
 
         if (this.potencia > adversario.getPotencia()) {
+
             return this;
-        }
 
-        if (this.potencia < adversario.getPotencia()) {
+        } else {
 
-            return adversario;
-        }
+            if (this.potencia < adversario.getPotencia()) {
 
-            if (this.potencia == adversario.getPotencia()) {
+                return adversario;
+
+            } else {
 
                 if (this.cilindrada > adversario.getCilindrada()) {
 
                     return this;
-                }
-                if (this.cilindrada < adversario.getCilindrada()) {
 
-                    return adversario;
-                }
+                } else {
 
-                if (this.cilindrada == adversario.getCilindrada()) {
-
-                    if (this.idade < adversario.getIdade()) {
-
-                        return this;
-                    }
-
-                    if (this.idade > adversario.getIdade()) {
+                    if (this.cilindrada < adversario.getCilindrada()) {
 
                         return adversario;
+
+                    } else {
+
+                        if (this.idade < adversario.getIdade()) {
+
+                            return this;
+
+                        } else {
+
+                            if (this.idade > adversario.getIdade()) {
+
+                                return adversario;
+                            }
+                        }
                     }
                 }
-
 
             }
 
 
+        }
+
+
+        return null;
 
 
     }
+
+    public void exibirDetalhes(){
+
+
+    System.out.println("Marca: " + this.marca);
+    System.out.println("Modelo: " +this.modelo);
+    System.out.println("Idade: " +this.idade);
+    System.out.println("Potência: " +this.potencia + " cavalos");
+    System.out.println("Cilindrada: " +this.cilindrada);
+
+
+
+}
 
 
     //conferir conta
