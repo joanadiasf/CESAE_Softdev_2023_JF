@@ -68,8 +68,8 @@ public class Main {
         System.out.println();
 
 
-        System.out.println(lamborguini.litros(97));
-        System.out.println(ferrari.litros(97));
+        System.out.println("Gasto: " + lamborguini.litros(97));
+        System.out.println("Gasto: " +ferrari.litros(97));
 
         if (ferrari.litros(97) > lamborguini.litros(97)){
 

@@ -1,7 +1,5 @@
 package Ex_11;
 
-import java.util.Scanner;
-
 public class Conta {
 
     private int numeroConta;
