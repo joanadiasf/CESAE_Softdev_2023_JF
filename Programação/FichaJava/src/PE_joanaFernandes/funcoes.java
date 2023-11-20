@@ -248,7 +248,7 @@ public class funcoes {
             if (preco > maisCaro){
 
                //continuar a fazer a comparaçao ate ao fim do loop
-                preco=maisCaro;
+                maisCaro=preco;
 
                 //vai guardar o nome do jogo mais caro
                 nomeJogo=matriz[l][7];
@@ -526,7 +526,7 @@ public class funcoes {
                 if (categoriaJaImpressa == false) {
                     System.out.println("--- " + categoria + " ---");
 
-                    
+
                 }
 
 
