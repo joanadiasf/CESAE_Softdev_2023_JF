@@ -17,6 +17,7 @@ public class Main {
         if (zezinho.pedirEmprestimo(900)){
 
             System.out.println("Emprestimo feito com sucesso!");
+            System.out.println(patinhas.getSaldo());
 
         }else {
 
@@ -29,6 +30,7 @@ public class Main {
         if (patinhas.pedirEmprestimo(5000)){
 
             System.out.println("Emprestimo feito com sucesso!");
+            System.out.println(patinhas.getSaldo());
 
         }else {
 

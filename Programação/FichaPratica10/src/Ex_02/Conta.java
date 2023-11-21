@@ -73,7 +73,11 @@ public class Conta {
 
         if (valor <= this.margemEmprestimo && this.valorDivida==0){
 
+            this.saldo += valor;
+            this.valorDivida=valor;
+
             return true;
+
         }
 
         if (valor > this.margemEmprestimo || this.valorDivida >0){
@@ -84,5 +88,9 @@ public class Conta {
             return false;
         }
 
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 }
