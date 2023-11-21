@@ -37,6 +37,7 @@ public void listaPessoa(){
 
         if (this.agenda[i]!=null){
 
+            System.out.println();
             this.agenda[i].exibirDetalhes();
         }
     }

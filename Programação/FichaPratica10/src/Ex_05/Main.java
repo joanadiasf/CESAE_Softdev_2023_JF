@@ -12,14 +12,14 @@ public class Main {
         Pessoa obito = new Pessoa("Obito Uchiha", 25,"madara2.0@gmail.com","456");
 
 
-
+        System.out.println();
         shrek.exibirDetalhesAparencia2();
 
+        System.out.println();
         obito.exibirDetalhesAparencia1();
 
 
         agenda.addPessoa(shrek);
-        System.out.println();
         agenda.addPessoa(obito);
 
         agenda.listaPessoa();
