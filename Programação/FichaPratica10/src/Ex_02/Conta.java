@@ -5,9 +5,9 @@ public class Conta {
     private int numeroConta;
     private double saldo;
     private String titularConta;
-    private int anoAbertura;
-    private int margemEmprestimo;
-    private int valorDivida;
+    private int anoAbertura=2023;
+    private double margemEmprestimo;
+    private double valorDivida=0;
 
     /**
      * Construtor
@@ -19,6 +19,12 @@ public class Conta {
         this.numeroConta = numeroConta;
         this.saldo = saldo;
         this.titularConta = titularConta;
+
+        this.margemEmprestimo= 0.9*saldo;
+    }
+
+    public double getMargemEmprestimo() {
+        return margemEmprestimo;
     }
 
     public void transferencia(double valor, Conta contaDestino){
@@ -61,5 +67,22 @@ public class Conta {
     public void exibirSaldo(){
 
         System.out.println("Saldo da conta " + this.numeroConta + " : " + this.saldo + "€.");
+    }
+
+    public boolean pedirEmprestimo(double valor){
+
+        if (valor <= this.margemEmprestimo && this.valorDivida==0){
+
+            return true;
+        }
+
+        if (valor > this.margemEmprestimo || this.valorDivida >0){
+
+            return false;
+        }else {
+
+            return false;
+        }
+
     }
 }
