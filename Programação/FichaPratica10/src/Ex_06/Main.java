@@ -15,5 +15,12 @@ public class Main {
 
         
         vitor.competicaoAltura(freddy).exibirDetalhes();
+
+        System.out.println();
+        System.out.println("***** COMPETIÇÃO NATAÇÃO *****");
+
+
+        quim.competicaoAltura(jacinto).exibirDetalhes();
+
     }
 }
