@@ -38,7 +38,7 @@ public class MusicPlayer {
         programacao.clear();
     }
 
-    public void imprimirRelatório(){
+    public void imprimirRelatorio(){
 
         for (Musica music : this.programacao){
 
