@@ -39,7 +39,7 @@ public class Sorteio {
 
         Random random = new Random();
 
-        int variavelAleatoria = random.nextInt(0,this.participantes.size()-1);
+        int variavelAleatoria = random.nextInt(0,this.participantes.size());
 
 
 
