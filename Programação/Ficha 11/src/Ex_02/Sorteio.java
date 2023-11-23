@@ -42,7 +42,7 @@ public class Sorteio {
     }
 
 
-    public Pessoa vencedorSorteio(){
+    public void vencedorSorteio(){
 
         Random random = new Random();
 
@@ -50,7 +50,17 @@ public class Sorteio {
 
         String vencedor = "Vencedor é o participante" + variavelAleatoria;
 
-        
+        for (Pessoa vencedora : this.participantes){
+
+            if (variavelAleatoria==this.participantes.indexOf(vencedora)){
+
+                vencedora.exibirDetalhes();
+            }
+
+
+        }
+
+
     }
 
 
