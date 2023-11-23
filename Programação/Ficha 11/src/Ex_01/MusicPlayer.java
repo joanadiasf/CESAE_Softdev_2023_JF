@@ -7,6 +7,10 @@ public class MusicPlayer {
     //ArrayList <tipo de dados> nome = new ArrayList <>();
     ArrayList <Musica> programacao = new ArrayList<>();
 
+    //construtor
+    public MusicPlayer() {
+        this.programacao = new ArrayList<>();
+    }
 
     /**
      * Método para adicionar músicas no ArrayList
@@ -20,18 +24,28 @@ public class MusicPlayer {
 
     /**
      * Método para trocar uma música no ArrayList (editar elemento)
-     * @param troca - música nova
-     * @param posicao - indice do ArrayList
      */
-    public void trocaMusica(Musica troca, int posicao){
+    public void trocaMusica(int posicao1, int posicao2){
 
-        programacao.set(posicao,troca);
+        Musica musica1= this.programacao.get(posicao1);
+        Musica musica2 = this.programacao.get(posicao2);
+
+        this.programacao.set(posicao1,musica2);
+        this.programacao.set(posicao2,musica1);
     }
 
+    //remover por index
     public void removeMusica(int posicao){
 
         programacao.remove(posicao);
     }
+
+    //remover por musica
+    public void removeMusica(Musica musica){
+
+        programacao.remove(musica);
+    }
+
 
     public void removeTodasMusicas(){
 
