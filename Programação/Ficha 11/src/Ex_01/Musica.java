@@ -26,4 +26,8 @@ public class Musica {
        System.out.println( this.titulo + " | " + this.genero + " | " + this.artista + " | " + this.duracaoSegundos);
 
    }
+
+    public int getDuracaoSegundos() {
+        return duracaoSegundos;
+    }
 }

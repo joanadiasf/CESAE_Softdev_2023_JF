@@ -54,11 +54,28 @@ public class MusicPlayer {
 
     public void imprimirRelatorio(){
 
+        //ciclo for each
         for (Musica music : this.programacao){
 
             System.out.print("Música " + this.programacao.indexOf(music) + " | " );
             music.imprimirDetalhes();
         }
+
+
+    }
+
+    public void tempoMusica(Musica music){
+
+        int horas,minutos,segundos;
+
+
+        horas= music.getDuracaoSegundos()/3600;
+        minutos=(music.getDuracaoSegundos()/60) - (horas*60);
+        segundos=music.getDuracaoSegundos()-(horas*3600)-(minutos*60);
+
+        System.out.println(horas+ "h " + minutos+"m " + segundos+"s");
+
+
 
 
     }
