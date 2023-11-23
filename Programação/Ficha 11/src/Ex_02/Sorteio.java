@@ -7,11 +7,13 @@ import java.util.Random;
 
 public class Sorteio {
 
+    private double premio;
     //ArrayList <tipo de dados> nome = new ArrayList <>();
     ArrayList<Pessoa> participantes = new ArrayList<>();
 
     //construtor
-    public Sorteio() {
+    public Sorteio(double premio) {
+        this.premio=premio;
         this.participantes = new ArrayList<>();
 
     }
@@ -24,43 +26,34 @@ public class Sorteio {
      */
     public void addParticipante(Pessoa novo){
 
-        participantes.add(novo);
-    }
-
-    public boolean verificaIdade(Pessoa pessoa){
-
-
-        if (pessoa.getIdade() < 18){
-
-            return false;
+        if (novo.getIdade()>= 18){
+            this.participantes.add(novo);
         }
         else {
-
-            return true;
+            System.out.println("Recusado... Menor de idade");
         }
-
     }
 
 
-    public void vencedorSorteio(){
+    public Pessoa vencedorSorteio(){
 
         Random random = new Random();
 
-        int variavelAleatoria = random.nextInt(1,5);
-
-        String vencedor = "Vencedor é o participante" + variavelAleatoria;
-
-        for (Pessoa vencedora : this.participantes){
-
-            if (variavelAleatoria==this.participantes.indexOf(vencedora)){
-
-                vencedora.exibirDetalhes();
-            }
+        int variavelAleatoria = random.nextInt(0,this.participantes.size()-1);
 
 
+
+        return  this.participantes.get(variavelAleatoria);
+
+
+    }
+
+    public void imprimirParticipantes(){
+
+        for (Pessoa participante : this.participantes){
+
+            participante.exibirDetalhes();
         }
-
-
     }
 
 

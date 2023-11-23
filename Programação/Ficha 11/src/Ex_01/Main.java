@@ -11,5 +11,12 @@ public class Main {
         Musica kissgoat = new Musica("Kiss The Go-Goat","Rock","Ghost",184);
         Musica squarehammer= new Musica("Square Hammer", "Rock", "Ghost",200);
 
+        MusicPlayer estacaoRadio = new MusicPlayer();
+
+        estacaoRadio.addMusica(masterofpuppets);
+        estacaoRadio.addMusica(wantsingle);
+        estacaoRadio.addMusica(squarehammer);
+
+        estacaoRadio.imprimirRelatorio();
     }
 }
