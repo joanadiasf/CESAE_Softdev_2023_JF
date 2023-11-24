@@ -33,6 +33,8 @@ public class Aviao {
     }
 
     public void exibirDetalhes(){
+
+        System.out.println("\n");
         System.out.println("****" + this.modelo+ "****");
         System.out.println(this.serial);
         System.out.println(this.anoFabrico);
@@ -40,6 +42,6 @@ public class Aviao {
         System.out.println(this.autonomia);
         System.out.println(this.velocidadeMax);
         System.out.println(this.preco);
-        System.out.println("\n");
+
     }
 }

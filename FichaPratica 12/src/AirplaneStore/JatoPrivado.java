@@ -32,9 +32,11 @@ public class JatoPrivado extends Aviao{
     }
 
     public void listarInstalacoes(){
+
+        System.out.println();
         System.out.println("Instalações: ");
         System.out.println(this.instalacoes);
-        System.out.println();
+
     }
 
     @Override
