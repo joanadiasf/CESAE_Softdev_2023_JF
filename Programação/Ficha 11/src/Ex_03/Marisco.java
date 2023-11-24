@@ -19,6 +19,11 @@ public class Marisco {
     }
 
 
+    public double getPeso() {
+        return peso;
+    }
 
-
+    public double getPreco() {
+        return preco;
+    }
 }

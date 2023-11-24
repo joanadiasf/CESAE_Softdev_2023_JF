@@ -18,6 +18,11 @@ public class Peixe {
         this.preco = preco;
     }
 
+    public double getPeso() {
+        return peso;
+    }
 
-
+    public double getPreco() {
+        return preco;
+    }
 }
