@@ -33,6 +33,8 @@ public class AviaoCombate extends Aviao{
 
     public void listarArsenal(){
 
-        
+        System.out.println("Arsenal: ");
+        System.out.println(this.arsenal);
+        System.out.println();
     }
 }

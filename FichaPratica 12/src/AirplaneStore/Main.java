@@ -4,8 +4,27 @@ public class Main {
     public static void main(String[] args) {
 
         //JatoPrivado jatoRico = new JatoPrivado();
-        //instalar wc,wifi e tomadas
+        //add wc,wifi e tomadas
 
+        //sout qq coisa
         //listarInstalacoes
+
+
+
+        //AviaoCombate combatentes = new AviaoCombate();
+        //add armas (só 3)
+
+        //fazer o mesmo
+        //add mais que 3 armas
+
+        //sout qq coisa
+        //listarArsenal
+
+        //sout qq coisa
+        //listarArsenal 2 aviao
+
+
+
+
     }
 }
