@@ -19,4 +19,23 @@ public class JatoPrivado extends Aviao{
         this.categoria = categoria;
         this.instalacoes= new ArrayList<>();
     }
+
+
+    public void addInstalacao(Instalacoes instalacaoNova){
+
+        this.instalacoes.add(instalacaoNova);
+    }
+
+    public void removeInstalacoes(int index){
+
+        this.instalacoes.remove(index);
+    }
+
+    public void listarInstalacoes(){
+        System.out.println("Instalações: ");
+        System.out.println(this.instalacoes);
+        System.out.println();
+    }
+
+
 }

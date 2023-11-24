@@ -17,4 +17,22 @@ public class AviaoCombate extends Aviao{
 
         this.arsenal=new ArrayList<>();
     }
+
+    public void addArma(Armas armaNova){
+
+        if (this.arsenal.size() < 3){
+            this.arsenal.add(armaNova);
+        }
+
+    }
+
+    public void removeArma(int index){
+
+        this.arsenal.remove(index);
+    }
+
+    public void listarArsenal(){
+
+        
+    }
 }
