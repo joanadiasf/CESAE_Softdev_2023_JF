@@ -37,6 +37,16 @@ public class JatoPrivado extends Aviao{
         System.out.println();
     }
 
+    @Override
+    public void exibirDetalhes(){
+        //imprimir detalhes aviao
+        super.exibirDetalhes();
 
+        //add as que quero exibir desta classe
+        System.out.println(this.lotacao);
+        System.out.println(this.categoria);
+        this.listarInstalacoes();
+
+    }
 
 }

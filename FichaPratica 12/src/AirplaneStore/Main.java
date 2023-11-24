@@ -27,6 +27,9 @@ public class Main {
         //add avioes (jato e combatentes)
 
         //sout valor total catalogo + nomecatalogo.totalcatalogo()+€;
+        //imprimircatalogo
+
+        
 
 
 

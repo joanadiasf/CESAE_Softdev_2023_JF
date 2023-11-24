@@ -29,4 +29,12 @@ public class Catalogo {
         }
         return  valorCatalogo;
     }
+
+    public void imprimirCatalogo(){
+        System.out.println("**** CATALOGO AVIOES ****");
+        for (Aviao aviaoAtual:this.catalogoAvioes){
+
+            aviaoAtual.exibirDetalhes();
+        }
+    }
 }

@@ -31,4 +31,15 @@ public class Aviao {
         this.velocidadeMax = velocidadeMax;
         this.preco = preco;
     }
+
+    public void exibirDetalhes(){
+        System.out.println("****" + this.modelo+ "****");
+        System.out.println(this.serial);
+        System.out.println(this.anoFabrico);
+        System.out.println(this.nrmotores);
+        System.out.println(this.autonomia);
+        System.out.println(this.velocidadeMax);
+        System.out.println(this.preco);
+        System.out.println("\n");
+    }
 }

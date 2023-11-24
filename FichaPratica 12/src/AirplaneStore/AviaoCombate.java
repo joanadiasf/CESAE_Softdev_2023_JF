@@ -37,4 +37,13 @@ public class AviaoCombate extends Aviao{
         System.out.println(this.arsenal);
         System.out.println();
     }
+    @Override
+    public void exibirDetalhes(){
+
+        super.exibirDetalhes();
+        System.out.println(this.paisOrigem);
+        System.out.println(this.camuflagem);
+        this.listarArsenal();
+
+    }
 }
