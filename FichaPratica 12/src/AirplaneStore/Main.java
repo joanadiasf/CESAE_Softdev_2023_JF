@@ -23,6 +23,11 @@ public class Main {
         //sout qq coisa
         //listarArsenal 2 aviao
 
+        //Catalogo nome = new Catalogo();
+        //add avioes (jato e combatentes)
+
+        //sout valor total catalogo + nomecatalogo.totalcatalogo()+€;
+
 
 
 

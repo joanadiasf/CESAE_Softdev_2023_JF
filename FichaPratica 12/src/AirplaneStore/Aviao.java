@@ -14,6 +14,10 @@ public class Aviao {
     private double velocidadeMax;
     private double preco;
 
+    public double getPreco() {
+        return preco;
+    }
+
     public Aviao(int serial, String modelo, int anoFabrico, double peso, double comprimentoFuselagem, double asas, double cauda, int nrmotores, double autonomia, double velocidadeMax, double preco) {
         this.serial = serial;
         this.modelo = modelo;
