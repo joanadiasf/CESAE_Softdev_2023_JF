@@ -13,21 +13,21 @@ public class Camiao  extends Veiculo{
     }
 
     //void?
-    public void viagem(double distancia, double carga, Camiao camiaoViagem){
+    public void viagem(double distancia, double carga){
 
         double custo=0;
         if (carga < capacidadeCargaKg){
 
             if (distancia > 100){
 
-                custo=camiaoViagem.litros(distancia)*1.95;
+                custo=this.litros(distancia)*1.95;
             }
             else{
-                
-                custo=((camiaoViagem.getLitros100Km()+0.1)*camiaoViagem.litros(distancia)) *1.95;
+
+                custo=((this.getLitros100Km()+0.1)*this.litros(distancia)) *1.95;
             }
 
-
+            System.out.println("VIAGEM ACEITE");
         }
         else {
             System.out.println("ULTRAPASSA A CARGA MÁXIMA!!! VIAGEM RECUSADA...");

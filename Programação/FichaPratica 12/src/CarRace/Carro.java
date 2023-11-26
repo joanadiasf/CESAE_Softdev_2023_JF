@@ -16,34 +16,33 @@ public class Carro  extends Veiculo{
 
     /**
      * Método para calcular o custo da viagem
-     * @param carroAnalisado - carro a ser analisado
+     * @param viagem - numero de km
      * @return - valor da viagem
      */
-    public double calcularCusto(Carro carroAnalisado){
+    public double calcularCusto(Double viagem){
 
-        Scanner input = new Scanner(System.in);
 
-        System.out.println("Quantos km serão feitos na viagem?");
-        double viagem = input.nextDouble();
 
-        if (carroAnalisado.getCombustivel()==TipoCombustivel.GASOLINA){
 
-            return carroAnalisado.litros(viagem)*2.1;
+
+        if (this.getCombustivel()==TipoCombustivel.GASOLINA){
+
+            return this.litros(viagem)*2.1;
         }
 
-        if (carroAnalisado.getCombustivel()==TipoCombustivel.DIESEL){
+        if (this.getCombustivel()==TipoCombustivel.DIESEL){
 
-            return carroAnalisado.litros(viagem)*1.95;
+            return this.litros(viagem)*1.95;
         }
 
-        if (carroAnalisado.getCombustivel()==TipoCombustivel.GPL){
+        if (this.getCombustivel()==TipoCombustivel.GPL){
 
-            return carroAnalisado.litros(viagem)*1.15;
+            return this.litros(viagem)*1.15;
         }
 
         else {
              //ELETRICO
-            return carroAnalisado.litros(viagem)*0.12;
+            return this.litros(viagem)*0.12;
         }
 
 
