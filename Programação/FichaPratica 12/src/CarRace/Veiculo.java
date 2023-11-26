@@ -49,7 +49,9 @@ public class Veiculo {
         return combustivel;
     }
 
-
+    public double getLitros100Km() {
+        return litros100Km;
+    }
 
     /**
      * Método para ligar o carro
