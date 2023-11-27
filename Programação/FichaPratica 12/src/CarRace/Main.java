@@ -2,9 +2,11 @@ package CarRace;
 
 import CarRace.Enums.TipoCombustivel;
 
+import java.io.FileNotFoundException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         Carro fiat = new Carro("Fiat","500",4,140,10, TipoCombustivel.GASOLINA,5,4);
         Carro ford = new Carro("Ford","Fiesta",5,100,20,TipoCombustivel.GPL,15,4);
@@ -36,6 +38,7 @@ public class Main {
         System.out.println("\nviagem 2: ");
         camiaoTransporte.viagem(200,75);
 
+        vespa.imprimirMota();
 
     }
 }
