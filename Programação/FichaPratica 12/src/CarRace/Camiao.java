@@ -16,7 +16,7 @@ public class Camiao  extends Veiculo{
     public void viagem(double distancia, double carga){
 
         double custo=0;
-        if (carga < capacidadeCargaKg){
+        if (carga <= capacidadeCargaKg){
 
             if (distancia > 100){
 

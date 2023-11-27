@@ -23,8 +23,6 @@ public class Carro  extends Veiculo{
 
 
 
-
-
         if (this.getCombustivel()==TipoCombustivel.GASOLINA){
 
             return this.litros(viagem)*2.1;
