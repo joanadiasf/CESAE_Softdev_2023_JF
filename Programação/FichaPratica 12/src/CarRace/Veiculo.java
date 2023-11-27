@@ -187,7 +187,7 @@ public class Veiculo {
      */
     public double litros(double distancia) {
 
-        return distancia * this.litros100Km;
+        return (distancia * this.litros100Km)/100;
 
     }
 
