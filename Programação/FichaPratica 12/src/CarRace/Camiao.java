@@ -8,7 +8,7 @@ public class Camiao  extends Veiculo{
 
     // Construtor
     public Camiao(String marca, String modelo, int idade, int potencia, double cilindrada, TipoCombustivel combustivel, int litros100Km, double capacidadeCargaKg) {
-        super(marca, modelo, idade, potencia, cilindrada, combustivel, litros100Km);
+        super(marca, modelo, idade, potencia, cilindrada, TipoCombustivel.DIESEL, litros100Km);
         this.capacidadeCargaKg = capacidadeCargaKg;
     }
 
@@ -17,6 +17,7 @@ public class Camiao  extends Veiculo{
 
         double custo=0;
         if (carga <= capacidadeCargaKg){
+
 
             if (distancia > 100){
 
