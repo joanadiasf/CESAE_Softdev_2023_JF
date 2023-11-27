@@ -41,17 +41,30 @@ public class Pizza {
      * Método para contar as calorias totais da pizza
      * @return - calorias totais
      */
-    public double caloriasTotais(){
+//    public double caloriasTotais(){
+//
+//        double caloriasTotais=0;
+//
+//        for (Ingredientes somaCal: this.ingredientes){
+//
+//
+//
+//        }
+//
+//        return caloriasTotais;
+//    }
 
-        double caloriasTotais=0;
+    public void exibirDetalhes(){
 
-        for (Ingredientes somaCal: this.ingredientes){
+        System.out.println("***** " + this.nome + " *****");
+        System.out.println("Código: " + this.codigo);
+        System.out.println("Descrição: " + this.descricao);
+        System.out.println("Preço: " + this.preco);
+        System.out.println("Tamanho: " + this.tamanho);
 
-        //caloriasTotais+=this.getCalorias;
 
-        }
 
-        return caloriasTotais;
+
     }
 
 
