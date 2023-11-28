@@ -15,6 +15,16 @@ public class Pizza {
    private ArrayList<IngredientesPizza> ingredientes;
    final int MAX_INGREDIENTES=5;
 
+   public Pizza(String id, String nome, String descricao, double preco, Tamanho tamanho) {
+      this.id = id;
+      this.nome = nome;
+      this.descricao = descricao;
+      this.preco = preco;
+      this.tamanho = tamanho;
+      this.ingredientes=new ArrayList<>();
+   }
+
+
    //*************************************************
 
    /**
@@ -37,9 +47,8 @@ public class Pizza {
 //
 //      this.setQuantidade(quantidade);
 //   }
-//
-//   private void setQuantidade(double quantidade) {
-//   }
+
+
 
    /**
     * Método para remover ingrediente da pizza
@@ -55,7 +64,7 @@ public class Pizza {
 
    public void exibirDetalhesPizza(){
 
-      
+
    }
 
 }
