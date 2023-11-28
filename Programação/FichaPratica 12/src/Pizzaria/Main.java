@@ -23,7 +23,8 @@ public class Main {
         //criar pizza
         Pizza queijoFiambre = new Pizza("P001", "Pizza de Queijo e Fiambre", "Basicão",2.9, Tamanho.MEDIA);
 
-
+        //adicionar ingredientes à pizza
+        //nomepizza.addIngredientePizza(new "tabela intermedia"/IngredientePizza(nomeIngrediente, quantidade)
         queijoFiambre.addIngredientePizza(new IngredientePizza(basefina,200));
         queijoFiambre.addIngredientePizza(new IngredientePizza(molho,0.100));
         queijoFiambre.addIngredientePizza(new IngredientePizza(queijo,180));
@@ -32,6 +33,8 @@ public class Main {
         //criar pizza
         Pizza pizzaHavai = new Pizza("P002", "Pizza Havaina", "Ananas na pizza é bom", 15.5, Tamanho.GRANDE);
 
+        //adicionar ingredientes à pizza
+        //nomepizza.addIngredientePizza(new "tabela intermedia"/IngredientePizza(nomeIngrediente, quantidade);
         pizzaHavai.addIngredientePizza(new IngredientePizza(basefina,235));
         pizzaHavai.addIngredientePizza(new IngredientePizza(molho,0.180));
         pizzaHavai.addIngredientePizza(new IngredientePizza(queijo,200));

@@ -21,6 +21,7 @@ public class Pizza {
     this.descricao = descricao;
     this.preco = preco;
     this.tamanho = tamanho;
+    this.composicao = new ArrayList<>();
 
   }
 
@@ -40,11 +41,11 @@ public class Pizza {
   }
 
   //mudar quantidade
-  public void mudarQuantidadeIngredientePizza(Ingrediente ingrediente, double quantidadeNova){
+  public void mudarQuantidadeIngredientePizza(Ingrediente ingredienteMuda, double quantidadeNova){
 
     for (IngredientePizza ingredientePizzaAtual : this.composicao){
 
-      if (ingredientePizzaAtual.getIngrediente()==ingrediente){
+      if (ingredientePizzaAtual.getIngrediente()==ingredienteMuda){
 
         ingredientePizzaAtual.setQuantidade(quantidadeNova);
       }
@@ -77,7 +78,7 @@ public class Pizza {
       double quantidadeIngredienteAtual = ingredientePizzaAtual.getQuantidade();
       double kcalQuantidadeIngredienteAtual = ingredientePizzaAtual.getIngrediente().getKcalUnidadeMedida();
 
-      double kcalIngredienteAtual=  quantidadeIngredienteAtual*kcalQuantidadeIngredienteAtual;
+      double kcalIngredienteAtual = quantidadeIngredienteAtual*kcalQuantidadeIngredienteAtual;
 
       kcalTotais+=kcalIngredienteAtual;
     }
