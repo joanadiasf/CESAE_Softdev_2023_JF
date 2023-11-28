@@ -7,65 +7,55 @@ import java.util.ArrayList;
 
 public class Pizza {
 
-    private String codigo;
-    private String nome;
-    private String descricao;
-    private double preco;
-    private Tamanho tamanho;
-    private ArrayList <Ingredientes> ingredientes;
+   private String id;
+   private String nome;
+   private String descricao;
+   private double preco;
+   private Tamanho tamanho;
+   private ArrayList<IngredientesPizza> ingredientes;
+   final int MAX_INGREDIENTES=5;
 
+   //*************************************************
 
-    /**
-     * Método para adicionar até 5 ingredientes
-     * @param ingredienteNovo - ingrediente novo
-     */
-    public void addIngredientes(Ingredientes ingredienteNovo){
+   /**
+    * Método para adicionar novo ingrediente (Max. 5)
+    * @param novoIngrediente - ingrediente a ser adicionado
+    */
+   public void addIngredientes(IngredientesPizza novoIngrediente){
 
+      for (int i=0; i < MAX_INGREDIENTES;i++){
 
-        for (int i=0; i < 5; i++){
+         this.ingredientes.add(novoIngrediente);
+      }
+   }
 
-            this.ingredientes.add(ingredienteNovo);
-        }
-    }
-
-    /**
-     * Método para remover ingredientes pelo id do elemento
-     * @param index - id do elemento
-     */
-    public void removeIngredientes(int index){
-
-        this.ingredientes.remove(index);
-    }
-
-    /**
-     * Método para contar as calorias totais da pizza
-     * @return - calorias totais
-     */
-//    public double caloriasTotais(){
+//   /**
+//    * Método para alterar a quantidade de um ingrediente
+//    * @param quantidade - nova quantidade
+//    */
+//   public void alterarQuantidadeIngrediente(double quantidade){
 //
-//        double caloriasTotais=0;
+//      this.setQuantidade(quantidade);
+//   }
 //
-//        for (Ingredientes somaCal: this.ingredientes){
-//
-//
-//
-//        }
-//
-//        return caloriasTotais;
-//    }
+//   private void setQuantidade(double quantidade) {
+//   }
 
-    public void exibirDetalhes(){
+   /**
+    * Método para remover ingrediente da pizza
+    * @param id - id pizza
+    */
+   public void removeIngrediente(String id){
 
-        System.out.println("***** " + this.nome + " *****");
-        System.out.println("Código: " + this.codigo);
-        System.out.println("Descrição: " + this.descricao);
-        System.out.println("Preço: " + this.preco);
-        System.out.println("Tamanho: " + this.tamanho);
+      this.ingredientes.remove(id);
+   }
+
+   //calorias pizza
 
 
+   public void exibirDetalhesPizza(){
 
-
-    }
-
+      
+   }
 
 }
