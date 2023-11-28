@@ -52,7 +52,7 @@ public class Pizza {
     }
 
   }
-  
+
   //remover ingrediente atraves do codigo dele
   public void removeIngrediente(String codigoIngrediente){
 
