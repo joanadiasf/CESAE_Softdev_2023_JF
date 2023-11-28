@@ -31,7 +31,7 @@ public class Pizza {
     if (this.composicao.size() <5){
 
       this.composicao.add(ingredientePizzaNovo);
-      System.out.println("*Adicionado!*");
+
 
     }else {
 
@@ -87,5 +87,27 @@ public class Pizza {
 
   }
 
+
+  public void exibirDetalhes(){
+
+
+    System.out.println("***** " + this.nome + " *****");
+    System.out.println("Código: " + this.codigo);
+    System.out.println("Descrição: " + this.descricao);
+    System.out.println("Preço: " + this.preco);
+    System.out.println("Tamanho: " + this.tamanho);
+
+    int contador=1;
+
+    for (IngredientePizza atual : this.composicao){
+
+      System.out.print("Ingrediente " + contador + "[ " + atual.getIngrediente().getCodigo());
+      System.out.print(" | " + atual.getIngrediente().getNome() + " | " + atual.getIngrediente().getMedidaIngrediente());
+      System.out.print(" | " + atual.getIngrediente().getKcalUnidadeMedida() + " ] " + atual.getQuantidade() + " " + atual.getIngrediente().getMedidaIngrediente() + "\n");
+
+      contador++;
+    }
+
+  }
 
 }

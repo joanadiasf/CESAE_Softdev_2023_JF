@@ -55,6 +55,14 @@ public class Main {
 
         System.out.println("Kcal pizza Portugal" + portugal.calcularKcal()); //tem que dar 1720.0
 
+        portugal.exibirDetalhes();
+        System.out.println();
+
+        pizzaHavai.exibirDetalhes();
+        System.out.println();
+
+        queijoFiambre.exibirDetalhes();
+
     }
 
 }

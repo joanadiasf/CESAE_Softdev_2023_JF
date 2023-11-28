@@ -27,6 +27,8 @@ public class IngredientePizza {
     public void setIngrediente(Ingrediente ingrediente) {
         this.ingrediente = ingrediente;
     }
+
+
 }
 
 //é tipo tabela intermedia da base de dados
