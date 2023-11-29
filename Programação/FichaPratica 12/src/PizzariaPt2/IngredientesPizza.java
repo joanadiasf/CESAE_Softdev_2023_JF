@@ -1,14 +1,14 @@
 package PizzariaPt2;
 
-import Pizzaria.Ingrediente;
+import PizzariaPt2.Ingredientes;
 
 public class IngredientesPizza {
 
-    private Ingrediente ingrediente;
+    private Ingredientes ingrediente;
     private double quantidade;
 
     //construtor
-    public IngredientesPizza(Ingrediente ingrediente, double quantidade) {
+    public IngredientesPizza(Ingredientes ingrediente, double quantidade) {
         this.ingrediente = ingrediente;
         this.quantidade = quantidade;
     }
@@ -22,11 +22,11 @@ public class IngredientesPizza {
         this.quantidade = quantidade;
     }
 
-    public Ingrediente getIngrediente() {
+    public Ingredientes getIngrediente() {
         return ingrediente;
     }
 
-    public void setIngrediente(Ingrediente ingrediente) {
+    public void setIngredientes(Ingredientes ingrediente) {
         this.ingrediente = ingrediente;
     }
 

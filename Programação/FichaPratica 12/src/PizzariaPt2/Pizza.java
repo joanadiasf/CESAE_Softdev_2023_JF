@@ -1,7 +1,7 @@
 package PizzariaPt2;
 
-import Pizzaria.Enums.Tamanho;
-import Pizzaria.Ingrediente;
+import PizzariaPt2.Enums.Tamanho;
+import PizzariaPt2.Ingredientes;
 import PizzariaPt2.Ingrediente_da_Pizza.*;
 
 import java.util.ArrayList;
@@ -93,7 +93,7 @@ public class Pizza {
         }
 
         //mudar quantidade
-        public void mudarQuantidadeIngredientePizza(Ingrediente ingredienteMuda, double quantidadeNova){
+        public void mudarQuantidadeIngredientePizza(Ingredientes ingredienteMuda, double quantidadeNova){
 
             for (IngredientesPizza ingredientePizzaAtual : this.composicao){
 
@@ -114,7 +114,7 @@ public class Pizza {
                 if (ingredientePizzaAtual.getIngrediente().getCodigo().equals(codigoIngrediente)){
 
                     if (!(ingredientePizzaAtual.getIngrediente() instanceof Base)){
-                        
+
                         this.composicao.remove(ingredientePizzaAtual);
                         return;
                     }
@@ -132,7 +132,7 @@ public class Pizza {
             for (IngredientesPizza ingredientePizzaAtual : this.composicao){
 
                 double quantidadeIngredienteAtual = ingredientePizzaAtual.getQuantidade();
-                double kcalQuantidadeIngredienteAtual = ingredientePizzaAtual.getIngrediente().getKcalUnidadeMedida();
+                double kcalQuantidadeIngredienteAtual = ingredientePizzaAtual.getIngrediente().getKcal();
 
                 double kcalIngredienteAtual = quantidadeIngredienteAtual*kcalQuantidadeIngredienteAtual;
 
@@ -159,7 +159,7 @@ public class Pizza {
 
                 System.out.print("Ingrediente " + contador + "[ " + atual.getIngrediente().getCodigo());
                 System.out.print(" | " + atual.getIngrediente().getNome() + " | " + atual.getIngrediente().getMedidaIngrediente());
-                System.out.print(" | " + atual.getIngrediente().getKcalUnidadeMedida() + " ] " + atual.getQuantidade() + " " + atual.getIngrediente().getMedidaIngrediente() + "\n");
+                System.out.print(" | " + atual.getIngrediente().getKcal() + " ] " + atual.getQuantidade() + " " + atual.getIngrediente().getMedidaIngrediente() + "\n");
 
                 contador++;
             }

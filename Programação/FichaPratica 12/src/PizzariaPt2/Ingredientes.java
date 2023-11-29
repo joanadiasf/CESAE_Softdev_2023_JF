@@ -15,4 +15,20 @@ public class Ingredientes {
         this.medidaIngrediente = medidaIngrediente;
         this.kcal = kcal;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public UnidadeMedida getMedidaIngrediente() {
+        return medidaIngrediente;
+    }
+
+    public double getKcal() {
+        return kcal;
+    }
 }
