@@ -2,8 +2,7 @@ package PizzariaPt2;
 
 import Pizzaria.Enums.Tamanho;
 import Pizzaria.Ingrediente;
-import Pizzaria.IngredientePizza;
-import PizzariaPt2.Enums.TipoPizza;
+import PizzariaPt2.Ingrediente_da_Pizza.*;
 
 import java.util.ArrayList;
 
@@ -15,7 +14,6 @@ public class Pizza {
         private double preco;
         private Tamanho tamanho;
 
-        private TipoPizza tipoPizza;
         private ArrayList<IngredientesPizza> composicao;
 
         //construtor
@@ -29,18 +27,68 @@ public class Pizza {
 
         }
 
-        //add ingrediente ate 5
+
+
+        //add ingrediente
         public void addIngredientePizza(IngredientesPizza ingredientePizzaNovo){
 
-            if (this.composicao.size() <5){
+           if (this.composicao.size() == 0 && ingredientePizzaNovo.getIngrediente() instanceof Base){
 
-                this.composicao.add(ingredientePizzaNovo);
+               this.composicao.add(ingredientePizzaNovo);
+           }
 
+           if (this.composicao.size() > 0 && this.composicao.size() >5 && ingredientePizzaNovo.getIngrediente() instanceof Topping){
 
-            }else {
+               this.composicao.add(ingredientePizzaNovo);
+           }
 
-                System.out.println("/A pizza já está cheia.../");
+        }
+
+        //tipo pizza
+        public String tipoPizza(){
+
+            int contadorCarne=0, contadorQueijo=0, contadorMar=0,contadorVegetal=0;
+            int quantidadeTopping = this.composicao.size()-1;
+
+            for (IngredientesPizza atual: this.composicao){
+
+                if (atual.getIngrediente() instanceof Queijo){
+                    contadorQueijo++;
+                }
+
+                if (atual.getIngrediente() instanceof Carne){
+                    contadorCarne++;
+                }
+
+                if (atual.getIngrediente() instanceof FrutoMar){
+                    contadorMar++;
+                }
+
+                if (atual.getIngrediente() instanceof Vegetal){
+                    contadorVegetal++;
+                }
             }
+
+            if (contadorCarne ==quantidadeTopping){
+
+                return "Carne";
+            }
+            else if (contadorVegetal == quantidadeTopping){
+
+                return "Vegetariana";
+            }
+            else if (contadorMar == quantidadeTopping){
+
+                return "Mar";
+            }
+            else if (contadorCarne==1 && contadorVegetal==1 && contadorMar==1 && contadorQueijo==1) {
+
+               return "Completa";
+            }
+            else {
+                return "Mista";
+            }
+
 
         }
 
@@ -65,8 +113,13 @@ public class Pizza {
 
                 if (ingredientePizzaAtual.getIngrediente().getCodigo().equals(codigoIngrediente)){
 
-                    this.composicao.remove(ingredientePizzaAtual);
-                    return;
+                    if (!(ingredientePizzaAtual.getIngrediente() instanceof Base)){
+
+
+                        this.composicao.remove(ingredientePizzaAtual);
+                        return;
+                    }
+
                 }
 
             }

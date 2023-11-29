@@ -1,9 +1,10 @@
-package PizzariaPt2;
+package PizzariaPt2.Ingrediente_da_Pizza;
 
 import Pizzaria.Enums.UnidadeMedida;
 import PizzariaPt2.Enums.Origem;
+import PizzariaPt2.Ingredientes;
 
-public class Topping extends Ingredientes{
+public class Topping extends Ingredientes {
 
     private Origem origemIngrediente;
 
