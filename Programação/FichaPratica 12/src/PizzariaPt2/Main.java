@@ -44,7 +44,7 @@ public class Main {
         System.out.println("Kcal Pizza Havai: " + pizzaHavai.calcularKcal());
         pizzaHavai.exibirDetalhes();
 
-
+        System.out.println("Pizza do tipo: " + pizzaHavai.tipoPizza());
 
 
 

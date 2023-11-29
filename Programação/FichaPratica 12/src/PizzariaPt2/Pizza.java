@@ -28,15 +28,15 @@ public class Pizza {
         }
 
 
-
         //add ingrediente
         public void addIngredientePizza(IngredientesPizza ingredientePizzaNovo){
 
+            //add base
            if (this.composicao.size() == 0 && ingredientePizzaNovo.getIngrediente() instanceof Base){
 
                this.composicao.add(ingredientePizzaNovo);
            }
-
+            //add topping
            if (this.composicao.size() > 0 && this.composicao.size() >5 && ingredientePizzaNovo.getIngrediente() instanceof Topping){
 
                this.composicao.add(ingredientePizzaNovo);
@@ -48,6 +48,8 @@ public class Pizza {
         public String tipoPizza(){
 
             int contadorCarne=0, contadorQueijo=0, contadorMar=0,contadorVegetal=0;
+
+            //para a base não contar como topping
             int quantidadeTopping = this.composicao.size()-1;
 
             for (IngredientesPizza atual: this.composicao){
