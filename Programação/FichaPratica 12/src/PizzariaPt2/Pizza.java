@@ -114,8 +114,7 @@ public class Pizza {
                 if (ingredientePizzaAtual.getIngrediente().getCodigo().equals(codigoIngrediente)){
 
                     if (!(ingredientePizzaAtual.getIngrediente() instanceof Base)){
-
-
+                        
                         this.composicao.remove(ingredientePizzaAtual);
                         return;
                     }
