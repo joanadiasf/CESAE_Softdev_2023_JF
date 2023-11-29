@@ -3,6 +3,7 @@ package PizzariaPt2;
 import Pizzaria.Enums.Tamanho;
 import Pizzaria.Ingrediente;
 import Pizzaria.IngredientePizza;
+import PizzariaPt2.Enums.TipoPizza;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ public class Pizza {
         private double preco;
         private Tamanho tamanho;
 
+        private TipoPizza tipoPizza;
         private ArrayList<IngredientesPizza> composicao;
 
         //construtor
@@ -111,4 +113,6 @@ public class Pizza {
             }
 
         }
+
+
 }
