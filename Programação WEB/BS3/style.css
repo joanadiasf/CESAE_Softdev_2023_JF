@@ -262,4 +262,54 @@ footer img{
     text-shadow: 0px 2px #00321f;
 }
 
+table{
+
+    border: 1px solid rgb(132,174,236);
+    padding: 5px;
+    border-radius: 11px;
+    margin-top: 15px;
+
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+tr{
+
+    display: table-row;
+}
+
+
+th{
+
+    background-color: #03A007;
+    text-align: center;
+    border-color: #007448;
+    box-shadow: 0px 1px rgba(0,0,0,0.3);
+    color: white;
+    text-shadow: 0px 2px #00321f;
+
+    border: 2px;
+    
+}
+
+td {
+    border: 2px solid #8DCAF0;
+    padding: 1px;
+    background-color: rgba(255,255,255,0.58);
+    
+}
+
+.monstro{
+
+    margin:2px 5px 1px 2px;
+    display:block;
+    white-space:nowrap;
+}
+
+
+
+    
 
