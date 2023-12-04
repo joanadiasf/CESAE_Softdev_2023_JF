@@ -18,6 +18,6 @@ public class Retangulo extends FiguraGeometrica{
 
     @Override
     public double perimetro() {
-        return 2*this.comprimento+2*this.largura;
+        return (2*this.comprimento)+(2*this.largura);
     }
 }
