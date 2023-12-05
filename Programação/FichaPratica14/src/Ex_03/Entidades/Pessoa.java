@@ -1,4 +1,4 @@
-package Ex_03;
+package Ex_03.Entidades;
 
 public abstract class Pessoa {
 

@@ -1,4 +1,4 @@
-package Ex_03;
+package Ex_03.Entidades;
 
 import Ex_03.Enums.AreaFormacao;
 
