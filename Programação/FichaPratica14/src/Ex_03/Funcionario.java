@@ -2,7 +2,7 @@ package Ex_03;
 
 import Ex_03.Enums.Funcao;
 
-import java.util.ArrayList;
+
 
 public class Funcionario extends Pessoa{
 

@@ -2,7 +2,7 @@ package Ex_03;
 
 import Ex_03.Enums.Curso;
 
-import java.util.ArrayList;
+
 
 public class Aluno extends Pessoa{
 
@@ -10,10 +10,10 @@ public class Aluno extends Pessoa{
     private String[][] pauta;
     private Curso curso;
 
-    public Aluno(String nome, int anoNascimento, String email, String telemovel, double mediaNotas, String[][] pauta) {
+    public Aluno(String nome, int anoNascimento, String email, String telemovel, double mediaNotas, String[][] pauta, Curso curso) {
         super(nome, anoNascimento, email, telemovel);
         this.mediaNotas = mediaNotas;
-        this.pauta = pauta;
+        this.pauta = new String[][2]; //todo: falta nr de disciplinas para controlar nr de linhas da pauta
         this.curso = curso;
     }
 
@@ -26,4 +26,5 @@ public class Aluno extends Pessoa{
     public void imprimirHorario() {
 
     }
+    
 }

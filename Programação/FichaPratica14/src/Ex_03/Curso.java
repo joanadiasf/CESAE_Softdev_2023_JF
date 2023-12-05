@@ -14,6 +14,6 @@ public class Curso {
         this.disciplinaCurso = new ArrayList<>();
     }
 
-    
+
 
 }
