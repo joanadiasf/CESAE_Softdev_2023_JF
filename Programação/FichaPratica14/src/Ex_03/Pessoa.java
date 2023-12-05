@@ -34,7 +34,7 @@ public abstract class Pessoa {
         System.out.println("Ano Nascimento: " + this.anoNascimento);
         System.out.println("Email: " + this.email);
         System.out.println("Telemóvel: " + this.telemovel);
-        
+
     }
 
 }
