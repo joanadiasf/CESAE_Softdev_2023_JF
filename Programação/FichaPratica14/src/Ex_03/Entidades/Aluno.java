@@ -13,7 +13,7 @@ public class Aluno extends Pessoa{
     public Aluno(String nome, int anoNascimento, String email, String telemovel, double mediaNotas, String[][] pauta, Curso curso) {
         super(nome, anoNascimento, email, telemovel);
         this.mediaNotas = mediaNotas;
-        this.pauta = new String[][2]; //todo: falta nr de disciplinas para controlar nr de linhas da pauta
+        this.pauta = new String[10][2]; //todo: falta nr de disciplinas para controlar nr de linhas da pauta
         this.curso = curso;
     }
 
