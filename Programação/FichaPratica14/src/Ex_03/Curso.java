@@ -46,7 +46,7 @@ public class Curso {
 
             ArrayList<Professor> professoresCompetentes = new ArrayList<>();
 
-            for (Professor professorAtual : escola.getListaProfessores()){
+            for (Professor professorAtual : escola.getListaProf()){
 
                 for (AreaFormacao areaFormacaoAtual : professorAtual.getAreaFormacao()){
 
@@ -79,8 +79,10 @@ public class Curso {
 
         for (DisciplinaCurso disciplinaCursoAtual : this.disciplinaCurso){
 
-            duracaoTotal+= duracaoTotal.getDisciplina().getDuracao
+            duracaoTotal+= disciplinaCursoAtual.getDisciplina().getDuracaoHoras();
         }
+
+        return duracaoTotal;
     }
 
 }

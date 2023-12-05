@@ -31,6 +31,46 @@ public class Escola {
         this.listaStaff=new ArrayList<>();
     }
 
+    public ArrayList<Professor> getListaProf() {
+        return listaProf;
+    }
+
+    public void setListaProf(ArrayList<Professor> listaProf) {
+        this.listaProf = listaProf;
+    }
+
+    public ArrayList<Disciplina> getListaDisciplinas() {
+        return listaDisciplinas;
+    }
+
+    public void setListaDisciplinas(ArrayList<Disciplina> listaDisciplinas) {
+        this.listaDisciplinas = listaDisciplinas;
+    }
+
+    public ArrayList<Curso> getListaCurso() {
+        return listaCurso;
+    }
+
+    public void setListaCurso(ArrayList<Curso> listaCurso) {
+        this.listaCurso = listaCurso;
+    }
+
+    public ArrayList<Aluno> getListaAlunos() {
+        return listaAlunos;
+    }
+
+    public void setListaAlunos(ArrayList<Aluno> listaAlunos) {
+        this.listaAlunos = listaAlunos;
+    }
+
+    public ArrayList<Funcionario> getListaStaff() {
+        return listaStaff;
+    }
+
+    public void setListaStaff(ArrayList<Funcionario> listaStaff) {
+        this.listaStaff = listaStaff;
+    }
+
     public void addProf(Professor profNovo){
 
         this.listaProf.add(profNovo);

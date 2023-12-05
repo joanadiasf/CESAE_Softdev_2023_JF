@@ -37,4 +37,35 @@ public abstract class Pessoa {
 
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getAnoNascimento() {
+        return anoNascimento;
+    }
+
+    public void setAnoNascimento(int anoNascimento) {
+        this.anoNascimento = anoNascimento;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelemovel() {
+        return telemovel;
+    }
+
+    public void setTelemovel(String telemovel) {
+        this.telemovel = telemovel;
+    }
 }
