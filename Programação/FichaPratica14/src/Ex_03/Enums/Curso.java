@@ -1,0 +1,6 @@
+package Ex_03.Enums;
+
+public enum Curso {
+
+    MECANICA,ELETRONICA,INFORMATICA,SOFTWARE_DEVELOPER
+}

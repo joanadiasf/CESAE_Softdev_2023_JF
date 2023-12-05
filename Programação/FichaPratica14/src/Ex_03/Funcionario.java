@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Funcionario extends Pessoa{
 
-    private ArrayList<Funcao> funcao;
+    private Funcao funcao;
 
     /**
      * Construtor
@@ -17,12 +17,12 @@ public class Funcionario extends Pessoa{
      */
     public Funcionario(String nome, int anoNascimento, String email, String telemovel) {
         super(nome, anoNascimento, email, telemovel);
-        this.funcao = new ArrayList<>();
+        this.funcao = funcao;
     }
 
     @Override
     public void obterFuncao() {
-        
+
     }
 
     @Override
