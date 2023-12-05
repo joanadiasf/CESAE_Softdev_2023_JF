@@ -10,6 +10,9 @@ public class Curso {
     private boolean longaDuracao;
 
     public Curso() {
+
+        this.disciplinaCurso=new ArrayList<>();
+
         Scanner input = new Scanner(System.in);
 
 
