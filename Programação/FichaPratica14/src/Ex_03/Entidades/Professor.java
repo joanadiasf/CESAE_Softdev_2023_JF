@@ -33,5 +33,18 @@ public class Professor extends Pessoa{
 
     }
 
+    public int getNivelAcademico() {
+        return nivelAcademico;
+    }
 
+    public ArrayList<AreaFormacao> getAreaFormacao() {
+        return areaFormacao;
+    }
+
+    public void exibirDetalhesMinimos(){
+
+        System.out.println(super.getNome() + "\t" + "Nivel academico" + this.nivelAcademico);
+
+
+    }
 }

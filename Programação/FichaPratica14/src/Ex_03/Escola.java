@@ -4,6 +4,7 @@ import Ex_03.Entidades.Aluno;
 import Ex_03.Entidades.Funcionario;
 import Ex_03.Entidades.Professor;
 import Ex_03.*;
+import Ex_03.Enums.AreaFormacao;
 
 import java.util.ArrayList;
 
@@ -55,13 +56,24 @@ public class Escola {
     public void imprimirDisciplinas(){
 
         int contador=1;
-
+        System.out.println("*** DISCIPLINAS ***");
         for (Disciplina disciplinaAtual : this.listaDisciplinas){
 
             System.out.println(contador++ + ": " );
             disciplinaAtual.exibirDetalhes();
 
-            System.out.println();
+
+        }System.out.println();
+    }
+
+    public void imprimirProfCompetentes(AreaFormacao areaFormacao){
+
+        int contador=1;
+        System.out.println("*** PROFESSORES ***");
+
+        for (Professor professorAtual : this.listaProf){
+
+
         }
     }
 }
