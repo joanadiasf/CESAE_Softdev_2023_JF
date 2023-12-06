@@ -34,7 +34,7 @@ public class UserSessionManager {
         return sessionToken;
     }
 
-    public void setLastAccess(String lastAccess) {
+    public void setLastAccess() {
         this.lastAccess = String.valueOf(LocalDateTime.now());
     }
 }

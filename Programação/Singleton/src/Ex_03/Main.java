@@ -18,7 +18,7 @@ public class Main {
         sleep(5800);
 
         //atualizar o ultimo acesso
-        sessionManager.getLastAccess();
+        sessionManager.setLastAccess();
 
 
         System.out.println("Token Acesso: " + sessionManager.getSessionToken());
