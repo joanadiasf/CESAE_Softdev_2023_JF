@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 public class Logger {
 
-    private final String nomeFicheiro;
+    private  String nomeFicheiro;
 
     private static Logger instance;
 
