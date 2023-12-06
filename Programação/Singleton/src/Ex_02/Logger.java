@@ -1,13 +1,13 @@
 package Ex_02;
 
-import Ex_01.DatabaseConnection;
-
-import java.io.*;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Logger {
 
-    private String nomeFicheiro;
+    private final String nomeFicheiro;
 
     private static Logger instance;
 
