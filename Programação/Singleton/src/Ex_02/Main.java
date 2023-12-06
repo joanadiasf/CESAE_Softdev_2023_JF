@@ -9,14 +9,17 @@ public class Main {
         Logger logger = Logger.getInstance("application_log.txt");
 
         logger.log("Mensagem de log 1");
-        logger.log("\nMensagem de log 2");
-        logger.log("\nMensagem de log 3");
-        logger.log("\nMensagem de log 4");
-        logger.log("\nMensagem de log 5");
+        logger.log("Mensagem de log 2");
+        logger.log("Mensagem de log 3");
+        logger.log("Mensagem de log 4");
+        logger.log("Mensagem de log 5");
 
-        logger.limparConteudoLog();
 
-        logger.log("Tentativa Reset");
+        /* logger.limparConteudoLog();
+
+        logger.log("Tentativa Reset"); */
+
+
 
     }
 }
