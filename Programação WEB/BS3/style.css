@@ -318,5 +318,17 @@ span {
 }
 
 
+.mb-3 {
+
+    padding: 15px;
+}
+
+.form-label {
+
+   
+    color: white;
     
+
+    border: 2px;
+}
 
