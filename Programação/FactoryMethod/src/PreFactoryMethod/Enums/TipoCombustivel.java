@@ -1,4 +1,4 @@
-package Enums;
+package PreFactoryMethod.Enums;
 
 public enum TipoCombustivel {
 

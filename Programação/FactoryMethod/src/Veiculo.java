@@ -1,4 +1,4 @@
-import Enums.TipoCombustivel;
+import PreFactoryMethod.Enums.TipoCombustivel;
 
 public class Veiculo {
 
