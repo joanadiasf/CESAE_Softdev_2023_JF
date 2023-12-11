@@ -3,8 +3,6 @@ import PreFactoryMethod.Enums.TipoCombustivel;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Lib.Biblioteca.imprimirFicheiro;
-
 public class Main {
 
     /**
@@ -17,9 +15,9 @@ public class Main {
 
 
         //declarar variaveis
-        String marca, modelo;
-        int idade, potencia,litros100Km;
-        double cilindrada;
+        String marca, modelo, tipoVeiculo;
+        int idade, potencia,litros100Km,nrPassageiros;
+        double cilindrada,cargaCamiao;
         TipoCombustivel combustivel;
         String combustivelString;
 
@@ -27,6 +25,9 @@ public class Main {
         System.out.println();
         System.out.println("* * * * *  N O V O   V E Í C U L O  * * * * *");
         System.out.println();
+
+        System.out.println("Qual o tipo de veículo? -----------");
+        tipoVeiculo=input.next();
 
 
         System.out.println("* *  M A R C A  * *");
@@ -63,7 +64,34 @@ public class Main {
 
         TipoCombustivel.valueOf(combustivelString);
 
-        return new Veiculo(marca,modelo,idade,potencia,cilindrada,TipoCombustivel.valueOf(combustivelString),litros100Km);
+
+        if (tipoVeiculo.equals("carro")){
+
+            System.out.println("* *  N Ú M E R O   D E  P A S S A G E I R O S  * *");
+            nrPassageiros= input.nextInt();
+
+            return new Carro(marca,modelo,idade,potencia,cilindrada,TipoCombustivel.valueOf(combustivelString),litros100Km,nrPassageiros);
+        }
+
+        if (tipoVeiculo.equals("camiao")){
+
+            System.out.println("* * Q U A L   A   C A R G A   M Á X I M A  * *");
+            cargaCamiao= input.nextDouble();
+
+            return new Camiao(marca,modelo,idade,potencia,cilindrada,TipoCombustivel.valueOf(combustivelString),litros100Km,cargaCamiao);
+        }
+
+        if (tipoVeiculo.equals("mota")){
+
+            return new Veiculo(marca,modelo,idade,potencia,cilindrada,TipoCombustivel.valueOf(combustivelString),litros100Km);
+
+        }
+
+        else {
+
+            return new Veiculo(marca,modelo,idade,potencia,cilindrada,TipoCombustivel.valueOf(combustivelString),litros100Km);
+        }
+
     }
 
 
@@ -162,21 +190,40 @@ public class Main {
 
             case 6:
 
-                System.out.println("* * * * *  C U S T O   V I A G E M   C A M I Ã O  * * * * *");
-                System.out.print("\nA viagem é de quantos km? - - - - - - -");
-                double kmCamiao = input.nextDouble();
+                if (veiculoUser instanceof Camiao){
 
-                System.out.print("\nQual a carga da viagem? - - - - - - -");
-                double cargaViagem = input.nextDouble();
+                    System.out.println("* * * * *  C U S T O   V I A G E M   C A M I Ã O  * * * * *");
+                    System.out.print("\nA viagem é de quantos km? - - - - - - -");
+                    double kmCamiao = input.nextDouble();
 
-                camiao1.viagem(kmCamiao,cargaViagem);
+                    System.out.print("\nQual a carga da viagem? - - - - - - -");
+                    double cargaViagem = input.nextDouble();
+
+                    ((Camiao) veiculoUser).viagem(kmCamiao,cargaViagem);
+
+                }
+                else {
+
+                    System.out.println("O seu veículo não é um camião...");
+                }
+
+
 
             break;
 
             case 7:
 
-                System.out.println("* * * * *  M O T A  * * * * * ");
-                mota1.imprimirMota();
+                if (veiculoUser instanceof Mota){
+
+                    System.out.println("* * * * *  M O T A  * * * * * ");
+                    mota1.imprimirMota();
+                }
+
+                else {
+
+                    System.out.println("O seu veículo não é uma mota...");
+                }
+
 
                 break;
 
