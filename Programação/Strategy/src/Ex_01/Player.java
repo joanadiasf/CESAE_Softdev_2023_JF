@@ -14,4 +14,8 @@ public class Player {
 
         System.out.println("Attacking...");
     }
+
+    public void setAttackStrategy(AttackStrategy attackStrategy){
+        this.attackStrategy=attackStrategy;
+    }
 }
