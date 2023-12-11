@@ -19,7 +19,7 @@ public class ProductFactory {
             return new Roupa(nome, preco);
 
             default:
-                throw new IllegalArgumentException("Tipo de Produto inválido");
+                throw new IllegalArgumentException("Tipo de Produto Inválido");
         }
     }
 }

@@ -1,5 +1,9 @@
 package Ex_02;
 
+import java.io.FileNotFoundException;
+
+import static Lib.Biblioteca.imprimirFicheiro;
+
 public class TacoFrango extends Produto{
 
     public TacoFrango(String nome) {
@@ -13,9 +17,10 @@ public class TacoFrango extends Produto{
     }
 
     @Override
-    public void bake() {
+    public void bake() throws FileNotFoundException {
         System.out.println("A cozinhar Taco de Frango: " + super.getNome());
 
+        imprimirFicheiro("src/TextFiles/taco.txt");
     }
 
     @Override

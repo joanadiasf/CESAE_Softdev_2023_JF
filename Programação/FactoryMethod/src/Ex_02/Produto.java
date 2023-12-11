@@ -1,5 +1,7 @@
 package Ex_02;
 
+import java.io.FileNotFoundException;
+
 public abstract class Produto {
 
     private String nome;
@@ -13,6 +15,8 @@ public abstract class Produto {
     }
 
     public abstract void prepare();
-    public abstract void bake();
+    public abstract void bake() throws FileNotFoundException;
     public abstract void box();
+
+
 }

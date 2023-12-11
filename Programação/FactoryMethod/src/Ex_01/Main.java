@@ -8,7 +8,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Tipo de Produto (Livro,Eletronico,Roupa)");
+        System.out.println("Tipo de Produto [Livro][Eletronico][Roupa])");
         String tipo = input.next();
 
         System.out.println("Nome");
