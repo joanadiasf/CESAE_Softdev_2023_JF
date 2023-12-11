@@ -13,6 +13,6 @@ public class Mota extends Veiculo {
 
     public void imprimirMota() throws FileNotFoundException {
 
-        imprimirFicheiro("src/Mota.txt");
+        imprimirFicheiro("src/TextFiles/Mota.txt");
     }
 }

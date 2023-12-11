@@ -3,6 +3,8 @@ import PreFactoryMethod.Enums.TipoCombustivel;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Lib.Biblioteca.imprimirFicheiro;
+
 public class Main {
 
     /**
@@ -179,8 +181,12 @@ public class Main {
                 break;
 
             default:
-                
-                System.out.println("/!/  /!/  /!/  /!/  /!/  /!/  I N V Á L I D O  /!/  /!/  /!/  /!/  /!/  /!/");
+                if (opcao!=8){
+
+                    System.out.println("/!/  /!/  /!/  /!/  /!/  /!/  I N V Á L I D O  /!/  /!/  /!/  /!/  /!/  /!/");
+
+                }
+
 
         }
     }while (opcao!=8);
