@@ -135,7 +135,9 @@ public class Main {
             case 3:
 
                 System.out.println("* * * * *  C O R R I D A   V S   C A R R O 1  * * * * *");
-                System.out.println(veiculoUser.corrida(carro1));
+                System.out.println("--------------- V E N C E D O R  ---------------");
+                veiculoUser.corrida(carro1).exibirDetalhes();
+
 
 
             break;
@@ -143,16 +145,16 @@ public class Main {
             case 4:
 
                 System.out.println("* * * * *  C O R R I D A   V S   M O T A 1  * * * * *");
-                System.out.println(veiculoUser.corrida(mota1));
-
+                System.out.println("--------------- V E N C E D O R  ---------------");
+                veiculoUser.corrida(mota1).exibirDetalhes();
 
             break;
 
             case 5:
 
                 System.out.println("* * * * *  C O R R I D A   V S   C A M I Ã O 1  * * * * *");
-                System.out.println(veiculoUser.corrida(camiao1));
-
+                System.out.println("--------------- V E N C E D O R  ---------------");
+                veiculoUser.corrida(camiao1).exibirDetalhes();
 
             break;
 
@@ -177,6 +179,7 @@ public class Main {
                 break;
 
             default:
+                
                 System.out.println("/!/  /!/  /!/  /!/  /!/  /!/  I N V Á L I D O  /!/  /!/  /!/  /!/  /!/  /!/");
 
         }
