@@ -13,6 +13,7 @@ public class Player {
     public void attack(){
 
         System.out.println("Attacking...");
+        attackStrategy.attack();
     }
 
     public void setAttackStrategy(AttackStrategy attackStrategy){
