@@ -8,6 +8,7 @@ public class EntryView {
 
         Scanner input = new Scanner(System.in);
         int opcao=0;
+        String user, password;
 
         System.out.println("\n********** M E N U ******************");
         System.out.println("* 1- Cliente                        *");
@@ -22,14 +23,23 @@ public class EntryView {
 
         switch (opcao){
 
-            case 1:
+            case 1: //cliente
                 ClienteView.menuCliente();
                 break;
 
-            case 2:
+            case 2: //admin
                 break;
 
-            case 3:
+            case 3: //funcionario
+                System.out.println("\nNome Utilizador: ");
+                user= input.next();
+
+                System.out.println("Password: ");
+                password= input.next();
+
+                if (passwordcorreta){
+                    FuncionarioView.menuStaff();
+                }
                 break;
 
 

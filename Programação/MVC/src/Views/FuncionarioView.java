@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FuncionarioView {
 
-    public void menuStaff() {
+    public static void menuStaff() {
 
         Scanner input = new Scanner(System.in);
         int opcao;
