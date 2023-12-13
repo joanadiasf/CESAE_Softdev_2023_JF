@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class EntryView {
 
-    public void menuEntrada(){
+    public static void menuEntrada(){
 
         Scanner input = new Scanner(System.in);
         int opcao=0;
