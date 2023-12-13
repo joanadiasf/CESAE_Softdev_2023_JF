@@ -10,9 +10,8 @@ public class FuncionarioView {
         int opcao;
 
         System.out.println("\n********** M E N U ******************");
-        System.out.println("* 1- Consultar Produtos Disponíveis *");
-        System.out.println("* 2- Consultar Produtos             *");
-        System.out.println("* 3- Consultar Produto Mais Barato  *");
+        System.out.println("* 1- Adicionar nova venda           *");
+        System.out.println("* 2- Consultar Stock Produto        *");
         System.out.println("* 0- Sair                           *");
         System.out.println("*************************************");
 
@@ -23,15 +22,12 @@ public class FuncionarioView {
             switch (opcao) {
 
                 case 1:
-                    System.out.println("****");
+                    System.out.println("**** Adicionar nova venda ****");
                     break;
 
                 case 2:
+                    System.out.println("**** Consultar Stock Produto ****");
                     break;
-
-                case 3:
-                    break;
-
 
                 case 0:
                     System.out.println("* * * * * A D E U S * * * * *");
