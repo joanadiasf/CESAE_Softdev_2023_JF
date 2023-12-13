@@ -22,37 +22,41 @@ public class AdministradorView {
         System.out.println("\nSelecione uma opção ******");
         opcao = input.nextInt();
 
-        switch (opcao){
+        do {
 
-            case 1:
-                System.out.println("**** Analisar Produto mais Vendido ****");
-                break;
+            switch (opcao){
 
-            case 2:
-                System.out.println("**** Produto com maior valor de vendas ****");
-                break;
+                case 1:
+                    System.out.println("**** Analisar Produto mais Vendido ****");
+                    break;
 
-            case 3:
-                System.out.println("**** Consultar Venda de mais Unidades ****");
-                break;
+                case 2:
+                    System.out.println("**** Produto com maior valor de vendas ****");
+                    break;
 
-            case 4:
-                System.out.println("**** Consultar Venda mais Valor ****");
-                break;
+                case 3:
+                    System.out.println("**** Consultar Venda de mais Unidades ****");
+                    break;
 
-            case 5:
-                System.out.println("**** Obter Total de todas as Vendas ****");
-                break;
+                case 4:
+                    System.out.println("**** Consultar Venda mais Valor ****");
+                    break;
 
-            case 6:
-                System.out.println("**** Obter média de todas as Vendas ****");
-                break;
+                case 5:
+                    System.out.println("**** Obter Total de todas as Vendas ****");
+                    break;
 
-            case 0:
-                System.out.println("* * * * * A D E U S * * * * *");
+                case 6:
+                    System.out.println("**** Obter média de todas as Vendas ****");
+                    break;
 
-                break;
+                case 0:
+                    System.out.println("* * * * * A D E U S * * * * *");
 
-        }
+                    break;
+
+            }
+        }while (opcao!=0);
+
     }
 }
