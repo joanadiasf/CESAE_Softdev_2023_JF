@@ -1,13 +1,19 @@
 package Views;
 
+import Controllers.ClientController;
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ClienteView {
 
 
-    public static void menuCliente() {
+    public static void menuCliente() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
+
+        ClientController clientController = new ClientController();
+
         int opcao = 0;
 
         System.out.println("\n********** M E N U ******************");
@@ -38,6 +44,7 @@ public class ClienteView {
 
                 case 4:
                     System.out.println("**** Consultar Produto Mais Caro ****");
+                    clientController.produtoMaisCaro().exibirDetalhes();
                     break;
 
                 case 0:

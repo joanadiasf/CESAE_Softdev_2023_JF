@@ -28,4 +28,9 @@ public class Venda {
     public double getPrecoUnitario() {
         return precoUnitario;
     }
+
+    public void exibirDetalhes(){
+
+        System.out.println(this.tipoProduto + "\t| " + this.produto + "\t| " + this.quantidadeVendida + "\t| " + this.precoUnitario);
+    }
 }
