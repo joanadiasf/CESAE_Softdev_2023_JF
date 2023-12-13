@@ -10,7 +10,7 @@ public class ClientController {
     private ArrayList<Venda> todasVendas;
 
     public ClientController() throws FileNotFoundException {
-        VendasRepositorio repositorio = new VendasRepositorio("Files/minimercado.csv");
+        VendasRepositorio repositorio = new VendasRepositorio("src/Files/minimercado.csv");
         this.todasVendas= repositorio.getVendaArrayList();
     }
 
