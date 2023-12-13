@@ -2,10 +2,9 @@ package Views;
 
 import java.util.Scanner;
 
-public class ClienteView {
+public class FuncionarioView {
 
-
-    public static void menuCliente(){
+    public void menuStaff(){
 
         Scanner input = new Scanner(System.in);
         int opcao=0;

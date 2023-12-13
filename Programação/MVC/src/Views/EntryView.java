@@ -2,19 +2,17 @@ package Views;
 
 import java.util.Scanner;
 
-public class ClienteView {
+public class EntryView {
 
-
-    public static void menuCliente(){
+    public void menuEntrada(){
 
         Scanner input = new Scanner(System.in);
         int opcao=0;
 
         System.out.println("\n********** M E N U ******************");
-        System.out.println("* 1- Consultar Produtos Disponíveis *");
-        System.out.println("* 2- Consultar Produtos             *");
-        System.out.println("* 3- Consultar Produto Mais Barato  *");
-        System.out.println("* 4- Consultar Produto Mais Caro    *");
+        System.out.println("* 1- Cliente                        *");
+        System.out.println("* 2- Administrador                  *");
+        System.out.println("* 3- Funcionário                    *");
         System.out.println("* 0- Sair                           *");
         System.out.println("*************************************");
 
@@ -25,7 +23,7 @@ public class ClienteView {
         switch (opcao){
 
             case 1:
-                System.out.println("");
+                ClienteView.menuCliente();
                 break;
 
             case 2:
@@ -34,8 +32,7 @@ public class ClienteView {
             case 3:
                 break;
 
-            case 4:
-                break;
+
 
             case 0:
                 break;

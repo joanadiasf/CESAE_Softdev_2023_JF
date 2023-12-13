@@ -2,25 +2,25 @@ package Views;
 
 import java.util.Scanner;
 
-public class ClienteView {
+public class AdministradorView {
 
-
-    public static void menuCliente(){
+    public void menuAdmni(){
 
         Scanner input = new Scanner(System.in);
         int opcao=0;
 
         System.out.println("\n********** M E N U ******************");
-        System.out.println("* 1- Consultar Produtos Disponíveis *");
-        System.out.println("* 2- Consultar Produtos             *");
-        System.out.println("* 3- Consultar Produto Mais Barato  *");
-        System.out.println("* 4- Consultar Produto Mais Caro    *");
+        System.out.println("* 1- Analisar Produto mais Vendido  *");
+        System.out.println("* 2- Produto com maior valor de vendas             *");
+        System.out.println("* 3- Consultar Venda de mais Unidades  *");
+        System.out.println("* 4- Consultar Venda mais Valor    *");
+        System.out.println("* 5- Obter Total de todas as Vendas    *");
+        System.out.println("* 6- Obter média de todas as Vendas    *");
         System.out.println("* 0- Sair                           *");
         System.out.println("*************************************");
 
         System.out.println("\nSelecione uma opção ******");
         opcao = input.nextInt();
-
 
         switch (opcao){
 
@@ -35,6 +35,12 @@ public class ClienteView {
                 break;
 
             case 4:
+                break;
+
+            case 5:
+                break;
+
+            case 6:
                 break;
 
             case 0:
