@@ -14,4 +14,8 @@ public class UtilizadorRepository {
         CSVLoginReader loginReader = new CSVLoginReader(path);
         this.utilizadorSistema= loginReader.readCSVToRepository();
     }
+
+    public ArrayList<Utilizador> getUtilizadorSistema() {
+        return utilizadorSistema;
+    }
 }

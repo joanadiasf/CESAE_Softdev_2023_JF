@@ -15,5 +15,7 @@ public class VendasRepositorio {
         this.vendaArrayList= csvVendasReader.readCSVToRepository();
     }
 
-
+    public ArrayList<Venda> getVendaArrayList() {
+        return vendaArrayList;
+    }
 }

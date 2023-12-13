@@ -13,5 +13,19 @@ public class Venda {
         this.precoUnitario = precoUnitario;
     }
 
+    public String getTipoProduto() {
+        return tipoProduto;
+    }
 
+    public String getProduto() {
+        return produto;
+    }
+
+    public double getQuantidadeVendida() {
+        return quantidadeVendida;
+    }
+
+    public double getPrecoUnitario() {
+        return precoUnitario;
+    }
 }

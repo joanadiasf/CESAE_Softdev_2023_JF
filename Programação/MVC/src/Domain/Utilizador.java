@@ -12,4 +12,15 @@ public class Utilizador {
         this.password = password;
     }
 
+    public String getTipoConta() {
+        return tipoConta;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }

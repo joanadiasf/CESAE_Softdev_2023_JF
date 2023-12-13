@@ -1,12 +1,18 @@
 package Views;
 
+import Controllers.LoginController;
+
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class EntryView {
 
-    public static void menuEntrada(){
+    public static void menuEntrada() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
+
+        LoginController loginController = new LoginController();
+
         int opcao=0;
         String user, password;
 
@@ -28,17 +34,35 @@ public class EntryView {
                 break;
 
             case 2: //admin
-                break;
+                String tipoAcesso1="ADMIN";
 
-            case 3: //funcionario
                 System.out.println("\nNome Utilizador: ");
                 user= input.next();
 
                 System.out.println("Password: ");
                 password= input.next();
 
-                if (passwordcorreta){
+                if (loginController.validarLogin(tipoAcesso1,user,password)){
                     FuncionarioView.menuStaff();
+                }else {
+                    System.out.println("\nAcesso Inválido");
+                }
+
+                break;
+
+            case 3: //funcionario
+                String tipoAcesso="FUNC";
+
+                System.out.println("\nNome Utilizador: ");
+                user= input.next();
+
+                System.out.println("Password: ");
+                password= input.next();
+
+                if (loginController.validarLogin(tipoAcesso,user,password)){
+                    FuncionarioView.menuStaff();
+                }else {
+                    System.out.println("\nAcesso Inválido");
                 }
                 break;
 
