@@ -147,7 +147,7 @@ footer{
 
   background-color:rgba(175,199,231, .6);
 
-  margin: auto 0;
+
 }
 
 footer img{
@@ -194,7 +194,7 @@ footer img{
     background-color: #f1f1f1;
   }
 
-
+  /* Carrossel */
   div.scroll-container {
     background-color: rgba(175,199,231, .7);
     overflow: auto;
@@ -324,6 +324,15 @@ span {
     display: inline;
 }
 
+#spanCollection{
+
+    padding: 1.5%;
+}
+
+#textoUnico{
+
+    padding: 2%; 
+}
 
 .mb-3 {
 
