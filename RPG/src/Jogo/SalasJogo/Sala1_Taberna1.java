@@ -6,7 +6,10 @@ import static Jogo.SalasJogo.Sala2_PortaTaberna.sala2;
 
 public class Sala1_Taberna1 {
 
-    public static void sala1_Inicio(){
+    /**
+     * Sala 1
+     */
+    public static void sala1_Inicio() throws InterruptedException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -78,6 +81,9 @@ public class Sala1_Taberna1 {
                 //sala 2
                 sala2();
                 break;
+
+            default:
+                System.out.println("Opção inválida...");
         }
 
 

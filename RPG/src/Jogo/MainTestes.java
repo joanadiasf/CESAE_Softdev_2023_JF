@@ -4,7 +4,7 @@ import Jogo.SalasJogo.Sala1_Taberna1.*;
 
 public class MainTestes {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Sala1_Taberna1.sala1_Inicio();
     }
