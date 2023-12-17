@@ -7,6 +7,10 @@ import static Jogo.SalasJogo.Sala5_Pantano.*;
 
 public class Sala3_Taberna2 {
 
+    /**
+     * Sala 3
+     * @throws InterruptedException - sleep method
+     */
    public static void sala3() throws InterruptedException {
 
        Scanner input = new Scanner(System.in);
@@ -64,6 +68,10 @@ public class Sala3_Taberna2 {
        }
    }
 
+    /**
+     * Opção de Ajudar na luta
+     * @throws InterruptedException - sleep method
+     */
    public static void ajudaBriga() throws InterruptedException {
 
        Scanner input = new Scanner(System.in);

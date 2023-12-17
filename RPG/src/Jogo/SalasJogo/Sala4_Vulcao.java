@@ -3,10 +3,15 @@ package Jogo.SalasJogo;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.Sala5_Pantano.sala5;
+import static Jogo.SalasJogo.Sala6_Torre.sala6;
 import static java.lang.Thread.sleep;
 
 public class Sala4_Vulcao {
 
+    /**
+     * Sala 4
+     * @throws InterruptedException - sleep method
+     */
     public static void sala4() throws InterruptedException {
 
         Scanner input = new Scanner(System.in);
@@ -51,6 +56,10 @@ public class Sala4_Vulcao {
 
     }
 
+    /**
+     * Momento de escolha
+     * @throws InterruptedException - sleep method
+     */
     public static void escolhaCao() throws InterruptedException {
 
         Scanner input = new Scanner(System.in);
@@ -86,7 +95,8 @@ public class Sala4_Vulcao {
 
                     case 1:
 
-                        //todo: sala 5
+                        //sala 6
+                        sala6();
 
                         break;
 
@@ -98,7 +108,8 @@ public class Sala4_Vulcao {
                         sleep(300);
 
 
-                        //todo: sala 5
+                        //sala 6
+                        sala6();
 
                         break;
 
@@ -109,14 +120,18 @@ public class Sala4_Vulcao {
                         //todo: add vida
                         sleep(500);
 
-                        //todo: sala 5
+                        //sala 6
+                        sala6();
+
                         break;
 
                     default:
                         System.out.println("Opção inválida...");
                 }
 
-                //todo: sala6
+                //sala 6
+                sala6();
+
                 break;
 
             default:
