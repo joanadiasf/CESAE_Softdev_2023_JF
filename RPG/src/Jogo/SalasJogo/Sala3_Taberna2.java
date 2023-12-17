@@ -3,6 +3,7 @@ package Jogo.SalasJogo;
 import java.util.Scanner;
 
 import static java.lang.Thread.sleep;
+import static Jogo.SalasJogo.Sala5_Pantano.*;
 
 public class Sala3_Taberna2 {
 
@@ -53,7 +54,9 @@ public class Sala3_Taberna2 {
                System.out.println("ele sabe onde está a princesa.  Ele diz-lhe que ela está no fundo ");
                System.out.println("da masmorra que se encontra no pantano do Ogre...");
 
-               //todo: sala5
+               //sala5
+               sala5();
+
                break;
 
            default:
@@ -77,6 +80,7 @@ public class Sala3_Taberna2 {
            case 1:
 
                //todo: add batalha
+               //todo: if vendedor continua senao para o jogo
 
                System.out.println("Que luta dificil... Mas o Pequeno Indefeso como gratidão oferece duas poções");
 
@@ -128,7 +132,8 @@ public class Sala3_Taberna2 {
                System.out.println("O Jogador dirige-se  ao Taverneiro e pergunta se ele sabe onde está a princesa.");
                System.out.println("Ele diz-lhe que ela está no fundo da masmorra que se encontra no pantano do Ogre...");
 
-               //todo: add sala5
+               //sala5
+               sala5();
 
                break;
 

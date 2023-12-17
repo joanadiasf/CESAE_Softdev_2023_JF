@@ -3,6 +3,7 @@ package Jogo.SalasJogo;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.Sala3_Taberna2.sala3;
+import static Jogo.SalasJogo.Sala4_Vulcao.sala4;
 import static java.lang.Thread.sleep;
 
 public class Sala2_PortaTaberna {
@@ -214,7 +215,9 @@ public class Sala2_PortaTaberna {
 
                 //todo: add comida inventario Jogador
 
-                //todo: local4
+                //sala 4
+                System.out.println("Mais à frente o Jogador vê um vulcão");
+                sala4();
 
                 break;
 
@@ -243,7 +246,9 @@ public class Sala2_PortaTaberna {
 
                     case 1:
 
-                        //todo: sala 4
+                        //sala 4
+                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        sala4();
 
                         break;
 
@@ -255,7 +260,9 @@ public class Sala2_PortaTaberna {
                         sleep(300);
 
 
-                        //todo: sala 4
+                        //sala 4
+                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        sala4();
 
                         break;
 
@@ -266,7 +273,10 @@ public class Sala2_PortaTaberna {
                         //todo: add vida
                         sleep(500);
 
-                        //todo: sala 4
+                        //sala 4
+                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        sala4();
+
                         break;
 
                     default:
