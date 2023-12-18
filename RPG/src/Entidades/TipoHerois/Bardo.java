@@ -5,8 +5,19 @@ import Entidades.NPC;
 
 public class Bardo extends Herois{
 
-    public Bardo(String nome, int maxHP, int HP, int forca, Ataques ataques, int nivel, int ouro) {
-        super(nome, maxHP, HP, forca, ataques, nivel, ouro);
+    private static Bardo instance;
+    private Bardo(String nome, int forca, Ataques ataques, int ouro) {
+        super(nome, forca, ataques, ouro);
+    }
+
+    public static Bardo getInstance(String nome, int forca, Ataques ataques, int ouro){
+
+
+        if (instance == null){
+            instance=new Bardo(nome,forca,ataques,ouro);
+        }
+
+        return instance;
     }
 
     @Override

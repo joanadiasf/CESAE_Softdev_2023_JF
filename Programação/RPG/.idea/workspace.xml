@@ -4,46 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5f40fa0-c809-4c2f-94a5-b4d6aa4ccfcf" name="Changes" comment="" />
+    <list default="true" id="dbf89fae-f069-4dc0-8ffb-6a84f9c41654" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
+  &quot;associatedIndex&quot;: 1
 }</component>
-  <component name="ProjectId" id="2ZdPYLQvHUPRHEoia4xCLLC7v82" />
+  <component name="ProjectId" id="2ZZYuVDNcq97JlKJeQQZdRUE7pF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/al795/Desktop/CESAE_Softdev_2023_JF/RPG&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/softdev/Desktop/CESAE_Softdev_2023_JF/Programação/RPG"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a5f40fa0-c809-4c2f-94a5-b4d6aa4ccfcf" name="Changes" comment="" />
-      <created>1702749031002</created>
+      <changelist id="dbf89fae-f069-4dc0-8ffb-6a84f9c41654" name="Changes" comment="" />
+      <created>1702631293011</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702749031002</updated>
+      <updated>1702631293011</updated>
     </task>
     <servers />
   </component>

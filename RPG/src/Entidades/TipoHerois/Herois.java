@@ -13,10 +13,33 @@ public class Herois extends Entidade {
     //ArrayList <Consumivel> - inventario
 
 //depois add o que falta
-    public Herois(String nome, int maxHP, int HP, int forca, Ataques ataques, int nivel, int ouro) {
-        super(nome, maxHP, HP, forca, ataques);
-        this.nivel = nivel;
+
+
+    public Herois(String nome, int forca, Ataques ataques, int ouro) {
+        super(nome, forca, ataques);
+        this.nivel = 1;
         this.ouro = ouro;
+
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public int getOuro() {
+        return ouro;
+    }
+
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
+
+    public Ataques getAtaques() {
+        return ataques;
     }
 
     @Override

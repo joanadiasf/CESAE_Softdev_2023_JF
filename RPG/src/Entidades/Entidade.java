@@ -9,19 +9,32 @@ public abstract class Entidade {
     /**
      * Construtor
      * @param nome - nome heroi
-     * @param maxHP - vida máxima
-     * @param HP - vida atual
      * @param forca - força ataque
      * @param ataques - ataque
      */
-    public Entidade(String nome, int maxHP, int HP, int forca, Ataques ataques) {
+    public Entidade(String nome, int forca, Ataques ataques) {
         this.nome = nome;
-        this.maxHP = maxHP;
-        this.HP = HP;
+        this.maxHP = 100;
+        this.HP = 100;
         this.forca = forca;
         this.ataques = ataques;
     }
 
+    public int getHP() {
+        return HP;
+    }
+
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+
+    public int getForca() {
+        return forca;
+    }
+
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
 
     public abstract void exibirDetalhes();
 

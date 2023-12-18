@@ -5,9 +5,23 @@ import Entidades.NPC;
 
 public class Barbaro extends Herois{
 
-    public Barbaro(String nome, int maxHP, int HP, int forca, Ataques ataques, int nivel, int ouro) {
-        super(nome, maxHP, HP, forca, ataques, nivel, ouro);
+    private static Barbaro instance;
+
+    private Barbaro(String nome, int forca, Ataques ataques, int ouro) {
+        super(nome, forca, ataques, ouro);
     }
+
+    public static Barbaro getInstance(String nome, int forca, Ataques ataques, int ouro){
+
+
+        if (instance == null){
+            instance=new Barbaro(nome,forca,ataques,ouro);
+        }
+
+        return instance;
+    }
+
+
 
     @Override
     public void atacarNormal(NPC npc) {

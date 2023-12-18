@@ -5,8 +5,20 @@ import Entidades.NPC;
 
 public class Feiticeiro extends Herois{
 
-    public Feiticeiro(String nome, int maxHP, int HP, int forca, Ataques ataques, int nivel, int ouro) {
-        super(nome, maxHP, HP, forca, ataques, nivel, ouro);
+    private static Feiticeiro instance;
+
+    private Feiticeiro(String nome, int forca, Ataques ataques, int ouro) {
+        super(nome, forca, ataques, ouro);
+    }
+
+    public static Feiticeiro getInstance(String nome, int forca, Ataques ataques, int ouro){
+
+
+        if (instance == null){
+            instance=new Feiticeiro(nome,forca,ataques,ouro);
+        }
+
+        return instance;
     }
 
     @Override
