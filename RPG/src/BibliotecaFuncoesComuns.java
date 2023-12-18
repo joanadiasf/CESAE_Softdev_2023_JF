@@ -30,7 +30,7 @@ public class BibliotecaFuncoesComuns {
             heroisPermitidos.replace("[","");
             heroisPermitidos.replace("]","");
             String [] heroiPermitidoArray= heroisPermitidos.split(",");
-            
+
 
             int ataque = Integer.parseInt(dividirLinha[4]);
             int ataqueEspecial = Integer.parseInt(dividirLinha[5]);
@@ -42,6 +42,12 @@ public class BibliotecaFuncoesComuns {
             if (tipo.equals("ArmaPrincipal")){
 
                 ItemHeroi itemHeroiAtual = new ArmaPrincipal();
+
+//                for (String heroiPermitidoAtual: heroiPermitidoArray){
+//
+//                    itemHeroiAtual.add(heroiPermitidoAtual);
+//
+//                }
             }
             if (tipo.equals("ConsumivelCombate")){
 
@@ -51,6 +57,8 @@ public class BibliotecaFuncoesComuns {
 
                 ItemHeroi itemHeroiAtual = new Pocao();
             }
+
+
         }
 
 

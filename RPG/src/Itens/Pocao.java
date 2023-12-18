@@ -16,7 +16,7 @@ public class Pocao extends Consumivel{
     }
 
     @Override
-    public void exibirDetalhes() throws FileNotFoundException {
+    public static void exibirDetalhes() throws FileNotFoundException {
 
         lerFicheiro();
 
