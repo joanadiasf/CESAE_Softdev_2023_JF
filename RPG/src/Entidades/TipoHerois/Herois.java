@@ -21,13 +21,20 @@ public class Herois extends Entidade {
     private int nivel, ouro;
     private Ataques ataques;
 
-
-    ArmaPrincipal arma;
-    ArrayList<Consumivel> inventario;
-
-//depois add o que falta
+    //todo-------------------------------
+    private ArmaPrincipal arma;
+    private ArrayList<Consumivel> inventario;
 
 
+    /**
+     * Construtor
+     * @param nome Nome Personagem
+     * @param HP Vida
+     * @param forca Força
+     * @param nivel Nivel
+     * @param ouro Dinheiro
+     * @param ataques Ataques
+     */
     public Herois(String nome, int HP, int forca, int nivel, int ouro, Ataques ataques) {
         super(nome, HP, forca);
         this.nivel = nivel;
@@ -37,35 +44,41 @@ public class Herois extends Entidade {
         this.inventario = new ArrayList<>();
     }
 
+    //*************************************************************** GETTERs
     public int getNivel() {
         return nivel;
     }
-
-    public void setNivel(int nivel) {
-        this.nivel = nivel;
-    }
-
     public int getOuro() {
         return ouro;
     }
-
-    public void setOuro(int ouro) {
-        this.ouro = ouro;
-    }
-
     public Ataques getAtaques() {
         return ataques;
     }
 
+    //*************************************************************** SETTERs
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
     public void setAtaques(Ataques ataques) {
         this.ataques = ataques;
     }
 
+    //*************************************************************** MÉTODOS
     @Override
     public void exibirDetalhes() {
 
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Vida: " + this.getHP());
+        System.out.println("Força de Ataque: " + this.getForca());
+        System.out.println("Nível: " + this.getNivel());
+        System.out.println("Dinheiro: " + this.getOuro());
+
     }
 
+    //todo ______________________
     public void usarPocao() throws FileNotFoundException {
 
         //imprime inventario poçoes
@@ -79,6 +92,11 @@ public class Herois extends Entidade {
         System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 
+    /**
+     * Método de ataque do Jogador
+     * @param adversario npc
+     * @throws FileNotFoundException - porque chama o método usarPocao()
+     */
     public void jogadorAtaca(NPC adversario) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         int ataqueRoll, opcao;
@@ -97,7 +115,7 @@ public class Herois extends Entidade {
             case 1:
 
                 System.out.println("Rolar D20 para Poder de Ataque....");
-                ataqueRoll = random.nextInt(1, 20);
+                ataqueRoll = random.nextInt(1, 21);
 
                 //se =20 bonus dano ??
 
@@ -125,7 +143,7 @@ public class Herois extends Entidade {
                 }
 
                 // || se <8 falha
-                if (ataqueRoll < 8 && ataqueRoll > 1) {
+                if (ataqueRoll < 8) {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Falhou...");
@@ -153,14 +171,18 @@ public class Herois extends Entidade {
         }
     }
 
+    /**
+     * Método de ataque do NPC
+     * @param adversario - NPC
+     */
     public void npcAtaca(NPC adversario) {
-        Scanner input = new Scanner(System.in);
-        int iniciativa, ataqueRoll, opcao;
+
+        int  ataqueRoll;
 
         Random random = new Random();
         System.out.println("Adversário ataca");
 
-        ataqueRoll = random.nextInt(1, 2);
+        ataqueRoll = random.nextInt(1, 3);
 
         if (ataqueRoll == 1) {
 
@@ -185,6 +207,12 @@ public class Herois extends Entidade {
 
     }
 
+    /**
+     * Batalha
+     * @param adversario - NPC
+     * @return - vencedor
+     * @throws FileNotFoundException - porque chama o método usarPocao()
+     */
     public Entidade batalha(NPC adversario) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
@@ -202,7 +230,7 @@ public class Herois extends Entidade {
         }
 
         //ciclo de ataques
-        // ciclo 1 começa npc || ciclo 2 começa heroi
+
         do {
 
             jogadorAtaca(adversario);

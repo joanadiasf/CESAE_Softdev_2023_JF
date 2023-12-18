@@ -13,10 +13,12 @@ public class BarbaroAttackStrategy implements Ataques {
     @Override
     public void ataqueEspecial(Herois heroi,NPC adversario) {
         System.out.println("Está a atacar especial");
+        adversario.setHP(adversario.getHP() - heroi.getForca()+10);
     }
 
     @Override
     public void ataqueConsumivel(Herois heroi,NPC adversario) {
         System.out.println("Está a atacar consumivel");
+        //todo: add
     }
 }
