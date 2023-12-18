@@ -1,6 +1,9 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import static Jogo.SalasJogo.Morte.morte;
 import static Jogo.SalasJogo.Sala2_PortaTaberna.sala2;
 
 
@@ -9,7 +12,7 @@ public class Sala1_Taberna1 {
     /**
      * Sala 1
      */
-    public static void sala1_Inicio() throws InterruptedException {
+    public static void sala1_Inicio() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -57,7 +60,8 @@ public class Sala1_Taberna1 {
                 System.out.println("Irritado ele mata o Jogador...");
 
                 //todo: add nome do personagem
-                //todo: add morte
+
+                morte();
 
                 break;
 

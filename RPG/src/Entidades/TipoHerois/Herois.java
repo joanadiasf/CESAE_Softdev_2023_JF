@@ -73,8 +73,13 @@ public class Herois extends Entidade {
     public void usarPocao(){
 
         //imprime inventario poçoes
+
+
         //utilizador seleciona
+
         //incrementa efeitos
+
+
         System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 

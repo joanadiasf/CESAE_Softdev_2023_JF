@@ -1,13 +1,16 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import static Jogo.SalasJogo.Morte.morte;
 
 public class Sala8_Masmorras {
 
     /**
      * Sala 8
      */
-    public static void sala8(){
+    public static void sala8() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -41,7 +44,7 @@ public class Sala8_Masmorras {
     /**
      * Escolha SALA DO REI
      */
-    public static void salaRei(){
+    public static void salaRei() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -58,7 +61,8 @@ public class Sala8_Masmorras {
 
                 System.out.println("\nDentro do Tesouro sai um vulto que engole o Jogador ainda vivo...");
 
-                //todo: add morte
+                morte();
+
                 break;
 
             case 2:

@@ -1,7 +1,9 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Jogo.SalasJogo.Morte.morte;
 import static java.lang.Thread.sleep;
 
 public class Sala6_Torre {
@@ -10,7 +12,7 @@ public class Sala6_Torre {
      * Sala 6
      * @throws InterruptedException - sleep method
      */
-    public static void sala6() throws InterruptedException {
+    public static void sala6() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -46,7 +48,8 @@ public class Sala6_Torre {
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
 
-                        //todo: add morte
+                        morte();
+
                         break;
 
                     case 2:
@@ -63,7 +66,8 @@ public class Sala6_Torre {
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
 
-                        //todo: add morte
+                        morte();
+
                         break;
 
                     case 3:
@@ -80,7 +84,8 @@ public class Sala6_Torre {
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
 
-                        //todo: add morte
+                        morte();
+
                         break;
 
                     default:
@@ -97,7 +102,8 @@ public class Sala6_Torre {
                 System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                 System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
 
-                //todo: add morte
+                morte();
+
                 break;
 
             default:

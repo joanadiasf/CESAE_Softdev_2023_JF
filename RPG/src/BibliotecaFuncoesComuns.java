@@ -1,5 +1,3 @@
-package Itens;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,6 +10,7 @@ public class BibliotecaFuncoesComuns {
         Scanner fileScanner = new Scanner(new File("src/Itens/ItensHeroiRPG.csv"));
 
         String linha;
+        linha = fileScanner.nextLine();
 
         while (fileScanner.hasNextLine()) {
             linha = fileScanner.nextLine();
@@ -21,7 +20,7 @@ public class BibliotecaFuncoesComuns {
             String tipo = dividirLinha[0];
             String nome= dividirLinha[1];
             int preco = Integer.parseInt(dividirLinha[2]);
-            String [] heroisPermitidos= new String[]{dividirLinha[3]};
+            String [] heroisPermitidos= new String[] {dividirLinha[3]};
             int ataque = Integer.parseInt(dividirLinha[4]);
             int ataqueEspecial = Integer.parseInt(dividirLinha[5]);
             int ataqueInstantaneo = Integer.parseInt(dividirLinha[6]);

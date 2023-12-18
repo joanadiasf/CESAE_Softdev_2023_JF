@@ -1,7 +1,9 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Jogo.SalasJogo.Morte.morte;
 import static java.lang.Thread.sleep;
 import static Jogo.SalasJogo.Sala5_Pantano.*;
 
@@ -11,7 +13,7 @@ public class Sala3_Taberna2 {
      * Sala 3
      * @throws InterruptedException - sleep method
      */
-   public static void sala3() throws InterruptedException {
+   public static void sala3() throws InterruptedException, FileNotFoundException {
 
        Scanner input = new Scanner(System.in);
        int opcao1,opcao2,comida;
@@ -72,7 +74,7 @@ public class Sala3_Taberna2 {
      * Opção de Ajudar na luta
      * @throws InterruptedException - sleep method
      */
-   public static void ajudaBriga() throws InterruptedException {
+   public static void ajudaBriga() throws InterruptedException, FileNotFoundException {
 
        Scanner input = new Scanner(System.in);
        int opcao,rest;
@@ -107,7 +109,8 @@ public class Sala3_Taberna2 {
 
                    case 1:
 
-                       //todo: sala 5
+                       //sala 5
+                       sala5();
 
                        break;
 
@@ -119,7 +122,8 @@ public class Sala3_Taberna2 {
                        sleep(300);
 
 
-                       //todo: sala 5
+                       //sala 5
+                       sala5();
 
                        break;
 
@@ -130,7 +134,8 @@ public class Sala3_Taberna2 {
                        //todo: add vida
                        sleep(500);
 
-                       //todo: sala 5
+                       //sala 5
+                       sala5();
                        break;
 
                    default:
@@ -148,7 +153,9 @@ public class Sala3_Taberna2 {
            case 2:
 
                System.out.println("Após ajudar o Grandalhão, ele continua chateado e mata o jogador...");
-               //todo: add morte
+
+               morte();
+
                break;
 
            default:

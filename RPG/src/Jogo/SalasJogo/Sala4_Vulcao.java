@@ -1,5 +1,6 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.Sala5_Pantano.sala5;
@@ -12,7 +13,7 @@ public class Sala4_Vulcao {
      * Sala 4
      * @throws InterruptedException - sleep method
      */
-    public static void sala4() throws InterruptedException {
+    public static void sala4() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -60,7 +61,7 @@ public class Sala4_Vulcao {
      * Momento de escolha
      * @throws InterruptedException - sleep method
      */
-    public static void escolhaCao() throws InterruptedException {
+    public static void escolhaCao() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;

@@ -1,5 +1,6 @@
 package Jogo.SalasJogo;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.Sala3_Taberna2.sala3;
@@ -11,7 +12,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2
      */
-    public static void sala2() throws InterruptedException {
+    public static void sala2() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -48,7 +49,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2 - opção selecionada ESQUERDA
      */
-    public static void esquerda() throws InterruptedException {
+    public static void esquerda() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -184,7 +185,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2 - opção selecionada DIREITA
      */
-    public static void direita() throws InterruptedException {
+    public static void direita() throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
