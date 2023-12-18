@@ -78,7 +78,7 @@ public class Herois extends Entidade {
     public void usarPocao() throws FileNotFoundException {
 
         //imprime inventario poçoes
-        Pocao.exibirDetalhes();
+//        Pocao.exibirDetalhes();
 
         //utilizador seleciona
 
@@ -88,7 +88,7 @@ public class Herois extends Entidade {
         System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 
-    public Entidade batalha(NPC npc) throws FileNotFoundException {
+    public Entidade batalha(Entidade adversario) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
 
@@ -121,8 +121,10 @@ public class Herois extends Entidade {
 
                 //npc ataca
 
+
+
                 //jogador ataca
-                
+
                 //no turno do heroi pergunta se quer atacar ou usar item
                 System.out.println("\n1- Atacar \t 2- Usar Poção \t 3- Usar Item Combate");
                 System.out.println("\nOpção: ");
@@ -240,7 +242,7 @@ public class Herois extends Entidade {
 
             }
 
-        }while (Entidade.getHP !=0);
+        }while (adversario.getHP() !=0);
 
 
 
