@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 

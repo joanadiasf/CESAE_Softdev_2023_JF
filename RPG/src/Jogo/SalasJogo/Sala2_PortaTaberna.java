@@ -83,7 +83,8 @@ public class Sala2_PortaTaberna {
 
                     case 1:
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
 
                         break;
 
@@ -91,11 +92,13 @@ public class Sala2_PortaTaberna {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
+
                         //todo: add vida
                         sleep(300);
 
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
 
                         break;
 
@@ -106,7 +109,9 @@ public class Sala2_PortaTaberna {
                         //todo: add vida
                         sleep(500);
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
+
                         break;
 
                     default:
@@ -141,7 +146,8 @@ public class Sala2_PortaTaberna {
 
                     case 1:
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
 
                         break;
 
@@ -153,7 +159,8 @@ public class Sala2_PortaTaberna {
                         sleep(300);
 
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
 
                         break;
 
@@ -164,7 +171,8 @@ public class Sala2_PortaTaberna {
                         //todo: add vida
                         sleep(500);
 
-                        //todo: sala 3
+                        //sala 3
+                        sala3();
                         break;
 
                     default:

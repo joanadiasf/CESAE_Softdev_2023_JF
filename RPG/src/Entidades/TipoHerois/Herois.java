@@ -241,6 +241,8 @@ public class Herois extends Entidade {
 
         if (adversario.getHP() != 0) {
 
+            this.setOuro(this.getOuro()+adversario.getOuro());
+
             return this;
         }
 

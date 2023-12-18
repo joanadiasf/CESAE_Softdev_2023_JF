@@ -16,8 +16,17 @@ public class NPC extends Entidade{
         this.ouro = ouro;
     }
 
+    //********************************************** GETTERs
+    public int getOuro() {
+        return ouro;
+    }
+
+    //********************************************** SETTERs
 
 
+    public void setOuro(int ouro) {
+        this.ouro = ouro;
+    }
 
     @Override
     public void exibirDetalhes() {
