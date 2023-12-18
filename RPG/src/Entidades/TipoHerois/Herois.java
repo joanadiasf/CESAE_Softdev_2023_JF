@@ -3,28 +3,38 @@ package Entidades.TipoHerois;
 import Entidades.Ataques;
 import Entidades.Entidade;
 import Entidades.NPC;
+import Itens.ArmaPrincipal;
+import Itens.Consumivel;
 import Itens.Pocao;
+import com.sun.source.tree.IfTree;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.IllegalFormatCodePointException;
 import java.util.Random;
 import java.util.Scanner;
 
+import static Jogo.SalasJogo.Morte.morte;
+
 public class Herois extends Entidade {
 
-    private int nivel,ouro;
+    private int nivel, ouro;
     private Ataques ataques;
 
-    //armaPrincipal(ArmaPrincipal) - objeto
-    //ArrayList <Consumivel> - inventario
+
+    ArmaPrincipal arma;
+    ArrayList<Consumivel> inventario;
 
 //depois add o que falta
 
 
-    public Herois(String nome, int forca, Ataques ataques, int ouro) {
-        super(nome, forca, ataques);
-        this.nivel = 1;
+    public Herois(String nome, int HP, int forca, int nivel, int ouro, Ataques ataques) {
+        super(nome, HP, forca);
+        this.nivel = nivel;
         this.ouro = ouro;
-
+        this.ataques = ataques;
+        this.arma = null;
+        this.inventario = new ArrayList<>();
     }
 
     public int getNivel() {
@@ -47,32 +57,13 @@ public class Herois extends Entidade {
         return ataques;
     }
 
-    @Override
-    public void exibirDetalhes() {
-
-    }
-
     public void setAtaques(Ataques ataques) {
         this.ataques = ataques;
     }
 
-    public void atacarNormal(NPC npc){
+    @Override
+    public void exibirDetalhes() {
 
-        System.out.println("Está a atacar normal (mensagem a remover??) CLASSE HEROIS");
-
-        ataques.ataqueNormal();
-    }
-
-    public void atacarEspecial(NPC npc){
-
-        System.out.println("Está a atacar especial (mensagem a remover??)  CLASSE HEROIS");
-        ataques.ataqueEspecial();
-    }
-
-    public void atacarConsumivel(NPC npc){
-
-        System.out.println("Está a atacar consumivel (mensagem a remover??)  CLASSE HEROIS");
-        ataques.ataqueConsumivel();
     }
 
     public void usarPocao() throws FileNotFoundException {
@@ -88,170 +79,148 @@ public class Herois extends Entidade {
         System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 
-    public Entidade batalha(Entidade adversario) throws FileNotFoundException {
-
+    public void jogadorAtaca(NPC adversario) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
-
-        int iniciativa,ataqueRoll,opcao;
+        int ataqueRoll, opcao;
 
         Random random = new Random();
 
-        System.out.println("Rolar D20 para iniciativa...");
-        iniciativa= random.nextInt(1,20);
+        //jogador ataca
 
-        //se iniciativa > 10 e >20 - ataque
-        if (iniciativa >10 && iniciativa <20){
+        //no turno do heroi pergunta se quer atacar ou usar item
+        System.out.println("\n1- Atacar \t 2- Usar Poção \t 3- Usar Item Combate");
+        System.out.println("\nOpção: ");
+        opcao = input.nextInt();
 
-            atacarNormal();
+        switch (opcao) {
+
+            case 1:
+
+                System.out.println("Rolar D20 para Poder de Ataque....");
+                ataqueRoll = random.nextInt(1, 20);
+
+                //se =20 bonus dano ??
+
+                //se >17 ataque especial
+                if (ataqueRoll >= 17) {
+
+                    System.out.println(ataqueRoll);
+                    System.out.println("Ataque Especial!!");
+                    ataques.ataqueNormal(this,adversario);
+
+
+                    adversario.setHP(adversario.getHP() - this.getForca());
+                    System.out.println("Vida Restante: " + adversario.getHP());
+                }
+
+                // || se >8 e <17 ataque normal
+                if (ataqueRoll >= 8 && ataqueRoll < 17) {
+
+                    System.out.println(ataqueRoll);
+                    System.out.println("Ataque Normal!!");
+                    ataques.ataqueEspecial(this,adversario);
+
+                    adversario.setHP(adversario.getHP() - this.getForca());
+                    System.out.println("Vida Restante: " + adversario.getHP());
+                }
+
+                // || se <8 falha
+                if (ataqueRoll < 8 && ataqueRoll > 1) {
+
+                    System.out.println(ataqueRoll);
+                    System.out.println("Falhou...");
+                }
+
+                //|| se 1/2 - perde vida??
+                break;
+
+            case 2:
+
+                System.out.println("**** USAR POÇÂO ****");
+                usarPocao();
+                break;
+
+            case 3:
+
+                System.out.println("**** USAR ITEM COMBATE ****");
+
+                ataques.ataqueConsumivel(this,adversario); //???
+                //todo: add
+                break;
+
+            default:
+                System.out.println("Opção inválida...");
+        }
+    }
+
+    public void npcAtaca(NPC adversario) {
+        Scanner input = new Scanner(System.in);
+        int iniciativa, ataqueRoll, opcao;
+
+        Random random = new Random();
+        System.out.println("Adversário ataca");
+
+        ataqueRoll = random.nextInt(1, 2);
+
+        if (ataqueRoll == 1) {
+
+            //ataque normal
+
+
+            //tira vida jogador
+            this.setHP(this.getHP() - adversario.getForca());
+            System.out.println("Vida Restante: " + this.getHP());
+
+        }
+        if (ataqueRoll == 2) {
+
+            //ataque especial
+
+
+            //tira vida jogador
+            this.setHP(this.getHP() - adversario.getForca());
+            System.out.println("Vida Restante: " + this.getHP() + 10);
         }
 
-        //se iniciativa =20 - ataque especial
-        if (iniciativa==20){
-            atacarEspecial();
+
+    }
+
+    public Entidade batalha(NPC adversario) throws FileNotFoundException {
+
+        Scanner input = new Scanner(System.in);
+
+        int iniciativa, ataqueRoll, opcao;
+
+        Random random = new Random();
+
+        System.out.println("\nRolar D20 para iniciativa...");
+        iniciativa = random.nextInt(1, 21);
+        System.out.println(iniciativa);
+
+        if(iniciativa<10){
+            npcAtaca(adversario);
         }
-
-        //se iniciativa < 10 - NPC ataca primeiro
-
 
         //ciclo de ataques
         // ciclo 1 começa npc || ciclo 2 começa heroi
         do {
 
-            if (iniciativa >10){
+            jogadorAtaca(adversario);
+            npcAtaca(adversario);
 
-                //npc ataca
+            //o primeiro a perder a vida toda morre
+        } while (adversario.getHP() != 0 || this.getHP() != 0);
 
+        if (adversario.getHP() != 0) {
 
+            return this;
+        }
 
-                //jogador ataca
+        if (this.getHP() != 0) {
+            morte();
+            return adversario;
 
-                //no turno do heroi pergunta se quer atacar ou usar item
-                System.out.println("\n1- Atacar \t 2- Usar Poção \t 3- Usar Item Combate");
-                System.out.println("\nOpção: ");
-                opcao= input.nextInt();
-
-                switch (opcao){
-
-                    case 1:
-
-                        System.out.println("Rolar D20 para Poder de Ataque....");
-                        ataqueRoll= random.nextInt(1,20);
-
-                        //se =20 bonus dano ??
-
-                        //se >17 ataque especial
-                        if (ataqueRoll > 17){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Ataque Especial!!");
-                            atacarEspecial();
-                        }
-
-                        // || se >8 e <17 ataque normal
-                        if (ataqueRoll > 8 && ataqueRoll < 17){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Ataque Normal!!");
-                            atacarNormal();
-                        }
-
-                        // || se <8 falha
-                        if (ataqueRoll < 8 && ataqueRoll > 1){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Falhou...");
-                        }
-
-                        //|| se 1/2 - perde vida??
-                        break;
-
-                    case 2:
-
-                        System.out.println("**** USAR POÇÂO ****");
-                        usarPocao();
-                        break;
-
-                    case 3:
-
-                        System.out.println("**** USAR ITEM COMBATE ****");
-                        //todo: add
-                        break;
-
-                    default:
-                        System.out.println("Opção inválida...");
-                }
-            }
-
-            if (iniciativa <10){
-
-                //no turno do heroi pergunta se quer atacar ou usar item
-                System.out.println("\n1- Atacar \t 2- Usar Poção \t 3- Usar Item Combate");
-                System.out.println("\nOpção: ");
-                opcao= input.nextInt();
-
-                switch (opcao){
-
-                    case 1:
-
-                        System.out.println("Rolar D20 para Poder de Ataque....");
-                        ataqueRoll= random.nextInt(1,20);
-
-                        //se =20 bonus dano ??
-
-                        //se >17 ataque especial
-                        if (ataqueRoll > 17){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Ataque Especial!!");
-                            atacarEspecial();
-                        }
-
-                        // || se >8 e <17 ataque normal
-                        if (ataqueRoll > 8 && ataqueRoll < 17){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Ataque Normal!!");
-                            atacarNormal();
-                        }
-
-                        // || se <8 falha
-                        if (ataqueRoll < 8 && ataqueRoll > 1){
-
-                            System.out.println(ataqueRoll);
-                            System.out.println("Falhou...");
-                        }
-
-                        //|| se 1/2 - perde vida??
-                        break;
-
-                    case 2:
-
-                        System.out.println("**** USAR POÇÂO ****");
-                        usarPocao();
-                        break;
-
-                    case 3:
-
-                        System.out.println("**** USAR ITEM COMBATE ****");
-                        //todo: add
-                        break;
-
-                    default:
-                        System.out.println("Opção inválida...");
-                }
-
-            }
-
-        }while (adversario.getHP() !=0);
-
-
-
-
-
-
-        //o primeiro a perder a vida toda morre
-        //se heroi perder - game over screen
-
+        }
         return null;
     }
 }
