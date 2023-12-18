@@ -17,6 +17,8 @@ public abstract class ItemHeroi {
     public ItemHeroi() {
     }
 
+    //ir ver Biblioteca
+
     public  void exibirDetalhes() throws FileNotFoundException{
 
 

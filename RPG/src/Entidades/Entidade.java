@@ -20,6 +20,22 @@ public abstract class Entidade {
         this.ataques = ataques;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMaxHP() {
+        return maxHP;
+    }
+
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
+    }
+
     public int getHP() {
         return HP;
     }

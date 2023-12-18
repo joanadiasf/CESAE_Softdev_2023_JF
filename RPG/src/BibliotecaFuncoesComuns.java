@@ -1,3 +1,8 @@
+import Itens.ArmaPrincipal;
+import Itens.ConsumivelCombate;
+import Itens.ItemHeroi;
+import Itens.Pocao;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -20,7 +25,13 @@ public class BibliotecaFuncoesComuns {
             String tipo = dividirLinha[0];
             String nome= dividirLinha[1];
             int preco = Integer.parseInt(dividirLinha[2]);
-            String [] heroisPermitidos= new String[] {dividirLinha[3]};
+
+            String  heroisPermitidos= dividirLinha[3];
+            heroisPermitidos.replace("[","");
+            heroisPermitidos.replace("]","");
+            String [] heroiPermitidoArray= heroisPermitidos.split(",");
+            
+
             int ataque = Integer.parseInt(dividirLinha[4]);
             int ataqueEspecial = Integer.parseInt(dividirLinha[5]);
             int ataqueInstantaneo = Integer.parseInt(dividirLinha[6]);
@@ -28,6 +39,18 @@ public class BibliotecaFuncoesComuns {
             int forca= Integer.parseInt(dividirLinha[8]);
 
 
+            if (tipo.equals("ArmaPrincipal")){
+
+                ItemHeroi itemHeroiAtual = new ArmaPrincipal();
+            }
+            if (tipo.equals("ConsumivelCombate")){
+
+                ItemHeroi itemHeroiAtual = new ConsumivelCombate();
+            }
+            if (tipo.equals("Pocao")){
+
+                ItemHeroi itemHeroiAtual = new Pocao();
+            }
         }
 
 

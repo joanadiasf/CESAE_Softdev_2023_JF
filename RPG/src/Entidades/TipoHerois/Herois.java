@@ -4,6 +4,8 @@ import Entidades.Ataques;
 import Entidades.Entidade;
 import Entidades.NPC;
 
+import java.util.Random;
+
 public class Herois extends Entidade {
 
     private int nivel,ouro;
@@ -83,13 +85,33 @@ public class Herois extends Entidade {
         System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 
-    public Herois batalha(NPC npc){
+    public Entidade batalha(NPC npc){
 
-        //ver metodo corridas
 
-        Herois heroi = null;
-        System.out.println("LUTAAAAAAAAAA!!!!!");
+        int iniciativa;
 
-        return heroi;
+        Random random = new Random();
+        iniciativa= random.nextInt(1,20);
+
+        //se iniciativa > 10 e >20 - ataque
+        if (iniciativa >10 && iniciativa <20){
+
+            atacarNormal();
+        }
+        //se iniciativa =20 - ataque especial
+        //se iniciativa < 10 - NPC ataca primeiro
+
+        //ciclo de ataques
+        // ciclo 1 começa npc || ciclo 2 começa heroi
+
+        //no turno do heroi pergunta se quer atacar ou usar item
+
+        //antes de atacar rola dado - se >17 ataque especial || se >8 e <17 ataque normal
+        // || se <8 falha || se 1/2 - perde vida
+
+        //o primeiro a perder a vida toda morre
+        //se heroi perder - game over screen
+
+        return null;
     }
 }

@@ -1,24 +1,29 @@
 package Entidades;
 
-public class NPC {
+public class NPC extends Entidade{
 
-    private String nome;
+
     private int ouro;
-    private int maxHP,HP,forca;  //porque o NPC também ataca
 
     /**
      * Construtor
-     * @param nome - nome NPC
-     * @param ouro - ouro que dá de recompensa
-     * @param maxHP - vida máxima
-     * @param HP - vida atual
-     * @param forca - força do bicho
+     * @param nome nome
+     * @param forca força
+     * @param ataques ataques
+     * @param ouro recompensa
      */
-    public NPC(String nome, int ouro, int maxHP, int HP, int forca) {
-        this.nome = nome;
+    public NPC(String nome, int forca, Ataques ataques, int ouro) {
+        super(nome, forca, ataques);
         this.ouro = ouro;
-        this.maxHP = maxHP;
-        this.HP = HP;
-        this.forca = forca;
     }
+
+    @Override
+    public void exibirDetalhes() {
+
+        System.out.println(super.getNome() + "appears *******");
+        System.out.println("Força: " + this.getForca());
+        System.out.println("Recompensa: " + this.ouro);
+
+    }
+
 }
