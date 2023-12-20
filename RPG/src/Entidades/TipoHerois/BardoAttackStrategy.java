@@ -1,6 +1,5 @@
 package Entidades.TipoHerois;
 
-import Entidades.Ataques;
 import Entidades.NPC;
 
 public class BardoAttackStrategy implements Ataques {

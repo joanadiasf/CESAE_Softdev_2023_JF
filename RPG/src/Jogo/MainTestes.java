@@ -1,13 +1,5 @@
 package Jogo;
-import Entidades.Ataques;
-import Entidades.NPC;
-import Entidades.TipoHerois.BardoAttackStrategy;
-import Entidades.TipoHerois.FeiticeiroAttackStrategy;
-import Entidades.TipoHerois.Herois;
-import Itens.Consumivel;
-import Itens.ItemHeroi;
-import Itens.ItemHeroi.*;
-import Itens.Pocao;
+import Jogo.SalasJogo.Sala1_Taberna1;
 
 import java.io.FileNotFoundException;
 
@@ -18,7 +10,7 @@ public class MainTestes {
     public static void main(String[] args) throws InterruptedException, FileNotFoundException {
 
         //testar historia toda
-        //Sala1_Taberna1.sala1_Inicio();
+        Sala1_Taberna1.sala1_Inicio();
 
 //        Herois heroi = new Herois("Hero",100,10,1,100, new FeiticeiroAttackStrategy());
 //

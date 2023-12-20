@@ -213,6 +213,11 @@ public class Sala2_PortaTaberna {
 
             case 1:
 
+                System.out.println("\n * * * * * * * * * ");
+                System.out.println("* F L O R E S T A *");
+                System.out.println(" * * * * * * * * * ");
+
+
                 sleep(300);
                 System.out.println("Caminhando...");
 
@@ -231,6 +236,10 @@ public class Sala2_PortaTaberna {
                 break;
 
             case 2:
+
+                System.out.println("\n * * * * * * * * * * * ");
+                System.out.println("* D E S C A M P A D O *");
+                System.out.println(" * * * * * * * * * * * ");
 
                 sleep(300);
                 System.out.println("Caminhando...");

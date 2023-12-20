@@ -2,6 +2,7 @@ package Jogo.SalasJogo;
 
 import Entidades.NPC;
 import Entidades.TipoHerois.Herois;
+import Entidades.Vendedor;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -24,7 +25,15 @@ public class Sala1_Taberna1 {
         //todo: add sleep method para estetica
 
         System.out.println();
+        System.out.println("Numa terra distante, onde existem ogres e dragões, o nosso Jogador passa por tempos dificeis...");
+        System.out.println("Toda a sua famila morreu num incendio, no qual ele perdeu também todas as suas posses.");
         System.out.println("Pobre, triste, sozinho e quase sem dinheiro ( já disse pobre? ), o jogador tenta procurar trabalho na Taberna local...");
+
+
+        System.out.println("\n * * * * * * *");
+        System.out.println("* T A V E R N A *");
+        System.out.println(" * * * * * * * *");
+
 
         System.out.println("\n1- Ir direto ao JobBoard");
         System.out.println("2- Mandar um berro para chamar a atenção");
@@ -50,11 +59,13 @@ public class Sala1_Taberna1 {
                 System.out.println("O taberneiro abre uma caixa. ** “Isto é a minha loja secreta...");
                 System.out.println("O que queres comprar?” **");
 
-                //todo:add interação com vendedor
+                //todo: interação com vendedor
+
 
 
                 //sala 2
                 sala2();
+
                 break;
 
             case 2:
@@ -62,7 +73,6 @@ public class Sala1_Taberna1 {
                 System.out.println("\nUm mercenário de nível 10 aproxima-se. ** “Quem é que pensas que és fracote?” **");
                 System.out.println("Irritado ele mata o Jogador...");
 
-                //todo: add nome do personagem
 
                 morte();
 
@@ -83,7 +93,8 @@ public class Sala1_Taberna1 {
                 System.out.println("O taberneiro abre uma caixa. ** “Isto é a minha loja secreta...");
                 System.out.println("O que queres comprar?” **");
 
-                //todo:add interação com vendedor
+                //todo: interação com vendedor
+
 
                 //sala 2
                 sala2();

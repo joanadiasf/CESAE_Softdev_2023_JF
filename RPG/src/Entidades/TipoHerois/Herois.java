@@ -1,16 +1,13 @@
 package Entidades.TipoHerois;
 
-import Entidades.Ataques;
 import Entidades.Entidade;
 import Entidades.NPC;
 import Itens.ArmaPrincipal;
 import Itens.Consumivel;
 import Itens.Pocao;
-import com.sun.source.tree.IfTree;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -84,7 +81,8 @@ public class Herois extends Entidade {
     public void usarPocao() throws FileNotFoundException {
 
         //imprime inventario poçoes
-//        Pocao.exibirDetalhes();
+
+        //Pocao.exibirDetalhes();
 
         //utilizador seleciona
 

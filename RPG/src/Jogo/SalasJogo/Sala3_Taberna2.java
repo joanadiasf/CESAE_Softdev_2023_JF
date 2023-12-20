@@ -23,6 +23,11 @@ public class Sala3_Taberna2 {
 
        System.out.println("\nApós um longo caminho o Jogador decide parar numa Taverna que encontra pelo caminho...");
 
+       System.out.println("\n * * * * * * *");
+       System.out.println("* T A V E R N A *");
+       System.out.println(" * * * * * * * *");
+
+
        System.out.println("\n1- Comprar comida \t 2- Não comprar nada");
        comida= input.nextInt();
 

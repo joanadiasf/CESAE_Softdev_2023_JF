@@ -1,5 +1,6 @@
-package Entidades;
+package Entidades.TipoHerois;
 
+import Entidades.NPC;
 import Entidades.TipoHerois.Herois;
 
 public interface Ataques {

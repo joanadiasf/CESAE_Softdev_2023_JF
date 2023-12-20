@@ -6,44 +6,17 @@ import java.util.Scanner;
 
 public class Pocao extends Consumivel{
 
-    private int efeitoVida;
-    private int aumentoForca;
-
-    /**
-     * Construtor Vazio - boa prática
-     */
-    public Pocao() {
+    public Pocao(String nome, int preco, int efeitoVida, int aumentoForca) {
+        super(nome, preco, 0, 0, 0, efeitoVida, aumentoForca);
     }
 
     @Override
     public  void exibirDetalhes() throws FileNotFoundException {
 
-        lerFicheiro();
-
-
-        System.out.println("Vida: " + this.efeitoVida);
-        System.out.println("Aumento na Força: " + this.aumentoForca);
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("Vida: " + super.getEfeitoVida());
+        System.out.println("Aumento na Força: " + super.getAumentoForca());
     }
 
-    public void lerFicheiro()throws FileNotFoundException{
 
-
-        Scanner fileScanner = new Scanner(new File("src/Itens/ItensHeroiRPG.csv"));
-
-        String linha;
-        linha = fileScanner.nextLine();
-
-        while (fileScanner.hasNextLine()) {
-            linha = fileScanner.nextLine();
-
-            String [] dividirLinha = linha.split(";");
-
-            if (dividirLinha[0].equals("Pocao")){
-
-                this.efeitoVida = Integer.parseInt(dividirLinha[7]);
-                this.aumentoForca = Integer.parseInt(dividirLinha[8]);
-            }
-
-        }
-    }
 }
