@@ -33,7 +33,6 @@ public class CSVVendasReader {
             double precoUnitario = Double.parseDouble(linhaDividida[3]);
 
             Venda vendaAtual = new Venda(tipoProduto, produto, quantidadeVendida, precoUnitario);
-            //Solução condensada: Venda vendaAtual1 = new Venda(linhaDividida[0],linhaDividida[1],Double.parseDouble(linhaDividida[2]),Double.parseDouble(linhaDividida[3]));
 
             arrayVendas.add(vendaAtual);
 

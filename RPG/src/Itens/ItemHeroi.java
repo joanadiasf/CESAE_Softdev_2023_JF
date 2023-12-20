@@ -11,13 +11,9 @@ public abstract class ItemHeroi {
     private int preco;
     ArrayList<String> heroisPermitidos;
 
-    /**
-     * Construtor Vazio - boa prática
-     */
+
     public ItemHeroi() {
     }
-
-    //ir ver Biblioteca
 
     public  void exibirDetalhes() throws FileNotFoundException{
 

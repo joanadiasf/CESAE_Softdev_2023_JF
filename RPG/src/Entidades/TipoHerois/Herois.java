@@ -23,7 +23,8 @@ public class Herois extends Entidade {
 
     //todo-------------------------------
     private ArmaPrincipal arma;
-    private ArrayList<Consumivel> inventario;
+    private ArrayList<Consumivel> inventarioConsumivelAtaque;
+    private ArrayList<Pocao> inventarioPocao;
 
 
     /**
@@ -41,7 +42,8 @@ public class Herois extends Entidade {
         this.ouro = ouro;
         this.ataques = ataques;
         this.arma = null;
-        this.inventario = new ArrayList<>();
+        this.inventarioConsumivelAtaque = new ArrayList<>();
+        this.inventarioPocao = new ArrayList<>();
     }
 
     //*************************************************************** GETTERs
@@ -253,4 +255,6 @@ public class Herois extends Entidade {
         }
         return null;
     }
+
+
 }

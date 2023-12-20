@@ -10,6 +10,8 @@ public class Consumivel extends ItemHeroi{
     @Override
     public void exibirDetalhes() throws FileNotFoundException {
 
+        System.out.println("CONSUMIVEEEEEEEEEEEEL");
+
     }
 
 
