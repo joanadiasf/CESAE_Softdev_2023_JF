@@ -2,6 +2,7 @@ package Entidades.TipoHerois;
 
 import Entidades.Entidade;
 import Entidades.NPC;
+import Entidades.Tools.CSVLojaReader;
 import Itens.ArmaPrincipal;
 import Itens.Consumivel;
 import Itens.Pocao;
@@ -12,16 +13,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.CharacterScreen.morte;
-
+import static Entidades.TipoHerois.BibliotecaFuncoesComuns.lerFicheiro;
 public class Herois extends Entidade {
 
     private int nivel, ouro;
     private Ataques ataques;
-
-    //todo-------------------------------
     private ArmaPrincipal arma;
-    private ArrayList<Consumivel> inventarioConsumivelAtaque;
-    private ArrayList<Pocao> inventarioPocao;
+    private ArrayList<Consumivel> inventario;
 
 
     /**
@@ -39,8 +37,8 @@ public class Herois extends Entidade {
         this.ouro = ouro;
         this.ataques = ataques;
         this.arma = null;
-        this.inventarioConsumivelAtaque = new ArrayList<>();
-        this.inventarioPocao = new ArrayList<>();
+        this.inventario = new ArrayList<>();
+
     }
 
     //*************************************************************** GETTERs
@@ -53,6 +51,9 @@ public class Herois extends Entidade {
     public Ataques getAtaques() {
         return ataques;
     }
+    public ArrayList<Consumivel> getInventario() {
+        return inventario;
+    }
 
     //*************************************************************** SETTERs
     public void setNivel(int nivel) {
@@ -63,6 +64,13 @@ public class Herois extends Entidade {
     }
     public void setAtaques(Ataques ataques) {
         this.ataques = ataques;
+    }
+    public void setInventario(ArrayList<Consumivel> inventario) {
+        this.inventario = inventario;
+    }
+
+    public void setArma(ArmaPrincipal arma) {
+        this.arma = arma;
     }
 
     //*************************************************************** MÉTODOS
@@ -80,11 +88,26 @@ public class Herois extends Entidade {
     //todo ______________________
     public void usarPocao() throws FileNotFoundException {
 
-        //imprime inventario poçoes
+        Scanner input = new Scanner(System.in);
 
-        //Pocao.exibirDetalhes();
+        //imprime inventario poçoes
+        for (Consumivel consumivelAtual : inventario){
+
+            int i=1;
+            if (consumivelAtual instanceof Pocao){
+
+                Pocao pocaoAtual = (Pocao) consumivelAtual;
+                inventario.get(i);
+                pocaoAtual.exibirDetalhes();
+
+            }
+            i++;
+        }
+
 
         //utilizador seleciona
+
+
 
         //incrementa efeitos
 
@@ -115,10 +138,19 @@ public class Herois extends Entidade {
             case 1:
 
                 System.out.println("Rolar D20 para Poder de Ataque....");
-                ataqueRoll = random.nextInt(1, 21);
+                ataqueRoll = random.nextInt(0, 21);
 
-                //se =20 bonus dano ??
+                //se =20 bonus dano
+                if (ataqueRoll == 20) {
 
+                    System.out.println(ataqueRoll);
+                    System.out.println("Ataque Especial ** DUPLO ** !!!!");
+                    ataques.ataqueNormal(this,adversario);
+
+                    adversario.setHP(adversario.getHP() - this.getForca());
+                    adversario.setHP(adversario.getHP() - this.getForca());
+                    System.out.println("Vida Restante: " + adversario.getHP());
+                }
                 //se >17 ataque especial
                 if (ataqueRoll >= 17) {
 
@@ -143,13 +175,20 @@ public class Herois extends Entidade {
                 }
 
                 // || se <8 falha
-                if (ataqueRoll < 8) {
+                if (ataqueRoll < 8 && ataqueRoll > 2) {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Falhou...");
                 }
 
-                //|| se 1/2 - perde vida??
+                //|| se 1/2 - perde vida
+
+                if (ataqueRoll==1 || ataqueRoll==2){
+
+                    this.setHP(this.getHP()-this.getForca());
+
+                    lerFicheiro("src/Entidades/TipoHerois/textFiles/failed_attack.txt");
+                }
                 break;
 
             case 2:
@@ -162,7 +201,7 @@ public class Herois extends Entidade {
 
                 System.out.println("**** USAR ITEM COMBATE ****");
 
-                ataques.ataqueConsumivel(this,adversario); //???
+                ataques.ataqueConsumivel(this,adversario);
                 //todo: add
                 break;
 

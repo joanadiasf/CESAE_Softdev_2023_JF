@@ -47,8 +47,9 @@ public class Sala1_Taberna1 {
                 System.out.println("Suspeita-se que esta se encontre presa numa torre alta guardada por um dragão...” **");
                 System.out.println("Ao lado encontra-se um mapa....");
 
+                //o mapa não é um item a sério, é só um adereço da história
                 System.out.println("\n* * * * * M A P A   A D Q U I R I D O * * * * *");
-                //todo:add mapa ao inventario
+
 
                 System.out.println("\nO Taberneiro dirige-se ao jogador e diz:");
                 System.out.println("** “Já percebi que tens a coragem necessária... Mas antes de ires....” **");
@@ -81,8 +82,8 @@ public class Sala1_Taberna1 {
                 System.out.println("Suspeita-se que esta se encontre presa numa torre alta guardada por um dragão...” **");
                 System.out.println("Ao lado encontra-se um mapa....");
 
+                //o mapa não é um item a sério, é só um adereço da história
                 System.out.println("\n* * * * * M A P A   A D Q U I R I D O * * * * *");
-                //todo:add mapa ao inventario
 
                 System.out.println("\nO Taberneiro dirige-se ao jogador e diz:");
                 System.out.println("** “Já percebi que tens a coragem necessária... Mas antes de ires....” **");

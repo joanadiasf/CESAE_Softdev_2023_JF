@@ -13,6 +13,8 @@ public class ArmaPrincipal extends ItemHeroi{
     @Override
     public void exibirDetalhes() throws FileNotFoundException {
 
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Ataque: " + getAtaqueArma());
 
     }
 

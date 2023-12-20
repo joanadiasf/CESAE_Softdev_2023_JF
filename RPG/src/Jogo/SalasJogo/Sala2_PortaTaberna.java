@@ -1,8 +1,11 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import static Jogo.SalasJogo.CharacterScreen.morte;
 import static Jogo.SalasJogo.Sala3_Taberna2.sala3;
 import static Jogo.SalasJogo.Sala4_Vulcao.sala4;
 import static java.lang.Thread.sleep;
@@ -68,9 +71,16 @@ public class Sala2_PortaTaberna {
 
                 System.out.println("\nQue estranho... O tunel está iluminado... Parece que andou aqui alguém!!");
 
+                //inimigo
+                NPC dragao = new NPC("Dragão",50,15,20);
+
                 //todo: add batalha
 
+
                 //todo: if vendedor continua senao para o jogo
+                if (heroi.getHP == 0){
+                    morte();
+                }
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");

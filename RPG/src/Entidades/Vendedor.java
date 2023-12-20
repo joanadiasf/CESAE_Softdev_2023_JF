@@ -2,7 +2,8 @@ package Entidades;
 
 import Entidades.TipoHerois.Herois;
 import Entidades.Tools.LojaRepository;
-import Itens.InventarioHerois;
+import Itens.ArmaPrincipal;
+import Itens.Consumivel;
 import Itens.ItemHeroi;
 
 import java.io.FileNotFoundException;
@@ -19,10 +20,20 @@ public class Vendedor {
         LojaRepository repository = new LojaRepository("src/Itens/ItensHeroiRPG.csv");
 
         this.loja = repository.getLojaArray();
-        //this.loja= repositorio get array
+
     }
 
-    public ArrayList<Integer> lojaVendedor() {
+    public boolean validarPermissao(Herois heroi, ItemHeroi itemHeroi){
+        for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()){
+            if (heroi.getClass().getSimpleName().equals(heroiPermitidoAtual)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public void lojaVendedor(Herois heroi) throws FileNotFoundException {
+
+        Scanner input = new Scanner(System.in);
 
         //gerar aleatóriamente a loja
         Random random = new Random();
@@ -46,41 +57,61 @@ public class Vendedor {
 
         for (int i = 0; i <= 10; i++) {
 
-            loja.get(arrayIndexAleatorio.get(i));
+            System.out.println("\nItem " + i + ": ");
+            loja.get(arrayIndexAleatorio.get(i)).exibirDetalhes();
         }
 
 
-        return arrayIndexAleatorio;
-
-
-
-
-
-
-//        comprar(arrayIndexAleatorio);
-
-    }
-
-    public ArrayList<InventarioHerois> comprar(ArrayList<Integer> arrayIndexAleatorio) {
-
-        Scanner input = new Scanner(System.in);
-
-        ArrayList<InventarioHerois> inventario = new ArrayList<>();
-
-        System.out.println(lojaVendedor());
 
         int opcao;
 
+        ArrayList<Consumivel> inventario = new ArrayList<>();
         do {
 
-           System.out.println("Queres alguma coisa? \t 1- Sim \t 2- Não");
-           opcao= input.nextInt();
+            System.out.println("Queres alguma coisa? \t 1- Sim \t 2- Não");
+            opcao= input.nextInt();
 
             switch (opcao){
 
                 case 1:
+                    System.out.println("Escolha o item");
+                    int item = input.nextInt();
 
-                    //todo _________________
+                    for (int i = 0; i < arrayIndexAleatorio.size(); i++) {
+                        if (i == item) {
+                            ItemHeroi itemHeroi = loja.get(arrayIndexAleatorio.get(item));
+
+                            if (validarPermissao(heroi, itemHeroi)) {
+
+                                if (heroi.getOuro() >= itemHeroi.getPreco()) {
+
+                                    if (itemHeroi instanceof ArmaPrincipal) {
+                                        ArmaPrincipal armaPrincipal = (ArmaPrincipal) itemHeroi;
+                                        heroi.setArma(armaPrincipal);
+                                        loja.remove(armaPrincipal);
+
+                                    } else if (itemHeroi instanceof Consumivel) {
+                                        Consumivel consumivel = (Consumivel) itemHeroi;
+                                        heroi.getInventario().add(consumivel);
+                                        loja.remove(consumivel);
+                                    }
+
+                                    heroi.setOuro(heroi.getOuro()-itemHeroi.getPreco());
+                                    System.out.println("Removeu o " + itemHeroi.getNome());
+
+                                } else {
+
+                                    System.out.println("Não tem ouro suficiente para comprar este item. Escolha outro item.");
+                                    break;
+                                }
+
+                            }
+
+                            else {
+                                System.out.println("Não pode comprar este item");
+                            }
+                        }
+                    }
 
                     break;
 
@@ -95,9 +126,8 @@ public class Vendedor {
 
         } while (opcao!=2);
 
-
-
-        return inventario;
     }
+
+
 
 }
