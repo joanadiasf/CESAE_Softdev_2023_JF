@@ -63,6 +63,10 @@ public class Sala4_Vulcao {
      */
     public static void escolhaCao() throws InterruptedException, FileNotFoundException {
 
+        System.out.println("\n * * * * * * * ");
+        System.out.println("* V U L C Ã O *");
+        System.out.println(" * * * * * * * ");
+
         Scanner input = new Scanner(System.in);
         int opcao,rest;
 

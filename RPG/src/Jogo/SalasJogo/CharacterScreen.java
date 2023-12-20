@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Morte {
+public class CharacterScreen {
 
 
     public static void morte() throws FileNotFoundException {
@@ -17,6 +17,23 @@ public class Morte {
 
 
         System.out.println("\n* * * * G A M E   O V E R * * * *");
+
+        while (fileScanner.hasNextLine()) {
+            linha = fileScanner.nextLine();
+
+            System.out.println(linha);
+        }
+
+    }
+
+    public static void tobias() throws FileNotFoundException {
+
+
+        // Instanciar o Scanner para um ficheiro com o caminho recebido como parâmetro
+        Scanner fileScanner = new Scanner(new File("src/Jogo/SalasJogo/tobias.txt"));
+
+        String linha;
+
 
         while (fileScanner.hasNextLine()) {
             linha = fileScanner.nextLine();

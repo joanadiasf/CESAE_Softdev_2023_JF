@@ -3,7 +3,7 @@ package Jogo.SalasJogo;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Jogo.SalasJogo.Morte.morte;
+import static Jogo.SalasJogo.CharacterScreen.morte;
 import static java.lang.Thread.sleep;
 
 public class Sala6_Torre {
@@ -26,6 +26,11 @@ public class Sala6_Torre {
         switch (opcao){
 
             case 1:
+
+                System.out.println("\n * * * * * * * * * * * * * * * * ");
+                System.out.println("* S A L A   M I S T E R I O S A *");
+                System.out.println(" * * * * * * * * * * * * * * * * ");
+
                 System.out.println("\nAo chegar à sala o jogador viu um grande cofre...");
                 System.out.println("Ao aproximar-se ele transforma-se num monstro!!!");
 
@@ -96,8 +101,16 @@ public class Sala6_Torre {
 
             case 2:
 
+                System.out.println("\n * * * * * * * * * * ");
+                System.out.println("* E S C A D A R I A *");
+                System.out.println(" * * * * * * * * * * ");
+
                 System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
                 System.out.println("\nO Jogador entra cuidadosamente.");
+
+                System.out.println("\n * * * * * * * * * * * * * * * * * *");
+                System.out.println("* Q U A R T O  D A  P R I N C E S A *");
+                System.out.println(" * * * * * * * * * * * * * * * * * *");
 
                 System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                 System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");

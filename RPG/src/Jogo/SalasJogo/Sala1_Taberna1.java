@@ -1,13 +1,9 @@
 package Jogo.SalasJogo;
 
-import Entidades.NPC;
-import Entidades.TipoHerois.Herois;
-import Entidades.Vendedor;
-
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Jogo.SalasJogo.Morte.morte;
+import static Jogo.SalasJogo.CharacterScreen.morte;
 import static Jogo.SalasJogo.Sala2_PortaTaberna.sala2;
 
 

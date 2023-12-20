@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import static Jogo.SalasJogo.Morte.morte;
+import static Jogo.SalasJogo.CharacterScreen.morte;
 
 public class Herois extends Entidade {
 

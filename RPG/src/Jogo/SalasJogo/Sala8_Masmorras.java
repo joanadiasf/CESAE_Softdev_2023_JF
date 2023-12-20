@@ -3,7 +3,8 @@ package Jogo.SalasJogo;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Jogo.SalasJogo.Morte.morte;
+import static Jogo.SalasJogo.CharacterScreen.*;
+
 
 public class Sala8_Masmorras {
 
@@ -11,6 +12,10 @@ public class Sala8_Masmorras {
      * Sala 8
      */
     public static void sala8() throws FileNotFoundException {
+
+        System.out.println("\n * * * * * * * *");
+        System.out.println("* C A S T E L O *");
+        System.out.println(" * * * * * * * *");
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -46,6 +51,10 @@ public class Sala8_Masmorras {
      */
     public static void salaRei() throws FileNotFoundException {
 
+        System.out.println("\n * * * * * * * * * * *");
+        System.out.println("* S A L A  D O  R E I *");
+        System.out.println(" * * * * * * * * * * *");
+
         Scanner input = new Scanner(System.in);
         int opcao;
 
@@ -80,17 +89,23 @@ public class Sala8_Masmorras {
     /**
      * Escolha MASMORRAS
      */
-    public static void masmorras(){
+    public static void masmorras() throws FileNotFoundException {
+
+        System.out.println("\n * * * * * * * * * *");
+        System.out.println("* M A S M O R R A S *");
+        System.out.println(" * * * * * * * * * *");
 
         Scanner input = new Scanner(System.in);
         int opcao;
 
         System.out.println("\nA princesa está amarrada a uma cadeira... O Jogador corre para a salvar ");
-        System.out.println("mas um Ogre Gigante põe-se no caminho...");
+        System.out.println("mas um Ogre Gigante (parecido com um macaco) põe-se no caminho...");
+
+        tobias();
 
         //todo: add batalha final
 
-        //todo: if vendedor continua senao para o jogo
+        //todo: if vencedor continua senao para o jogo
 
         System.out.println("\nO inimigo está quase a morrer...");
         System.out.println("\n1- Poupar-lhe a vida \t 2- Acabar com ele");

@@ -18,6 +18,10 @@ public class Sala7_Cabana {
         Scanner input = new Scanner(System.in);
         int rest;
 
+        System.out.println("\n * * * * * * * ");
+        System.out.println("* C A B A N A *");
+        System.out.println(" * * * * * * * ");
+
         System.out.println("\nUm Goblin que estava a roubar a cabana viu o Jogador e achou que era o morador e ataca!");
 
         //todo: add batalha

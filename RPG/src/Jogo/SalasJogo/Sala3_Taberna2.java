@@ -3,7 +3,7 @@ package Jogo.SalasJogo;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static Jogo.SalasJogo.Morte.morte;
+import static Jogo.SalasJogo.CharacterScreen.morte;
 import static java.lang.Thread.sleep;
 import static Jogo.SalasJogo.Sala5_Pantano.*;
 
