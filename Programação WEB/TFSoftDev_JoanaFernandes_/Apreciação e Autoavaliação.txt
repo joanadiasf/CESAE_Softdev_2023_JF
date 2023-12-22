@@ -1,0 +1,13 @@
+***** Apreciação do trabalho *****
+
+O meu trabalho é sobre um jogo chamado Stardew Valley. Utilizei BootStrap para fazer a nav bar e os cards, mas optei fazer o carrossel com código retirado do W3Schools porque achei que esteticamente era o que mais se adequava à minha página.
+Quanto às listas, utilizei-as dentro das tabelas que fiz com HTML, e numa página à parte incluí uma lista de dois elementos apenas, porque de acordo com o contéudo não fazia sentido acrescentar mais pontos. O formulário de contacto encontra-se no fundo da primeira página, este foi me um pouco dificil de integrar no site porque não se adequava muito ao tema, então ele só tem o campo do e-mail e de texto pois serve apenas para quem visita o site poder acrescentar informação que não esteja lá.
+
+Um elemento não mencionado/lecionado que eu acrescentei foi um div para o soundcloud quer a soundtrack do jogo é uma parte importante dele, então quis implementar no site. Nas minhas tabelas uso o span porque essa tag permite-me fácilmente colocar uma lista com imagem e texto.
+
+
+***** Autoavaliação *****
+
+Acho que mereço entre um 17 a um 19 tanto no projeto como nota final do módulo. Acredito que apresento os conhecimentos, organização e método de trabalho para tal. Fui sempre assidua e pontual, entreguei todos os trabalhos pedidos a tempo e horas.
+
+Boas festas e um bom ano novo! Que corra tudo bem! :)
