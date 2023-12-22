@@ -5,16 +5,20 @@ import Entidades.TipoHerois.BardoAttackStrategy;
 import Entidades.TipoHerois.FeiticeiroAttackStrategy;
 import Entidades.TipoHerois.Herois;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import static Jogo.SalasJogo.CharacterScreen.morte;
 
 public class Jogo {
     public static void main(String[] args) {
 
-
+        //todo: add persongaem
+        //todo: add sala com necessidade de inserir personagem
 
     }
 
-    public Herois personagem(){
+    public Herois personagem() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
 
@@ -38,19 +42,61 @@ public class Jogo {
             int escolha= input.nextInt();
 
 
+            int pontosVida=0,pontosForca=0,contPontos=3;
+
+            while (contPontos != 0){
+
+                System.out.println("\nTem"+ contPontos + "pontos de criação disponiveis...");
+                System.out.println("1- Vida \t 2- Força");
+                int distribuicaoPontos = input.nextInt();
+
+                switch (distribuicaoPontos){
+
+                    case 1:
+                        pontosVida++;
+                        System.out.println("Adicionou 1 ponto de vida");
+                        break;
+
+                    case 2:
+                        pontosForca++;
+                        System.out.println("Adicionou 1 ponto de força");
+                        break;
+
+                    default:
+                        System.out.println("Opção Inválida...");
+                }
+
+                contPontos--;
+            }
+
+            if (pontosVida==1 && pontosForca==2){
+
+                pontosVida=100;
+                pontosForca=20;
+            }
+
+            if (pontosVida==2 && pontosForca==1){
+
+                pontosVida=150;
+                pontosForca=10;
+            }
+
+            if (pontosVida==3 || pontosForca==3){
+
+                System.out.println("O Jogador não sabe criar personagens...");
+                morte();
+            }
+
             switch (escolha){
 
 
                 case 1:
-                    Herois feiticeiro = new Herois(nome,100,20,1,200, new FeiticeiroAttackStrategy());
-                    return feiticeiro;
+                    return new Herois(nome,pontosVida,pontosForca,1,200, new FeiticeiroAttackStrategy());
                 case 2:
-                    Herois bardo = new Herois(nome,100,20,1,200, new BardoAttackStrategy());
-                    return bardo;
+                    return new Herois(nome,pontosVida,pontosForca,1,200, new BardoAttackStrategy());
 
                 case 3:
-                    Herois barbaro = new Herois(nome,100,20,1,200, new BarbaroAttackStrategy());
-                    return barbaro;
+                    return new Herois(nome,pontosVida,pontosForca,1,200, new BarbaroAttackStrategy());
 
 
                 default:
@@ -67,21 +113,62 @@ public class Jogo {
 
             int escolha= input.nextInt();
 
+            int pontosVida=0,pontosForca=0,contPontos=3;
+
+            while (contPontos != 0){
+
+                System.out.println("\nTem"+ contPontos + "pontos de criação disponiveis...");
+                System.out.println("1- Vida \t 2- Força");
+                int distribuicaoPontos = input.nextInt();
+
+                switch (distribuicaoPontos){
+
+                    case 1:
+                        pontosVida++;
+                        System.out.println("Adicionou 1 ponto de vida");
+                        break;
+
+                    case 2:
+                        pontosForca++;
+                        System.out.println("Adicionou 1 ponto de força");
+                        break;
+
+                    default:
+                        System.out.println("Opção Inválida...");
+                }
+
+                contPontos--;
+            }
+
+            if (pontosVida==1 && pontosForca==2){
+
+                pontosVida=50;
+                pontosForca=10;
+            }
+
+            if (pontosVida==2 && pontosForca==1){
+
+                pontosVida=100;
+                pontosForca=5;
+            }
+
+            if (pontosVida==3 || pontosForca==3){
+
+                System.out.println("O Jogador não sabe criar personagens...");
+                morte();
+            }
 
             switch (escolha){
 
 
                 case 1:
-                    Herois feiticeiro = new Herois(nome,100,10,1,100, new FeiticeiroAttackStrategy());
-                    return feiticeiro;
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new FeiticeiroAttackStrategy());
 
                 case 2:
-                    Herois bardo = new Herois(nome,100,10,1,100, new BardoAttackStrategy());
-                    return bardo;
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new BardoAttackStrategy());
 
                 case 3:
-                    Herois barbaro = new Herois(nome,100,10,1,100, new BarbaroAttackStrategy());
-                    return barbaro;
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new BarbaroAttackStrategy());
                     
 
                 default:
