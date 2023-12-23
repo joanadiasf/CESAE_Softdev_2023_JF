@@ -35,7 +35,7 @@ public class Sala6_Torre {
                 System.out.println("Ao aproximar-se ele transforma-se num monstro!!!");
 
                 //todo: add batalha
-                //todo: if vendedor continua senao para o jogo
+
 
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
@@ -107,6 +107,8 @@ public class Sala6_Torre {
 
                 System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
                 System.out.println("\nO Jogador entra cuidadosamente.");
+
+                sleep(400);
 
                 System.out.println("\n * * * * * * * * * * * * * * * * * *");
                 System.out.println("* Q U A R T O  D A  P R I N C E S A *");

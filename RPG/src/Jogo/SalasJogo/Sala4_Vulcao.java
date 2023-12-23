@@ -79,8 +79,11 @@ public class Sala4_Vulcao {
         switch (opcao){
 
             case 1:
-                //todo: da mais contexto
-                System.out.println("A velha informa das intenções malignas do cão... Indica o caminho certo");
+
+                System.out.println("\n** Oh meu filho... Nem sabes do que te livrei... Este Cão é o ajudante do Senhor Shrek, o Ogre que ");
+                System.out.println("mandou raptar a princesa! Ele ia te tramar e eventualmente matar.  Se fosse a ti dava meia volta e ia por outro caminho!");
+                System.out.println("Pelo Pantano talvez.");;
+
 
                 //sala5
                 sala5();
@@ -88,7 +91,7 @@ public class Sala4_Vulcao {
 
             case 2:
                 //todo: add batalha
-                //todo: if vendedor continua senao para o jogo
+
 
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");

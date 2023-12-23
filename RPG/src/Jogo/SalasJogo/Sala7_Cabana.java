@@ -26,7 +26,7 @@ public class Sala7_Cabana {
 
         //todo: add batalha
 
-        //todo: if vendedor continua senao para o jogo
+
 
         System.out.println("\nAo vasculhar na Cabana o Jogador encontra uma Poção Cura!!");
         System.out.println("\n Poção Cura adquirida");

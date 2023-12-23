@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.CharacterScreen.morte;
+import static Jogo.SalasJogo.CharacterScreen.tobias;
 
 public class Jogo {
     public static void main(String[] args) {
@@ -23,15 +24,20 @@ public class Jogo {
         Scanner input = new Scanner(System.in);
 
         System.out.println("\nBem-vindo a Tobias Quest");
-        //todo add ascii art
+        System.out.println("\n \t \t * * * * * T O B I A S");
+        System.out.println("\t \t \t Q U E S T * * * * *");
+        tobias();
 
-        System.out.println("\nSelecione a Dificuldade");
+        //escolher dificuldade
+
+        System.out.println("\n\n\nSelecione a Dificuldade");
         System.out.println("1-Fácil \t 2- Dificil");
         int opcao= input.nextInt();
 
+        //criação personagem
         System.out.println("Vamos criar o seu Heroi!");
 
-        if (opcao==1){
+        if (opcao==1){       //fácil
 
             System.out.println("\nComo se chama o Heroi?");
             String nome=input.next();
@@ -44,6 +50,7 @@ public class Jogo {
 
             int pontosVida=0,pontosForca=0,contPontos=3;
 
+            //distribuição de pontos
             while (contPontos != 0){
 
                 System.out.println("\nTem"+ contPontos + "pontos de criação disponiveis...");
@@ -103,7 +110,7 @@ public class Jogo {
                     System.out.println("Opção Inválida...");
             }
         }
-        if (opcao==2){
+        if (opcao==2){   //dificil
 
             System.out.println("\nComo se chama o Heroi?");
             String nome=input.next();

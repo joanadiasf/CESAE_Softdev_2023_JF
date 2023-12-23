@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static Jogo.SalasJogo.CharacterScreen.*;
+import static java.lang.Thread.sleep;
 
 
 public class Sala8_Masmorras {
@@ -11,7 +12,7 @@ public class Sala8_Masmorras {
     /**
      * Sala 8
      */
-    public static void sala8() throws FileNotFoundException {
+    public static void sala8() throws FileNotFoundException, InterruptedException {
 
         System.out.println("\n * * * * * * * *");
         System.out.println("* C A S T E L O *");
@@ -20,7 +21,9 @@ public class Sala8_Masmorras {
         Scanner input = new Scanner(System.in);
         int opcao;
 
-        System.out.println("\nO fim aproxima-se.... Jogador faça as escolhas certas...(Sem pressão)");
+        System.out.println("\nO fim aproxima-se....");
+        sleep(800);
+        System.out.println("Jogador faça as escolhas certas...(Sem pressão)");
 
         System.out.println("\n1- Masmorras \t 2- Sala do Rei");
 

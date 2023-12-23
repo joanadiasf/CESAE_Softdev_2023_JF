@@ -77,11 +77,6 @@ public class Sala2_PortaTaberna {
                 //todo: add batalha
 
 
-                //todo: if vendedor continua senao para o jogo
-                if (heroi.getHP == 0){
-                    morte();
-                }
-
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
@@ -143,7 +138,6 @@ public class Sala2_PortaTaberna {
 
                 //todo: add batalha
 
-                //todo: if vendedor continua senao para o jogo
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
@@ -261,7 +255,6 @@ public class Sala2_PortaTaberna {
 
                 //todo: add batalha
 
-                //todo: if vendedor continua senao para o jogo
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");

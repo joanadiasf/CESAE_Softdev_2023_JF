@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import static Jogo.SalasJogo.CharacterScreen.morte;
 import static Jogo.SalasJogo.Sala2_PortaTaberna.sala2;
+import static java.lang.Thread.sleep;
 
 
 public class Sala1_Taberna1 {
@@ -17,13 +18,13 @@ public class Sala1_Taberna1 {
         Scanner input = new Scanner(System.in);
         int opcao;
 
-        //todo: add mais contexto
-        //todo: add sleep method para estetica
 
         System.out.println();
         System.out.println("Numa terra distante, onde existem ogres e dragões, o nosso Jogador passa por tempos dificeis...");
         System.out.println("Toda a sua famila morreu num incendio, no qual ele perdeu também todas as suas posses.");
         System.out.println("Pobre, triste, sozinho e quase sem dinheiro ( já disse pobre? ), o jogador tenta procurar trabalho na Taberna local...");
+
+        sleep(500);
 
 
         System.out.println("\n * * * * * * *");

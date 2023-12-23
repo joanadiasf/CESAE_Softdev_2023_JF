@@ -18,8 +18,7 @@ public class Sala3_Taberna2 {
        Scanner input = new Scanner(System.in);
        int opcao1,opcao2,comida;
 
-       //todo: add mais contexto
-       //todo: add sleep method para estetica
+       sleep(500);
 
        System.out.println("\nApós um longo caminho o Jogador decide parar numa Taverna que encontra pelo caminho...");
 
