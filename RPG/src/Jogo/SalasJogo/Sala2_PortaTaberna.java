@@ -1,6 +1,7 @@
 package Jogo.SalasJogo;
 
 import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2
      */
-    public static void sala2() throws InterruptedException, FileNotFoundException {
+    public static void sala2(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -36,12 +37,12 @@ public class Sala2_PortaTaberna {
 
             case 1:
                 //esquerda
-                esquerda();
+                esquerda(heroi);
                 break;
 
             case 2:
                 //direita
-                direita();
+                direita(heroi);
                 break;
 
             default:
@@ -52,7 +53,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2 - opção selecionada ESQUERDA
      */
-    public static void esquerda() throws InterruptedException, FileNotFoundException {
+    public static void esquerda(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -74,7 +75,8 @@ public class Sala2_PortaTaberna {
                 //inimigo
                 NPC dragao = new NPC("Dragão",50,15,20);
 
-                //todo: add batalha
+                //batalha
+                heroi.batalha(dragao);
 
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
@@ -89,7 +91,7 @@ public class Sala2_PortaTaberna {
                     case 1:
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
 
                         break;
 
@@ -97,13 +99,12 @@ public class Sala2_PortaTaberna {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
-
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
 
                         break;
 
@@ -111,11 +112,11 @@ public class Sala2_PortaTaberna {
 
                         sleep(500);
                         System.out.println("Recuperou 20 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
 
                         break;
 
@@ -124,11 +125,16 @@ public class Sala2_PortaTaberna {
                 }
 
                 //sala3
-                sala3();
+                sala3(heroi);
 
             break;
 
             case 2:
+
+
+                //inimigo
+                NPC serpente = new NPC("Serpente Gigante",50,15,20);
+
 
                 System.out.println("\nParece tudo tão calmo...");
 
@@ -136,8 +142,8 @@ public class Sala2_PortaTaberna {
 
                 System.out.println("\nDo nada salta um inimigo para a frente do Jogador!");
 
-                //todo: add batalha
-
+                //batalha
+                heroi.batalha(serpente);
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
@@ -151,7 +157,7 @@ public class Sala2_PortaTaberna {
                     case 1:
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
 
                         break;
 
@@ -159,12 +165,12 @@ public class Sala2_PortaTaberna {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
 
                         break;
 
@@ -172,11 +178,11 @@ public class Sala2_PortaTaberna {
 
                         sleep(500);
                         System.out.println("Recuperou 20 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
                         //sala 3
-                        sala3();
+                        sala3(heroi);
                         break;
 
                     default:
@@ -184,7 +190,7 @@ public class Sala2_PortaTaberna {
                 }
 
                 //sala3
-                sala3();
+                sala3(heroi);
 
             break;
 
@@ -197,7 +203,7 @@ public class Sala2_PortaTaberna {
     /**
      * Sala 2 - opção selecionada DIREITA
      */
-    public static void direita() throws InterruptedException, FileNotFoundException {
+    public static void direita(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -235,11 +241,13 @@ public class Sala2_PortaTaberna {
 
                 //sala 4
                 System.out.println("Mais à frente o Jogador vê um vulcão");
-                sala4();
+                sala4(heroi);
 
                 break;
 
             case 2:
+
+                NPC serpente = new NPC("Serpente Gigante",50,20,10);
 
                 System.out.println("\n * * * * * * * * * * * ");
                 System.out.println("* D E S C A M P A D O *");
@@ -253,8 +261,8 @@ public class Sala2_PortaTaberna {
 
                 System.out.println("\nInimigo sai de baixo da terra!");
 
-                //todo: add batalha
-
+                //batalha
+                heroi.batalha(serpente);
 
                 System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
@@ -269,7 +277,7 @@ public class Sala2_PortaTaberna {
 
                         //sala 4
                         System.out.println("Mais à frente o Jogador vê um vulcão");
-                        sala4();
+                        sala4(heroi);
 
                         break;
 
@@ -277,13 +285,13 @@ public class Sala2_PortaTaberna {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
 
                         //sala 4
                         System.out.println("Mais à frente o Jogador vê um vulcão");
-                        sala4();
+                        sala4(heroi);
 
                         break;
 
@@ -291,12 +299,12 @@ public class Sala2_PortaTaberna {
 
                         sleep(500);
                         System.out.println("Recuperou 20 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
                         //sala 4
                         System.out.println("Mais à frente o Jogador vê um vulcão");
-                        sala4();
+                        sala4(heroi);
 
                         break;
 

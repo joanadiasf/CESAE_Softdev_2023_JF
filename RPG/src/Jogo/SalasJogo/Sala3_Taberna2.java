@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,7 +16,7 @@ public class Sala3_Taberna2 {
      * Sala 3
      * @throws InterruptedException - sleep method
      */
-   public static void sala3() throws InterruptedException, FileNotFoundException {
+   public static void sala3(Herois heroi) throws InterruptedException, FileNotFoundException {
 
        Scanner input = new Scanner(System.in);
        int opcao1,opcao2,comida;
@@ -53,7 +56,7 @@ public class Sala3_Taberna2 {
 
            case 1:
 
-               ajudaBriga();
+               ajudaBriga(heroi);
 
 
                break;
@@ -65,7 +68,7 @@ public class Sala3_Taberna2 {
                System.out.println("da masmorra que se encontra no pantano do Ogre...");
 
                //sala5
-               sala5();
+               sala5(heroi);
 
                break;
 
@@ -78,7 +81,7 @@ public class Sala3_Taberna2 {
      * Opção de Ajudar na luta
      * @throws InterruptedException - sleep method
      */
-   public static void ajudaBriga() throws InterruptedException, FileNotFoundException {
+   public static void ajudaBriga(Herois heroi) throws InterruptedException, FileNotFoundException {
 
        Scanner input = new Scanner(System.in);
        int opcao,rest;
@@ -92,9 +95,10 @@ public class Sala3_Taberna2 {
        switch (opcao){
 
            case 1:
+                NPC grandalhao = new NPC("Grandalhão",70,30,25);
 
-               //todo: add batalha
-               //todo: if vendedor continua senao para o jogo
+               //batalha
+               heroi.batalha(grandalhao);
 
                System.out.println("Que luta dificil... Mas o Pequeno Indefeso como gratidão oferece duas poções");
 
@@ -114,7 +118,7 @@ public class Sala3_Taberna2 {
                    case 1:
 
                        //sala 5
-                       sala5();
+                       sala5(heroi);
 
                        break;
 
@@ -122,12 +126,12 @@ public class Sala3_Taberna2 {
 
                        sleep(300);
                        System.out.println("Recuperou 10 de vida!");
-                       //todo: add vida
+                       heroi.setHP(heroi.getHP()+10);
                        sleep(300);
 
 
                        //sala 5
-                       sala5();
+                       sala5(heroi);
 
                        break;
 
@@ -135,11 +139,11 @@ public class Sala3_Taberna2 {
 
                        sleep(500);
                        System.out.println("Recuperou 20 de vida!");
-                       //todo: add vida
+                       heroi.setHP(heroi.getHP()+20);
                        sleep(500);
 
                        //sala 5
-                       sala5();
+                       sala5(heroi);
                        break;
 
                    default:
@@ -150,7 +154,7 @@ public class Sala3_Taberna2 {
                System.out.println("Ele diz-lhe que ela está no fundo da masmorra que se encontra no pantano do Ogre...");
 
                //sala5
-               sala5();
+               sala5(heroi);
 
                break;
 

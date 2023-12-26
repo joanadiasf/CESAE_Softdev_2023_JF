@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -12,7 +15,7 @@ public class Sala6_Torre {
      * Sala 6
      * @throws InterruptedException - sleep method
      */
-    public static void sala6() throws InterruptedException, FileNotFoundException {
+    public static void sala6(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -27,6 +30,8 @@ public class Sala6_Torre {
 
             case 1:
 
+                NPC cofre = new NPC("Cofre",70,30,40);
+
                 System.out.println("\n * * * * * * * * * * * * * * * * ");
                 System.out.println("* S A L A   M I S T E R I O S A *");
                 System.out.println(" * * * * * * * * * * * * * * * * ");
@@ -34,8 +39,8 @@ public class Sala6_Torre {
                 System.out.println("\nAo chegar à sala o jogador viu um grande cofre...");
                 System.out.println("Ao aproximar-se ele transforma-se num monstro!!!");
 
-                //todo: add batalha
-
+                //batalha
+                heroi.batalha(cofre);
 
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
@@ -61,7 +66,7 @@ public class Sala6_Torre {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
                         System.out.println("\nO Jogador sai da sala e segue a Escadaria");
@@ -79,7 +84,7 @@ public class Sala6_Torre {
 
                         sleep(500);
                         System.out.println("Recuperou 20 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
                         System.out.println("\nO Jogador sai da sala e segue a Escadaria");

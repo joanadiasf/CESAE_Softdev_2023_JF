@@ -339,5 +339,51 @@ public class Herois extends Entidade {
         return null;
     }
 
+    /**
+     * Batalha final
+     * @param adversario - npc
+     * @return - vencedor
+     * @throws FileNotFoundException - file
+     */
+    public Entidade batalhaFinal(NPC adversario) throws FileNotFoundException {
+
+        Scanner input = new Scanner(System.in);
+
+        int iniciativa, ataqueRoll, opcao;
+
+        Random random = new Random();
+
+        System.out.println("\nRolar D20 para iniciativa...");
+        iniciativa = random.nextInt(1, 21);
+        System.out.println(iniciativa);
+
+        if(iniciativa<10){
+            npcAtaca(adversario);
+        }
+
+        //ciclo de ataques
+
+        do {
+
+            jogadorAtaca(adversario);
+            npcAtaca(adversario);
+
+            //o primeiro a perder a vida toda morre
+        } while (adversario.getHP() > 30 || this.getHP() != 0);
+
+        if (adversario.getHP() != 0) {
+
+            this.setOuro(this.getOuro()+adversario.getOuro());
+
+            return this;
+        }
+
+        if (this.getHP() != 0) {
+            morte();
+            return adversario;
+
+        }
+        return null;
+    }
 
 }

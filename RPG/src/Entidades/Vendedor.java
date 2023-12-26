@@ -23,6 +23,12 @@ public class Vendedor {
 
     }
 
+    /**
+     * Método para validar se o Heroi pode user item
+     * @param heroi - heroi
+     * @param itemHeroi - item
+     * @return - se pode ou nao usar
+     */
     public boolean validarPermissao(Herois heroi, ItemHeroi itemHeroi){
         for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()){
             if (heroi.getClass().getSimpleName().equals(heroiPermitidoAtual)){
@@ -31,6 +37,12 @@ public class Vendedor {
         }
         return false;
     }
+
+    /**
+     * Loja do Vendedor
+     * @param heroi - Heroi que compra
+     * @throws FileNotFoundException - ler file
+     */
     public void lojaVendedor(Herois heroi) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);

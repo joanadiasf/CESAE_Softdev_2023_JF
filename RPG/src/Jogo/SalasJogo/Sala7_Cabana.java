@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,7 +16,7 @@ public class Sala7_Cabana {
      * Sala 7
      * @throws InterruptedException - sleep method
      */
-    public static void sala7() throws InterruptedException, FileNotFoundException {
+    public static void sala7(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int rest;
@@ -22,10 +25,12 @@ public class Sala7_Cabana {
         System.out.println("* C A B A N A *");
         System.out.println(" * * * * * * * ");
 
+
+        NPC goblin = new NPC("Goblin",40,10,5);
         System.out.println("\nUm Goblin que estava a roubar a cabana viu o Jogador e achou que era o morador e ataca!");
 
-        //todo: add batalha
-
+        //batalha
+        heroi.batalha(goblin);
 
 
         System.out.println("\nAo vasculhar na Cabana o Jogador encontra uma Poção Cura!!");
@@ -44,7 +49,7 @@ public class Sala7_Cabana {
 
 
                 //sala8
-                sala8();
+                sala8(heroi);
 
                 break;
 
@@ -52,12 +57,12 @@ public class Sala7_Cabana {
 
                 sleep(300);
                 System.out.println("Recuperou 10 de vida!");
-                //todo: add vida
+                heroi.setHP(heroi.getHP()+10);
                 sleep(300);
 
 
                 //sala8
-                sala8();
+                sala8(heroi);
 
                 break;
 
@@ -65,11 +70,11 @@ public class Sala7_Cabana {
 
                 sleep(500);
                 System.out.println("Recuperou 20 de vida!");
-                //todo: add vida
+                heroi.setHP(heroi.getHP()+20);
                 sleep(500);
 
                 //sala8
-                sala8();
+                sala8(heroi);
 
                 break;
 

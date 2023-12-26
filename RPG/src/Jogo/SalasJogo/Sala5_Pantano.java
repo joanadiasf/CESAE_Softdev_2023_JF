@@ -1,5 +1,7 @@
 package Jogo.SalasJogo;
 
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,7 +15,7 @@ public class Sala5_Pantano {
      * Sala 5
      * @throws InterruptedException - sleep method
      */
-    public static void sala5() throws InterruptedException, FileNotFoundException {
+    public static void sala5(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao,rest;
@@ -28,7 +30,7 @@ public class Sala5_Pantano {
             case 1:
 
                 //sala7
-                sala7();
+                sala7(heroi);
 
                 break;
 
@@ -47,7 +49,7 @@ public class Sala5_Pantano {
                 //todo: add comida inventario Jogador
 
                 //sala8
-                sala8();
+                sala8(heroi);
 
                 break;
 

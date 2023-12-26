@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -12,7 +15,7 @@ public class Sala8_Masmorras {
     /**
      * Sala 8
      */
-    public static void sala8() throws FileNotFoundException, InterruptedException {
+    public static void sala8(Herois heroi) throws FileNotFoundException, InterruptedException {
 
         System.out.println("\n * * * * * * * *");
         System.out.println("* C A S T E L O *");
@@ -34,12 +37,12 @@ public class Sala8_Masmorras {
 
             case 1:
 
-                masmorras();
+                masmorras(heroi);
                 break;
 
             case 2:
 
-                salaRei();
+                salaRei(heroi);
                 break;
 
             default:
@@ -52,7 +55,7 @@ public class Sala8_Masmorras {
     /**
      * Escolha SALA DO REI
      */
-    public static void salaRei() throws FileNotFoundException {
+    public static void salaRei(Herois heroi) throws FileNotFoundException {
 
         System.out.println("\n * * * * * * * * * * *");
         System.out.println("* S A L A  D O  R E I *");
@@ -80,7 +83,7 @@ public class Sala8_Masmorras {
             case 2:
 
                 System.out.println("\nO Jogador contém-se, sai da sala e dirige-se para as Masmorras.");
-                masmorras();
+                masmorras(heroi);
                 break;
 
             default:
@@ -92,7 +95,7 @@ public class Sala8_Masmorras {
     /**
      * Escolha MASMORRAS
      */
-    public static void masmorras() throws FileNotFoundException {
+    public static void masmorras(Herois heroi) throws FileNotFoundException {
 
         System.out.println("\n * * * * * * * * * *");
         System.out.println("* M A S M O R R A S *");
@@ -106,9 +109,10 @@ public class Sala8_Masmorras {
 
         tobias();
 
-        //todo: add batalha final
+        NPC tobias = new NPC("Tobias O Grande",100,25,40);
 
-        //todo: if vencedor continua senao para o jogo
+        //batalha final *****************
+        heroi.batalhaFinal(tobias);
 
         System.out.println("\nO inimigo está quase a morrer...");
         System.out.println("\n1- Poupar-lhe a vida \t 2- Acabar com ele");

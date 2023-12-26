@@ -1,5 +1,8 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,7 +16,7 @@ public class Sala4_Vulcao {
      * Sala 4
      * @throws InterruptedException - sleep method
      */
-    public static void sala4() throws InterruptedException, FileNotFoundException {
+    public static void sala4(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -31,7 +34,7 @@ public class Sala4_Vulcao {
                 System.out.println("O Jogador vai em direção ao Pantano do Ogre");
 
                 //sala5
-                sala5();
+                sala5(heroi);
                 break;
 
             case 2:
@@ -46,7 +49,7 @@ public class Sala4_Vulcao {
                 sleep(300);
 
 
-                escolhaCao();
+                escolhaCao(heroi);
 
                 break;
 
@@ -61,7 +64,7 @@ public class Sala4_Vulcao {
      * Momento de escolha
      * @throws InterruptedException - sleep method
      */
-    public static void escolhaCao() throws InterruptedException, FileNotFoundException {
+    public static void escolhaCao(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         System.out.println("\n * * * * * * * ");
         System.out.println("* V U L C Ã O *");
@@ -86,11 +89,14 @@ public class Sala4_Vulcao {
 
 
                 //sala5
-                sala5();
+                sala5(heroi);
                 break;
 
             case 2:
-                //todo: add batalha
+
+                NPC velhota = new NPC("Velhota",60,25,15);
+                //batalha
+                heroi.batalha(velhota);
 
 
                 System.out.println("\nQuer descansar?");
@@ -104,7 +110,7 @@ public class Sala4_Vulcao {
                     case 1:
 
                         //sala 6
-                        sala6();
+                        sala6(heroi);
 
                         break;
 
@@ -112,12 +118,12 @@ public class Sala4_Vulcao {
 
                         sleep(300);
                         System.out.println("Recuperou 10 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
 
                         //sala 6
-                        sala6();
+                        sala6(heroi);
 
                         break;
 
@@ -125,11 +131,11 @@ public class Sala4_Vulcao {
 
                         sleep(500);
                         System.out.println("Recuperou 20 de vida!");
-                        //todo: add vida
+                        heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
                         //sala 6
-                        sala6();
+                        sala6(heroi);
 
                         break;
 
@@ -138,7 +144,7 @@ public class Sala4_Vulcao {
                 }
 
                 //sala 6
-                sala6();
+                sala6(heroi);
 
                 break;
 

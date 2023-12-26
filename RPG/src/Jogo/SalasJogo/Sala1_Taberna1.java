@@ -1,5 +1,9 @@
 package Jogo.SalasJogo;
 
+import Entidades.NPC;
+import Entidades.TipoHerois.Herois;
+import Entidades.Vendedor;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -13,7 +17,7 @@ public class Sala1_Taberna1 {
     /**
      * Sala 1
      */
-    public static void sala1_Inicio() throws InterruptedException, FileNotFoundException {
+    public static void sala1_Inicio(Herois heroi) throws InterruptedException, FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -39,6 +43,8 @@ public class Sala1_Taberna1 {
         System.out.println("\nOpção: ");
         opcao= input.nextInt();
 
+        Vendedor vendedor = new Vendedor();
+
         switch (opcao){
 
             case 1:
@@ -57,12 +63,12 @@ public class Sala1_Taberna1 {
                 System.out.println("O taberneiro abre uma caixa. ** “Isto é a minha loja secreta...");
                 System.out.println("O que queres comprar?” **");
 
-                //todo: interação com vendedor
-
+                //interação com vendedor
+                vendedor.lojaVendedor(heroi);
 
 
                 //sala 2
-                sala2();
+                sala2(heroi);
 
                 break;
 
@@ -91,11 +97,13 @@ public class Sala1_Taberna1 {
                 System.out.println("O taberneiro abre uma caixa. ** “Isto é a minha loja secreta...");
                 System.out.println("O que queres comprar?” **");
 
-                //todo: interação com vendedor
+                //interação com vendedor
+                vendedor.lojaVendedor(heroi);
+
 
 
                 //sala 2
-                sala2();
+                sala2(heroi);
                 break;
 
             default:
