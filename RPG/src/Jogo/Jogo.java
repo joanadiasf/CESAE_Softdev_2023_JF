@@ -4,6 +4,7 @@ import Entidades.TipoHerois.BarbaroAttackStrategy;
 import Entidades.TipoHerois.BardoAttackStrategy;
 import Entidades.TipoHerois.FeiticeiroAttackStrategy;
 import Entidades.TipoHerois.Herois;
+import Jogo.SalasJogo.Sala1_Taberna1;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,14 +13,15 @@ import static Jogo.SalasJogo.CharacterScreen.morte;
 import static Jogo.SalasJogo.CharacterScreen.tobias;
 
 public class Jogo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
-        //todo: add persongaem
-        //todo: add sala com necessidade de inserir personagem
+        //criação personagem + inicio de jogo
+
+        Sala1_Taberna1.sala1_Inicio(personagem());
 
     }
 
-    public Herois personagem() throws FileNotFoundException {
+    public static Herois personagem() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
 
