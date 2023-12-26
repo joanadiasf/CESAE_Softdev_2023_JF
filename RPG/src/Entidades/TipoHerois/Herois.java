@@ -5,6 +5,7 @@ import Entidades.NPC;
 import Entidades.Tools.CSVLojaReader;
 import Itens.ArmaPrincipal;
 import Itens.Consumivel;
+import Itens.ConsumivelCombate;
 import Itens.Pocao;
 
 import java.io.FileNotFoundException;
@@ -85,7 +86,10 @@ public class Herois extends Entidade {
 
     }
 
-    //todo ______________________
+    /**
+     * Método para usar poção
+     * @throws FileNotFoundException - ler files
+     */
     public void usarPocao() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
@@ -93,28 +97,69 @@ public class Herois extends Entidade {
         //imprime inventario poçoes
         for (Consumivel consumivelAtual : inventario){
 
-            int i=1;
-            if (consumivelAtual instanceof Pocao){
+            int i=0;
+            if (consumivelAtual instanceof Pocao) {
 
                 Pocao pocaoAtual = (Pocao) consumivelAtual;
-                inventario.get(i);
+                inventario.get(i++);
                 pocaoAtual.exibirDetalhes();
 
+                //utilizador seleciona
+                System.out.println("Qual a poção que quer?");
+                int escolha = input.nextInt();
+
+                if (escolha == i) {
+
+                    //retirar do inventário
+                    inventario.remove(i);
+
+                    //incrementa efeitos
+                    this.setHP(this.getHP()+pocaoAtual.getEfeitoVida());
+                    this.setForca(this.getForca()+pocaoAtual.getAumentoForca());
+
+                }
+
             }
-            i++;
+
+
         }
 
-
-        //utilizador seleciona
-
-
-
-        //incrementa efeitos
-
-
-        System.out.println("A usar poção... (mensagem a remover ???)  CLASSE HEROIS");
     }
 
+    public void usarConsumivel(NPC adversario) throws FileNotFoundException{
+
+        Scanner input = new Scanner(System.in);
+
+        //imprime inventario consumiveis
+        for (Consumivel consumivelAtual : inventario){
+
+            int i=0;
+            if (consumivelAtual instanceof ConsumivelCombate) {
+
+                ConsumivelCombate consumivelCombateAtual = (ConsumivelCombate) consumivelAtual;
+                inventario.get(i++);
+                consumivelCombateAtual.exibirDetalhes();
+
+                //utilizador seleciona
+                System.out.println("Qual a poção que quer?");
+                int escolha = input.nextInt();
+
+                if (escolha == i) {
+
+                    //retirar do inventário
+                    inventario.remove(i);
+
+                    //incrementa efeitos
+                    adversario.setHP(adversario.getHP()-consumivelCombateAtual.getAtaqueInstantaneo());
+
+                }
+
+            }
+
+
+        }
+
+    }
     /**
      * Método de ataque do Jogador
      * @param adversario npc
@@ -202,7 +247,8 @@ public class Herois extends Entidade {
                 System.out.println("**** USAR ITEM COMBATE ****");
 
                 ataques.ataqueConsumivel(this,adversario);
-                //todo: add
+                usarConsumivel(adversario);
+
                 break;
 
             default:

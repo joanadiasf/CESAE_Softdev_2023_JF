@@ -2,6 +2,7 @@ package Entidades.TipoHerois;
 
 import Entidades.NPC;
 import Itens.Consumivel;
+import Itens.ConsumivelCombate;
 import Itens.Pocao;
 
 import java.io.FileNotFoundException;
@@ -30,7 +31,6 @@ public class BarbaroAttackStrategy implements Ataques {
     public void ataqueConsumivel(Herois heroi,NPC adversario) {
 
 
-        System.out.println("Está a atacar consumivel");
-        //todo: add
+
     }
 }
