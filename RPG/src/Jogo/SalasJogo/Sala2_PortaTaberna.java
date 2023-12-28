@@ -2,6 +2,8 @@ package Jogo.SalasJogo;
 
 import Entidades.NPC;
 import Entidades.TipoHerois.Herois;
+import Itens.Consumivel;
+import Itens.Pocao;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -235,9 +237,10 @@ public class Sala2_PortaTaberna {
                 System.out.println("Caminhando......");
 
                 sleep(600);
-                System.out.println("O caminho foi bastante seguro! O Jogador achou mantimentos.");
+                System.out.println("O caminho foi bastante seguro! O Jogador achou uma *Poção*.");
 
-                //todo: add comida inventario Jogador
+                //add pocao inventario Jogador
+                heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));
 
                 //sala 4
                 System.out.println("Mais à frente o Jogador vê um vulcão");

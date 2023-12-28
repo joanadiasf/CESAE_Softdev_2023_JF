@@ -386,4 +386,22 @@ public class Herois extends Entidade {
         return null;
     }
 
+    public void addInventario(ConsumivelCombate consumivelAtual){
+
+        inventario.add(consumivelAtual);
+    }
+
+    public void removeInventario (ConsumivelCombate consumivelAtual){
+
+        inventario.remove(consumivelAtual);
+    }
+    public void addInventario(Pocao pocaoAtual){
+
+        inventario.add(pocaoAtual);
+    }
+
+    public void removeInventario (Pocao pocaoAtual){
+
+        inventario.remove(pocaoAtual);
+    }
 }

@@ -10,13 +10,7 @@ public class ArmaPrincipal extends ItemHeroi{
         super(nome, preco, ataqueArma, ataqueEspecialArma, ataqueInstantaneo,0,0);
     }
 
-    @Override
-    public void exibirDetalhes() throws FileNotFoundException {
 
-        System.out.println("Nome: " + this.getNome());
-        System.out.println("Ataque: " + getAtaqueArma());
-
-    }
 
 
 }

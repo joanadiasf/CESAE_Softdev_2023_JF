@@ -2,6 +2,7 @@ package Jogo.SalasJogo;
 
 import Entidades.NPC;
 import Entidades.TipoHerois.Herois;
+import Itens.Pocao;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -105,7 +106,10 @@ public class Sala3_Taberna2 {
                System.out.println("\n Poção Cura adquirida");
                System.out.println("\n Poção Invisibilidade adquirida");
 
-               //todo: add poçoes inventario
+               //add poçoes inventario
+               heroi.addInventario(new Pocao("Pocao Cura",0,35,0));
+               heroi.addInventario(new Pocao("Pocao Invisibilidade",0,0,15));
+
 
                System.out.println("\nQuer descansar?");
                System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");

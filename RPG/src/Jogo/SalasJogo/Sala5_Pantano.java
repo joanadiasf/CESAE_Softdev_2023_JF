@@ -1,6 +1,7 @@
 package Jogo.SalasJogo;
 
 import Entidades.TipoHerois.Herois;
+import Itens.Pocao;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -46,7 +47,9 @@ public class Sala5_Pantano {
                 sleep(600);
                 System.out.println("O caminho foi bastante seguro! O Jogador achou mantimentos.");
 
-                //todo: add comida inventario Jogador
+                //add pocao inventario Jogador
+                heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));
+
 
                 //sala8
                 sala8(heroi);

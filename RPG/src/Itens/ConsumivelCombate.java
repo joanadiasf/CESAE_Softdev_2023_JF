@@ -11,5 +11,10 @@ public class ConsumivelCombate extends Consumivel{
         super(nome, preco, 0, 0, ataqueInstantaneo,0, 0);
     }
 
+    @Override
+    public void exibirDetalhes() throws FileNotFoundException {
 
+        System.out.println("Nome: " + super.getNome());
+        System.out.println("Ataque: " + super.getAtaqueInstantaneo());
+    }
 }
