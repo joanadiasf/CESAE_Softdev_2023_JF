@@ -31,7 +31,7 @@ public class NPC extends Entidade{
     @Override
     public void exibirDetalhes() {
 
-        System.out.println(super.getNome() + " appears *******");
+        System.out.println("A random " + super.getNome() + " appears *******");
         System.out.println("Força: " + this.getForca());
         System.out.println("Recompensa: " + this.ouro + " ouros");
 
