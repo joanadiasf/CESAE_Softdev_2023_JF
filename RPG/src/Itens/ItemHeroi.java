@@ -69,14 +69,6 @@ public abstract class ItemHeroi {
 
     public  void exibirDetalhes() throws FileNotFoundException{
 
-
-
-        System.out.println("Nome: " + this.nome);
-        System.out.println("Preço: " + this.preco);
-
-        System.out.println("Heróis que podem usar item: " + this.heroisPermitidos);
-
-
     }
 
 
