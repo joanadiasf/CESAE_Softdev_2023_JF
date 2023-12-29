@@ -21,6 +21,11 @@ public class Jogo {
 
     }
 
+    /**
+     * Método de Criação de Personagem
+     * @return - retorna um Heroi
+     * @throws FileNotFoundException - file
+     */
     public static Herois personagem() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
@@ -32,7 +37,7 @@ public class Jogo {
 
         //escolher dificuldade
 
-        System.out.println("\n\n\nSelecione a Dificuldade");
+        System.out.println("\nSelecione a Dificuldade");
         System.out.println("1-Fácil \t 2- Dificil");
         int opcao= input.nextInt();
 

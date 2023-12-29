@@ -105,7 +105,7 @@ public class Herois extends Entidade {
                 pocaoAtual.exibirDetalhes();
 
                 //utilizador seleciona
-                System.out.println("Qual a poção que quer?");
+                System.out.println("Qual a Poção que quer?");
                 int escolha = input.nextInt();
 
                 if (escolha == i) {
@@ -116,6 +116,7 @@ public class Herois extends Entidade {
                     //incrementa efeitos
                     this.setHP(this.getHP()+pocaoAtual.getEfeitoVida());
                     this.setForca(this.getForca()+pocaoAtual.getAumentoForca());
+                    //todo: sout com efeitos
 
                 }
 
@@ -137,11 +138,14 @@ public class Herois extends Entidade {
             if (consumivelAtual instanceof ConsumivelCombate) {
 
                 ConsumivelCombate consumivelCombateAtual = (ConsumivelCombate) consumivelAtual;
+
+                System.out.println("\nItem " + i + ": ");
                 inventario.get(i++);
                 consumivelCombateAtual.exibirDetalhes();
 
+
                 //utilizador seleciona
-                System.out.println("Qual a poção que quer?");
+                System.out.println("Qual o Consumivel que quer?");
                 int escolha = input.nextInt();
 
                 if (escolha == i) {
@@ -152,6 +156,7 @@ public class Herois extends Entidade {
                     //incrementa efeitos
                     adversario.setHP(adversario.getHP()-consumivelCombateAtual.getAtaqueInstantaneo());
 
+                    //todo: sout com efeitos
                 }
 
             }
@@ -194,7 +199,7 @@ public class Herois extends Entidade {
 
                     adversario.setHP(adversario.getHP() - this.getForca());
                     adversario.setHP(adversario.getHP() - this.getForca());
-                    System.out.println("Vida Restante: " + adversario.getHP());
+                    System.out.println("Vida Restante Adversário: " + adversario.getHP());
                 }
                 //se >17 ataque especial
                 if (ataqueRoll >= 17) {
@@ -205,22 +210,22 @@ public class Herois extends Entidade {
 
 
                     adversario.setHP(adversario.getHP() - this.getForca());
-                    System.out.println("Vida Restante: " + adversario.getHP());
+                    System.out.println("Vida Restante Adversário: " + adversario.getHP());
                 }
 
-                // || se >8 e <17 ataque normal
-                if (ataqueRoll >= 8 && ataqueRoll < 17) {
+                // || se >5 e <17 ataque normal
+                if (ataqueRoll >= 5 && ataqueRoll < 17) {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Ataque Normal!!");
                     ataques.ataqueEspecial(this,adversario);
 
                     adversario.setHP(adversario.getHP() - this.getForca());
-                    System.out.println("Vida Restante: " + adversario.getHP());
+                    System.out.println("Vida Restante Adversário: " + adversario.getHP());
                 }
 
-                // || se <8 falha
-                if (ataqueRoll < 8 && ataqueRoll > 2) {
+                // || se <5 falha
+                if (ataqueRoll < 5 && ataqueRoll > 2) {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Falhou...");
@@ -246,7 +251,7 @@ public class Herois extends Entidade {
 
                 System.out.println("**** USAR ITEM COMBATE ****");
 
-                ataques.ataqueConsumivel(this,adversario);
+//                ataques.ataqueConsumivel(this,adversario);
                 usarConsumivel(adversario);
 
                 break;
@@ -276,7 +281,7 @@ public class Herois extends Entidade {
 
             //tira vida jogador
             this.setHP(this.getHP() - adversario.getForca());
-            System.out.println("Vida Restante: " + this.getHP());
+            System.out.println("Vida Restante Jogador: " + this.getHP());
 
         }
         if (ataqueRoll == 2) {
@@ -286,7 +291,7 @@ public class Herois extends Entidade {
 
             //tira vida jogador
             this.setHP(this.getHP() - adversario.getForca());
-            System.out.println("Vida Restante: " + this.getHP() + 10);
+            System.out.println("Vida Restante Jogador: " + this.getHP() + 10);
         }
 
 
@@ -310,6 +315,9 @@ public class Herois extends Entidade {
         iniciativa = random.nextInt(1, 21);
         System.out.println(iniciativa);
 
+
+        lerFicheiro("src/Entidades/battleScreen.txt");
+
         if(iniciativa<10){
             npcAtaca(adversario);
         }
@@ -322,16 +330,20 @@ public class Herois extends Entidade {
             npcAtaca(adversario);
 
             //o primeiro a perder a vida toda morre
-        } while (adversario.getHP() != 0 || this.getHP() != 0);
+        } while (adversario.getHP() > 0 || this.getHP() > 0);
 
-        if (adversario.getHP() != 0) {
+        if (adversario.getHP() > 0) {
 
+            System.out.println("**RECOMPENSA**" + adversario.getOuro());
             this.setOuro(this.getOuro()+adversario.getOuro());
+
+            System.out.println("\n *** SUBIU DE NIVEL ***");
+            this.setNivel(this.getNivel()+1);
 
             return this;
         }
 
-        if (this.getHP() != 0) {
+        if (this.getHP() > 0) {
             morte();
             return adversario;
 

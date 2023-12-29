@@ -20,7 +20,7 @@ public class Sala3_Taberna2 {
    public static void sala3(Herois heroi) throws InterruptedException, FileNotFoundException {
 
        Scanner input = new Scanner(System.in);
-       int opcao1,opcao2,comida;
+       int opcao1,opcao2,pocao;
 
        sleep(500);
 
@@ -31,15 +31,32 @@ public class Sala3_Taberna2 {
        System.out.println(" * * * * * * * *");
 
 
-       System.out.println("\n1- Comprar comida \t 2- Não comprar nada");
-       comida= input.nextInt();
+       System.out.println("\n1- Comprar Poções \t 2- Não comprar nada");
+       pocao= input.nextInt();
 
-       if (comida==1){
+       if (pocao==1){
 
-           //todo: add comida ao inventário
-           //todo: retirar dinheiro
+           //opções de poções
+           System.out.println("1- Poção Vitamina C (20 ouros) \t 2- Poção God of War (40 ouros) \t 3- Poção Força Divina (60 ouros)");
+            int escolhaPocao= input.nextInt();
 
-           System.out.println("COMPROOOU");
+           //retirar dinheiro
+           if (escolhaPocao==1){
+               System.out.println("** POÇÃO VITAMINA C adicionada ao inventário");
+               heroi.addInventario(new Pocao("Pocao Vitamina C",0,40,0));
+               heroi.setOuro(heroi.getOuro()-20);
+           }
+           if (escolhaPocao==2){
+               System.out.println("** POÇÃO GOD OF WAR adicionada ao inventário");
+               heroi.addInventario(new Pocao("Pocao God of War",0,30,25));
+               heroi.setOuro(heroi.getOuro()-40);
+           }
+           if(escolhaPocao==3){
+               System.out.println("** POÇÃO FORÇA DIVINA adicionada ao inventário");
+               heroi.addInventario(new Pocao("Pocao Força Divina",0,-10,40));
+               heroi.setOuro(heroi.getOuro()-60);
+           }
+
            System.out.println("\nApós comprar comida o Jogador ouve uma discussão acessa entre dois clientes...");
        }
 

@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
+import static Entidades.TipoHerois.BibliotecaFuncoesComuns.lerFicheiro;
 public class Vendedor {
 
     ArrayList<ItemHeroi> loja;
@@ -29,14 +29,14 @@ public class Vendedor {
      * @param itemHeroi - item
      * @return - se pode ou nao usar
      */
-    public boolean validarPermissao(Herois heroi, ItemHeroi itemHeroi){
-        for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()){
-            if (heroi.getClass().getSimpleName().equals(heroiPermitidoAtual)){
-                return true;
-            }
-        }
-        return false;
-    }
+//    public boolean validarPermissao(Herois heroi, ItemHeroi itemHeroi){
+//        for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()){
+//            if (heroi.getClass().getSimpleName().equals(heroiPermitidoAtual)){
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
     /**
      * Loja do Vendedor
@@ -67,6 +67,8 @@ public class Vendedor {
             }
         }
 
+        lerFicheiro("src/Entidades/shopScreen.txt");
+
         for (int i = 0; i <= 10; i++) {
 
             System.out.println("\nItem " + i + ": ");
@@ -93,7 +95,7 @@ public class Vendedor {
                         if (i == item) {
                             ItemHeroi itemHeroi = loja.get(arrayIndexAleatorio.get(item));
 
-                            if (validarPermissao(heroi, itemHeroi)) {
+
 
                                 if (heroi.getOuro() >= itemHeroi.getPreco()) {
 
@@ -109,7 +111,7 @@ public class Vendedor {
                                     }
 
                                     heroi.setOuro(heroi.getOuro()-itemHeroi.getPreco());
-                                    System.out.println("Removeu o " + itemHeroi.getNome());
+                                    System.out.println("Obteve o " + itemHeroi.getNome());
 
                                 } else {
 
@@ -117,11 +119,8 @@ public class Vendedor {
                                     break;
                                 }
 
-                            }
 
-                            else {
-                                System.out.println("Não pode comprar este item");
-                            }
+
                         }
                     }
 

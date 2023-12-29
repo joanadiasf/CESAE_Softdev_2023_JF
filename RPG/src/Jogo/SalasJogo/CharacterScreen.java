@@ -43,4 +43,20 @@ public class CharacterScreen {
 
     }
 
+    public static void titleScreen () throws FileNotFoundException{
+
+        // Instanciar o Scanner para um ficheiro com o caminho recebido como parâmetro
+        Scanner fileScanner = new Scanner(new File("src/Jogo/SalasJogo/gameTitle.txt"));
+
+        String linha;
+
+
+        while (fileScanner.hasNextLine()) {
+            linha = fileScanner.nextLine();
+
+            System.out.println(linha);
+        }
+
+    }
+
 }
