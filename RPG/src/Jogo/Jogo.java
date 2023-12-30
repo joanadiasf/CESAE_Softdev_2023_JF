@@ -26,8 +26,7 @@ public class Jogo {
      * @return - retorna um Heroi
      * @throws FileNotFoundException - file
      */
-    public static Herois personagem() throws FileNotFoundException
-    {
+    public static Herois personagem() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
 
@@ -61,7 +60,7 @@ public class Jogo {
             //distribuição de pontos
             while (contPontos != 0){
 
-                System.out.println("\nTem"+ contPontos + "pontos de criação disponiveis...");
+                System.out.println("\nTem "+ contPontos + "pontos de criação disponiveis...");
                 System.out.println("1- Vida \t 2- Força");
                 int distribuicaoPontos = input.nextInt();
 

@@ -51,6 +51,7 @@ public class Vendedor {
         Random random = new Random();
 
         //arrayList para a "montra"
+
         ArrayList<Integer> arrayIndexAleatorio = new ArrayList<>();
 
 

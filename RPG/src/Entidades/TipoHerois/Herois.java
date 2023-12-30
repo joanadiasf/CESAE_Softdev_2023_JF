@@ -2,7 +2,6 @@ package Entidades.TipoHerois;
 
 import Entidades.Entidade;
 import Entidades.NPC;
-import Entidades.Tools.CSVLojaReader;
 import Itens.ArmaPrincipal;
 import Itens.Consumivel;
 import Itens.ConsumivelCombate;
