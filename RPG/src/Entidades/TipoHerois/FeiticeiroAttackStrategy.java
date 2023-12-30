@@ -10,7 +10,7 @@ public class FeiticeiroAttackStrategy implements Ataques {
     @Override
     public void ataqueNormal(Herois heroi, NPC adversario) throws FileNotFoundException {
         System.out.println("** PRELIMPIMPIM **");
-        adversario.setHP(adversario.getHP() - heroi.getForca());
+        //adversario.setHP(adversario.getHP() - heroi.getForca());
 
         lerFicheiro("src/Entidades/TipoHerois/textFiles/magic_attack.txt");
     }
@@ -18,7 +18,7 @@ public class FeiticeiroAttackStrategy implements Ataques {
     @Override
     public void ataqueEspecial(Herois heroi,NPC adversario) throws FileNotFoundException {
         System.out.println("** FLECHAS **");
-        adversario.setHP(adversario.getHP() - heroi.getForca()+10);
+       // adversario.setHP(adversario.getHP() - heroi.getForca()+10);
 
         lerFicheiro("src/Entidades/TipoHerois/textFiles/crossbow_attack.txt");
     }

@@ -26,7 +26,8 @@ public class Jogo {
      * @return - retorna um Heroi
      * @throws FileNotFoundException - file
      */
-    public static Herois personagem() throws FileNotFoundException {
+    public static Herois personagem() throws FileNotFoundException
+    {
 
         Scanner input = new Scanner(System.in);
 
@@ -106,6 +107,7 @@ public class Jogo {
 
                 case 1:
                     return new Herois(nome,pontosVida,pontosForca,1,200, new FeiticeiroAttackStrategy());
+
                 case 2:
                     return new Herois(nome,pontosVida,pontosForca,1,200, new BardoAttackStrategy());
 

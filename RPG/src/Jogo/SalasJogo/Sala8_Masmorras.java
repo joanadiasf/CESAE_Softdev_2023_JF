@@ -109,7 +109,7 @@ public class Sala8_Masmorras {
 
         tobias();
 
-        NPC tobias = new NPC("Tobias O Grande",100,25,40);
+        NPC tobias = new NPC("Tobias O Grande",85,25,40);
 
         //batalha final *****************
         heroi.batalhaFinal(tobias);

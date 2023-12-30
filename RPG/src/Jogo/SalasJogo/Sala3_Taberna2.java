@@ -184,7 +184,6 @@ public class Sala3_Taberna2 {
                System.out.println("Após ajudar o Grandalhão, ele continua chateado e mata o jogador...");
 
                morte();
-
                break;
 
            default:
