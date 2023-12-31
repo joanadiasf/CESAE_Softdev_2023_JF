@@ -60,7 +60,7 @@ public class Jogo {
             //distribuição de pontos
             while (contPontos != 0){
 
-                System.out.println("\nTem "+ contPontos + "pontos de criação disponiveis...");
+                System.out.println("\nTem "+ contPontos + " pontos de criação disponiveis...");
                 System.out.println("1- Vida \t 2- Força");
                 int distribuicaoPontos = input.nextInt();
 
@@ -105,13 +105,37 @@ public class Jogo {
 
 
                 case 1:
-                    return new Herois(nome,pontosVida,pontosForca,1,200, new FeiticeiroAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 100");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new FeiticeiroAttackStrategy());
 
                 case 2:
-                    return new Herois(nome,pontosVida,pontosForca,1,200, new BardoAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 100");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new BardoAttackStrategy());
 
                 case 3:
-                    return new Herois(nome,pontosVida,pontosForca,1,200, new BarbaroAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 100");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,100, new BarbaroAttackStrategy());
 
 
                 default:
@@ -132,7 +156,7 @@ public class Jogo {
 
             while (contPontos != 0){
 
-                System.out.println("\nTem"+ contPontos + "pontos de criação disponiveis...");
+                System.out.println("\nTem"+ contPontos + " pontos de criação disponiveis...");
                 System.out.println("1- Vida \t 2- Força");
                 int distribuicaoPontos = input.nextInt();
 
@@ -177,13 +201,37 @@ public class Jogo {
 
 
                 case 1:
-                    return new Herois(nome,pontosVida,pontosForca,1,100, new FeiticeiroAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 50");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,50, new FeiticeiroAttackStrategy());
 
                 case 2:
-                    return new Herois(nome,pontosVida,pontosForca,1,100, new BardoAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 50");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,50, new BardoAttackStrategy());
 
                 case 3:
-                    return new Herois(nome,pontosVida,pontosForca,1,100, new BarbaroAttackStrategy());
+
+                    System.out.println("\n************ O nosso Heroi ************");
+                    System.out.println("\nNome: " + nome);
+                    System.out.println("Vida: " + pontosVida);
+                    System.out.println("Força: " + pontosForca);
+                    System.out.println("Nivel: 1");
+                    System.out.println("Ouro: 50");
+
+                    return new Herois(nome,pontosVida,pontosForca,1,50, new BarbaroAttackStrategy());
                     
 
                 default:

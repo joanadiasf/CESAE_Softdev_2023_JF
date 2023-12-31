@@ -12,8 +12,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import static Jogo.Jogo.personagem;
 import static Jogo.SalasJogo.CharacterScreen.morte;
 import static Entidades.TipoHerois.BibliotecaFuncoesComuns.lerFicheiro;
+import static Jogo.SalasJogo.Sala1_Taberna1.sala1_Inicio;
+
 public class Herois extends Entidade {
 
     private int nivel, ouro;
@@ -24,11 +27,12 @@ public class Herois extends Entidade {
 
     /**
      * Construtor
-     * @param nome Nome Personagem
-     * @param HP Vida
-     * @param forca Força
-     * @param nivel Nivel
-     * @param ouro Dinheiro
+     *
+     * @param nome    Nome Personagem
+     * @param HP      Vida
+     * @param forca   Força
+     * @param nivel   Nivel
+     * @param ouro    Dinheiro
      * @param ataques Ataques
      */
     public Herois(String nome, int HP, int forca, int nivel, int ouro, Ataques ataques) {
@@ -45,12 +49,15 @@ public class Herois extends Entidade {
     public int getNivel() {
         return nivel;
     }
+
     public int getOuro() {
         return ouro;
     }
+
     public Ataques getAtaques() {
         return ataques;
     }
+
     public ArrayList<Consumivel> getInventario() {
         return inventario;
     }
@@ -59,12 +66,15 @@ public class Herois extends Entidade {
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
+
     public void setOuro(int ouro) {
         this.ouro = ouro;
     }
+
     public void setAtaques(Ataques ataques) {
         this.ataques = ataques;
     }
+
     public void setInventario(ArrayList<Consumivel> inventario) {
         this.inventario = inventario;
     }
@@ -87,72 +97,74 @@ public class Herois extends Entidade {
 
     /**
      * Método para usar poção
+     *
      * @throws FileNotFoundException - ler files
      */
     public void usarPocao() throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
 
+        int removerPocao = -1; //nao pode ser a 0 porque senao tira o item do indice 0
         //imprime inventario poçoes
-        for (Consumivel consumivelAtual : inventario){
+        for (Consumivel consumivelAtual : inventario) {
 
-            int i=0;
+            int i = -1;
             if (consumivelAtual instanceof Pocao) {
 
                 Pocao pocaoAtual = (Pocao) consumivelAtual;
-
+                inventario.get(++i);
                 System.out.println("\nItem " + i + ": ");
-                inventario.get(i++);
+
                 pocaoAtual.exibirDetalhes();
 
                 //utilizador seleciona
                 System.out.println("Qual a Poção que quer?");
                 int escolha = input.nextInt();
-
+                System.out.println(escolha);
                 if (i == escolha) {
 
                     //retirar do inventário
-                    inventario.remove(i);
+                    removerPocao=i;
 
                     //incrementa efeitos
+                    this.setHP(this.getHP() + pocaoAtual.getEfeitoVida());
+                    System.out.println("** Ganhou " + pocaoAtual.getEfeitoVida() + " de Vida");
 
-                    if (this.getHP() < this.getMaxHP()){
-
-                        this.setHP(this.getHP()+pocaoAtual.getEfeitoVida());
-                        System.out.println("** Ganhou " + pocaoAtual.getEfeitoVida() + " de Vida");
-
-                    }
-
-                    this.setForca(this.getForca()+pocaoAtual.getAumentoForca());
+                    this.setForca(this.getForca() + pocaoAtual.getAumentoForca());
                     System.out.println("e " + pocaoAtual.getAumentoForca() + " de Força! **");
                 }
 
             }
-
-
+            //retirar do inventario
+            inventario.remove(removerPocao);
         }
+
+
 
     }
 
     /**
      * Método para usar Consumivel
+     *
      * @param adversario - npc
      * @throws FileNotFoundException - file
      */
-    public void usarConsumivel(NPC adversario) throws FileNotFoundException{
+    public void usarConsumivel(NPC adversario) throws FileNotFoundException {
 
         Scanner input = new Scanner(System.in);
+        int removerConsumivel = -1; //nao pode ser a 0 porque senao tira o item do indice 0
 
         //imprime inventario consumiveis
-        for (Consumivel consumivelAtual : inventario){
+        for (Consumivel consumivelAtual : inventario) {
 
-            int i=0;
+            int i = 0;
             if (consumivelAtual instanceof ConsumivelCombate) {
 
                 ConsumivelCombate consumivelCombateAtual = (ConsumivelCombate) consumivelAtual;
 
+                inventario.get(++i);
                 System.out.println("\nItem " + i + ": ");
-                inventario.get(i++);
+
                 consumivelCombateAtual.exibirDetalhes();
 
 
@@ -160,13 +172,13 @@ public class Herois extends Entidade {
                 System.out.println("Qual o Consumivel que quer?");
                 int escolha = input.nextInt();
 
-                if ( i == escolha) {
+                if (i == escolha) {
 
                     //retirar do inventário
-                    inventario.remove(i);
+                    removerConsumivel=i;
 
                     //incrementa efeitos
-                    adversario.setHP(adversario.getHP()-consumivelCombateAtual.getAtaqueInstantaneo());
+                    adversario.setHP(adversario.getHP() - consumivelCombateAtual.getAtaqueInstantaneo());
 
                     System.out.println("** Ataque Instantaneo de " + consumivelCombateAtual.getAtaqueInstantaneo() + " **");
 
@@ -174,12 +186,15 @@ public class Herois extends Entidade {
 
             }
 
-
+            //remover
+            inventario.remove(removerConsumivel);
         }
 
     }
+
     /**
      * Método de ataque do Jogador
+     *
      * @param adversario npc
      * @throws FileNotFoundException - porque chama o método usarPocao()
      */
@@ -208,10 +223,10 @@ public class Herois extends Entidade {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Ataque Especial ** DUPLO ** !!!!");
-                    ataques.ataqueNormal(this,adversario);
+                    ataques.ataqueNormal(this, adversario);
 
-                    adversario.setHP(adversario.getHP() - (this.getForca()-10));
-                    adversario.setHP(adversario.getHP() - (this.getForca()-10));
+                    adversario.setHP(adversario.getHP() - (this.getForca() - 10));
+                    adversario.setHP(adversario.getHP() - (this.getForca() - 10));
                     System.out.println("Vida Restante Adversário: " + adversario.getHP());
                 }
                 //se >17 ataque especial
@@ -219,10 +234,10 @@ public class Herois extends Entidade {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Ataque Especial!!");
-                    ataques.ataqueNormal(this,adversario);
+                    ataques.ataqueNormal(this, adversario);
 
 
-                    adversario.setHP(adversario.getHP() - (this.getForca()-10));
+                    adversario.setHP(adversario.getHP() - (this.getForca() - 10));
                     System.out.println("Vida Restante Adversário: " + adversario.getHP());
                 }
 
@@ -231,7 +246,7 @@ public class Herois extends Entidade {
 
                     System.out.println(ataqueRoll);
                     System.out.println("Ataque Normal!!");
-                    ataques.ataqueEspecial(this,adversario);
+                    ataques.ataqueEspecial(this, adversario);
 
                     adversario.setHP(adversario.getHP() - this.getForca());
                     System.out.println("Vida Restante Adversário: " + adversario.getHP());
@@ -246,9 +261,9 @@ public class Herois extends Entidade {
 
                 //|| se 1/2 - perde vida
 
-                if (ataqueRoll==1 || ataqueRoll==2){
+                if (ataqueRoll == 1 || ataqueRoll == 2) {
 
-                    this.setHP(this.getHP()-this.getForca());
+                    this.setHP(this.getHP() - this.getForca());
 
                     lerFicheiro("src/Entidades/TipoHerois/textFiles/failed_attack.txt");
                     System.out.println("\nVida Restante Jogador: " + this.getHP());
@@ -277,11 +292,12 @@ public class Herois extends Entidade {
 
     /**
      * Método de ataque do NPC
+     *
      * @param adversario - NPC
      */
     public void npcAtaca(NPC adversario) {
 
-        int  ataqueRoll;
+        int ataqueRoll;
 
         Random random = new Random();
         System.out.println("Adversário ataca");
@@ -304,7 +320,7 @@ public class Herois extends Entidade {
 
 
             //tira vida jogador
-            this.setHP(this.getHP() -(adversario.getForca()-10) );
+            this.setHP(this.getHP() - (adversario.getForca() - 10));
             System.out.println("Vida Restante Jogador: " + this.getHP());
         }
 
@@ -317,7 +333,7 @@ public class Herois extends Entidade {
      * @return - vencedor
      * @throws FileNotFoundException - porque chama o método usarPocao()
      */
-    public Entidade batalha(NPC adversario) throws FileNotFoundException {
+    public Entidade batalha(NPC adversario) throws FileNotFoundException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -332,7 +348,7 @@ public class Herois extends Entidade {
 
         lerFicheiro("src/Entidades/battleScreen.txt");
 
-        if(iniciativa<10){
+        if (iniciativa < 10) {
             npcAtaca(adversario);
         }
 
@@ -349,14 +365,14 @@ public class Herois extends Entidade {
                 if (adversario.getHP() <= 0) {
 
                     System.out.println("\n**RECOMPENSA**" + adversario.getOuro());
-                    this.setOuro(this.getOuro()+adversario.getOuro());
+                    this.setOuro(this.getOuro() + adversario.getOuro());
 
                     System.out.println("\n *** SUBIU DE NIVEL ***");
-                    this.setNivel(this.getNivel()+1);
+                    this.setNivel(this.getNivel() + 1);
 
-                    if (this.getHP() < this.getMaxHP()){
+                    if (this.getHP() < this.getMaxHP()) {
                         System.out.println("*** VIDA + 15 ***");
-                        this.setHP(this.getHP()+15);
+                        this.setHP(this.getHP() + 15);
                     }
 
 
@@ -364,8 +380,26 @@ public class Herois extends Entidade {
                 }
                 if (this.getHP() <= 0) {
                     morte();
-                    return adversario;
 
+                    System.out.println("\n\nQueres voltar a tentar?");
+                    System.out.println("1- Sim \t 2- Não");
+                    int escolha=input.nextInt();
+
+                    switch (escolha){
+
+                        case 1:
+                            sala1_Inicio(personagem());
+                            break;
+
+                        case 2:
+                            System.out.println("Adeus...");
+
+
+                        default:
+                            System.out.println("Opção inválida...");
+                    }
+
+                    return adversario;
                 }
                 return null;
             }
@@ -373,12 +407,11 @@ public class Herois extends Entidade {
         } while (true);
 
 
-
-
     }
 
     /**
      * Batalha final
+     *
      * @param adversario - npc
      * @return - vencedor
      * @throws FileNotFoundException - file
@@ -395,7 +428,7 @@ public class Herois extends Entidade {
         iniciativa = random.nextInt(1, 21);
         System.out.println(iniciativa);
 
-        if(iniciativa<10){
+        if (iniciativa < 10) {
             npcAtaca(adversario);
         }
 
@@ -421,22 +454,24 @@ public class Herois extends Entidade {
         } while (true);
     }
 
-    public void addInventario(ConsumivelCombate consumivelAtual){
+    //****************************************************************** INVENTARIO
+
+    /**
+     * Método para adicionar consumivel de combate ao inventario
+     * @param consumivelAtual - o que recebe
+     */
+    public void addInventario(ConsumivelCombate consumivelAtual) {
 
         inventario.add(consumivelAtual);
     }
 
-    public void removeInventario (ConsumivelCombate consumivelAtual){
-
-        inventario.remove(consumivelAtual);
-    }
-    public void addInventario(Pocao pocaoAtual){
+    /**
+     * Método para adicionar poções ao inventario
+     * @param pocaoAtual - o que recebe
+     */
+    public void addInventario(Pocao pocaoAtual) {
 
         inventario.add(pocaoAtual);
     }
 
-    public void removeInventario (Pocao pocaoAtual){
-
-        inventario.remove(pocaoAtual);
-    }
 }

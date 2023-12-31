@@ -52,17 +52,17 @@ public class Vendedor {
 
         //arrayList para a "montra"
 
-        ArrayList<Integer> arrayIndexAleatorio = new ArrayList<>();
+        ArrayList<Integer> montra = new ArrayList<>();
 
 
-        while (arrayIndexAleatorio.size() <= 10) {
+        while (montra.size() <= 10) {
 
             int indexAleatorio = random.nextInt(0, loja.size());
 
             //if para não serem adicionados repetidos
-            if (!arrayIndexAleatorio.contains(indexAleatorio)) {
+            if (!montra.contains(indexAleatorio)) {
 
-                arrayIndexAleatorio.add(indexAleatorio);
+                montra.add(indexAleatorio);
 
 
             }
@@ -73,7 +73,7 @@ public class Vendedor {
         for (int i = 0; i <= 10; i++) {
 
             System.out.println("\nItem " + i + ": ");
-            loja.get(arrayIndexAleatorio.get(i)).exibirDetalhes();
+            loja.get(montra.get(i)).exibirDetalhes();
         }
 
 
@@ -83,36 +83,49 @@ public class Vendedor {
         ArrayList<Consumivel> inventario = new ArrayList<>();
         do {
 
+            System.out.println("\nOuro disponivel: " + heroi.getOuro());
             System.out.println("Queres alguma coisa? \t 1- Sim \t 2- Não");
             opcao= input.nextInt();
 
             switch (opcao){
 
                 case 1:
-                    System.out.println("Escolha o item");
+
+                    //todo: fix repetido
+                    System.out.println("Escolha o item (  Se escolher repetido parte o programa :(  )");
                     int item = input.nextInt();
 
-                    for (int i = 0; i < arrayIndexAleatorio.size(); i++) {
+
+                    for (int i = 0; i < montra.size(); i++) {
+
                         if (i == item) {
-                            ItemHeroi itemHeroi = loja.get(arrayIndexAleatorio.get(item));
-
-
+                            ItemHeroi itemHeroi = loja.get(montra.get(item));
 
                                 if (heroi.getOuro() >= itemHeroi.getPreco()) {
+
+                                    if (montra.get(i)==-1){
+                                        System.out.println("Objeto indisponivel, já foi comprado...");
+                                        break;
+                                    }
 
                                     if (itemHeroi instanceof ArmaPrincipal) {
                                         ArmaPrincipal armaPrincipal = (ArmaPrincipal) itemHeroi;
                                         heroi.setArma(armaPrincipal);
-                                        loja.remove(armaPrincipal);
+
+                                        //da set de um valor para nao se alterar o indice dos objetos
+                                        montra.set(i,-1);
 
                                     } else if (itemHeroi instanceof Consumivel) {
                                         Consumivel consumivel = (Consumivel) itemHeroi;
                                         heroi.getInventario().add(consumivel);
-                                        loja.remove(consumivel);
+
+                                        //da set de um valor para nao se alterar o indice dos objetos
+                                        montra.set(i,-1);
                                     }
 
                                     heroi.setOuro(heroi.getOuro()-itemHeroi.getPreco());
                                     System.out.println("Obteve o " + itemHeroi.getNome());
+                                    System.out.println("Ouro restante: " + heroi.getOuro());
 
                                 } else {
 
@@ -124,6 +137,8 @@ public class Vendedor {
 
                         }
                     }
+
+
 
                     break;
 

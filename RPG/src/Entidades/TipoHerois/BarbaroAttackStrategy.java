@@ -14,7 +14,7 @@ public class BarbaroAttackStrategy implements Ataques {
     @Override
     public void ataqueNormal(Herois heroi,NPC adversario) throws FileNotFoundException {
         System.out.println("*** SOCO ***");
-        //adversario.setHP(adversario.getHP() - heroi.getForca());
+
 
         lerFicheiro("src/Entidades/TipoHerois/textFiles/fist_attack.txt");
     }
@@ -22,15 +22,11 @@ public class BarbaroAttackStrategy implements Ataques {
     @Override
     public void ataqueEspecial(Herois heroi,NPC adversario) throws FileNotFoundException {
         System.out.println("*** MACHADO DE LENHADOR***");
-       // adversario.setHP(adversario.getHP() - heroi.getForca()+45);
 
         lerFicheiro("src/Entidades/TipoHerois/textFiles/axe_attack.txt");
     }
 
     @Override
     public void ataqueConsumivel(Herois heroi,NPC adversario) {
-
-
-
     }
 }

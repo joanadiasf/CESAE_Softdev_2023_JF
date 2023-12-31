@@ -6,7 +6,10 @@ import java.util.Scanner;
 
 public class CharacterScreen {
 
-
+    /**
+     * GameOver screen
+     * @throws FileNotFoundException - txt file
+     */
     public static void morte() throws FileNotFoundException {
 
 
@@ -26,6 +29,10 @@ public class CharacterScreen {
 
     }
 
+    /**
+     * Boss screen
+     * @throws FileNotFoundException - txt file
+     */
     public static void tobias() throws FileNotFoundException {
 
 
@@ -43,6 +50,10 @@ public class CharacterScreen {
 
     }
 
+    /**
+     * Title screen
+     * @throws FileNotFoundException - txt file
+     */
     public static void titleScreen () throws FileNotFoundException{
 
         // Instanciar o Scanner para um ficheiro com o caminho recebido como parâmetro
