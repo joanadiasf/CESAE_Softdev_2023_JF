@@ -2,11 +2,15 @@ tipo;nome;preco;heroisPermitidos;ataque;ataqueEspecial;ataqueInstantaneo;vida;fo
 ArmaPrincipal;CrossBow Leve;10;[Feiticeiro,Bardo];10;15;0;0;0
 ArmaPrincipal;Dardo;4;[Feiticeiro];5;10;0;0;0
 ArmaPrincipal;Machado;30;[Barbaro];35;45;0;0;0
+ArmaPrincipal;Soqueira;15;[Feiticeiro,Barbaro,Bardo];5;10;0;0;0
 ConsumivelCombate;Bomba Mau Cheiro;10;[Feiticeiro,Bardo];0;0;15;0;0
 ConsumivelCombate;Bomba de Fumo;15;[Feiticeiro,Barbaro,Bardo];0;0;5;0;0
+ConsumivelCombate;Mini Bomba Nuclear;35;[Feiticeiro,Barbaro,Bardo];0;0;60;0;0
 ConsumivelCombate;Cordas Aco;15;[Bardo];0;0;25;0;0
 ConsumivelCombate;Senbon Ninja;65;[Feiticeiro,Bardo];0;0;70;0;0
+ConsumivelCombate;Luva Branca;65;[Barbaro];0;0;70;0;0
 Pocao;Pocao Cura;15;[Feiticeiro,Barbaro,Bardo];0;0;0;35;0
 Pocao;Pocao Invisibilidade;15;[Feiticeiro,Bardo];0;0;0;0;15
 Pocao;Injecao Adrenalina;18;[Barbaro];0;0;0;-15;15
 Pocao;Inspiracao Divina;70;[Feiticeiro,Barbaro,Bardo];0;0;0;-20;50
+Pocao;Sorte Liquida;70;[Feiticeiro,Bardo];0;0;0;30;50
