@@ -2,6 +2,7 @@ package Jogo;
 import Entidades.NPC;
 import Entidades.TipoHerois.FeiticeiroAttackStrategy;
 import Entidades.TipoHerois.Herois;
+import Entidades.Vendedor;
 import Jogo.SalasJogo.Sala1_Taberna1;
 
 import java.io.FileNotFoundException;
@@ -14,7 +15,7 @@ public class MainTestes {
 
 
 
-//        Herois heroi = new Herois("Hero",100,10,1,100, new FeiticeiroAttackStrategy());
+        Herois heroi = new Herois("Hero",100,10,1,100, new FeiticeiroAttackStrategy());
 //
 //        NPC npc = new NPC("Ogre",50,5,20);
 //
@@ -25,5 +26,9 @@ public class MainTestes {
 //        //testar só batalha
 //        heroi.batalha(npc);
 
+
+        Vendedor vendedor = new Vendedor();
+
+        vendedor.lojaVendedor(heroi);
     }
 }

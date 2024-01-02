@@ -111,7 +111,7 @@ public class Vendedor {
 
 
 //                            //está comentado porque senão não deixa comprar nada
-//                            if (validarPermissao(tipoHeroi,itemHeroi)){
+                            if (validarPermissao(tipoHeroi,itemHeroi)){
                                 if (heroi.getOuro() >= itemHeroi.getPreco()) {
 
 
@@ -140,10 +140,10 @@ public class Vendedor {
                                     System.out.println("Não tem ouro suficiente para comprar este item. Escolha outro item.");
                                     break;
                                 }
-//                            }
-//                            else {
-//                                System.out.println("Este item não é para este tipo de Heroi.");
-//                            }
+                            }
+                            else {
+                                System.out.println("Este item não é para este tipo de Heroi.");
+                            }
                         }
                     }
 

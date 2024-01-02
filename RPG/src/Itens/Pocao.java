@@ -13,8 +13,9 @@ public class Pocao extends Consumivel{
      * @param efeitoVida - efeito na vida
      * @param aumentoForca - efeito na força
      */
-    public Pocao(String nome, int preco, int efeitoVida, int aumentoForca) {
-        super(nome, preco, 0, 0, 0, efeitoVida, aumentoForca);
+
+    public Pocao(String nome, int preco, String[] heroispermitidos,  int efeitoVida, int aumentoForca) {
+        super(nome, preco, heroispermitidos, 0, 0, 0, efeitoVida, aumentoForca);
     }
 
     @Override

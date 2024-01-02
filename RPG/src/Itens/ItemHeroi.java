@@ -9,7 +9,7 @@ public abstract class ItemHeroi {
 
     private String nome;
     private int preco;
-    ArrayList<String> heroisPermitidos;
+    String[] heroisPermitidos;
     private int ataqueArma;
     private int ataqueEspecialArma;
     private int AtaqueInstantaneo;
@@ -18,25 +18,29 @@ public abstract class ItemHeroi {
     private int aumentoForca;
 
     /**
-     * Construtor
-     * @param nome nome item
+     *
+     * @param nome nome
      * @param preco preço
-     * @param ataqueArma ataque
-     * @param ataqueEspecialArma ataqueEspecial
-     * @param ataqueInstantaneo ataqueInstantaneo
-     * @param efeitoVida efeito
-     * @param aumentoForca aumento de força
+     * @param heroispermitidos herois array
+     * @param ataqueArma - ataque
+     * @param ataqueEspecialArma - ataque especial
+     * @param ataqueInstantaneo - ataque instaneo
+     * @param efeitoVida - efeito na vida
+     * @param aumentoForca - aumento na força
      */
-    public ItemHeroi(String nome, int preco, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
+    public ItemHeroi(String nome, int preco, String[] heroispermitidos, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
         this.nome = nome;
         this.preco = preco;
-        this.heroisPermitidos = new ArrayList<>();
+        this.heroisPermitidos = heroispermitidos;
         this.ataqueArma = ataqueArma;
         this.ataqueEspecialArma = ataqueEspecialArma;
         AtaqueInstantaneo = ataqueInstantaneo;
         this.efeitoVida = efeitoVida;
         this.aumentoForca = aumentoForca;
     }
+
+
+
 
     //******************************************************************* GETTERs
 
@@ -46,7 +50,7 @@ public abstract class ItemHeroi {
     public int getPreco() {
         return preco;
     }
-    public ArrayList<String> getHeroisPermitidos() {
+    public String [] getHeroisPermitidos() {
         return heroisPermitidos;
     }
     public int getAtaqueArma() {
@@ -72,8 +76,13 @@ public abstract class ItemHeroi {
         System.out.println("Nome: " + this.nome);
         System.out.println("Preço: " + this.preco);
 
-        System.out.println("Heróis que podem usar item: " + this.heroisPermitidos);
+        System.out.println("Heróis que podem usar item: " );
 
+        for (String itemHeroiAtual : heroisPermitidos){
+
+            System.out.print(itemHeroiAtual+ ";");
+
+        }
 
     }
 

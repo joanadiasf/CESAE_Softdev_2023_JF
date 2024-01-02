@@ -131,7 +131,7 @@ public class Sala8_Masmorras {
                 System.out.println("\nContinua pobre... mas ao menos agora tem trabalho");
                 System.out.println("como mercenário com o seu sidequick Ogre.");
 
-                break;
+                return;
 
             case 2:
 
@@ -139,7 +139,8 @@ public class Sala8_Masmorras {
                 System.out.println(" É aclamado como Salvador da Vila.");
                 System.out.println("\nMas a que custo?... Continua pobre... e sozinho... mas ao menos");
                 System.out.println(" agora tem trabalho a limpar as mesas da taverna.");
-                break;
+
+                return;
 
             default:
                 System.out.println("Opçção inválida...");

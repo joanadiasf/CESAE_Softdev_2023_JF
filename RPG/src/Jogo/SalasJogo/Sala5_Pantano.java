@@ -48,7 +48,7 @@ public class Sala5_Pantano {
                 System.out.println("O caminho foi bastante seguro! " + heroi.getNome() + " achou uma Poção.");
 
                 //add pocao inventario Jogador
-                heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));
+                heroi.addInventario(new Pocao("Pocao de Vitamina C",0, new String[]{"Feiticeiro","Bardo","Barbaro"},20,5));
 
 
                 //sala8

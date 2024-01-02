@@ -12,8 +12,9 @@ public class ConsumivelCombate extends Consumivel{
      * @param preco- preço
      * @param ataqueInstantaneo - ataque instantaneo
      */
-    public ConsumivelCombate(String nome, int preco,  int ataqueInstantaneo) {
-        super(nome, preco, 0, 0, ataqueInstantaneo,0, 0);
+
+    public ConsumivelCombate(String nome, int preco, String[] heroispermitidos, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
+        super(nome, preco, heroispermitidos, 0, 0, ataqueInstantaneo, 0, 0);
     }
 
     @Override

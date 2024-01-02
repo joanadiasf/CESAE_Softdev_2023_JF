@@ -13,6 +13,8 @@ public class LojaRepository {
 
         CSVLojaReader csvLojaReader = new CSVLojaReader(filepath);
         lojaArray = csvLojaReader.readCSVToRepository();
+
+
     }
 
     public  ArrayList<ItemHeroi> getLojaArray() {

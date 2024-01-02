@@ -77,8 +77,13 @@ public class Sala2_PortaTaberna {
                 //inimigo
                 NPC dragao = new NPC("Dragão",50,15,20);
 
+                System.out.println("Dragão appears!!");
                 //batalha
-                heroi.batalha(dragao);
+                if (heroi.getHP() > 0){
+                    heroi.batalha(dragao);
+                } else{
+                    return;
+                }
 
 
                 System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
@@ -144,8 +149,13 @@ public class Sala2_PortaTaberna {
 
                 System.out.println("\nDo nada salta um inimigo para a frente do Jogador!");
 
-                //batalha
-                heroi.batalha(serpente);
+                System.out.println("Serpente Gigante appears!!");
+
+                if (heroi.getHP() > 0){
+                    heroi.batalha(serpente);
+                } else{
+                    return;
+                }
 
                 System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
@@ -240,7 +250,7 @@ public class Sala2_PortaTaberna {
                 System.out.println("O caminho foi bastante seguro! Achou uma *Poção*.");
 
                 //add pocao inventario Jogador
-                heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));
+                heroi.addInventario(new Pocao("Pocao de Vitamina C",0,new String[]{"Feiticeiro","Bardo","Barbaro"},20,5));
 
                 //sala 4
                 System.out.println("Mais à frente " + heroi.getNome() + " vê um vulcão");
@@ -264,8 +274,14 @@ public class Sala2_PortaTaberna {
 
                 System.out.println("\nInimigo sai de baixo da terra!");
 
+                System.out.println("Serpente Gigante appears!!");
                 //batalha
-                heroi.batalha(serpente);
+                if (heroi.getHP() > 0){
+                    heroi.batalha(serpente);
+                } else{
+                    return;
+                }
+
 
                 System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");

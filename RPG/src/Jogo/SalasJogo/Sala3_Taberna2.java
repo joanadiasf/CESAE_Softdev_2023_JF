@@ -43,17 +43,17 @@ public class Sala3_Taberna2 {
            //retirar dinheiro
            if (escolhaPocao==1){
                System.out.println("** POÇÃO VITAMINA C adicionada ao inventário");
-               heroi.addInventario(new Pocao("Pocao Vitamina C",0,40,0));
+               heroi.addInventario(new Pocao("Pocao Vitamina C",0,new String[]{"Feiticeiro","Bardo","Barbaro"},40,0));
                heroi.setOuro(heroi.getOuro()-20);
            }
            if (escolhaPocao==2){
                System.out.println("** POÇÃO GOD OF WAR adicionada ao inventário");
-               heroi.addInventario(new Pocao("Pocao God of War",0,30,25));
+               heroi.addInventario(new Pocao("Pocao God of War",0,new String[]{"Feiticeiro","Bardo","Barbaro"},30,25));
                heroi.setOuro(heroi.getOuro()-40);
            }
            if(escolhaPocao==3){
                System.out.println("** POÇÃO FORÇA DIVINA adicionada ao inventário");
-               heroi.addInventario(new Pocao("Pocao Força Divina",0,-10,40));
+               heroi.addInventario(new Pocao("Pocao Força Divina",0,new String[]{"Feiticeiro","Bardo","Barbaro"},-10,40));
                heroi.setOuro(heroi.getOuro()-60);
            }
 
@@ -81,7 +81,7 @@ public class Sala3_Taberna2 {
 
            case 2:
 
-               System.out.println("\nComo não é nada condigo, " + heroi.getNome() + " vai ao Taverneiro e pergunta se");
+               System.out.println("\nComo não é nada consigo, " + heroi.getNome() + " vai ao Taverneiro e pergunta se");
                System.out.println("ele sabe onde está a princesa.  Ele diz-lhe que ela está no fundo ");
                System.out.println("da masmorra que se encontra no pantano do Ogre...");
 
@@ -116,7 +116,13 @@ public class Sala3_Taberna2 {
                 NPC grandalhao = new NPC("Grandalhão",70,30,25);
 
                //batalha
-               heroi.batalha(grandalhao);
+
+               System.out.println("Grandalhão appears!!");
+               if (heroi.getHP() > 0){
+                   heroi.batalha(grandalhao);
+               } else{
+                   return;
+               }
 
                System.out.println("Que luta dificil... Mas o Pequeno Indefeso como gratidão oferece duas poções");
 
@@ -124,8 +130,8 @@ public class Sala3_Taberna2 {
                System.out.println("\n Poção Invisibilidade adquirida");
 
                //add poçoes inventario
-               heroi.addInventario(new Pocao("Pocao Cura",0,35,0));
-               heroi.addInventario(new Pocao("Pocao Invisibilidade",0,0,15));
+               heroi.addInventario(new Pocao("Pocao Cura",0,new String[]{"Feiticeiro","Bardo","Barbaro"},35,0));
+               heroi.addInventario(new Pocao("Pocao Invisibilidade",0,new String[]{"Feiticeiro","Bardo","Barbaro"},0,15));
 
 
                System.out.println("\nQuer descansar?");

@@ -14,8 +14,8 @@ public class Consumivel extends ItemHeroi{
      * @param efeitoVida - efeito na vida
      * @param aumentoForca - efeito na força
      */
-    public Consumivel(String nome, int preco, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
-        super(nome, preco, ataqueArma, ataqueEspecialArma, ataqueInstantaneo, efeitoVida, aumentoForca);
+    public Consumivel(String nome, int preco, String[] heroispermitidos, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
+        super(nome, preco, heroispermitidos, ataqueArma, ataqueEspecialArma, ataqueInstantaneo, efeitoVida, aumentoForca);
     }
 
     @Override

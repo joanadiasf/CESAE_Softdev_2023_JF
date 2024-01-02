@@ -95,8 +95,14 @@ public class Sala4_Vulcao {
             case 2:
 
                 NPC velhota = new NPC("Velhota",60,25,15);
+
                 //batalha
-                heroi.batalha(velhota);
+                System.out.println("Velhota appears!!");
+                if (heroi.getHP() > 0){
+                    heroi.batalha(velhota);
+                } else{
+                    return;
+                }
 
 
                 System.out.println("\nQuer descansar?");

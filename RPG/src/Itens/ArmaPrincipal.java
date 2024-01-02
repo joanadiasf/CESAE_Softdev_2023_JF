@@ -2,6 +2,7 @@ package Itens;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArmaPrincipal extends ItemHeroi{
@@ -14,11 +15,9 @@ public class ArmaPrincipal extends ItemHeroi{
      * @param ataqueEspecialArma - ataque especial
      * @param ataqueInstantaneo - ataque instantaneo
      */
-    public ArmaPrincipal(String nome, int preco, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo ) {
-        super(nome, preco, ataqueArma, ataqueEspecialArma, ataqueInstantaneo,0,0);
+
+
+    public ArmaPrincipal(String nome, int preco, String[] heroispermitidos, int ataqueArma, int ataqueEspecialArma, int ataqueInstantaneo, int efeitoVida, int aumentoForca) {
+        super(nome, preco, heroispermitidos, ataqueArma, ataqueEspecialArma, ataqueInstantaneo, efeitoVida, aumentoForca);
     }
-
-
-
-
 }

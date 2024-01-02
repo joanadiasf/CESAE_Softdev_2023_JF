@@ -37,9 +37,11 @@ public class CSVLojaReader {
             String nome = linhaDividada[1];
             int preco = Integer.parseInt(linhaDividada[2]);
 
-            linhaDividada[3]=linhaDividada[3].replace("[","");
-            linhaDividada[3]=linhaDividada[3].replace("]","");
-            String[] heroispermitidos = linhaDividada[3].split(",");
+            String herois = linhaDividada[3];
+            herois=herois.replace("[","");
+            herois=herois.replace("]","");
+            String[] heroispermitidos = herois.split(",");
+
 
             int ataque = Integer.parseInt(linhaDividada[4]);
             int ataqueEspecial = Integer.parseInt(linhaDividada[5]);
@@ -52,15 +54,15 @@ public class CSVLojaReader {
 
             switch (tipo){
                 case "ArmaPrincipal":
-                    itemHeroiAtual= new ArmaPrincipal(nome,preco,ataque,ataqueEspecial,ataqueInstantaneo);
+                    itemHeroiAtual= new ArmaPrincipal(nome,preco,heroispermitidos,ataque,ataqueEspecial,ataqueInstantaneo,vida,forca);
                     break;
 
                 case "ConsumivelCombate":
-                    itemHeroiAtual= new ConsumivelCombate(nome,preco,ataqueInstantaneo);
+                    itemHeroiAtual= new ConsumivelCombate(nome,preco,heroispermitidos,ataque,ataqueEspecial,ataqueInstantaneo,vida,forca);
                     break;
 
                 case "Pocao":
-                    itemHeroiAtual= new Pocao(nome,preco,vida,forca);
+                    itemHeroiAtual= new Pocao(nome,preco,heroispermitidos,vida,forca);
                     break;
             }
 

@@ -364,7 +364,7 @@ public class Herois extends Entidade {
 
                 if (adversario.getHP() <= 0) {
 
-                    System.out.println("\n**RECOMPENSA**" + adversario.getOuro());
+                    System.out.println("\n**RECOMPENSA " + adversario.getOuro() + " ouro **");
                     this.setOuro(this.getOuro() + adversario.getOuro());
 
                     System.out.println("\n *** SUBIU DE NIVEL ***");
