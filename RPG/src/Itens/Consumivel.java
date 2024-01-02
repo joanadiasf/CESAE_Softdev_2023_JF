@@ -19,7 +19,12 @@ public class Consumivel extends ItemHeroi{
     }
 
     @Override
-    public void exibirDetalhes() throws FileNotFoundException {
+    public  void exibirDetalhes() throws FileNotFoundException{
+
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Preço: " + this.getPreco());
+
+        System.out.println("Heróis que podem usar item: " + this.heroisPermitidos);
 
 
     }

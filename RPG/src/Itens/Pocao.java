@@ -21,6 +21,8 @@ public class Pocao extends Consumivel{
     public  void exibirDetalhes() throws FileNotFoundException {
 
         System.out.println("Nome: " + super.getNome());
+        System.out.println("Preço: " + this.getPreco());
+
         System.out.println("Vida: " + super.getEfeitoVida());
         System.out.println("Aumento na Força: " + super.getAumentoForca());
     }

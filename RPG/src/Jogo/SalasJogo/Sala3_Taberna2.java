@@ -24,7 +24,7 @@ public class Sala3_Taberna2 {
 
        sleep(500);
 
-       System.out.println("\nApós um longo caminho o Jogador decide parar numa Taverna que encontra pelo caminho...");
+       System.out.println("\nApós um longo caminho " + heroi.getNome() + " decide parar numa Taverna que encontra pelo caminho...");
 
        System.out.println("\n * * * * * * *");
        System.out.println("* T A V E R N A *");
@@ -57,7 +57,7 @@ public class Sala3_Taberna2 {
                heroi.setOuro(heroi.getOuro()-60);
            }
 
-           System.out.println("\nApós comprar comida o Jogador ouve uma discussão acessa entre dois clientes...");
+           System.out.println("\nApós comprar comida " + heroi.getNome() + " ouve uma discussão acessa entre dois clientes...");
        }
 
        else {
@@ -81,7 +81,7 @@ public class Sala3_Taberna2 {
 
            case 2:
 
-               System.out.println("\nComo não é nada com o jogador ele vai ao Taverneiro e pergunta se");
+               System.out.println("\nComo não é nada condigo, " + heroi.getNome() + " vai ao Taverneiro e pergunta se");
                System.out.println("ele sabe onde está a princesa.  Ele diz-lhe que ela está no fundo ");
                System.out.println("da masmorra que se encontra no pantano do Ogre...");
 
@@ -171,7 +171,7 @@ public class Sala3_Taberna2 {
                        System.out.println("Opção inválida...");
                }
 
-               System.out.println("O Jogador dirige-se  ao Taverneiro e pergunta se ele sabe onde está a princesa.");
+               System.out.println( heroi.getNome() + " dirige-se  ao Taverneiro e pergunta se ele sabe onde está a princesa.");
                System.out.println("Ele diz-lhe que ela está no fundo da masmorra que se encontra no pantano do Ogre...");
 
                //sala5
@@ -181,7 +181,7 @@ public class Sala3_Taberna2 {
 
            case 2:
 
-               System.out.println("Após ajudar o Grandalhão, ele continua chateado e mata o jogador...");
+               System.out.println("Após ajudar o Grandalhão, ele continua chateado e mata " + heroi.getNome() + "...");
 
                morte();
                break;

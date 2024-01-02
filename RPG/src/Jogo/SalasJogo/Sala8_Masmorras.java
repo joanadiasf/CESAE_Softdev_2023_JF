@@ -26,7 +26,7 @@ public class Sala8_Masmorras {
 
         System.out.println("\nO fim aproxima-se....");
         sleep(800);
-        System.out.println("Jogador faça as escolhas certas...(Sem pressão)");
+        System.out.println(heroi.getNome() + " faça as escolhas certas...(Sem pressão)");
 
         System.out.println("\n1- Masmorras \t 2- Sala do Rei");
 
@@ -82,7 +82,7 @@ public class Sala8_Masmorras {
 
             case 2:
 
-                System.out.println("\nO Jogador contém-se, sai da sala e dirige-se para as Masmorras.");
+                System.out.println("\n" + heroi.getNome() + " contém-se, sai da sala e dirige-se para as Masmorras.");
                 masmorras(heroi);
                 break;
 
@@ -104,7 +104,7 @@ public class Sala8_Masmorras {
         Scanner input = new Scanner(System.in);
         int opcao;
 
-        System.out.println("\nA princesa está amarrada a uma cadeira... O Jogador corre para a salvar ");
+        System.out.println("\nA princesa está amarrada a uma cadeira... " + heroi.getNome() + " corre para a salvar ");
         System.out.println("mas um Ogre Gigante (parecido com um macaco) põe-se no caminho...");
 
         tobias();
@@ -126,7 +126,7 @@ public class Sala8_Masmorras {
 
                 System.out.println("\nO Ogre ajoelha-se... ** “Obrigada... obrigada por me poupar a vida... Só fiz isto porque");
                 System.out.println(" precisava do dinheiro da recompensa para salvar a minha família da fome...” **");
-                System.out.println("\nO jogador retorna à sua cidade com a princesa e o Ogre...");
+                System.out.println("\n" + heroi.getNome() + " retorna à sua cidade com a princesa e o Ogre...");
                 System.out.println("É aclamado como Salvador da Vila.");
                 System.out.println("\nContinua pobre... mas ao menos agora tem trabalho");
                 System.out.println("como mercenário com o seu sidequick Ogre.");
@@ -135,7 +135,7 @@ public class Sala8_Masmorras {
 
             case 2:
 
-                System.out.println("\nO jogador retorna à sua cidade com a princesa ... ");
+                System.out.println("\n" + heroi.getNome() + " retorna à sua cidade com a princesa ... ");
                 System.out.println(" É aclamado como Salvador da Vila.");
                 System.out.println("\nMas a que custo?... Continua pobre... e sozinho... mas ao menos");
                 System.out.println(" agora tem trabalho a limpar as mesas da taverna.");

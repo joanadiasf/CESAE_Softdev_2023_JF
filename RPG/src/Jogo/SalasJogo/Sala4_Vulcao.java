@@ -21,7 +21,7 @@ public class Sala4_Vulcao {
         Scanner input = new Scanner(System.in);
         int opcao;
 
-        System.out.println("\nO Jogador tem uma sensação estranha...");
+        System.out.println("\n" + heroi.getNome() + " tem uma sensação estranha...");
         System.out.println("\n1- Tomar outra direção \t 2- Seguir mesmo caminho");
 
         System.out.println("\nOpção: ");
@@ -31,7 +31,7 @@ public class Sala4_Vulcao {
 
             case 1:
 
-                System.out.println("O Jogador vai em direção ao Pantano do Ogre");
+                System.out.println(heroi.getNome() + " vai em direção ao Pantano do Ogre");
 
                 //sala5
                 sala5(heroi);
@@ -40,7 +40,7 @@ public class Sala4_Vulcao {
             case 2:
 
                 System.out.println("O Cão aponta na direção do vulcão.");
-                System.out.println("O Jogador acha então que os instintos do Cão devem estar corretos e segue caminho...");
+                System.out.println(heroi.getNome() + " acha então que os instintos do Cão devem estar corretos e segue caminho...");
 
                 sleep(300);
                 System.out.println("\nCaminhando...");

@@ -22,4 +22,9 @@ public class FeiticeiroAttackStrategy implements Ataques {
     @Override
     public void ataqueConsumivel(Herois heroi,NPC adversario) {
     }
+
+    public String getTipo(){
+
+        return "Feiticeiro";
+    }
 }

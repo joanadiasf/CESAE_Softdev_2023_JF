@@ -20,6 +20,8 @@ public class ConsumivelCombate extends Consumivel{
     public void exibirDetalhes() throws FileNotFoundException {
 
         System.out.println("Nome: " + super.getNome());
+        System.out.println("Preço: " + this.getPreco());
+
         System.out.println("Ataque: " + super.getAtaqueInstantaneo());
     }
 }

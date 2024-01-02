@@ -1,5 +1,6 @@
 package Entidades;
 
+import Entidades.TipoHerois.Ataques;
 import Entidades.TipoHerois.Herois;
 import Entidades.Tools.LojaRepository;
 import Itens.ArmaPrincipal;
@@ -25,18 +26,19 @@ public class Vendedor {
 
     /**
      * Método para validar se o Heroi pode user item
-     * @param heroi - heroi
+     * @param tipoHeroi - tipo de heroi
      * @param itemHeroi - item
      * @return - se pode ou nao usar
      */
-//    public boolean validarPermissao(Herois heroi, ItemHeroi itemHeroi){
-//        for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()){
-//            if (heroi.getClass().getSimpleName().equals(heroiPermitidoAtual)){
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public boolean validarPermissao(Ataques tipoHeroi, ItemHeroi itemHeroi) {
+        for (String heroiPermitidoAtual : itemHeroi.getHeroisPermitidos()) {
+            if (tipoHeroi.getTipo().equals(heroiPermitidoAtual)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * Loja do Vendedor
@@ -70,7 +72,7 @@ public class Vendedor {
 
         lerFicheiro("src/Entidades/shopScreen.txt");
 
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i < montra.size(); i++) {
 
             System.out.println("\nItem " + i + ": ");
             loja.get(montra.get(i)).exibirDetalhes();
@@ -91,22 +93,28 @@ public class Vendedor {
 
                 case 1:
 
-                    //todo: fix repetido
-                    System.out.println("Escolha o item (  Se escolher repetido parte o programa :(  )");
+                    System.out.println("Escolha o item :");
                     int item = input.nextInt();
 
 
                     for (int i = 0; i < montra.size(); i++) {
 
                         if (i == item) {
-                            ItemHeroi itemHeroi = loja.get(montra.get(item));
 
+
+                            if (montra.get(i)==-1){
+                                System.out.println("Objeto indisponivel, já foi comprado...");
+                                break;
+                            }
+                            ItemHeroi itemHeroi = loja.get(montra.get(item));
+                            Ataques tipoHeroi = heroi.getAtaques();
+
+
+//                            //está comentado porque senão não deixa comprar nada
+//                            if (validarPermissao(tipoHeroi,itemHeroi)){
                                 if (heroi.getOuro() >= itemHeroi.getPreco()) {
 
-                                    if (montra.get(i)==-1){
-                                        System.out.println("Objeto indisponivel, já foi comprado...");
-                                        break;
-                                    }
+
 
                                     if (itemHeroi instanceof ArmaPrincipal) {
                                         ArmaPrincipal armaPrincipal = (ArmaPrincipal) itemHeroi;
@@ -132,9 +140,10 @@ public class Vendedor {
                                     System.out.println("Não tem ouro suficiente para comprar este item. Escolha outro item.");
                                     break;
                                 }
-
-
-
+//                            }
+//                            else {
+//                                System.out.println("Este item não é para este tipo de Heroi.");
+//                            }
                         }
                     }
 

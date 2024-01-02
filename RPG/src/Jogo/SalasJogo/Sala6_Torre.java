@@ -20,7 +20,7 @@ public class Sala6_Torre {
         Scanner input = new Scanner(System.in);
         int opcao,rest;
 
-        System.out.println("\nFinalmente... O jogador chega à torre... Está a chegar a hora da batalha final");
+        System.out.println("\nFinalmente... " + heroi.getNome() + " chega à torre... Está a chegar a hora da batalha final");
         System.out.println("\n1- Sala Misteriosa \t 2- Escadaria");
 
         System.out.println("\nOpção: ");
@@ -51,9 +51,9 @@ public class Sala6_Torre {
                 switch (rest){
 
                     case 1:
-                        System.out.println("\nO Jogador sai da sala e segue a Escadaria");
+                        System.out.println("\n" + heroi.getNome() + " sai da sala e segue a Escadaria");
                         System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
-                        System.out.println("\nO Jogador entra cuidadosamente.");
+                        System.out.println("\n" + heroi.getNome() + " entra cuidadosamente.");
 
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
@@ -69,9 +69,9 @@ public class Sala6_Torre {
                         heroi.setHP(heroi.getHP()+10);
                         sleep(300);
 
-                        System.out.println("\nO Jogador sai da sala e segue a Escadaria");
+                        System.out.println("\n" + heroi.getNome() + " sai da sala e segue a Escadaria");
                         System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
-                        System.out.println("\nO Jogador entra cuidadosamente.");
+                        System.out.println("\n" + heroi.getNome() + " entra cuidadosamente.");
 
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
@@ -87,9 +87,9 @@ public class Sala6_Torre {
                         heroi.setHP(heroi.getHP()+20);
                         sleep(500);
 
-                        System.out.println("\nO Jogador sai da sala e segue a Escadaria");
+                        System.out.println("\n" + heroi.getNome() + " sai da sala e segue a Escadaria");
                         System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
-                        System.out.println("\nO Jogador entra cuidadosamente.");
+                        System.out.println("\n" + heroi.getNome() + " entra cuidadosamente.");
 
                         System.out.println("\nDeitado na cama encontra-se um Goblin gigante vestido de princesa, o cão começa a ladrar e o Goblin diz:");
                         System.out.println("** “Com que então foste tu que aceitaste aquela missão... Cão.... Queres fazer as honras?” **");
@@ -111,7 +111,7 @@ public class Sala6_Torre {
                 System.out.println(" * * * * * * * * * * ");
 
                 System.out.println("\nNo fundo da Escadaria encontra-se o Quarto da Princesa...");
-                System.out.println("\nO Jogador entra cuidadosamente.");
+                System.out.println("\n" + heroi.getNome() + " entra cuidadosamente.");
 
                 sleep(400);
 

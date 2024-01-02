@@ -27,7 +27,7 @@ public class Sala2_PortaTaberna {
         System.out.println("* P O R T A   D A   T A V E R N A *");
         System.out.println(" * * * * * * * * * * * * * * * * * ");
 
-        System.out.println("\nApós analisar o mapa, o Jogador vê que há dois caminhos possíveis...");
+        System.out.println("\nApós analisar o mapa, " + heroi.getNome() +" vê que há dois caminhos possíveis...");
         System.out.println("O mapa indica que o caminho correto é o da direita...");
         System.out.println("Qual pretende seguir?...");
         System.out.println("\n1- Esquerda \t 2- Direita");
@@ -61,7 +61,7 @@ public class Sala2_PortaTaberna {
         int opcao,rest;
 
 
-        System.out.println("\nMas o instinto do Jogador diz-lhe para ir para a esquerda...");
+        System.out.println("\nMas o instinto de " + heroi.getNome() + " diz-lhe para ir para a esquerda...");
         System.out.println("Ao sair da cidade ele encontra um tunel...");
         System.out.println("\n1- Entrar \t 2- Não Entrar");
 
@@ -81,7 +81,7 @@ public class Sala2_PortaTaberna {
                 heroi.batalha(dragao);
 
 
-                System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
+                System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
 
@@ -147,7 +147,7 @@ public class Sala2_PortaTaberna {
                 //batalha
                 heroi.batalha(serpente);
 
-                System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
+                System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
 
@@ -210,7 +210,7 @@ public class Sala2_PortaTaberna {
         Scanner input = new Scanner(System.in);
         int opcao,rest;
 
-        System.out.println("\nAo sair da cidade o jogador encontra um cão abandonado e faminto...");
+        System.out.println("\nAo sair da cidade " + heroi.getNome() + " encontra um cão abandonado e faminto...");
         System.out.println("Ele dá lhe de comer e o Cão torna-se seu companheiro.");
 
         System.out.println("\nMais à frente encontra dois possíveis caminhos.");
@@ -237,13 +237,13 @@ public class Sala2_PortaTaberna {
                 System.out.println("Caminhando......");
 
                 sleep(600);
-                System.out.println("O caminho foi bastante seguro! O Jogador achou uma *Poção*.");
+                System.out.println("O caminho foi bastante seguro! Achou uma *Poção*.");
 
                 //add pocao inventario Jogador
                 heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));
 
                 //sala 4
-                System.out.println("Mais à frente o Jogador vê um vulcão");
+                System.out.println("Mais à frente " + heroi.getNome() + " vê um vulcão");
                 sala4(heroi);
 
                 break;
@@ -267,7 +267,7 @@ public class Sala2_PortaTaberna {
                 //batalha
                 heroi.batalha(serpente);
 
-                System.out.println("\nApós a primeira batalha do Jogador, ele chega ao fim do tunel...");
+                System.out.println("\nApós a primeira batalha, " + heroi.getNome() + " chega ao fim do tunel...");
                 System.out.println("\nQuer descansar?");
                 System.out.println("\n1- Não \t 2- Short Rest \t 3- Long Rest");
 
@@ -279,7 +279,7 @@ public class Sala2_PortaTaberna {
                     case 1:
 
                         //sala 4
-                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        System.out.println("Mais à frente " + heroi.getNome() + " vê um vulcão");
                         sala4(heroi);
 
                         break;
@@ -293,7 +293,7 @@ public class Sala2_PortaTaberna {
 
 
                         //sala 4
-                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        System.out.println("Mais à frente " + heroi.getNome() + " vê um vulcão");
                         sala4(heroi);
 
                         break;
@@ -306,7 +306,7 @@ public class Sala2_PortaTaberna {
                         sleep(500);
 
                         //sala 4
-                        System.out.println("Mais à frente o Jogador vê um vulcão");
+                        System.out.println("Mais à frente " + heroi.getNome() + " vê um vulcão");
                         sala4(heroi);
 
                         break;

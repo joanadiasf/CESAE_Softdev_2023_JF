@@ -27,13 +27,13 @@ public class Sala7_Cabana {
 
 
         NPC goblin = new NPC("Goblin",40,10,5);
-        System.out.println("\nUm Goblin que estava a roubar a cabana viu o Jogador e achou que era o morador e ataca!");
+        System.out.println("\nUm Goblin que estava a roubar a cabana viu" + heroi.getNome() + " e achou que era o morador e ataca!");
 
         //batalha
         heroi.batalha(goblin);
 
 
-        System.out.println("\nAo vasculhar na Cabana o Jogador encontra uma Poção Cura!!");
+        System.out.println("\nAo vasculhar na Cabana, " + heroi.getNome() + " encontra uma Poção Cura!!");
         System.out.println("\n Poção Cura adquirida");
 
 

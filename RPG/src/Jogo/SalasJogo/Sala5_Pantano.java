@@ -21,7 +21,7 @@ public class Sala5_Pantano {
         Scanner input = new Scanner(System.in);
         int opcao,rest;
 
-        System.out.println("\nO Jogador avista uma cabana...");
+        System.out.println("\n" + heroi.getNome() + " avista uma cabana...");
         System.out.println("\n1- Entrar \t 2- Não entrar");
         System.out.println("\nOpção: ");
         opcao= input.nextInt();
@@ -36,7 +36,7 @@ public class Sala5_Pantano {
                 break;
 
             case 2:
-                System.out.println("O jogador escolheu o caminho entre as árvores...");
+                System.out.println(heroi.getNome() + " escolheu o caminho entre as árvores...");
 
                 sleep(300);
                 System.out.println("Caminhando...");
@@ -45,7 +45,7 @@ public class Sala5_Pantano {
                 System.out.println("Caminhando......");
 
                 sleep(600);
-                System.out.println("O caminho foi bastante seguro! O Jogador achou uma Poção.");
+                System.out.println("O caminho foi bastante seguro! " + heroi.getNome() + " achou uma Poção.");
 
                 //add pocao inventario Jogador
                 heroi.addInventario(new Pocao("Pocao de Vitamina C",0,20,5));

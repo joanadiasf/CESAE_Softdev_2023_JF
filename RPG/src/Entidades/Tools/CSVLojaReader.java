@@ -1,6 +1,5 @@
 package Entidades.Tools;
 
-import Entidades.TipoHerois.Herois;
 import Itens.ArmaPrincipal;
 import Itens.ConsumivelCombate;
 import Itens.ItemHeroi;
@@ -24,6 +23,7 @@ public class CSVLojaReader {
         File file = new File(this.filePath);
         Scanner scanner = new Scanner(file);
 
+        //saltar cabeçalho
         String linha = scanner.nextLine();
 
         ArrayList<ItemHeroi> arrayLoja = new ArrayList<>();
@@ -37,8 +37,8 @@ public class CSVLojaReader {
             String nome = linhaDividada[1];
             int preco = Integer.parseInt(linhaDividada[2]);
 
-            linhaDividada[3].replace("[","");
-            linhaDividada[3].replace("]","");
+            linhaDividada[3]=linhaDividada[3].replace("[","");
+            linhaDividada[3]=linhaDividada[3].replace("]","");
             String[] heroispermitidos = linhaDividada[3].split(",");
 
             int ataque = Integer.parseInt(linhaDividada[4]);
