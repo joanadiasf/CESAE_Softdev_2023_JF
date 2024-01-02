@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"Entidades"},{"l":"Entidades.TipoHerois"},{"l":"Entidades.Tools"},{"l":"Itens"},{"l":"Jogo"},{"l":"Jogo.SalasJogo"}];updateSearchResults();
