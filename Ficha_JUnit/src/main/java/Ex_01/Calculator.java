@@ -4,7 +4,7 @@ public class Calculator {
 
     public int add(int a,int b){
 
-        return a+b;
+        return a+a;
     }
 
     public int subtract(int a,int b){
