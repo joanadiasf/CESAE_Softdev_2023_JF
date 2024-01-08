@@ -15,9 +15,9 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2aS7Y681McvIOpCUOatW0RZFgR5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,7 +27,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/softdev/Desktop/CESAE_Softdev_2023_JF/Programação/Ficha_JUnit",
+    "last_opened_file_path": "C:/Users/softdev/Desktop/CESAE_Softdev_2023_JF/Ficha_JUnit",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
