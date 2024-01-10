@@ -13,7 +13,7 @@ public class AdministradorView {
 
     public static void menuAdmin() throws IOException {
         Scanner input = new Scanner(System.in);
-        AdministradorController adminController = new AdministradorController();
+        AdministradorController adminController = new AdministradorController("login_grandesNegocios.csv");
 
         int opcao = 0;
 
@@ -96,7 +96,7 @@ public class AdministradorView {
                     System.out.println("\n Digite a password: ");
                     String password = input.next();
 
-                    adminController.adicionarUtilizador(tipoUtilizadorString,nomeUtilizador,password);
+                    adminController.adicionarUtilizador(tipoUtilizadorString,nomeUtilizador,password,"login_grandesNegocios.csv");
 
                     break;
 

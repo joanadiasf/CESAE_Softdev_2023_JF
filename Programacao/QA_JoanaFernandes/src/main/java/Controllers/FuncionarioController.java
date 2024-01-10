@@ -19,7 +19,7 @@ public class FuncionarioController {
     }
 
     public void addVenda(String tipoProduto, String nomeProduto, int quantidadeProduto, double precoProduto) throws IOException {
-        File ficheiro = new File("Ficheiros/minimercado.csv");
+        File ficheiro = new File("src/main/resources/minimercado.csv");
 
         FileWriter fw = new FileWriter(ficheiro, true);
         fw.append("\n"+tipoProduto+","+nomeProduto+","+quantidadeProduto+","+precoProduto);
