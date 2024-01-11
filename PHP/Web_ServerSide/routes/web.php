@@ -16,16 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', function () {
-    return view('welcome');
-})->name('home.index');
-
-Route::get('/hello/', function () {
-    return '<h1> Turma de Software </h1>';
-})->name('home.hello');
-
-Route::get('/hello/{nome}', function ($nome) {
-    return '<h1> Turma de Software </h1>'.$nome;
-});
-
