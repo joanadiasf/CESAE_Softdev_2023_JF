@@ -1,0 +1,131 @@
+7********************************************************
+
+INSERT INTO Clientes (nome, cidade, pontos, data_inscricao)
+VALUES
+('Matilde','Maia', 100, '2024-01-11'),
+('Ricardo','Ermesinde', 150, '2024-01-11'),
+('Rita','Porto', 200, '2024-01-11');
+
+INSERT INTO Produtos (descricao, preco, stock)
+VALUES
+('Martelo', 29.99, 50),
+('Manual', 39.99, 30),
+('Parafuso', 19.99, 100),
+('Serrote', 49.99, 20),
+('Alicate', 9.99, 75);
+
+UPDATE Clientes
+SET pontos = 2789
+WHERE id_cliente = 3;
+
+UPDATE Produtos
+SET stock = 13
+WHERE descricao = 'Berbequim';
+
+
+UPDATE Clientes
+SET nome = 'Vitorino', pontos = 327
+WHERE id_cliente = 11;
+
+8********************************************************
+
+SELECT DISTINCT cidade 
+FROM Clientes;
+
+SELECT 
+    descrição,
+    preço,
+    preço * 1.23 AS "Preço + IVA"
+FROM Produtos;
+
+
+SELECT * 
+FROM cliente 
+WHERE data_inscricao='2000-01-01' and '2009-01-01';
+
+SELECT *
+FROM Produtos
+WHERE stock IN (0, 15, 60);
+
+ 
+SELECT * FROM cliente 
+WHERE nome LIKE '%ana%';
+ 
+SELECT pontos 
+FROM cliente 
+ORDER BY pontos DESC 
+LIMIT 3 OFFSET 5;
+ 
+SELECT *
+FROM cliente
+GROUP BY cidade
+HAVING COUNT(nome) > 1;
+ 
+SELECT * 
+FROM venda 
+WHERE desconto = 0;
+ 
+SELECT * FROM produto 
+ORDER BY preco DESC 
+LIMIT 3 ;
+ 
+SELECT * 
+FROM venda 
+WHERE desconto > 0.10;
+
+*****************************
+
+SELECT venda.id_venda,cliente.nome,cliente.cidade
+FROM venda
+JOIN cliente 
+ON venda.id_client = cliente.id_cliente;
+
+SELECT produto.descricao,produto.preco,venda.id_venda
+FROM venda
+JOIN linha_venda
+ON venda.id_venda=linha_venda.id_venda
+JOIN produto
+ON linha_venda.id_produto=produto.id_produto
+WHERE venda.id_venda=9;
+
+SELECT produto.descricao,produto.preco,linha_venda.quantidade,venda.id_venda
+FROM venda
+JOIN linha_venda
+ON venda.id_venda=linha_venda.id_venda
+JOIN produto
+ON linha_venda.id_produto=produto.id_produto
+WHERE venda.id_venda=10;
+
+SELECT produto.descricao,produto.preco,linha_venda.quantidade,venda.id_venda,produto.preco*linha_venda.quantidade AS precoTotal
+FROM venda
+JOIN linha_venda
+ON venda.id_venda=linha_venda.id_venda
+JOIN produto
+ON linha_venda.id_produto=produto.id_produto
+WHERE venda.id_venda=10;
+
+SELECT venda.data_venda,produto.descricao
+FROM venda
+JOIN linha_venda
+ON venda.id_venda=linha_venda.id_venda
+JOIN produto
+ON linha_venda.id_produto = produto.id_produto
+WHERE venda.data_venda BETWEEN '2021-05-01' and '2021-08-01';
+
+SELECT venda.id_venda, SUM(produto.preco * linha_venda.quantidade) AS preco_total 
+FROM venda 
+JOIN linha_venda 
+ON venda.id_venda= linha_venda.id_venda
+JOIN produto 
+ON linha_venda.id_produto = produto.id_produto 
+GROUP BY venda.id_venda;
+
+SELECT produto.descricao,cliente.nome,cliente.cidade
+FROM cliente
+JOIN venda
+ON cliente.id_cliente=venda.id_client
+JOIN linha_venda
+ON venda.id_venda=linha_venda.id_venda
+JOIN produto
+ON linha_venda.id_produto=produto.id_produto
+WHERE cliente.cidade='Gaia';
