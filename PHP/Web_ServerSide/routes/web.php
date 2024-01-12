@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,17 +32,21 @@ Route::get('/hello/{nome}', function ($nome) {
 
 /*Exercicio */
 
-Route::get('/home', function () {
-    return view('main.home');
-})->name('home.index');
+Route::get('/home', [IndexController::class, 'index']
+)->name('home');
 
 Route::get('/', function () {
     return view('welcome');
 })->name('bemvindos');
 
-Route::get('/users/add/',function(){
-    return view('users.add_users');
-})->name('users.add');
+Route::get('/users/add/',[UserController::class,'addUser']
+)->name('users.add');
+
+Route::get('/users/all/',[UserController::class,'allUser']
+)->name('users.all');
+
+
+
 
 Route::fallback(function(){
     return view('main.lost');

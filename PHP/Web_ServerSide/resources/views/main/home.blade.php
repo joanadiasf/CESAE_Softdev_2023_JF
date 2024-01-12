@@ -1,22 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-</head>
-<body>
 
+
+ @extends('layouts.femaster')
+
+
+
+
+
+ @section('content')
+
+ <br>
     <h3>Hello World, página Views.</h3>
 
     <h5>Tens disponiveis estes links</h5>
 
     <ul>
-        <li><a href="{{route('bemvindos')}}">Vai para casa!</a></li>
-        <li><a href="{{route('users.add')}}">Adicionar Utiliadores</a></li>
+        <li><a href="{{route('home')}}">Vai para casa!</a></li>
+        <li><a href="{{route('users.all')}}">Ver todos os Utilizadores</a></li>
+        <li><a href="{{route('users.add')}}">Adicionar Utilizadores</a></li>
     </ul>
 
-</body>
-</html>
+    @endsection
+
+    @section('content2')
+
+    <h6>2 content</h6>
+
+    @endsection
