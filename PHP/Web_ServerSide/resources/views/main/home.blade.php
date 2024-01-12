@@ -23,6 +23,9 @@
 
     @section('content2')
 
-    <h6>2 content</h6>
+    <h5>Dados do Cesae</h5>
+    <p>Nome: {{$cesaeInfo['name']}}</p>
+    <p>Morada: {{$cesaeInfo['address']}}</p>
+    <p>E-mail: {{$cesaeInfo['email']}}</p>
 
     @endsection

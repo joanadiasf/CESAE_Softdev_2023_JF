@@ -6,50 +6,52 @@
  @section('content')
 
  <br>
-    <h3>Aqui podes ver todos os Utiliazdores</h3>
+
+ <h3>Aqui podes ver todos os Utiliazdores</h3>
+ <br><br>
+
 
     <table class="table">
+
         <thead>
-          <tr>
-            <th scope="col"></th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-
-          </tr>
-        </thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">NOME</th>
+              <th scope="col">TELEMÓVEL</th>
+              <th scope="col">E-MAIL</th>
+            </tr>
+          </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+            @foreach ($contacts as $item)
 
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
+             <tr>
+                 <th scope="row">{{$item['id']}}</th>
+                 <td>{{$item['name']}}</td>
+                 <td>{{$item['phone']}}</td>
+                 <td>{{$item['email']}}</td>
+             </tr>
 
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
+            @endforeach
+         </tbody>
+    </table>
 
-          </tr>
-        </tbody>
-      </table>
+<br><br>
 
-      <br><br>
+<h3>Mais opções:</h3>
+<ul>
+  <li><a href="{{route('home')}}">Vai para casa!</a></li>
+  <li><a href="{{route('users.add')}}">Adicionar Utilizadores</a></li>
+</ul>
 
-      <h3>Mais opções:</h3>
-      <ul>
-        <li><a href="{{route('home')}}">Vai para casa!</a></li>
-        <li><a href="{{route('users.add')}}">Adicionar Utilizadores</a></li>
-    </ul>
+<br><br>
 
+{{-- <h3>Testes Variáveis</h3>
 
     <p>{{$hello}}</p>
     <p>{{$helloAgain}}</p>
     <p>{{$daysOfWeek[2]}}</p>
-
+    <p>{{$info['name']}}</p>
+    <p>{{$info['modules'][0]}}</p>
+    <p>{{$info[0][3]}}</p> --}}
     @endsection
 

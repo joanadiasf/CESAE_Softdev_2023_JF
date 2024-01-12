@@ -18,7 +18,11 @@ class UserController extends Controller
         $daysOfWeek= $this->getWeekDays();
         $info = $this->info();
 
-        return view('users.all_users',compact('hello','helloAgain','daysOfWeek'));
+        //dd($info);  //debug
+
+        $contacts = $this->getContacts();
+
+        return view('users.all_users',compact('hello','helloAgain','daysOfWeek','info','contacts'));
     }
 
     private function getWeekDays(){
@@ -39,6 +43,17 @@ class UserController extends Controller
         ];
 
         return $courseInfo;
+    }
+
+    private function getContacts(){
+
+        $contacts = [
+            ['id'=> 1,'name'=>'Sara','phone'=>'985654455','email'=>'sara@email.com'],
+            ['id'=> 2,'name'=>'Bruno','phone'=>'985654455','email'=>'bruno@email.com'],
+            ['id'=> 3,'name'=>'Márcia','phone'=>'985654455','email'=>'marcia@email.com']
+        ];
+
+        return $contacts;
     }
 
 
