@@ -1,0 +1,12 @@
+a********
+
+SELECT * FROM treinadores
+WHERE idade < 40
+
+b**********
+
+SELECT *
+FROM experiencia 
+JOIN treinador
+on experiencia.id_treinador=treinador.id_treinador
+WHERE experiencia.id_escalao in ('3') or experiencia.anos>=10
