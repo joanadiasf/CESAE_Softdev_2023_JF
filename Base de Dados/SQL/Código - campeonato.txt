@@ -10,3 +10,99 @@ FROM experiencia
 JOIN treinador
 on experiencia.id_treinador=treinador.id_treinador
 WHERE experiencia.id_escalao in ('3') or experiencia.anos>=10
+
+c**********
+
+SELECT t.*
+FROM treinador as t
+WHERE t.idade BETWEEN '45' AND '53'
+ORDER BY t.idade DESC
+
+d***********
+
+SELECT t.*
+FROM treinador as t
+WHERE nome LIKE 'A%'
+
+e**********
+
+SELECT COUNT(*) AS "Total de Equipas"
+FROM equipa
+
+f**********
+
+SELECT COUNT(*) AS "Treinadores + 40",
+    AVG(idade)
+FROM treinador
+WHERE idade > 40
+
+g***********
+
+SELECT MAX(idade)
+FROM treinador 
+
+h************
+
+SELECT equipa.id_equipa,bola.fabricante
+FROM equipa
+JOIN bola
+ON bola.id_equipa = equipa.id_equipa
+WHERE bola.fabricante = 'Adidas'
+
+i***********
+
+SELECT DISTINCT equipa.id_equipa,bola.fabricante
+FROM equipa
+JOIN bola
+ON bola.id_equipa = equipa.id_equipa
+WHERE bola.fabricante = 'Adidas'
+
+j************
+
+SELECT COUNT(*) AS "Idade Treinadores Juvenis",
+    AVG(idade)
+FROM treinador
+JOIN experiencia
+on experiencia.id_treinador = treinador.id_treinador
+JOIN escalao
+ON escalao.id_escalao = experiencia.id_experiencia
+WHERE escalao.id_escalao=2
+
+k************
+
+SELECT treinador.nome,treinador.telefone,equipa.nome
+FROM treinador
+JOIN experiencia
+on experiencia.id_treinador = treinador.id_treinador
+JOIN equipa
+ON experiencia.id_equipa = equipa.id_equipa
+
+l**********
+
+SELECT treinador.nome as nomeTreinador,equipa.*
+FROM treinador
+JOIN experiencia
+on experiencia.id_treinador = treinador.id_treinador
+JOIN equipa
+ON experiencia.id_equipa = equipa.id_equipa
+WHERE equipa.nome ='Académico'
+
+m*************
+
+SELECT MAX(idade)
+FROM treinador 
+JOIN experiencia
+on experiencia.id_treinador = treinador.id_treinador
+JOIN equipa
+ON experiencia.id_equipa = equipa.id_equipa
+WHERE equipa.nome ='Académico'
+
+n***************
+
+SELECT SUM(experiencia.anos)
+FROM treinador 
+JOIN experiencia
+on experiencia.id_treinador = treinador.id_treinador
+JOIN equipa
+ON experiencia.id_equipa = equipa.id_equipa
+WHERE equipa.nome ='Académico' and treinador.nome='António'

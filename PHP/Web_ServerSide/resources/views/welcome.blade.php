@@ -16,7 +16,7 @@
         /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
         *,
         ::after,
-        ::before {
+            ::before {
             box-sizing: border-box;
             border-width: 0;
             border-style: solid;
