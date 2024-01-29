@@ -1,12 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     public function addUser(){
+
+        DB::table('users')
+        ->updateOrInsert(
+            [
+                'email'=> 'darkLord@email.com',
+            ],
+
+            [ //nome campos base dados => valor a ser atribuido
+            'name'=> 'Voldmort',
+            'password'=> 'voldy',
+            'updated_at'=>now(),
+            'created_at'=>now(),
+
+        ]);
+
+        $users = Db::table('users')->get(); //da um array de objetos
+
+       $myUser = DB::table('users')
+       ->where('email','sirius@email.com')
+       ->first(); //da um objeto so   //se no dd usar myUser-name ele vai buscar o nome, se fosse um get teria que usar um ciclo for each
+
+
+     /*  dd($myUser); */
+
+
         return view('users.add_users');
     }
 
@@ -20,9 +47,20 @@ class UserController extends Controller
 
         //dd($info);  //debug
 
-        $contacts = $this->getContacts();
+        $users = $this->getContacts();
 
-        return view('users.all_users',compact('hello','helloAgain','daysOfWeek','info','contacts'));
+       /* dd($contacts); */
+
+        return view('users.all_users',compact('hello','helloAgain','daysOfWeek','info','users'));
+    }
+
+    public function viewUser($id){ //para ele ir buscar os dados e apresentar na blade do view
+
+        $myUser = DB::table('users')
+            ->where('id',$id)
+            ->first();
+
+        return view('users.view', compact ('myUser'));
     }
 
     private function getWeekDays(){
@@ -47,13 +85,18 @@ class UserController extends Controller
 
     private function getContacts(){
 
-        $contacts = [
+      /*  $contacts = [
             ['id'=> 1,'name'=>'Sara','phone'=>'985654455','email'=>'sara@email.com'],
             ['id'=> 2,'name'=>'Bruno','phone'=>'985654455','email'=>'bruno@email.com'],
             ['id'=> 3,'name'=>'Márcia','phone'=>'985654455','email'=>'marcia@email.com']
-        ];
+        ]; */
 
-        return $contacts;
+        $users = db::table('users')
+            ->whereNull('updated_at')
+            ->get();  
+       //$users = User::get();   = DB
+
+        return $users;
     }
 
 

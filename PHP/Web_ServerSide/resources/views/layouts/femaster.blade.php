@@ -30,7 +30,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('users.all')}}">All Users</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('tasks.task')}}">Tasks</a>
+              </li>
             </ul>
 
           </div>

@@ -1,0 +1,64 @@
+<h2>Estruturas condicionais</h2>
+
+<hr>
+
+<div>
+        <h3>If</h3>
+
+        <div *ngIf="valor >= 0">
+           O valor >= 0
+        </div>
+
+            <!-- Ou -->
+
+        <ng-template [ngIf]="valor >= 0">
+            <div>O valor >= 0</div>
+        </ng-template>
+
+            <!-- versao 17.0 e a cima -->
+
+        @if (valor >= 0 ) {
+            <div> O valor >= 0</div>
+        }
+</div>
+
+<hr>
+
+<h3>Else</h3>
+
+<div *ngIf="valor >= 0; else elseBlock">
+   O valor >= 0
+</div>
+<ng-template #elseBlock>
+    <div>O valor < 0</div>
+</ng-template>
+
+    <!-- Ou -->
+
+<ng-template [ngIf]="valor >= 0">
+    <div>O valor >= 0</div>
+</ng-template>
+
+    <!-- versao 17.0 e a cima -->
+
+@if (valor >= 0 ) {
+    <div> O valor >= 0</div>
+}
+
+<div> <h3> Else-if </h3>
+    <div *ngIf= "valor >= 0; else elseBlock2 " > O valor é maior que 0 </div>
+    <ng-template #elseBlock2> 
+        <div> O valor é menor que 0.</div> 
+    </ng-template>
+
+    <ng-template> [*ngIf]= "valor >= 0" [ngIfElse]="elseBlock"> 
+        <div> O valor é maior ou igual a 0 </div> 
+    </ng-template>
+
+    <ng-template #elseBlock2> 
+        <div> O valor é menor que 0.</div> 
+    </ng-template>
+
+    @if(valor>=0){ 
+        <div> o valor é maior ou igual que 0.</div> } 
+     @else { <div>O valor é menor qe 0. (3)</div> } </div>

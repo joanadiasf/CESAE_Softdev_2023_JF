@@ -1,0 +1,38 @@
+<h1>Hello, my name is {{meuNome}}</h1>
+<p>{{mensagem}}</p>
+
+<img src="{{imagem}}" alt="imagem">
+
+<hr>
+
+<h1>Hello, my name is {{meuNome}}</h1>
+<p>{{mensagem}}</p>
+
+<img [src]="imagem" alt="imagem">
+<br>
+
+<button (click)="alterarImagem()">Alterar Imagem</button>
+<button (click)="alterarImagem2()">Alterar Imagem2</button>
+<button (click)="meuNome= 'Doggs'">Alterar Nome</button>
+
+<hr>
+
+<p [style.color]="pCorTexto" [style.backgroundcolor]="pCorFundo">
+        And more dogs!
+</p>
+
+<button 
+
+(click)="alterarCores()"
+[disabled]="!pAlterarCores">Alterar cor texto/fundo</button>
+
+<button (click)="alterarAtivo()">Desativar</button>
+
+<hr>
+
+<h3>{{contador}}</h3>
+
+<button (click)="incrementar()">incrementar</button>
+
+
+<hr><hr><hr>

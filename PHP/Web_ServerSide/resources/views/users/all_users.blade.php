@@ -7,7 +7,7 @@
 
  <br>
 
- <h3>Aqui podes ver todos os Utiliazdores</h3>
+ <h3>Aqui podes ver todos os Utilizadores</h3>
  <br><br>
 
 
@@ -22,16 +22,18 @@
             </tr>
           </thead>
         <tbody>
-            @foreach ($contacts as $item)
+            @foreach ($users as $item)
 
              <tr>
-                 <th scope="row">{{$item['id']}}</th>
-                 <td>{{$item['name']}}</td>
-                 <td>{{$item['phone']}}</td>
-                 <td>{{$item['email']}}</td>
+                 <th scope="row">{{$item->id}}</th>
+                 <td>{{$item->name}}</td>
+                 <td>{{$item->phone}}</td>
+                 <td>{{$item->email}}</td>
+                  <td><a href="{{route('users.view',$item->id)}}" class="btn btn-info">Ver</a></td> <!--  botao que vai aceder ao id do user p/ ele ir buscar info -->
              </tr>
 
             @endforeach
+            
          </tbody>
     </table>
 

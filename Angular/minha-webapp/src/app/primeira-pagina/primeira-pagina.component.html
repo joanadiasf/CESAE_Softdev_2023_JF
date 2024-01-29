@@ -1,0 +1,10 @@
+<app-meu-componente meu-nome="Joanaa" />
+
+<app-meu-componente [meu-nome]="meuNomePai"></app-meu-componente>
+
+<app-meu-componente></app-meu-componente>
+
+<app-meu-componente (mudancaContador)="atualizar($event)"></app-meu-componente>
+<div style="background-color: beige">
+  <p>Contador: {{ contadorPAI }}</p>
+</div>

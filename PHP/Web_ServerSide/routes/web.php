@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,11 +40,19 @@ Route::get('/', function () {
     return view('welcome');
 })->name('bemvindos');
 
+//users
 Route::get('/users/add/',[UserController::class,'addUser']
 )->name('users.add');
 
 Route::get('/users/all/',[UserController::class,'allUser']
 )->name('users.all');
+
+Route::get('/users/view/{id}',[UserController::class,'viewUser']
+)->name('users.view');
+
+//tasks
+Route::get('/tasks',[TaskController::class,'seeTask']
+)->name('tasks.task');
 
 
 
