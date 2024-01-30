@@ -1,0 +1,15 @@
+<li><b>{{animal.nome}}</b>,
+    {{animal.especie}},
+    {{animal.raca}},
+    <small><i>
+       @if (animal.idade >= 20) {
+
+           <b>{{animal.idade}} anos</b>
+       }
+       @else {
+           {{animal.idade}} anos
+       }
+       
+   
+     </i></small>
+</li>

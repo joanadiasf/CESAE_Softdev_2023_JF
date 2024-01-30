@@ -1,0 +1,14 @@
+<li><b>{{cidade.nome}}</b>,
+     {{cidade.pais}},
+     <small><i>
+        @if (cidade.populacao >= 2000000) {
+
+            <b>{{cidade.populacao}} pessoas</b>
+        }
+        @else {
+            {{cidade.populacao}} pessoas
+        }
+        
+    
+      </i></small>
+</li>
