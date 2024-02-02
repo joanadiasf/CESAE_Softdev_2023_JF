@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, Signal } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Signal, SimpleChanges,OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-meu-componente',
@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output, Signal } from '@angular/core';
   templateUrl: './meu-componente.component.html',
   styleUrl: './meu-componente.component.scss',
 })
-export class MeuComponenteComponent {
+export class MeuComponenteComponent  implements OnChanges{
   //@Input({ required: true, alias: 'meu-nome' }) meuNome: string = 'João';
   //@Input({ alias: 'meu-nome' }) meuNome: string = 'João';
   @Input('meu-nome') meuNome: string = 'Joanaaa';
@@ -39,6 +39,18 @@ export class MeuComponenteComponent {
   pCorTexto: string = '#336699';
   pCorFundo: string = '#99ccff';
   pAlterarCores: boolean = true;
+
+  ngOnChanges(changes:SimpleChanges){
+
+    console.log('MeuComponenteComponent.ngOnChange',changes);
+
+    if(changes['meuNome']){
+        console.log('O nome foi alterado para ' + changes['meuNome'].currentValue);
+    }
+    if(changes['meuNome2']){
+      //...
+    }
+  }
 
   alterarImagem(): void {
     this.imagem = this.imagens[1];

@@ -18,4 +18,8 @@ export class PrimeiraPaginaComponent {
   atualizar(valor: number): void {
     this.contadorPAI = valor;
   }
+
+  changeMeuNomePai(){
+    this.meuNomePai = 'Tobiaaas'
+  }
 }

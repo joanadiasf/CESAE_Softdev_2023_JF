@@ -44,16 +44,38 @@ Route::get('/', function () {
 Route::get('/users/add/',[UserController::class,'addUser']
 )->name('users.add');
 
+Route::post('/users/create',[UserController::class,'createUser']
+)->name('users.create');
+
+Route::post('/users/update',[UserController::class,'updateUser']
+)->name('users.update');
+
 Route::get('/users/all/',[UserController::class,'allUser']
 )->name('users.all');
 
 Route::get('/users/view/{id}',[UserController::class,'viewUser']
 )->name('users.view');
 
+Route::get('/users/delete/{id}',[UserController::class,'deleteUser']
+)->name('users.delete');
+
+
 //tasks
 Route::get('/tasks',[TaskController::class,'seeTask']
 )->name('tasks.task');
 
+Route::post('/tasks/create',[TaskController::class,'createTask']
+)->name('tasks.create');
+
+Route::post('/tasks/update',[TaskController::class,'updateTask']
+)->name('tasks.update');
+
+Route::get('/tasks/add/',[TaskController::class,'addTask']
+)->name('tasks.add');
+
+Route::get('/tasks/view/{id}', [TaskController::class, 'viewTask'])->name('tasks.view');
+
+Route::get('/tasks/delete/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
 
 
 

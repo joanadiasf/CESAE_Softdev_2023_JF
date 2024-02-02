@@ -1,6 +1,10 @@
 <h1>Lista de cidades</h1>
 
 <div>
+    <button type="button" (click)="adicionarCidade()">Adicionar nova cidade</button>
+</div>
+
+<div>
     <ul>
         @for (cidade of cidades; track $index) {
            <!--<li>{{cidade}}</li> -->
@@ -8,4 +12,6 @@
         }
     </ul>
 </div>
+
+
 

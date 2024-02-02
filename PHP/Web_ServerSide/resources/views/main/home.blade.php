@@ -18,7 +18,7 @@
         <li><a href="{{route('users.all')}}">Ver todos os Utilizadores</a></li>
         <li><a href="{{route('users.add')}}">Adicionar Utilizadores</a></li>
         <li><a href="{{route('tasks.task')}}">Tasks</a></li>
-
+        <li><a href="{{route('tasks.add')}}">Add Tasks</a></li>
     </ul>
 
     @endsection

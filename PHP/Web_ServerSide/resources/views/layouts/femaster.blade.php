@@ -33,6 +33,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{route('tasks.task')}}">Tasks</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('tasks.add')}}">Add Tasks</a>
+              </li>
             </ul>
 
           </div>

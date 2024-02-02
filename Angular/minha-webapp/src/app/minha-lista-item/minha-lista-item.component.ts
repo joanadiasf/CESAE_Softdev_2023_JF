@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ICidade } from '../models/cidade.model';
 
 @Component({
   selector: 'app-minha-lista-item',
@@ -8,6 +9,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './minha-lista-item.component.scss'
 })
 export class MinhaListaItemComponent {
-  @Input({required:true}) cidade: {nome:string, pais:string, populacao:number} = {nome:'', pais:'',populacao: 0}; //estrutura de dados
+  @Input({required:true}) cidade: ICidade = {nome:'', pais:'',populacao: 0}; //estrutura de dados
 //required:true e pra sinalizar que e obrigatorio
 }

@@ -1,7 +1,7 @@
 <li><b>{{cidade.nome}}</b>,
      {{cidade.pais}},
      <small><i>
-        @if (cidade.populacao >= 2000000) {
+        @if (cidade!.populacao && cidade.populacao >= 2000000) {
 
             <b>{{cidade.populacao}} pessoas</b>
         }

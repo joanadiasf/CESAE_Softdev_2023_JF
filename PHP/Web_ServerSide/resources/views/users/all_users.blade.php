@@ -10,7 +10,13 @@
  <h3>Aqui podes ver todos os Utilizadores</h3>
  <br><br>
 
-
+ 
+ @if(session('message'))
+  <div class="alert alert-success">
+    {{session('message')}}
+  </div>
+ @endif
+ 
     <table class="table">
 
         <thead>
@@ -19,6 +25,8 @@
               <th scope="col">NOME</th>
               <th scope="col">TELEMÓVEL</th>
               <th scope="col">E-MAIL</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
         <tbody>
@@ -29,7 +37,8 @@
                  <td>{{$item->name}}</td>
                  <td>{{$item->phone}}</td>
                  <td>{{$item->email}}</td>
-                  <td><a href="{{route('users.view',$item->id)}}" class="btn btn-info">Ver</a></td> <!--  botao que vai aceder ao id do user p/ ele ir buscar info -->
+                 <td><a href="{{route('users.view',$item->id)}}" class="btn btn-info">Ver/Editar</a></td> <!--  botao que vai aceder ao id do user p/ ele ir buscar info -->
+                 <td><a href="{{route('users.delete',$item->id)}}" class="btn btn-danger">Apagar</a></td>
              </tr>
 
             @endforeach

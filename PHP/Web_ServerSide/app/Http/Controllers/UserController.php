@@ -5,12 +5,13 @@ use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function addUser(){
 
-        DB::table('users')
+       /* DB::table('users')
         ->updateOrInsert(
             [
                 'email'=> 'darkLord@email.com',
@@ -31,10 +32,57 @@ class UserController extends Controller
        ->first(); //da um objeto so   //se no dd usar myUser-name ele vai buscar o nome, se fosse um get teria que usar um ciclo for each
 
 
-     /*  dd($myUser); */
+       dd($myUser); */
 
 
         return view('users.add_users');
+    }
+
+    public function createUser(Request $request){
+       
+      //dd($request->all()); //all vai buscar tudo
+
+      $request->validate([
+        'email'=>'required|unique:users',
+        'name'=>'required|string|max:5',
+
+      ]);
+
+      User::insert([
+
+        'name' => $request->name, //lado esq nome na coluna sql || lado direito variavel 
+        'email' => $request->email,
+        'password'=>Hash::make($request->password),  //encriptar a password
+
+      ]);
+
+      return redirect()->route('users.all')->with('message','Utilizador adicionado com sucesso!');
+
+    }
+
+    public function updateUser(Request $request){
+       
+
+         //dd($request->all());
+       
+        $request->validate([
+          'phone'=>'min:9|max:14',
+        ]);
+  
+        User::where('id',$request->id)
+            -> update([
+  
+                'name' => $request->name, //lado esq nome na coluna sql || lado direito variavel 
+                'adress' => $request->adress,
+                'phone' => $request->phone,
+  
+        ]);
+  
+        return redirect()->route('users.all')->with('message','Utilizador atualizado!');
+  
+
+
+    
     }
 
     public function allUser(){
@@ -61,6 +109,20 @@ class UserController extends Controller
             ->first();
 
         return view('users.view', compact ('myUser'));
+    }
+
+
+    public function deleteUser($id){
+
+        db::table('tasks')
+        ->where('user_id',$id)
+        ->delete();
+
+        db::table('users')
+            ->where('id',$id)
+            ->delete();
+
+        return back(); //volta a retornar pra onde estava
     }
 
     private function getWeekDays(){
@@ -92,7 +154,7 @@ class UserController extends Controller
         ]; */
 
         $users = db::table('users')
-            ->whereNull('updated_at')
+            //->whereNull('updated_at')
             ->get();  
        //$users = User::get();   = DB
 
