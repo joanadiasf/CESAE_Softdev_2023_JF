@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Task;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -88,14 +89,14 @@ class TaskController extends Controller
   
         $request->validate([
           'nome'=>'required|string|max:50',
-          'usname'=>'required',
+          'user_id'=>'required',
   
         ]);
   
-        User::insert([
+        Task::insert([
   
           'nome' => $request->name, //lado esq nome na coluna sql || lado direito variavel 
-          'usname' => $request->email,
+          'user_id' => $request->user_id,
           
   
         ]);
@@ -110,11 +111,10 @@ class TaskController extends Controller
             'description'=>'string|max:200',
           ]);
 
-          User::where('id',$request->id)
+          Task::where('id',$request->id)
             -> update([
   
                 'nome' => $request->nome, //lado esq nome na coluna sql || lado direito variavel 
-                'usname' => $request->usname,
                 'description' => $request->description,
   
         ]);

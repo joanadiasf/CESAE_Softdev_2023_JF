@@ -27,8 +27,9 @@
         </div>
         
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">User ID</label>
-           <select name="user_id" id="" required>
+           
+            <select class="custom-select" name="user_id" required>
+            <option selected> Todos os Users</option>
                 @foreach($users as $user)
                 <option @if($user->id == request()->query('user_id')) 
                 selected @endif value="{{ $user ->id }}">
@@ -36,6 +37,10 @@
             @endforeach
            </select>
         </div>
+
+       
+ 
+                
 
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

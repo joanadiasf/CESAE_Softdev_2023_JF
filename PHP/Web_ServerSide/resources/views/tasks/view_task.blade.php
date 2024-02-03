@@ -26,9 +26,9 @@
         </div>
 
 
-       <form method="GET">
+      
         <select class="custom-select" name="user_id">
-            <option value="" selected>Todos os Utilizadores</option>
+            <option selected>Todos os Utilizadores</option>
 
             @foreach($users as $item)
             <option @if($item->id == request()->query('user_id')) 
@@ -37,9 +37,8 @@
             @endforeach
         </select>
 
-       </form>
-        
-       <br>
+      
+
         <button type="submit" class="btn btn-info">Atualizar</button>
     </form>
 
