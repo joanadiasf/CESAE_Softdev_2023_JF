@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formadores', function (Blueprint $table) {
+        Schema::create('turma', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->nullable();
-            $table->string('localidade')->nullable();
-            $table->string('contacto')->nullable();
-            //$table->string('tipo_horario')->nullable();
-            //$table->string('tipo_formacao')->nullable();
+                $table->string('localidade')->nullable();
+                $table->integer('nr_alunos')->nullable();
         });
     }
 
@@ -26,7 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('formadores');
-
+        Schema::dropIfExists('turma');
     }
 };

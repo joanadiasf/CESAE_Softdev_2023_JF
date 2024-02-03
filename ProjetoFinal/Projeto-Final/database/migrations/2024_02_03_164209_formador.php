@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admin', function (Blueprint $table) {
-            $table->id();
+        Schema::create('formador', function (Blueprint $table) {
+        $table->id();
             $table->string('nome')->nullable();
+            $table->string('ultimo_nome')->nullable();
             $table->string('localidade')->nullable();
-            $table->string('contacto')->nullable();
-
-            //$table->unsignedBigInteger('cursos_id');
-            //$table->foreign('cursos_id')->references('id')->on('cursos');
-
-           // $table->foreignId('cursos_id')->constrained();
+            $table->string('contato')->nullable();
+            $table->unsignedBigInteger('disponibilidades_id');
+            $table->foreign('disponibilidades_id')->references('id')->on('disponibilidades');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('formador');
     }
 };

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('disponibilidade', function (Blueprint $table) {
+        
+        Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->date('data_inicio')->nullable();
-            $table->date('data_fim')->nullable();
-            $table->integer('horas')->nullable();
-            
+                $table->string('nome')->nullable();
+                $table->integer('localidade')->nullable();
         });
     }
 
@@ -25,7 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('disponibilidade');
-
+        Schema::dropIfExists('modulos');
     }
 };
