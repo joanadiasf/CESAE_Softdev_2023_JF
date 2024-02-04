@@ -33,52 +33,37 @@ Route::get('/hello/{nome}', function ($nome) {
 
 /*Exercicio */
 
-Route::get('/home', [IndexController::class, 'index']
-)->name('home');
+Route::get('/home', [IndexController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('bemvindos');
+Route::get('/', function () {return view('welcome');})->name('bemvindos');
 
-//users
-Route::get('/users/add/',[UserController::class,'addUser']
-)->name('users.add');
+//users ****************************************************************************************
+Route::get('/users/add/',[UserController::class,'addUser'])->name('users.add');
 
-Route::post('/users/create',[UserController::class,'createUser']
-)->name('users.create');
+Route::post('/users/create',[UserController::class,'createUser'])->name('users.create');
 
-Route::post('/users/update',[UserController::class,'updateUser']
-)->name('users.update');
+Route::post('/users/update',[UserController::class,'updateUser'])->name('users.update');
 
-Route::get('/users/all/',[UserController::class,'allUser']
-)->name('users.all');
+Route::get('/users/all/',[UserController::class,'allUser'])->name('users.all');
 
-Route::get('/users/view/{id}',[UserController::class,'viewUser']
-)->name('users.view');
+Route::get('/users/view/{id}',[UserController::class,'viewUser'])->name('users.view');
 
-Route::get('/users/delete/{id}',[UserController::class,'deleteUser']
-)->name('users.delete');
+Route::get('/users/delete/{id}',[UserController::class,'deleteUser'])->name('users.delete');
 
 
-//tasks
-Route::get('/tasks',[TaskController::class,'seeTask']
-)->name('tasks.task');
+//tasks ****************************************************************************************
+Route::get('/tasks',[TaskController::class,'seeTask'])->name('tasks.task');
 
-Route::post('/tasks/create',[TaskController::class,'createTask']
-)->name('tasks.create');
+Route::post('/tasks/create',[TaskController::class,'createTask'])->name('tasks.create');
 
-Route::post('/tasks/update',[TaskController::class,'updateTask']
-)->name('tasks.update');
+Route::post('/tasks/update',[TaskController::class,'updateTask'])->name('tasks.update');
 
-Route::get('/tasks/add/',[TaskController::class,'addTask']
-)->name('tasks.add');
+Route::get('/tasks/add/',[TaskController::class,'addTask'])->name('tasks.add');
 
 Route::get('/tasks/view/{id}', [TaskController::class, 'viewTask'])->name('tasks.view');
 
 Route::get('/tasks/delete/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
 
 
-
-Route::fallback(function(){
-    return view('main.lost');
-});
+//fallback ****************************************************************************************
+Route::fallback(function(){return view('main.lost');});
