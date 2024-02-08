@@ -36,10 +36,33 @@ export const routes: Routes = [
     title: 'minha lista',
     component: MinhaListaComponent
   },
+  
+    /*{
+      path: 'formulario-cidade-td', 
+      title: 'Criar - formulario cidade (Template-driven forms)',
+      component: FormularioCidadeTdComponent
+    },
+    {
+      path: 'formulario-cidade-td/:id',   //os : faz com que seja uma variavel
+      title: 'Editar - formulario cidade (Template-driven forms)',
+      component: FormularioCidadeTdComponent
+    },*/
+
   {
-    path: 'formulario-cidade-td', 
-    title: 'formulario cidade',
-    component: FormularioCidadeTdComponent
+    path: 'formulario-cidade-td',
+    children:[
+      {
+        path:'',
+        title: 'Criar - formulario cidade (Template-driven forms)',
+        component: FormularioCidadeTdComponent,
+      },
+      {
+        path:':id',
+        title: 'Editar - formulario cidade (Template-driven forms)',
+        component: FormularioCidadeTdComponent,
+      }
+    ]
+
   },
   {
     path: 'lista-animais', 

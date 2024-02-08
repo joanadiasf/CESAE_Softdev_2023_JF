@@ -97,10 +97,13 @@ export class CidadesService {
     this.cidades = cidades;
   }
 
-  read(cidade: ICidade): void {}
+  read(id: number): ICidade {
+
+    return this.cidades.filter(x => x.id === id)[0]; //ele retorna uma lista e so queremos a primeira posicao
+  }
 
   update(cidade: ICidade): void {
-    
+
 
   }
 
