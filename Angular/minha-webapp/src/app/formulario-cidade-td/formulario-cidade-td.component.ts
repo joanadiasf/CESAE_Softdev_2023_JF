@@ -12,10 +12,13 @@ import { ActivatedRoute,  Router } from '@angular/router';
   styleUrl: './formulario-cidade-td.component.scss'
 })
 export class FormularioCidadeTdComponent {
-  idCidade: number = 0;
-  nomeCidade: string = '';
-  paisCidade: string = '';
-  populacaoCidade: number | undefined  = 0;  //podemos ter mais que um tipo
+
+  minhaCidade: ICidade = {
+    id: 0,
+    nome: '',
+    pais: '',
+    populacao: 0
+  };
 
   constructor(private cidadeService:CidadesService, 
               private router: Router,
@@ -24,27 +27,26 @@ export class FormularioCidadeTdComponent {
   }
 
   ngOnInit(){
-    this.idCidade = parseInt(this.route.snapshot.paramMap.get('id') ??  '0') ; //ele e uma string e precisa de passar pra nr, dai o parseInt
+    this.minhaCidade.id = parseInt(this.route.snapshot.paramMap.get('id') ??  '0') ; //ele e uma string e precisa de passar pra nr, dai o parseInt
 
-    if(this.idCidade > 0){
-      let cidade: ICidade = this.cidadeService.read(this.idCidade);
+    if(this.minhaCidade.id > 0){
 
-      this.nomeCidade = cidade.nome;
-      this.paisCidade = cidade.pais;
-      this.populacaoCidade = cidade.populacao;
+      this.minhaCidade= this.cidadeService.read(this.minhaCidade.id);
+
+   
     }
 
-    console.log('id:',this.idCidade);
+    console.log('id:',this.minhaCidade.id);
   }
 
   formSubmit(){
-    console.log('nome',this.nomeCidade)
+    console.log('nome',this.minhaCidade.nome)
 
     let novaCidade: ICidade= {
       id: 0,
-      nome:this.nomeCidade,
-      pais:this.paisCidade,
-      populacao:this.populacaoCidade
+      nome: this.minhaCidade.nome,
+      pais: this.minhaCidade.pais,
+      populacao: this.minhaCidade.populacao
     }
 
     this.cidadeService.create(novaCidade);

@@ -1,22 +1,22 @@
-<p>formulario-cidade-td works!</p>
+<h1>Formulario Cidade</h1>
 
 <div>
     <label for="nome">nome cidade: </label>
-    <input type="text" id="nome" [(ngModel)]="nomeCidade" name="nome"/>
+    <input type="text" id="nome" [(ngModel)]="minhaCidade.nome" name="nome"/>
 </div><br>
 
 <div>
     <label for="pais">nome pais: </label>
-    <input type="text" id="pais" [(ngModel)]="paisCidade" name="pais"/>
+    <input type="text" id="pais" [(ngModel)]="minhaCidade.pais" name="pais"/>
 </div><br>
 
 <div>
     <label for="populacao">populacao: </label>
-    <input type="text" id="populacao" [(ngModel)]="populacaoCidade" name="populacao"/>
+    <input type="text" id="populacao" [(ngModel)]="minhaCidade.populacao" name="populacao"/>
 </div><br>
 
 <div>
-    O nome escrito foi: {{ nomeCidade }}
+    O nome escrito foi: {{ minhaCidade.nome }}
 </div><br>
 
 <div>
