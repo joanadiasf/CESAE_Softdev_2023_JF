@@ -104,6 +104,10 @@ export class CidadesService {
 
   update(cidade: ICidade): void {
 
+    let index = this.cidades.findIndex(x => x.id === cidade.id)
+    this.cidades[index] = cidade;
+    
+    localStorage.setItem('cidades', JSON.stringify(this.cidades));
 
   }
 

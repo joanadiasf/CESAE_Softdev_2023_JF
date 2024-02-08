@@ -42,14 +42,14 @@ export class FormularioCidadeTdComponent {
   formSubmit(){
     console.log('nome',this.minhaCidade.nome)
 
-    let novaCidade: ICidade= {
-      id: 0,
-      nome: this.minhaCidade.nome,
-      pais: this.minhaCidade.pais,
-      populacao: this.minhaCidade.populacao
-    }
+    if(this.minhaCidade.id > 0){
 
-    this.cidadeService.create(novaCidade);
+      this.cidadeService.update(this.minhaCidade);
+    }
+    else{
+
+      this.cidadeService.create(this.minhaCidade);
+    }
 
     this.router.navigate(['/minha-lista']);
   }
