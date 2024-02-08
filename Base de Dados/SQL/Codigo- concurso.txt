@@ -1,0 +1,88 @@
+2****
+CREATE TABLE concurso ( 
+    data date,
+    hora time,
+    chefe int,
+    nome varchar(50),
+    bolo varchar(50),
+    nr_assistentes int,
+    tema varchar(50),
+    sabor varchar(50)
+    );
+
+
+3****
+ALTER TABLE concurso
+ADD CONSTRAINT pk_concurso PRIMARY KEY (data, hora, chefe);
+
+4****
+INSERT INTO concurso (data,hora,chefe,nome,bolo,nr_assistentes,tema,sabor)
+VALUES
+('2020-09-14','12:23:00',56,'Bourdain','Bolo Brigadeiro Gourmet',2,'Aniversario','Limao')
+('2021-05-03','17:00:00',71,'Ramsay','Mouse de Chocolate Branco e Framboesas',3,'Casamento','Chocolate'),
+('2021-05-03','14:43:00',81,'Oliver','Pavlova de Laranja',0,'Casamento','Laranja'),
+('2021-05-24','16:55:00',23,'Batali','Bolo Humido de Baunilha e Limao',2,'Halloween','Baunilha'),
+('2021-05-24','18:09:00',81,'Oliver','Merengue de Tiramisu e Limoncello',4,'Aniversario','Chocolate'),
+('2021-05-24','15:38:00',44,'Flay','Mouse de Baunilha',3,'Casamento','Baunilha'),
+('2023-02-15','18:12:00',56,'Bourdain','Brigadeiro Ferrero',1,'Aniversario','Chocolate')
+
+5****
+a**
+CREATE VIEW ContagemSaborChocolate AS
+SELECT COUNT(*) AS num_registros_chocolate
+FROM concurso
+WHERE sabor = 'Chocolate';
+b**
+CREATE VIEW ContagemBolosMouse AS
+SELECT COUNT(*) AS num_registros_mouse
+FROM concurso
+WHERE bolo LIKE '%Mouse%';
+
+6****
+a**
+DELIMITER //
+CREATE PROCEDURE MostrarEstatisticas(IN nome VARCHAR(50))
+BEGIN
+    -- Quantos bolos propostos por um dado chefe
+    SELECT COUNT(*) AS num_bolos_propostos
+    FROM concurso
+    WHERE chefe = chef_nome;
+    
+END //
+DELIMITER ;
+
+b**
+DELIMITER //
+CREATE PROCEDURE MostrarEstatisticasBolo(IN nome VARCHAR(50))
+BEGIN
+ -- Quais os bolos propostos na mesma data
+    SELECT bolo
+    FROM concurso
+    WHERE data IN (SELECT data FROM concurso WHERE chefe = chef_nome GROUP BY data HAVING COUNT(*) > 1);
+END //
+DELIMITER ;
+
+c**
+DELIMITER //
+CREATE PROCEDURE MostrarEstatisticasTema(IN nome VARCHAR(50))
+BEGIN
+-- Quantos bolos do mesmo tema foram propostas
+    SELECT tema, COUNT(*) AS num_bolos_mesmo_tema
+    FROM concurso
+    WHERE chefe = chef_nome
+    GROUP BY tema;
+END //
+DELIMITER ;
+
+d**
+DELIMITER //
+CREATE PROCEDURE MostrarEstatisticasReceitas(IN nome VARCHAR(50))
+BEGIN
+-- Quais as tres ultimas receitas propostas por um dado chefe
+    SELECT *
+    FROM concurso
+    WHERE chefe = chef_nome
+    ORDER BY data DESC, hora DESC
+    LIMIT 3;
+END //
+DELIMITER ;
