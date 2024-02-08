@@ -6,6 +6,7 @@ import { SegundaBbbPaginaComponent } from './segunda-bbb-pagina/segunda-bbb-pagi
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MinhaListaComponent } from './minha-lista/minha-lista.component';
 import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
+import { FormularioCidadeTdComponent } from './formulario-cidade-td/formulario-cidade-td.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
     component: MinhaListaComponent
   },
   {
+    path: 'formulario-cidade-td', 
+    title: 'formulario cidade',
+    component: FormularioCidadeTdComponent
+  },
+  {
     path: 'lista-animais', 
     title: 'lista animais',
     component: ListaAnimaisComponent
@@ -43,6 +49,6 @@ export const routes: Routes = [
 
 
 /******************************************************/
-  {path: "",redirectTo: "/primeira",pathMatch:"full"},
+  {path: "",redirectTo: "/minha-lista",pathMatch:"full"}, //rota por defeito
   {path: "**", title: "404", component: NotFoundComponent,}
 ];

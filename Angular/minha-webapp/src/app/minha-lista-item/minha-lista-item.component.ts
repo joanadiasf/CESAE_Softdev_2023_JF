@@ -6,9 +6,8 @@ import { ICidade } from '../models/cidade.model';
   standalone: true,
   imports: [],
   templateUrl: './minha-lista-item.component.html',
-  styleUrl: './minha-lista-item.component.scss'
+  styleUrl: './minha-lista-item.component.scss',
 })
 export class MinhaListaItemComponent {
-  @Input({required:true}) cidade: ICidade = {nome:'', pais:'',populacao: 0}; //estrutura de dados
-//required:true e pra sinalizar que e obrigatorio
+  @Input({ required: true }) cidade: ICidade = { id: 0, nome: '', pais: '', populacao: 0 };
 }

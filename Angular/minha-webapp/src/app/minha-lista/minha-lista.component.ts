@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
-import { CidadesService } from '../services/cidades.service';
+import { CidadesService } from '../services/cidades-ls.service';
 import { ICidade } from '../models/cidade.model';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent],
+  imports: [MinhaListaItemComponent,RouterLink],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss',
 })
 export class MinhaListaComponent {
   cidades: Array<ICidade> = [];
 
-  constructor(private cidadesService: CidadesService) {
+  constructor(private cidadesService: CidadesService,private router:Router) {
 
      console.log('MinhaListaComponent.constructor()');
     //...
@@ -36,13 +37,29 @@ termina de inicializar as propriedades de entrada. É usado
 para realizar operações de inicialização que dependem dos
 dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
-
+this.cidadesService.readAll();
 this.cidades = this.cidadesService.cidades;
+
   }
 
-  adicionarCidade(){
-    this.cidadesService.create({nome: 'Lisboa',pais: 'Portugal'});
+  adicionarCidade() :void {
+    this.cidadesService.create({id: 0,nome: 'Lisboa',pais: 'Portugal'});
   }
+
+  irAdicionarCidade() :void {
+    this.router.navigate(['/formulario-cidade-td']);
+  }
+
+  limparDados() :void {
+   // localStorage.removeItem('cidades'); 
+   //  localStorage.clear();
+    this.cidadesService.limparDados();
+    this.cidades = this.cidadesService.cidades;
+  }
+
+
+
+
 
   ngDoCheck() {
     console.log('MinhaListaComponent.ngDoCheck()');
