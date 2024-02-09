@@ -7,11 +7,13 @@
 
 
 <!-- So aparece se autenticado-->
-@auth   
-<!-- Alerta -->
-<div class="alert alert-info" role="alert">
-    Conta de Administrador
-</div>
+@auth
+    @if(Auth::user()->user_type == 1)
+    <!-- Alerta -->
+    <div class="alert alert-info" role="alert">
+        Conta de Administrador
+    </div>
+    @endif
 @endauth
 
 @endsection
