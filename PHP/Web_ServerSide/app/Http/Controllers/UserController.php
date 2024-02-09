@@ -94,8 +94,24 @@ class UserController extends Controller
         $info = $this->info();
 
         //dd($info);  //debug
+        //dd(request()->query('search'));
 
-        $users = $this->getContacts();
+        $search = request()->query('search') ? request()->query('search') : null; //se no request ele encontrar algo, o search fica com esse valor, senao ele fica nulo
+                                                                                  
+
+        //$users = $this->getContacts(); //com funcao acessoria
+        $users = DB::table('users');  //para poder fazer filtros
+
+        if($search){
+
+           // $users = $users-> DB::table('users') 
+           $users =  $users
+                    ->where('name','like', "%{$search}%")  //neste caso tem mesmo que ser "" e nao '' porque se nao ele le errado
+                    ->orWhere('email','like', "%{$search}%");
+
+        };
+
+        $users = $users ->get();
 
        /* dd($contacts); */
 

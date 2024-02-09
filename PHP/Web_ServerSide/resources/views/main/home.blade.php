@@ -12,6 +12,12 @@
     <h3>Hello World, página Views.</h3>
 
     <h5>Tens disponiveis estes links</h5>
+    <br>
+@auth
+   <h3>Ola, {{ Auth::user()->name }}</h3>
+@endauth
+
+<br>
 
     <ul>
         <li><a href="{{route('home')}}">Vai para casa!</a></li>
@@ -19,6 +25,8 @@
         <li><a href="{{route('users.add')}}">Adicionar Utilizadores</a></li>
         <li><a href="{{route('tasks.task')}}">Tasks</a></li>
         <li><a href="{{route('tasks.add')}}">Add Tasks</a></li>
+        <li><a href="{{route('backoffice.view')}}">Backoffice</a></li>
+
     </ul>
 
     @endsection

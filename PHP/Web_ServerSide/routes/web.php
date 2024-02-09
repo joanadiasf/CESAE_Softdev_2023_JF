@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,7 @@ Route::post('/users/create',[UserController::class,'createUser'])->name('users.c
 
 Route::post('/users/update',[UserController::class,'updateUser'])->name('users.update');
 
-Route::get('/users/all/',[UserController::class,'allUser'])->name('users.all');
+Route::get('/users/all/',[UserController::class,'allUser'])->name('users.all');//a rota fica apenas para users autenticados  ->middleware('auth'); 
 
 Route::get('/users/view/{id}',[UserController::class,'viewUser'])->name('users.view');
 
@@ -63,6 +64,11 @@ Route::get('/tasks/add/',[TaskController::class,'addTask'])->name('tasks.add');
 Route::get('/tasks/view/{id}', [TaskController::class, 'viewTask'])->name('tasks.view');
 
 Route::get('/tasks/delete/{id}', [TaskController::class, 'deleteTask'])->name('tasks.delete');
+
+//dashboard ****************************************************************************************
+Route::get('/backoffice',[DashboardController::class,'viewBackoffice'])->name('backoffice.view')->middleware('auth');
+
+
 
 
 //fallback ****************************************************************************************

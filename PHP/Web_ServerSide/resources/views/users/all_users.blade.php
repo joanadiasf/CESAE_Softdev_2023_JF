@@ -10,6 +10,10 @@
  <h3>Aqui podes ver todos os Utilizadores</h3>
  <br><br>
 
+  <form method="GET">
+    <input type="text" value="" name="search" id="">
+    <button  class="btn btn-info" type="submit">Procurar</button>
+  </form>
  
  @if(session('message'))
   <div class="alert alert-success">
@@ -32,13 +36,17 @@
         <tbody>
             @foreach ($users as $item)
 
+          
              <tr>
                  <th scope="row">{{$item->id}}</th>
                  <td>{{$item->name}}</td>
                  <td>{{$item->phone}}</td>
-                 <td>{{$item->email}}</td>
+                 <td>{{$item->email}}</td>]
+
+                 @auth <!-- So os autenticados que conseguem ver os botoes --> 
                  <td><a href="{{route('users.view',$item->id)}}" class="btn btn-info">Ver/Editar</a></td> <!--  botao que vai aceder ao id do user p/ ele ir buscar info -->
                  <td><a href="{{route('users.delete',$item->id)}}" class="btn btn-danger">Apagar</a></td>
+                 @endauth
              </tr>
 
             @endforeach
