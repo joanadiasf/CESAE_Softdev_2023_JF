@@ -31,7 +31,7 @@
             <option selected>Todos os Utilizadores</option>
 
             @foreach($users as $item)
-            <option @if($item->id == request()->query('user_id')) 
+            <option @if($item->id == $myTask->user_id)  <!-- Para aparecer o nome que ja esta atribuido a tarefa -->
                 selected @endif value="{{ $item ->id }}">
                     {{ $item->name}} </option>
             @endforeach

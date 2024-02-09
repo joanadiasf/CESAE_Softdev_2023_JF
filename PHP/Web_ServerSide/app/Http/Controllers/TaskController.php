@@ -95,8 +95,7 @@ class TaskController extends Controller
   
         Task::insert([
   
-          'nome' => $request->name, //lado esq nome na coluna sql || lado direito variavel 
-          'user_id' => $request->user_id,
+           
           
   
         ]);
