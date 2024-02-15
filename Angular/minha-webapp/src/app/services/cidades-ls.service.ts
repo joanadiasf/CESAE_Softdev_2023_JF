@@ -26,7 +26,7 @@ export class CidadesService {
     this.cidades = []; //limpar o array de cidades
 
     //refazer os dados
-    this.reporDados
+    this.reporDados()
 
   }
 
@@ -39,6 +39,7 @@ export class CidadesService {
       { id: 3, nome: 'Barcelona', pais: 'Espanha', populacao: 1620343 },
     ];
 
+    console.log('erroo');
     this.cidades = cidades;
     localStorage.setItem('cidades', JSON.stringify(cidades));
   }
@@ -84,7 +85,7 @@ export class CidadesService {
     novaCidade.id = maxID.id + 1;
 
     this.cidades.push(novaCidade);
-    localStorage.setItem('cidades', JSON.stringify(this.cidades));
+   localStorage.setItem('cidades', JSON.stringify(this.cidades));
 
     console.log(this.cidades); // --
   }
@@ -111,5 +112,11 @@ export class CidadesService {
 
   }
 
-  delete(cidade: ICidade): void {}
+  delete(cidade: ICidade): void {
+ 
+    let index: number = this.cidades.findIndex((x: ICidade) => x.id === cidade.id);
+    this.cidades.splice(index, 1);
+ 
+    localStorage.setItem('cidades', JSON.stringify(this.cidades));                            
+  }
 }

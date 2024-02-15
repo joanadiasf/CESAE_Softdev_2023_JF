@@ -3,11 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { CidadesService } from '../services/cidades-ls.service';
 import { ICidade } from '../models/cidade.model';
 import { ActivatedRoute,  Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-formulario-cidade-td',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './formulario-cidade-td.component.html',
   styleUrl: './formulario-cidade-td.component.scss'
 })
