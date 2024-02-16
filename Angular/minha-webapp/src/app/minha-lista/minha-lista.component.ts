@@ -1,25 +1,24 @@
 import { Component } from '@angular/core';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
-import { CidadesService } from '../services/cidades-ls.service';
+import { CidadesService } from '../services/cidades-api.service';
 import { ICidade } from '../models/cidade.model';
 import { Router, RouterLink } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent,RouterLink],
+  imports: [MinhaListaItemComponent, RouterLink,HttpClientModule],
+  providers:[CidadesService],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss',
 })
 export class MinhaListaComponent {
   cidades: Array<ICidade> = [];
 
-  constructor(private cidadesService: CidadesService,private router:Router) {
-
-     console.log('MinhaListaComponent.constructor()');
+  constructor(private cidadesService: CidadesService, private router: Router) {
+    console.log('MinhaListaComponent.constructor()');
     //...
-
-    
   }
 
   ngOnChange() {
@@ -37,29 +36,27 @@ termina de inicializar as propriedades de entrada. É usado
 para realizar operações de inicialização que dependem dos
 dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
-this.cidadesService.readAll();
-this.cidades = this.cidadesService.cidades;
 
+    //console.log(this.cidadesService.readAll());
+    this.cidadesService.readAll().subscribe((cidades) => {
+      this.cidades = cidades;
+    });
   }
 
-  adicionarCidade() :void {
-    this.cidadesService.create({id: 0,nome: 'Lisboa',pais: 'Portugal'});
+  adicionarCidade(): void {
+    this.cidadesService.create({ id: 0, nome: 'Lisboa', pais: 'Portugal' });
   }
 
-  irAdicionarCidade() :void {
+  irAdicionarCidade(): void {
     this.router.navigate(['/formulario-cidade-td']);
   }
 
-  limparDados() :void {
-   // localStorage.removeItem('cidades'); 
-   //  localStorage.clear();
+  limparDados(): void {
+    // localStorage.removeItem('cidades');
+    //  localStorage.clear();
     this.cidadesService.limparDados();
     this.cidades = this.cidadesService.cidades;
   }
-
-
-
-
 
   ngDoCheck() {
     console.log('MinhaListaComponent.ngDoCheck()');
@@ -71,8 +68,7 @@ deteção de mudanças, que pode ser mais complexa ou
 específica do que a padrão do Angular*/
   }
 
-  ngAfterContentChecked(){
-
+  ngAfterContentChecked() {
     /*É executado depois de cada ciclo
 de deteção de mudanças do Angular, depois que o conteúdo
 projetado é verificado. É usado para realizar operações que
@@ -81,22 +77,20 @@ atualizar valores, aplicar estilos, etc… */
   }
 
   ngAfterViewInit() {
-
     /* É executado uma vez depois que o Angular
 inicializa a view do e as views dos seus filhos. É usado para
 realizar operações que dependem da view, como aceder
 elementos DOM, manipular dados, etc… */
   }
- 
-  ngAfterViewChecked() {
 
+  ngAfterViewChecked() {
     /* É executado depois de cada ciclo de
 deteção de mudanças do Angular, depois que a view e as
 views dos filhos são verificadas. É usado para realizar
 operações que dependem das mudanças na view, como
 atualizar valores, aplicar estilos, etc… */
   }
- 
+
   ngOnDestroy() {
     console.log('MinhaListaComponent.ngOnDestroy()');
     /* É executado uma vez antes que o Angular

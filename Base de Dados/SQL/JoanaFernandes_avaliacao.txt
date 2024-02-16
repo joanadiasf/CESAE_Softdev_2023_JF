@@ -1,0 +1,119 @@
+4*******************************************************************
+a-------------------------------------------------------------------
+CREATE VIEW clienteGmail AS
+SELECT *
+FROM cliente
+WHERE email LIKE '%gmail%' AND (contacto LIKE '91%' OR contacto LIKE '96%');
+
+b-------------------------------------------------------------------
+CREATE VIEW dataEmprestimo AS
+SELECT *,
+       DATEDIFF(CURRENT_DATE(), data_emprestimo) AS Dias
+FROM emprestimo
+WHERE data_devolucao IS NULL;
+
+c-------------------------------------------------------------------
+CREATE VIEW anosEmprestimos AS
+SELECT YEAR(data_emprestimo) AS Ano,
+       COUNT(*) AS TotalEmprestimos
+FROM emprestimo
+GROUP BY YEAR(data_emprestimo);
+
+d-------------------------------------------------------------------
+CREATE VIEW editora3Livros AS
+SELECT e.nome_editora, COUNT(l.id_editora) AS QuantidadeLivros
+FROM livro as l
+JOIN editora as e ON l.id_editora = e.id_editora
+GROUP BY l.id_editora
+HAVING COUNT(*) > 3;
+
+e-------------------------------------------------------------------
+CREATE VIEW generoQuantidades AS
+SELECT g.genero, COUNT(*) AS QuantidadeLivros
+FROM livro as  l
+JOIN genero as g ON l.id_genero = g.id_genero
+GROUP BY g.genero;
+
+f-------------------------------------------------------------------
+CREATE VIEW generoEditora AS
+SELECT e.nome_editora, g.genero
+FROM editora as  e
+JOIN livro as l ON e.id_editora = l.id_editora
+JOIN genero as g ON l.id_genero = g.id_genero;
+
+g-------------------------------------------------------------------
+CREATE VIEW autoresEUA AS
+SELECT a.nome_autor, COUNT(*) AS TotalEmprestimos
+FROM emprestimo as e
+JOIN livro as l ON e.id_livro = l.id_livro
+JOIN autor a ON l.id_autor = a.id_autor
+WHERE a.pais <> 'EUA'
+GROUP BY a.nome_autor
+ORDER BY COUNT(*) DESC
+LIMIT 3;
+
+h-------------------------------------------------------------------
+CREATE VIEW livrosNaoDevolvidos AS
+SELECT l.titulo, c.nome, c.email, e.data_emprestimo
+FROM emprestimo as e
+JOIN cliente as c ON e.id_cliente = c.id_cliente
+JOIN livro as l ON e.id_livro = l.id_livro
+WHERE e.data_devolucao IS NULL AND YEAR(e.data_emprestimo) < 2021
+ORDER BY e.data_emprestimo;
+
+
+5*******************************************************************
+a-------------------------------------------------------------------
+DELIMITER //
+
+CREATE PROCEDURE clientesEmail(IN dominio_email VARCHAR(200))
+BEGIN
+    SELECT *
+    FROM cliente
+    WHERE email LIKE CONCAT('%@', dominio_email);
+END //
+
+DELIMITER ;
+
+b-------------------------------------------------------------------
+DELIMITER //
+
+CREATE PROCEDURE livrosPaisAutor(IN nome_autor VARCHAR(100), IN pais_autor VARCHAR(50))
+BEGIN
+    SELECT l.*
+    FROM livro as l
+    JOIN autor as a ON l.id_autor = a.id_autor
+    WHERE a.nome_autor = nome_autor AND a.pais = pais_autor;
+END //
+
+DELIMITER ;
+
+c-------------------------------------------------------------------
+DELIMITER //
+
+CREATE PROCEDURE livrosGenero(IN genero_nome VARCHAR(50))
+BEGIN
+    DECLARE qtd_livros INT;
+    
+    SELECT COUNT(*)
+    INTO qtd_livros
+    FROM livro as l
+    JOIN genero as g ON l.id_genero = g.id_genero
+    WHERE g.genero = genero_nome;
+    
+    SELECT qtd_livros;
+END //
+
+d-------------------------------------------------------------------
+DELIMITER //
+
+CREATE PROCEDURE livrosAutorEmprestimo(IN nome_autor VARCHAR(100))
+BEGIN
+    SELECT l.*
+    FROM livro as l
+    JOIN autor as a ON l.id_autor = a.id_autor
+    JOIN emprestimos e ON l.id_livro = e.id_livro
+    WHERE a.nome_autor = nome_autor AND e.id_livro IS NULL;
+END //
+
+DELIMITER ;

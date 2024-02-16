@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ICidade } from '../models/cidade.model';
 import { RouterLink } from '@angular/router';
-import { CidadesService } from './../services/cidades-ls.service';
+import { CidadesService } from './../services/cidades-api.service';
 
 @Component({
   selector: 'app-minha-lista-item',
@@ -22,6 +22,6 @@ export class MinhaListaItemComponent {
 
   del() {
     this.CidadesService.delete(this.cidade);
-    console.log('aqui');
+    //console.log('aqui');
   }
 }
