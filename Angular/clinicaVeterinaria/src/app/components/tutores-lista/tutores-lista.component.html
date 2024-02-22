@@ -16,8 +16,8 @@
               <td>{{ tutor.nome }}</td>
               <td>{{ tutor.telemovel }}</td>
               <td>{{ tutor.email }}</td>
-              <td><button class="btn btn-info" [routerLink]="['/editar-tutor/',tutor.id]" type="button">Editar</button></td>
-            <td><button class="btn btn-warning" [routerLink]="['/eliminar-tutor/',tutor.id]" type="button">Apagar</button></td>
+              <td><button class="btn btn-primary" [routerLink]="['/editar-tutor/',tutor.id]" type="button">Editar</button></td>
+            <td><button class="btn btn-danger" [routerLink]="['/eliminar-tutor/',tutor.id]" type="button">Apagar</button></td>
               
             </tr>
         } @empty {

@@ -20,10 +20,26 @@
               <td>{{ marcacao.animalId }}</td>
               <td>{{ marcacao.tutorId }}</td>
               <td>{{ marcacao.dataHora }}</td>
+              <!-- @if ( marcacao.realizada ) {    tentei mas não estava a ficar bonito como eu queria
+                <td class="align-middle">
+                   <i class="bi bi-x-lg"></i>
+                </td>
+              }
+              @else {
+                <p> - </p>
+              } -->
+              <!-- @if ( marcacao.cancelada ) {    tentei mas não estava a ficar bonito como eu queria
+                <td class="align-middle">
+                   <i class="bi bi-x-lg"></i>
+                </td>
+              }
+              @else {
+                <p> - </p>
+              } -->
             <td>{{ marcacao.realizada ? 'x' : 'o' }}</td>
             <td>{{ marcacao.cancelada ? 'x' : 'o' }}</td>
-            <td><button class="btn btn-info" [routerLink]="['/editar-marcacao/',marcacao.id]" type="button">Editar</button></td>
-            <td><button class="btn btn-warning" [routerLink]="['/eliminar-marcacao/',marcacao.id]" type="button">Apagar</button></td>
+            <td><button class="btn btn-primary" [routerLink]="['/editar-marcacao/',marcacao.id]" type="button">Editar</button></td>
+            <td><button class="btn btn-danger" [routerLink]="['/eliminar-marcacao/',marcacao.id]" type="button">Apagar</button></td>
             </tr>
         } @empty {
           @if (marcacoes) {
@@ -38,5 +54,7 @@
         }
       </tbody>
   </table>
+
+  
 </div>
   

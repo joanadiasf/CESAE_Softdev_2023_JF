@@ -7,7 +7,7 @@
       "raca": "Dálmata",
       "sexo": "f",
       "dataNascimento": "2021-04-10T00:00",
-      "tutorId": ""
+      "tutorId": "892a"
     },
     {
       "id": "ab75",
@@ -40,21 +40,24 @@
       "animalId": "982a",
       "tutorId": "892a",
       "dataHora": "2024-02-21T09:25",
-      "realizada": true
+      "realizada": true,
+      "cancelada": true
     },
     {
       "id": "ac25",
       "tipo": "Consulta",
       "animalId": "ab75",
       "tutorId": "58aa",
-      "dataHora": "2024-02-21T010:10"
+      "dataHora": "2024-02-21T010:10",
+      "cancelada": true
     },
     {
       "id": "0539",
       "tipo": "Vacina",
       "animalId": "982a",
       "tutorId": "892a",
-      "dataHora": "2024-02-21T14:24"
+      "dataHora": "2024-02-21T14:24",
+      "realizada": true
     }
   ]
 }
