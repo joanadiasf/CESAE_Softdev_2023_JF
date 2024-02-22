@@ -1,13 +1,12 @@
-<p>animais-criar works!</p>
 
-<div>
+<div class="container">
+  <br>
     <h2>Novo Animal</h2>
-  </div>
-  <div>
+  
     <form [formGroup]="formularioAnimais" (ngSubmit)="handleSubmit()">
       <div>
-        <label for="nome">Nome:</label>
-        <input formControlName="nome" type="text" id="nome" />
+        <label class="form-label" for="nome">Nome:</label>
+        <input class="form-control" formControlName="nome" type="text" id="nome" />
         @if ((submitted || formularioAnimais.controls['nome'].touched) && formularioAnimais.controls['nome'].errors) {
         <div>
           @if (formularioAnimais.controls['nome'].errors['required']) {
@@ -17,8 +16,8 @@
         }
       </div>
       <div>
-        <label for="especie">Especie:</label>
-        <input formControlName="especie" type="text" id="especie" />
+        <label class="form-label" for="especie">Especie:</label>
+        <input class="form-control" formControlName="especie" type="text" id="especie" />
         @if ((submitted || formularioAnimais.controls['especie'].touched) && formularioAnimais.controls['especie'].errors) {
         <div>
           @if (formularioAnimais.controls['especie'].errors['required']) {
@@ -28,8 +27,8 @@
         }
       </div>
       <div>
-        <label for="raca">Raça:</label>
-        <input formControlName="raca" type="text" id="raca" />
+        <label class="form-label" for="raca">Raça:</label>
+        <input class="form-control" formControlName="raca" type="text" id="raca" />
         @if ((submitted || formularioAnimais.controls['raca'].touched) && formularioAnimais.controls['raca'].errors) {
         <div>
           @if (formularioAnimais.controls['raca'].errors['required']) {
@@ -39,8 +38,8 @@
         }
       </div>
       <div>
-        <label for="sexo">Sexo:</label>
-        <input formControlName="sexo" type="text" id="sexo" />
+        <label class="form-label" for="sexo">Sexo:</label>
+        <input class="form-control" formControlName="sexo" type="text" id="sexo" />
         @if ((submitted || formularioAnimais.controls['sexo'].touched) && formularioAnimais.controls['sexo'].errors) {
         <div>
           @if (formularioAnimais.controls['sexo'].errors['required']) {
@@ -50,8 +49,8 @@
         }
       </div>
       <div>
-        <label for="dataNascimento">Data de Nascimento:</label>
-        <input formControlName="dataNascimento" type="datetime-local" id="dataNascimento" />
+        <label class="form-label" for="dataNascimento">Data de Nascimento:</label>
+        <input class="form-control" formControlName="dataNascimento" type="datetime-local" id="dataNascimento" />
         @if ((submitted || formularioAnimais.controls['dataNascimento'].touched) && formularioAnimais.controls['dataNascimento'].errors) {
         <div>
           @if (formularioAnimais.controls['dataNascimento'].errors['required']) {
@@ -61,8 +60,8 @@
         }
       </div>
       <div>
-        <label for="tutorId">ID do Tutor:</label>
-        <input formControlName="tutorId" type="text" id="tutorId" />
+        <label class="form-label" for="tutorId">ID do Tutor:</label>
+        <input class="form-control" formControlName="tutorId" type="text" id="tutorId" />
         @if ((submitted || formularioAnimais.controls['tutorId'].touched) && formularioAnimais.controls['tutorId'].errors) {
         <div>
           @if (formularioAnimais.controls['tutorId'].errors['required']) {
@@ -71,7 +70,7 @@
         </div>
         }
       </div>
-      
-      <button type="submit" [disabled]="submitted && formularioAnimais.invalid">Criar animal</button>
+      <br>
+      <button style="background-color: #3889C9;" class="btn btn-primary" type="submit" [disabled]="submitted && formularioAnimais.invalid">Criar animal</button>
     </form>
   </div>

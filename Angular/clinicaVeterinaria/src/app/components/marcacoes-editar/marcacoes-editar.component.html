@@ -1,11 +1,11 @@
-<div>
+<div  class="container">
+  <br>
     <h2>Editar marcação</h2>
-  </div>
-  <div>
+  
     <form [formGroup]="formularioMarcacao" (ngSubmit)="handleSubmit()">
       <div>
-        <label for="tipo">Tipo:</label>
-        <input formControlName="tipo" type="text" id="tipo" />
+        <label class="form-label" for="tipo">Tipo:</label>
+        <input class="form-control" formControlName="tipo" type="text" id="tipo" />
         @if ((submitted || formularioMarcacao.controls['tipo'].touched) && formularioMarcacao.controls['tipo'].errors) {
         <div>
           @if (formularioMarcacao.controls['tipo'].errors['required']) {
@@ -15,8 +15,8 @@
         }
       </div>
       <div>
-        <label for="animalId">ID do Animal:</label>
-        <input formControlName="animalId" type="text" id="animalId" />
+        <label class="form-label" for="animalId">ID do Animal:</label>
+        <input class="form-control" formControlName="animalId" type="text" id="animalId" />
         @if ((submitted || formularioMarcacao.controls['animalId'].touched) && formularioMarcacao.controls['animalId'].errors) {
         <div>
           @if (formularioMarcacao.controls['animalId'].errors['required']) {
@@ -26,8 +26,8 @@
         }
       </div>
       <div>
-        <label for="tutorId">ID do Tutor:</label>
-        <input formControlName="tutorId" type="text" id="tutorId" />
+        <label class="form-label" for="tutorId">ID do Tutor:</label>
+        <input class="form-control" formControlName="tutorId" type="text" id="tutorId" />
         @if ((submitted || formularioMarcacao.controls['tutorId'].touched) && formularioMarcacao.controls['tutorId'].errors) {
         <div>
           @if (formularioMarcacao.controls['tutorId'].errors['required']) {
@@ -37,8 +37,8 @@
         }
       </div>
       <div>
-        <label for="dataHora">Data e Hora:</label>
-        <input formControlName="dataHora" type="datetime-local" id="dataHora" />
+        <label class="form-label" for="dataHora">Data e Hora:</label>
+        <input class="form-control" formControlName="dataHora" type="datetime-local" id="dataHora" />
         @if ((submitted || formularioMarcacao.controls['dataHora'].touched) && formularioMarcacao.controls['dataHora'].errors) {
         <div>
           @if (formularioMarcacao.controls['dataHora'].errors['required']) {
@@ -50,12 +50,12 @@
 
       <div>
         <input formControlName="realizada" type="checkbox" id="realizada" />
-        <label for="realizada">Realizada</label>
+        <label class="form-label" for="realizada">Realizada</label>
       </div>
       <div>
-        <input formControlName="cancelada" type="checkbox" id="cancelada" />
-        <label for="cancelada">Cancelada</label>
+        <input  formControlName="cancelada" type="checkbox" id="cancelada" />
+        <label class="form-label" for="cancelada">Cancelada</label>
       </div>
-      <button type="submit" [disabled]="submitted && formularioMarcacao.invalid">Guardar</button>
+      <button style="background-color: #3889C9;" class="btn btn-primary" type="submit" [disabled]="submitted && formularioMarcacao.invalid">Guardar</button>
     </form>
   </div>
