@@ -40,7 +40,7 @@ export const routes: Routes = [
     title: 'Editar Animal', 
     component: AnimaisEditarComponent, 
     },
-    { path: 'eliminar-animail/:id', 
+    { path: 'eliminar-animal/:id', 
     title: 'Eliminar Animal', 
     component: AnimaisEliminarComponent, 
     },
