@@ -23,7 +23,7 @@
             <td>{{ marcacao.realizada ? 'x' : 'o' }}</td>
             <td>{{ marcacao.cancelada ? 'x' : 'o' }}</td>
             <td><button class="btn btn-info" [routerLink]="['/editar-marcacao/',marcacao.id]" type="button">Editar</button></td>
-            <td><button class="btn btn-danger" [routerLink]="['/eliminar-marcacao/',marcacao.id]" type="button">Apagar</button></td>
+            <td><button class="btn btn-warning" [routerLink]="['/eliminar-marcacao/',marcacao.id]" type="button">Apagar</button></td>
             </tr>
         } @empty {
           @if (marcacoes) {

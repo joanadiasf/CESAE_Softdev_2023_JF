@@ -7,6 +7,8 @@ import { AnimaisEditarComponent } from './components/animais-editar/animais-edit
 import { TutoresCriarComponent } from './components/tutores-criar/tutores-criar.component';
 import { TutoresEditarComponent } from './components/tutores-editar/tutores-editar.component';
 import { MarcacoesEliminarComponent } from './components/marcacoes-eliminar/marcacoes-eliminar.component';
+import { AnimaisEliminarComponent } from './components/animais-eliminar/animais-eliminar.component';
+import { TutoresEliminarComponent } from './components/tutores-eliminar/tutores-eliminar.component';
 
 export const routes: Routes = [
 
@@ -38,6 +40,10 @@ export const routes: Routes = [
     title: 'Editar Animal', 
     component: AnimaisEditarComponent, 
     },
+    { path: 'eliminar-animail/:id', 
+    title: 'Eliminar Animal', 
+    component: AnimaisEliminarComponent, 
+    },
 
     { path: 'novo-tutor', 
     title: 'Novo Tutor', 
@@ -47,5 +53,10 @@ export const routes: Routes = [
     { path: 'editar-tutor/:id', 
     title: 'Editar Tutor', 
     component: TutoresEditarComponent, 
+    },
+
+    { path: 'eliminar-tutor/:id', 
+    title: 'Eliminar Tutor', 
+    component: TutoresEliminarComponent, 
     },
 ];

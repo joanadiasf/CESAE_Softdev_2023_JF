@@ -11,6 +11,8 @@
         <th scope="col">Sexo</th>
         <th scope="col">Data de Nascimento</th>
         <th scope="col">Tutor</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -22,6 +24,8 @@
               <td>{{ animal.sexo }}</td>
             <td>{{ animal.dataNascimento }}</td>
             <td>{{ animal.tutorId }}</td>
+            <td><button class="btn btn-info" [routerLink]="['/editar-animal/',animal.id]" type="button">Editar</button></td>
+            <td><button class="btn btn-warning" [routerLink]="['/eliminar-animal/',animal.id]" type="button">Apagar</button></td>
             </tr>
         } @empty {
           @if (animais) {
