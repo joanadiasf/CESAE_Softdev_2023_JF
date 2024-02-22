@@ -1,0 +1,26 @@
+<nav>
+
+    <ul>
+        <li><a href="/primeira" routerlinkactive="active">Primeira Pagina</a></li>
+        <li><a href="/segunda" routerlinkactive="active">Segunda Pagina</a></li>
+
+    </ul>
+
+</nav>
+
+<router-outlet />
+
+<h1>Hello World</h1>
+
+<app-meu-componente meuNome="Paulo" /> <!--Componentes podem ser usados mais que uma vez-->
+
+
+<app-meu-componente [meu-nome]="meuNomePai"></app-meu-componente>
+
+<app-meu-componente></app-meu-componente>
+
+<app-meu-componente (mudancaContador)="atualizar($event)"></app-meu-componente>
+<div style = "background-color: beige ;">
+
+<p> Contadador: {{contadorPai}} </p>
+</div>

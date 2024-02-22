@@ -1,0 +1,42 @@
+<p>form-api works!</p>
+<form [formGroup]="form" (ngSubmit)="formSubmit()">
+    <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome" formControlName="nome">
+        @if(form.controls['nome'].invalid) {
+        <div>
+            @if(form.controls['nome'].errors) {
+                <span>O campo nome é obrigatório</span>
+            }
+            <!-- Erros -->
+        </div>
+        }
+    </div>
+    <div>
+        <label for="pais">Pais:</label>
+        <input type="text" name="pais" id="pais" formControlName="pais">
+        @if(form.controls['pais'].invalid) {
+            <div>
+                @if(form.controls['pais'].errors) {
+                    <span>O campo pais é obrigatório</span>
+                }
+                <!-- Erros -->
+            </div>
+            }
+    </div>
+    <div>
+        <label for="populacao">População:</label>
+        <input type="number" name="populacao" id="populacao" formControlName="populacao">
+        @if(form.controls['populacao'].invalid) {
+            <div>
+                @if(form.controls['populacao'].errors) {
+                    <span>O campo populoção tem de estar entre 1000 e 10000</span>
+                }
+                <!-- Erros -->
+            </div>
+            }
+    </div>
+    <div>
+        <button type="submit" [disabled]="form.invalid">Ok</button>
+    </div>
+</form>

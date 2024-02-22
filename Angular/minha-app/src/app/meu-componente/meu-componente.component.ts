@@ -1,65 +1,77 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, Signal, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-meu-componente',
   standalone: true,
   imports: [],
   templateUrl: './meu-componente.component.html',
-  styleUrl: './meu-componente.component.scss'
+  styleUrl: './meu-componente.component.scss',
 })
-export class MeuComponenteComponent {
- //@Input({ required:true}) meuNome = "Sirius";  required - fica obrigatorio
-@Input({alias: "meu-nome"}) meuNome = "Sirius";  //alias - nome que queremos dar a propriedade - funciona so pro input - podemos so por "meu-nome" sem escrever alias
+export class MeuComponenteComponent implements OnChanges {
+  //@Input({ required: true, alias: 'meu-nome' }) meuNome: string = 'João';
+  //@Input({ alias: 'meu-nome' }) meuNome: string = 'João';
+  @Input('meu-nome') meuNome: string = 'João';
+  mensagem: string = 'Eu adoro gatos! 😀';
+  imagem: string =
+    'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?w=500';
 
-// @Input() meuNome = "Sirius";
+  @Output() mudancaContador: EventEmitter<number> = new EventEmitter<number>();
+  contador: number = 0;
 
- mensagem = "I'm so sleepy 😴";
- imagem = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkK4c3vGQxtyaZpwnWgzxDdcOcwMwzoW-mwg&usqp=CAU";
+  imagens: string[] = [
+    'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?w=500',
+    'https://t1.ea.ltmcdn.com/pt/posts/4/8/5/gato_fraco_o_que_fazer_24584_orig.jpg',
+    'https://sadanduseless.b-cdn.net/wp-content/uploads/2021/02/cat-taxidermy14.jpg',
+  ];
 
-@Output() mudancaContador : EventEmitter<number> = new EventEmitter <number>();
-contador : number = 0
+  /*arr: Array<string> = [
+    'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?w=500',
+    'https://t1.ea.ltmcdn.com/pt/posts/4/8/5/gato_fraco_o_que_fazer_24584_orig.jpg',
+    'https://sadanduseless.b-cdn.net/wp-content/uploads/2021/02/cat-taxidermy14.jpg'
+  ]*/
 
- imagens: string []= [
-  "https://t1.ea.ltmcdn.com/pt/posts/4/8/5/gato_fraco_o_que_fazer_24584_orig.jpg",
-  "https://sadanduseless.b-cdn.net/wp-content/uploads/2021/02/cat-taxidermy14.jpg"
+  obj: { id: number; nome: string /*, fn?: Function*/ } = {
+    id: 80,
+    nome: 'joaoo',
+    //fn: () => {}
+  };
 
-];
+  pCorTexto: string = '#336699';
+  pCorFundo: string = '#99ccff';
+  pAlterarCores: boolean = true;
 
- /* arr: Array<string>  funciona da mesma forma que o exemplo a cima */
-
-obj: {id:number,nome:string}={        
-  id:80,
-  nome:"joanaa"
-};
-
-pCorTexto: string= "#336699";
-pCorFundo: string= "#99ccff";
-pAlterarCores: boolean = true;
-
- alterarImagem(): void {
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('MeuComponenteComponent.ngOnChanges()', changes);
+    
+    if(changes['meuNome']) {
+      console.log('O meuNome foi alterado para ' + changes['meuNome'].currentValue);
+    }
+    
+    if(changes['meuNome2']) {
+      //...
+    }
+  }
+  
+  alterarImagem(): void {
     this.imagem = this.imagens[1];
-    /*this.obj.nome;  como chamar um objeto */
- }
+  }
 
- alterarImagem2(): void {
-  this.imagem = this.imagens[2];
-}
+  alterarImagem2(): void {
+    this.imagem = this.imagens[2];
+  }
 
-alterarCores(): void {
-  let cor: string = this.pCorTexto
-  this.pCorTexto= this.pCorFundo
-  this.pCorFundo=cor
-}
+  alterarCores(): void {
+    let auxCor: string = this.pCorTexto;
+    this.pCorTexto = this.pCorFundo;
+    this.pCorFundo = auxCor;
+  }
 
-alterarAtivo(): void{
-  this.pAlterarCores = false;
-}
+  alterarAtivo(): void {
+    this.pAlterarCores = false;
+  }
 
-
-incrementar(): void {
-
-  this.contador++;
-   this.mudancaContador.emit(this.contador);
-}
-
+  incrementar(): void {
+    this.contador++;
+    this.mudancaContador.emit(this.contador);
+  }
 }

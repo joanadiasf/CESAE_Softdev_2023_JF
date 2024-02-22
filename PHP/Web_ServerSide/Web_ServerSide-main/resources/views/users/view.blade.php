@@ -1,4 +1,4 @@
-@extends('layouts.femaster')~
+@extends('layouts.femaster')
 
 @section('content')
     <h1> Ver / Actualizar Dados {{ $myUser->name }}</h1>

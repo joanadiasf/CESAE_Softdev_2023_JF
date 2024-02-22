@@ -1,8 +1,8 @@
 <p>segunda-pagina works!</p>
 <nav>
-    <ul>
-        <li><a href="/segunda/aaa"></a>AAA</li>
-        <li><a href="/segunda/bbb"></a>BBB</li>
-    </ul>
+  <ul>
+    <li><a routerLink="/segunda/aaa" [routerLinkActive]="['active', 'aaa']">Aaa</a></li>
+    <li><a routerLink="/segunda/bbb" [routerLinkActive]="['active', 'bbb']">Bbb</a></li>
+  </ul>
 </nav>
 <router-outlet />

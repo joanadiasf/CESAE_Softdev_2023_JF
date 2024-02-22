@@ -1,0 +1,119 @@
+{
+  "cidades": [
+    {
+      "id": "d415",
+      "nome": "Berlim",
+      "pais": "Alemanha",
+      "populacao": 3645000
+    },
+    {
+      "id": "0b20",
+      "nome": "Aveiro",
+      "pais": "Portugal",
+      "populacao": 181494
+    },
+    {
+      "id": "2d94",
+      "nome": "Barcelona",
+      "pais": "Espanha",
+      "populacao": 1620343
+    },
+    {
+      "id": "ee13",
+      "nome": "Porto",
+      "pais": "Portugal",
+      "populacao": 78450
+    },
+    {
+      "id": "7822",
+      "nome": "Paris",
+      "pais": "França",
+      "populacao": 2148271
+    },
+    {
+      "id": "de2a",
+      "nome": "Berlim",
+      "pais": "Alemanha",
+      "populacao": 3645000
+    },
+    {
+      "id": "42a2",
+      "nome": "Aveiro",
+      "pais": "Portugal",
+      "populacao": 181494
+    },
+    {
+      "id": "fc36",
+      "nome": "Barcelona",
+      "pais": "Espanha",
+      "populacao": 1620343
+    },
+    {
+      "id": "e864",
+      "nome": "Porto",
+      "pais": "Portugal",
+      "populacao": 78450
+    },
+    {
+      "id": "ca92",
+      "nome": "Paris",
+      "pais": "França",
+      "populacao": 2148271
+    },
+    {
+      "id": "5d6e",
+      "nome": "Berlim",
+      "pais": "Alemanha",
+      "populacao": 3645000
+    },
+    {
+      "id": "059c",
+      "nome": "Aveiro",
+      "pais": "Portugal",
+      "populacao": 181494
+    },
+    {
+      "id": "adb0",
+      "nome": "Barcelona",
+      "pais": "Espanha",
+      "populacao": 1620343
+    },
+    {
+      "id": "41c5",
+      "nome": "Porto",
+      "pais": "Portugal",
+      "populacao": 78450
+    },
+    {
+      "id": "b871",
+      "nome": "Paris",
+      "pais": "França",
+      "populacao": 2148271
+    },
+    {
+      "id": "e82c",
+      "nome": "Berlim",
+      "pais": "Alemanha",
+      "populacao": 3645000
+    },
+    {
+      "id": "5d6f",
+      "nome": "Aveiro",
+      "pais": "Portugal",
+      "populacao": 181494
+    },
+    {
+      "id": "6c15",
+      "nome": "Barcelona",
+      "pais": "Espanha",
+      "populacao": 1620343
+    },
+    {
+      "id": "8425",
+      "nome": "the",
+      "pais": "htr",
+      "populacao": 8888
+    }
+  ],
+  "pais": []
+}

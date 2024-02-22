@@ -1,0 +1,33 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Telemovel</th>
+        <th scope="col">Email</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        @for (tutor of tutores; track tutor.id) {
+            <tr>
+              <td>{{ tutor.nome }}</td>
+              <td>{{ tutor.telemovel }}</td>
+              <td>{{ tutor.email }}</td>
+              
+            </tr>
+        } @empty {
+          @if (tutores) {
+              <tr>
+                <td colspan="4">Não há marcações!</td>
+              </tr>
+          } @else {
+              <tr>
+                <td colspan="4">A carregar as marcações...</td>
+              </tr>
+          }
+        }
+      </tbody>
+  </table>
+</div>
+  

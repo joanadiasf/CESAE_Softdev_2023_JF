@@ -1,0 +1,44 @@
+<p>tutores-criar works!</p>
+
+<div>
+    <h2>Novo Tutor</h2>
+  </div>
+  <div>
+    <form [formGroup]="formularioTutores" (ngSubmit)="handleSubmit()">
+      <div>
+        <label for="nome">Nome:</label>
+        <input formControlName="nome" type="text" id="nome" />
+        @if ((submitted || formularioTutores.controls['nome'].touched) && formularioTutores.controls['nome'].errors) {
+        <div>
+          @if (formularioTutores.controls['nome'].errors['required']) {
+          <span>O Tipo é obrigatório</span>
+          }
+        </div>
+        }
+      </div>
+      <div>
+        <label for="telemovel">Telemovel:</label>
+        <input formControlName="telemovel" type="text" id="telemovel" />
+        @if ((submitted || formularioTutores.controls['telemovel'].touched) && formularioTutores.controls['telemovel'].errors) {
+        <div>
+          @if (formularioTutores.controls['telemovel'].errors['required']) {
+          <span>O ID do Animal é obrigatório</span>
+          }
+        </div>
+        }
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input formControlName="email" type="email" id="email" />
+        @if ((submitted || formularioTutores.controls['email'].touched) && formularioTutores.controls['email'].errors) {
+        <div>
+          @if (formularioTutores.controls['email'].errors['required']) {
+          <span>O ID do Tutor é obrigatório</span>
+          }
+        </div>
+        }
+      </div>
+      
+      <button type="submit" [disabled]="submitted && formularioTutores.invalid">Criar marcação</button>
+    </form>
+  </div>

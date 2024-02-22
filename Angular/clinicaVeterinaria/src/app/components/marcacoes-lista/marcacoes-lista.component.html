@@ -1,0 +1,39 @@
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Tipo</th>
+        <th scope="col">Animal</th>
+        <th scope="col">Tutor</th>
+        <th scope="col">Data e hora</th>
+        <th scope="col">Realizada</th>
+        <th scope="col">Cancelada</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (marcacao of marcacoes; track marcacao.id) {
+            <tr>
+              <td>{{ marcacao.tipo }}</td>
+              <td>{{ marcacao.animalId }}</td>
+              <td>{{ marcacao.tutorId }}</td>
+              <td>{{ marcacao.dataHora }}</td>
+            <td>{{ marcacao.realizada }}</td>
+            <td>{{ marcacao.cancelada }}</td>
+            <td><button  class="btn btn-danger" [routerLink]="['/editar-marcacao/:id']" type="button"><i class="bi bi-pencil"></i> Apagar</button></td>
+            </tr>
+        } @empty {
+          @if (marcacoes) {
+              <tr>
+                <td colspan="4">Não há marcações!</td>
+              </tr>
+          } @else {
+              <tr>
+                <td colspan="4">A carregar as marcações...</td>
+              </tr>
+          }
+        }
+      </tbody>
+  </table>
+</div>
+  
