@@ -20,7 +20,7 @@
               <td>{{ marcacao.dataHora }}</td>
             <td>{{ marcacao.realizada }}</td>
             <td>{{ marcacao.cancelada }}</td>
-            <td><button  class="btn btn-danger" [routerLink]="['/editar-marcacao/:id']" type="button"><i class="bi bi-pencil"></i> Apagar</button></td>
+            <td><button  class="btn btn-danger" [routerLink]="['/eliminar-marcacao/:id']" type="button"><i class="bi bi-pencil"></i> Apagar</button></td>
             </tr>
         } @empty {
           @if (marcacoes) {

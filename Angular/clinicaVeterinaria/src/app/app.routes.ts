@@ -6,6 +6,7 @@ import { AnimaisCriarComponent } from './components/animais-criar/animais-criar.
 import { AnimaisEditarComponent } from './components/animais-editar/animais-editar.component';
 import { TutoresCriarComponent } from './components/tutores-criar/tutores-criar.component';
 import { TutoresEditarComponent } from './components/tutores-editar/tutores-editar.component';
+import { MarcacoesEliminarComponent } from './components/marcacoes-eliminar/marcacoes-eliminar.component';
 
 export const routes: Routes = [
 
@@ -22,6 +23,10 @@ export const routes: Routes = [
     { path: 'editar-marcacao/:id', 
     title: 'Editar Marcação', 
     component: MarcacoesEditarComponent, 
+    },
+    { path: 'eliminar-marcacao/:id', 
+    title: 'Eliminar Marcação', 
+    component: MarcacoesEliminarComponent, 
     },
 
     { path: 'novo-animal', 
