@@ -5,6 +5,7 @@ import { MarcacoesService } from '../../services/marcacoes.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-marcacoes-lista',
   standalone: true,
@@ -16,8 +17,10 @@ import { RouterLink } from '@angular/router';
 export class MarcacoesListaComponent {
 
   marcacoes?: Marcacao[];
+  
 
   marcacoesSubscription?: Subscription;
+ 
 
   constructor(private marcacoesService: MarcacoesService) {}
 
@@ -30,6 +33,8 @@ export class MarcacoesListaComponent {
         console.error('Erro ao carregar os dados!', err);
       },
     });
+
+  
   }
 
   ngOnDestroy() {
