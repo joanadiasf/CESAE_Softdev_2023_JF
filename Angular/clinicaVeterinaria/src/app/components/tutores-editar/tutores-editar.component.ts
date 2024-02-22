@@ -56,7 +56,15 @@ tutorId:string='';
   }
   ngOnInit() {
     this.tutorId = this.route.snapshot.paramMap.get('id') || '';
-  }
+
+    this.tutoresService.getById(this.tutorId).subscribe((tutor)=> {
+
+      this.formularioTutores.controls['nome'].setValue(tutor.nome);
+      this.formularioTutores.controls['telemovel'].setValue(tutor.telemovel);
+      this.formularioTutores.controls['email'].setValue(tutor.email);
+
+  });
+}
 
   ngOnDestroy() {
     this.criarSubscription?.unsubscribe();

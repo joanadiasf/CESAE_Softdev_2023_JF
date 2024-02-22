@@ -64,6 +64,17 @@ animaisId:string='';
 
   ngOnInit() {
     this.animaisId = this.route.snapshot.paramMap.get('id') || '';
+
+    this.animaisService.getById(this.animaisId).subscribe((animais)=>{
+    
+      this.formularioAnimais.controls['nome'].setValue(animais.nome);
+      this.formularioAnimais.controls['especie'].setValue(animais.especie);
+      this.formularioAnimais.controls['raca'].setValue(animais.raca);
+      this.formularioAnimais.controls['sexo'].setValue(animais.sexo);
+      this.formularioAnimais.controls['dataNascimento'].setValue(animais.dataNascimento);
+      this.formularioAnimais.controls['tutorId'].setValue(animais.tutorId);
+    
+   });
   }
 
   ngOnDestroy() {
