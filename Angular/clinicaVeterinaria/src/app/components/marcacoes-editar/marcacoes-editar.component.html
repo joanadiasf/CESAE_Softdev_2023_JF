@@ -1,8 +1,5 @@
-<p>marcacoes-editar works!</p>
-<p>marcacoes-criar works!</p>
-
 <div>
-    <h2>Nova marcação</h2>
+    <h2>Editar marcação</h2>
   </div>
   <div>
     <form [formGroup]="formularioMarcacao" (ngSubmit)="handleSubmit()">
@@ -59,6 +56,6 @@
         <input formControlName="cancelada" type="checkbox" id="cancelada" />
         <label for="cancelada">Cancelada</label>
       </div>
-      <button type="submit" [disabled]="submitted && formularioMarcacao.invalid">Criar marcação</button>
+      <button type="submit" [disabled]="submitted && formularioMarcacao.invalid">Guardar</button>
     </form>
   </div>

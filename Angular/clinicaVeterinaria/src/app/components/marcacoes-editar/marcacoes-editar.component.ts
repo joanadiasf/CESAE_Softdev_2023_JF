@@ -25,8 +25,8 @@ export class MarcacoesEditarComponent {
     animalId: new FormControl('', Validators.required),
     tutorId: new FormControl('', Validators.required),
     dataHora: new FormControl('', Validators.required),
-    realizada: new FormControl('', Validators.required),
-    cancelada: new FormControl('', Validators.required),
+    realizada: new FormControl(''),
+    cancelada: new FormControl(''),
   });
   criarSubscription?: Subscription;
   submitted: boolean = false;
@@ -63,6 +63,17 @@ export class MarcacoesEditarComponent {
   }
   ngOnInit() {
     this.marcacaoId = this.route.snapshot.paramMap.get('id') || '';
+
+    this.marcacoesService.getById(this.marcacaoId).subscribe((marcacao)=> {
+
+      this.formularioMarcacao.controls['tipo'].setValue(marcacao.tipo);
+      this.formularioMarcacao.controls['animalId'].setValue(marcacao.animalId);
+      this.formularioMarcacao.controls['tutorId'].setValue(marcacao.tutorId);
+      this.formularioMarcacao.controls['dataHora']?.setValue(marcacao.dataHora);
+      this.formularioMarcacao.controls['realizada'].setValue(marcacao.realizada);
+      this.formularioMarcacao.controls['cancelada']?.setValue(marcacao.cancelada);
+
+    });
   }
 
   ngOnDestroy() {

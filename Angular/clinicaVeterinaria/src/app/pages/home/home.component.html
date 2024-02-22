@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Clinica Veterinária</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<img src="assets/logoAngular.jpg" style="max-width: 5%;" alt="">    
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,19 +22,12 @@
     </div>
   </div>
 </nav>
-
-<div>
-  <button [routerLink]="['/nova-marcacao']" type="button">Nova marcação</button>
-  <button [routerLink]="['/novo-animal']" type="button">Novo animal</button>
-
-  <button [routerLink]="['/novo-tutor']" type="button">Novo tutor</button>
-
-
-</div>
+<br><br>
   <div class="container">
 
     <div>
-      <h2>Marcações</h2>
+      <h2>Marcações</h2> 
+      <button [routerLink]="['/nova-marcacao']" type="button">Nova marcação</button>
     </div>
     <div>
        <app-marcacoes-lista />
@@ -42,6 +35,7 @@
 
     <div>
       <h2>Animais</h2>
+      <button [routerLink]="['/novo-animal']" type="button">Novo animal</button>
     </div>
     <div>
       <app-animais-lista />
@@ -49,6 +43,7 @@
 
     <div>
       <h2>Tutores</h2>
+      <button [routerLink]="['/novo-tutor']" type="button">Novo tutor</button>
     </div>
     <div>
       <app-tutores-lista /> 

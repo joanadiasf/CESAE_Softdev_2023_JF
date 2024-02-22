@@ -17,6 +17,24 @@
       "sexo": "f",
       "dataNascimento": "2020-07-20T00:00",
       "tutorId": ""
+    },
+    {
+      "id": "880b",
+      "nome": "fed",
+      "especie": "fdd",
+      "raca": "ed",
+      "sexo": "wedf",
+      "dataNascimento": "2024-02-02T12:55",
+      "tutorId": "892a"
+    },
+    {
+      "id": "827d",
+      "nome": "23r4etf",
+      "especie": "egrt",
+      "raca": "wetgrhjy",
+      "sexo": "rety",
+      "dataNascimento": "2024-02-16T12:56",
+      "tutorId": "892a"
     }
   ],
   "tutores": [
@@ -39,7 +57,8 @@
       "tipo": "Consulta",
       "animalId": "982a",
       "tutorId": "892a",
-      "dataHora": "2024-02-21T09:25"
+      "dataHora": "2024-02-21T09:25",
+      "realizada": true
     },
     {
       "id": "ac25",
