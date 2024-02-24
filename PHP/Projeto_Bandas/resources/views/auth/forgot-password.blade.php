@@ -21,10 +21,16 @@
 
     <img class="image-login" src="{{ asset('imagens/logo.png') }}" alt="">
     <div class="conteiner-right-content">
+        <h3>Recover password</h3>
       
-            <h1>Are you lost? </h1>
-
-            <h1>Go <a href="{{route('home') }}">home</a></h1>
+    <form method="POST" action="{{ route('password.email') }}">
+        @csrf
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
 
     </div>
 

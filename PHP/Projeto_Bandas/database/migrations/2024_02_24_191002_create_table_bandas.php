@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('bandas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('photo');
-            $table->integer('nrAlbums');
+            $table->string('photo')->nullable();
+            $table->integer('nrAlbums')->nullable();
         });
     }
 

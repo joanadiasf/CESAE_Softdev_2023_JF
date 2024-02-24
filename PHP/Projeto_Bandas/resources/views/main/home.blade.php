@@ -5,30 +5,42 @@
 <h3>HOMEEEEEEEE</h3>
 
 <br>
-<table class="table table-secondary table-hover">
-    <thead>
-        <tr class="table-secondary">
-            <th scope="col">Photo</th>
-            <th scope="col">Name</th>
-            <th scope="col">Albums</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Qualquer coisa</td>
-            <td>Larry the Bird</td>
-        </tr>
-    </tbody>
-</table>
+
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+    <div class="card text-center mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">BANDS</h5>
+    <a class="btn btn-dark" href="{{ route('bandas.add') }}">Add Bands</a>
+  </div>
+</div>
+    </div>
+    <div class="col">
+    <div class="card text-center mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">ALBUMS</h5>
+    <a class="btn btn-dark" href="{{ route('albums.add') }}">Add Albums</a>
+  </div>
+</div>
+    </div>
+    <div class="col">
+    <div class="card text-center mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">USERS</h5>
+    <a class="btn btn-dark" href="{{ route('users.add') }}">Add Users</a>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+
+
+
+
 @endsection
