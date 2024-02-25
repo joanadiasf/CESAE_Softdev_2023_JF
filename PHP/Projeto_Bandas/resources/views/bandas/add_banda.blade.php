@@ -7,7 +7,7 @@
 <h3>Add Band</h3>
 <br>
 
-<form method="POST" action="{{ route('bandas.create') }}">
+<form method="POST" action="{{ route('bandas.create') }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -29,7 +29,7 @@
         @enderror
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-light">Save</button>
 </form>
 
 

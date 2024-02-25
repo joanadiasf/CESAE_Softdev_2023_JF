@@ -6,7 +6,7 @@
 
 <h3>ALBUMS</h3>
 
-<form method="POST" action="{{ route('albums.update') }}">
+<form method="POST" action="{{ route('albums.update') }}" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="id" value="{{ $myAlbum->id }}" id="">
     <div class="mb-3">
@@ -21,8 +21,7 @@
     </div>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Photo</label>
-        <input accept="image/*" type="text" value="{{ $myAlbum->photo }}" name="photo" class="form-control"
-            id="exampleFormControlInput1">
+        <input accept="image/*" type="file" name="photo" class="form-control" id="exampleFormControlInput1">
         @error('photo')
         <div class='alert alert-danger'>
             Invalid Photo
@@ -53,6 +52,6 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="submit" class="btn btn-light">Update</button>
 </form>
 @endsection

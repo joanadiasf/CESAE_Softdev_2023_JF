@@ -13,17 +13,24 @@
             <th scope="col">Photo</th>
             <th scope="col">Name</th>
             <th scope="col">E-MAIL</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-       @foreach ($users as $user)
-       <tr>
-        <td>Photo</td>
-        <td>{{ $user->name }}</td>
-        <td>{{ $user->email }}</td>
+        @foreach ($users as $user)
+        <tr>
+            <td scope="row"><img width="50px" height="50px"
+                    src="{{ $user->photo ? asset('storage/' . $user->photo) : asset('imagens/nophoto.jpg') }}"></td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td><a href="{{ route('users.view', $user->id) }}" class="btn btn-dark">Ver / Actualizar</a></td>
 
-        @endforeach
-       </tr>
+            <td><a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Delete</a></td>
+
+
+            @endforeach
+        </tr>
     </tbody>
 </table>
 

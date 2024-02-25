@@ -7,7 +7,7 @@
 <h3>Add Album</h3>
 <br>
 
-<form method="POST" action="{{ route('albums.create') }}">
+<form method="POST" action="{{ route('albums.create') }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -50,7 +50,7 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-light">Save</button>
 </form>
 
 

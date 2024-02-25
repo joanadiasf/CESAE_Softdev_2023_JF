@@ -7,7 +7,7 @@
 <h3>Add User</h3>
 <br>
 
-<form method="POST" action="{{ route('users.create') }}">
+<form method="POST" action="{{ route('users.create') }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
@@ -35,6 +35,6 @@
         <input value="" type="password" name="password" class="form-control" id="exampleFormControlInput1"
             placeholder="Password" required>
     </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-light">Save</button>
 </form>
 @endsection

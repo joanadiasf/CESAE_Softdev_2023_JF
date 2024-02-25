@@ -21,8 +21,9 @@ class DashboardController extends Controller
         $message= null;
 
         if( $isAdmin){
-            $message= 'Olá, ' + Auth::user()->name;
+            $message= '';
         }
+        
 
 
         return view('dashboard.home', compact('message'));

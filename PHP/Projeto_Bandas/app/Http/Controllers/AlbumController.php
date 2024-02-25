@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class AlbumController extends Controller
@@ -38,11 +39,17 @@ class AlbumController extends Controller
             'banda_id' => 'required|integer|exists:bandas,id'
         ]);
 
+        $photo = null;
+
+        if($request->has('photo')){
+            $photo = Storage::putFile('profilePictures/', $request->photo);
+        }
+
         Album::where('id', $request->id)
         ->update([
             'name' => $request->name ,
             'releaseDate' => $request->releaseDate ,
-            'banda_id' => $request->banda_id,
+            'photo' =>$photo,
         ]);
 
         return redirect()->route('albums.all')->with('message', 'Album updated!!');

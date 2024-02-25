@@ -40,7 +40,7 @@
             <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword1">
         </div>
         <input type="hidden" name="token" value="{{ request()->route('token') }}">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-light">Submit</button>
 
     </form>
 

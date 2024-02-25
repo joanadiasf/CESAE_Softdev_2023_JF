@@ -14,15 +14,26 @@
             <th scope="col">Name</th>
             <th scope="col">Release Date</th>
             <th scope="col">Band</th>
+            @auth
+            <th></th>
+            <th></th>
+            @endauth
         </tr>
     </thead>
     <tbody>
        @foreach ($albums as $album)
        <tr>
-        <td>Photo</td>
+       <td scope="row"><img width="50px" height="50px"
+                            src="{{ $album->photo ? asset('storage/' . $album->photo) : asset('imagens/nophoto.jpg') }}"></td>
         <td>{{ $album->name }}</td>
         <td>{{ $album->releaseDate }}</td>
         <td>{{ $album->bandaName }}</td>
+        @auth
+                        <td><a href="{{ route('albums.view', $album->id) }}" class="btn btn-dark">Ver / Actualizar</a></td>
+                        @if (Auth::user()->user_type == 1)
+                            <td><a href="{{ route('albums.delete', $album->id) }}" class="btn btn-danger">Delete</a></td>
+                        @endif
+        @endauth
 
         @endforeach
        </tr>
