@@ -9,6 +9,7 @@
 <br>
 
 
+
 <h1>Unleash the Sound Waves &#x1F918;</h1>
 
 <p>Join us on an epic musical journey filled with raw energy and passion. From heart-pounding rhythms to soul-stirring
@@ -58,7 +59,6 @@
 @endauth
 
 <br><br>
-
 
 
 
